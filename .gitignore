@@ -1,0 +1,12 @@
+*.o
+
+# ssh
+known_hosts
+*.private
+*.pub
+
+# vim
+*.*~
+*~
+
+.directory

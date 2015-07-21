@@ -1,0 +1,82 @@
+"1.1
+
+loadplugins '\.(js|penta)$'
+group user
+
+" vim: set ft=pentadactyl:
+"加速移动
+map -modes=n,v j -builtin 5j
+map -modes=n,v k -builtin 5k
+map -modes=n,v J -builtin 20j
+map -modes=n,v K -builtin 20k
+"高亮
+"set hintkeys=asdfghkl;
+set hintkeys=asdfghklqwertyuio
+
+"前进和后退
+map -modes=n,v H -builtin <C-o>
+map -modes=n,v L -builtin <C-i>
+map -modes=n,v h -builtin gT
+map -modes=n,v l -builtin gt
+
+"tab跳转
+"快捷菜单栏
+map c gn
+
+"set go-=s
+map v :set go!=B<CR>
+map m :set go!=T<CR>
+
+qmark 1 http://music.163.com/
+qmark 5 http://www.52pojie.cn/
+qmark a http://bbs.archlinuxcn.org/
+qmark b http://cn.bing.com/
+qmark c http://www.csdn.net/
+qmark f http://www.freebuf.com/
+qmark F https://www.facebook.com/
+qmark g https://www.google.com.hk/
+qmark G https://github.com/
+qmark h http://hometown.scau.edu.cn/
+qmark j http://jwc.scau.edu.cn/
+qmark k http://bbs.pediy.com/ 
+qmark l http://www.lofter.com/
+qmark L http://lastavenger.github.io/
+qmark m https://outlook.com
+"chrome://quicknote/content/quicknote.xul
+qmark o https://plus.google.com/u/0/
+qmark q http://user.qzone.qq.com/
+qmark Q http://www.quora.com/ 
+qmark s https://forum.suse.org.cn/
+qmark t http://tieba.baidu.com/f?kw=%C9%FA%B2%BB%D6%B9%B1%CA%B2%BB%D0%DD
+qmark T http://translate.google.cn/
+qmark w http://weibo.com/
+qmark y http://www.cnblogs.com/
+qmark z http://www.zhihu.com/ 
+
+"恢复剪切复制黏贴的使用
+noremap <C-a> <C-v><C-a>
+noremap <C-c> <C-v><C-c>
+noremap <C-f> <C-v><C-f>
+noremap <C-x> <C-v><C-f> 
+
+cnoremap <C-a> <C-v><C-a>
+cnoremap <C-c> <C-v><C-c>
+cnoremap <C-v> <C-v><C-v>
+cnoremap <C-x> <C-v><C-x>
+
+inoremap <C-a> <C-v><C-a>
+inoremap <C-c> <C-v><C-c>
+inoremap <C-v> <C-v><C-v>
+inoremap <C-x> <C-v><C-x>
+
+"Hint模式下禁用输入法
+style -name=commandline-ime chrome://* #dactyl-commandline-command input {ime-mode: inactive;}
+"强化Hint模式的字体大小
+:hi Hint font:bold 15px "Droid Sans Mono", monospace !important; margin:-.2ex; padding: 0 0 0 1px; outline:1px solid rgba(0, 0, 0, .5); background:rgba(255, 248, 231, .8); color:black; text-transform:uppercase;
+ "Next Page and Previous Page超级的下一页,基本上是够用了.快捷键是[[和]]
+set nextpattern=\s*下一页|下一章|下一张|下一篇|下页|后页\s*,^\bnext\b,\\bnext\\b,^>$,^(>>|)$,^(>|),(>|)$,\\bmore\\b
+set previouspattern=\s*上一页|上一章|上一张|上一篇|上页|前页\s*,^\bprev|previous\b,\\bprev|previous\\b,^<$,^(<<|)$,^(<|),(<|)$
+js dactyl.plugins.pinynHintsMod;
+
+
+messclear

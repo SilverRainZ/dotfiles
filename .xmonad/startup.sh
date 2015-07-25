@@ -16,8 +16,14 @@ trayer --edge top --align right --widthtype percent --width 11 \
 # Set up network mananger applet
 nm-applet --sm-disable &
 
-fcitx
+# 
+pnmixer &
+
+fcitx &
 
 # Set the background color<
-xsetroot -solid midnightblue
+xsetroot -solid midnightblue &
+
+# Dual screens
+xrandr --output VGA-0 --auto --output LVDS --auto --right-of VGA-0
 

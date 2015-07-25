@@ -11,6 +11,9 @@ filetype plugin on
 set number
 set autochdir 
 
+" 距离底部五行时滚屏
+set so=5
+
 "高亮当前行列
 set cursorline 
 set cursorcolumn

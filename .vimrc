@@ -8,7 +8,10 @@ syntax enable
 filetype on
 filetype plugin on
 
+" 显示行号
 set number
+
+" 打开文件自动切换到该文件目录
 set autochdir 
 
 " 距离底部五行时滚屏
@@ -58,10 +61,20 @@ set nowritebackup
 set noswapfile
 set noundofile
 
+"语法折叠
+set foldmethod=syntax
+set foldcolumn=0  " 设置折叠区域的宽度
+set foldlevel=100
+" 用空格键来开关折叠
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+
 " 特定文件类型
 au BufRead,BufNewFile _pentadactylrc set filetype=pentadactyl
 au BufNewFile,BufRead *.asm set filetype=fasm
 au BufNewFile,BufRead *.md set filetype=markdown
+
+" 以下类型输入左花括号自动补全
+au FileType c,cpp,h,java,css inoremap <buffer> {<CR> {<CR>}<Esc>O
 
 " Normal 模式下禁用输入法(Windows Only?)
 set iminsert=0
@@ -73,6 +86,7 @@ au FocusGained * se imd
 " ================== 简单键映射 ===========================
 map j gj
 map k gk
+nunmap <c-v>
 
 " ==================<F1> - <F12> 功能绑定======================
 
@@ -193,6 +207,9 @@ let g:Powerline_symbols = 'compatible'  " no fancy, too bother
 Plugin 'scrooloose/nerdtree'
 " nerdtree 
 map <C-n> :NERDTreeToggle<CR>
+
+" Plugin YCM
+nnoremap <C-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

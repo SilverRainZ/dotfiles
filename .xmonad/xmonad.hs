@@ -21,7 +21,7 @@ myStartupHook = do
     -- Startup script
     spawn "~/.xmonad/startup.sh"
 
-myWorkspaces = ["web", "code", "term", "im", "ext", "", "", "", "min"]
+myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "", "min"]
 myManageHook = manageDocks <+> manageHook defaultConfig
 
 myLoyoutHook = avoidStruts  $  layoutHook defaultConfig

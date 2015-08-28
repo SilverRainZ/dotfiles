@@ -4,13 +4,6 @@ Config { font = "-misc-fixed-*-*-*-*-13-*-*-*-*-*-*-*"
        , position = TopW L 90
        , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run CoreTemp [ "--template" , "Temp: <core0>°C|<core1>°C"
-                                   , "--Low"      , "70"        -- units: °C
-                                   , "--High"     , "80"        -- units: °C
-                                   , "--low"      , "darkgreen"
-                                   , "--normal"   , "darkorange"
-                                   , "--high"     , "darkred"
-                                   ] 50
                     , Run Battery [ "--template" , "Batt: <acstatus>"
                                   , "--Low"      , "10"        -- units: %
                                   , "--High"     , "80"        -- units: %
@@ -31,5 +24,5 @@ Config { font = "-misc-fixed-*-*-*-*-13-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "LastAvengers@Arch %StdinReader% }{ %cpu% | %memory% * %swap% | %coretemp%  <fc=#ee9a00>%date%</fc> | %battery%    "
+       , template = "LastAvengers@Arch %StdinReader% }{ <fc=#ee9a00>%date%</fc> | %battery% | %cpu% | %memory% * %swap%  "
        }

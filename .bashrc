@@ -2,6 +2,18 @@
 # ~/.bashrc
 # date: 2015-7-21
 
+# env var
+PATH=$PATH:~/.gem/ruby/2.2.0/bin 
+
+case "$TERM" in
+    xterm)
+        export TERM=xterm-256color
+        ;;
+    screen)
+        export TERM=screen-256color
+        ;;
+esac
+
 # less colorful output
 export LESS=-R
 export LESS_TERMCAP_me=$(printf '\e[0m')
@@ -15,6 +27,11 @@ export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 # alias
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
+
+# vim-cn
+upimg(){
+    curl -F "name=@$1" https://img.vim-cn.com
+}
 
 # wechall scoreboard
 export WECHALLUSER="LastAvengers"

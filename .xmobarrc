@@ -1,7 +1,8 @@
-Config { font = "-misc-fixed-*-*-*-*-13-*-*-*-*-*-*-*"
+Config { font = "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true" 
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 90
+       , lowerOnStart = True
        , commands = [ Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Battery [ "--template" , "Batt: <acstatus>"
@@ -20,9 +21,10 @@ Config { font = "-misc-fixed-*-*-*-*-13-*-*-*-*-*-*-*"
                                   ] 50
                     , Run Swap [] 10
                     , Run Date "%a %b %_d %l:%M" "date" 10
+                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red","-t","<rx>KB|<tx>KB"] 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "LastAvengers@Arch %StdinReader% }{ <fc=#ee9a00>%date%</fc> | %battery% | %cpu% | %memory% * %swap%  "
+       , template = "LastAvengers@Arch %StdinReader% }{ %cpu% | %memory% * %swap% | %eth0% | %battery% | <fc=#ee9a00>%date%</fc>  "
        }

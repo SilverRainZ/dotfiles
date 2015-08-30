@@ -1,10 +1,15 @@
+import System.IO
+
 import XMonad
+import XMonad.ManageHook
+
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Cursor
-import System.IO
 
 myTerminal = "konsole"
 
@@ -22,14 +27,18 @@ myStartupHook = do
     spawn "~/.xmonad/startup.sh"
 
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "", "min"]
-myManageHook = manageDocks <+> manageHook defaultConfig
+
+myManageHook = composeAll
+    [ isFullscreen --> doFloat
+    ] 
 
 myLoyoutHook = avoidStruts  $  layoutHook defaultConfig
 
 myLogHook xmproc = dynamicLogWithPP xmobarPP
             { ppOutput = hPutStrLn xmproc
-            , ppTitle = xmobarColor "green" "" . shorten 50
+            , ppTitle = xmobarColor "green" "" . shorten 0
             }
+
 
 main = do
     xmproc <- spawnPipe "/usr/bin/xmobar /home/la/.xmobarrc"

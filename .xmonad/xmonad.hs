@@ -28,9 +28,11 @@ myStartupHook = do
 
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "", "min"]
 
-myManageHook = composeAll
+{- myManageHook = composeAll
     [ isFullscreen --> doFloat
     ] 
+    -}
+myManageHook = manageDocks <+> manageHook defaultConfig
 
 myLoyoutHook = avoidStruts  $  layoutHook defaultConfig
 

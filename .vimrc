@@ -36,7 +36,8 @@ language messages zh_CN.utf-8
 set go=
 colorscheme solarized
 set background=dark
-set guifont=Sayo\ UV\ Console\ HC\ 11
+"set guifont=Sayo\ UV\ Console\ HC\ 11 找不到 belleve 的这个字体了...
+set guifont=Tsentsiu\ Mono\ HJ\ 11
 set laststatus=2
 
 "关闭声音

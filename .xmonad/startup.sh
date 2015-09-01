@@ -12,7 +12,7 @@ xrdb -merge .Xresources &
 # install trayer-srg form AUR
 trayer --edge top --align right --widthtype percent --width 11 \
        --SetDockType true --SetPartialStrut true --transparent true --alpha 0 \
-       --tint 0x000000 --expand true --heighttype pixel --height 17 --monitor primary &
+       --tint 0x000000 --expand true --heighttype pixel --height 18 --monitor primary &
  
 # Set up network mananger applet
 nm-applet --sm-disable &

@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 # Set wallpaper wit feh
-feh --bg-scale /home/la/Pictures/Wallpapers/blog-bg.jpg &
+feh --bg-scale /home/la/Pictures/Wallpapers/境界的彼方-1.jpg &
 
 xflux -l 23 -g 113 -k 4300 &
  

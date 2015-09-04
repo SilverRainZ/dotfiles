@@ -3,3 +3,5 @@
 	name = lastavengers
 [push]
 	default = simple
+[core]
+	editor = vim

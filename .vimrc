@@ -37,7 +37,7 @@ set go=
 colorscheme solarized
 set background=dark
 "set guifont=Sayo\ UV\ Console\ HC\ 11 找不到 belleve 的这个字体了...
-set guifont=Tsentsiu\ Mono\ HJ\ 11
+set guifont=Tsentsiu\ Mono\ HJ\ 12
 set laststatus=2
 
 "关闭声音

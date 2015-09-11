@@ -6,6 +6,6 @@
 while [ true ]; do
     sleep 40m
     notify-send '该休息了' \
-                '你已经连续对着 40 分钟了... :(' \
+                '你已经连续对着屏幕 40 分钟了... :(' \
                 --icon=dialog-information
 done

@@ -124,8 +124,7 @@ function Do_OneFileMake()
     echo "file saved."
     "设置make参数
     if &filetype=="c"
-        " 默认用32位编译
-        set makeprg=gcc\ -m32\ -o\ \"%<\"\ \"%\"
+        set makeprg=gcc\ -o\ \"%<\"\ \"%\"
     elseif &filetype=="cpp"
         set makeprg=g++\ -o\ \"%<\"\ \"%\"
     elseif &filetype=="java"

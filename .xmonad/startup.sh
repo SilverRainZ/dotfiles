@@ -29,4 +29,7 @@ xsetroot -solid midnightblue &
 xrandr --output VGA-0 --auto --output LVDS --auto --right-of VGA-0 &
 
 # Composite manager
-compton -b -c
+compton -b -c &
+
+# have a rest
+rest.sh

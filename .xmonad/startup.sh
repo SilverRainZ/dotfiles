@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 # Set wallpaper wit feh
-feh --bg-scale /home/la/Pictures/Wallpapers/境界的彼方-1.jpg &
+feh --bg-scale /home/la/Pictures/Wallpapers/star-aurora.jpg &
 
 xflux -l 23 -g 113 -k 4300 &
  
@@ -32,4 +32,7 @@ xrandr --output VGA-0 --auto --output LVDS --auto --right-of VGA-0 &
 compton -b -c &
 
 # have a rest
-rest.sh
+rest.sh &
+
+# 
+sudo mentohust

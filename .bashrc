@@ -27,6 +27,7 @@ export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 # alias
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
+alias felix='pacman -Syu'
 
 # vim-cn
 upimg(){

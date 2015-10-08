@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 # Set wallpaper wit feh
-feh --bg-scale /home/la/Pictures/Wallpapers/star-aurora.jpg &
+feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 
 xflux -l 23 -g 113 -k 4300 &
  

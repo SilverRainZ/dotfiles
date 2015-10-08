@@ -9,6 +9,4 @@ fi
 
 source ~/.xprofile
 
-export BROWSER=firefox
-
 exec xmonad

@@ -1,6 +1,19 @@
+#!/bin/sh
+
+export BROWSER=firefox
+
+# language
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN:en_US
+export LC_CTYPE=en_US.UTF-8
+
+# fcitx moudle
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-export XDG_CURRENT_DESKTOP=kde
+# qt5
 export QT_STYLE_OVERRIDE=breeze
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CURRENT_DESKTOP=kde

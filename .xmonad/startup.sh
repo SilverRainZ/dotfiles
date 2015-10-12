@@ -1,8 +1,5 @@
 #!/usr/bin/sh
 
-# Set wallpaper wit feh
-feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
-
 xflux -l 23 -g 113 -k 4300 &
  
 # Load resources
@@ -30,6 +27,9 @@ xrandr --output VGA-0 --auto --output LVDS --auto --right-of VGA-0 &
 
 # Composite manager
 compton -b -c &
+
+# Set wallpaper wit feh
+sleep 1 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 
 # have a rest
 rest.sh &

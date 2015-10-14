@@ -28,11 +28,19 @@ myStartupHook = do
 
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "", "min"]
 
-{- myManageHook = composeAll
-    [ isFullscreen --> doFloat
+myManageHook = composeAll
+    [ isFullscreen              --> doFloat
+    , className =? "feh"        --> doCenterFloat
+    , className =? "MPlayer"    --> doCenterFloat
+    , className =? "trayer"     --> doIgnore
+    -- , className =? "Wine"       --> doIgnore
+    , className =? "Firefox"    --> doShift "web" 
+    , className =? "Gvim"       --> doShift "code"
+    , className =? "qTox"       --> doShift "im"
+    , className =? "konsole"    --> doShift "term"
     ] 
-    -}
-myManageHook = manageDocks <+> manageHook defaultConfig
+
+-- myManageHook = manageDocks <+> manageHook defaultConfig
 
 myLoyoutHook = avoidStruts  $  layoutHook defaultConfig
 

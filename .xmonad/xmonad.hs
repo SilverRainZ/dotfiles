@@ -37,7 +37,10 @@ myManageHook = composeAll
     , className =? "Firefox"    --> doShift "web" 
     , className =? "Gvim"       --> doShift "code"
     , className =? "qTox"       --> doShift "im"
+    , className =? "Irc"    --> doShift "im"
     , className =? "konsole"    --> doShift "term"
+    , className =? "Okular"    --> doShift "doc"
+    , className =? "dolphin"    --> doShift "fm"
     ] 
 
 -- myManageHook = manageDocks <+> manageHook defaultConfig

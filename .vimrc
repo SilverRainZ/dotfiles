@@ -124,9 +124,9 @@ function Do_OneFileMake()
     echo "file saved."
     "设置make参数
     if &filetype=="c"
-        set makeprg=gcc\ -o\ \"%<\"\ \"%\"
+        set makeprg=gcc\ -o\ \"/tmp/%<\"\ \"%\"
     elseif &filetype=="cpp"
-        set makeprg=g++\ -o\ \"%<\"\ \"%\"
+        set makeprg=g++\ -o\ \"/tmp/%<\"\ \"%\"
     elseif &filetype=="java"
         set makeprg=javac\ \"%\"
     elseif &filetype=="haskell"
@@ -138,13 +138,13 @@ function Do_OneFileMake()
     endif
     "删除旧文件,对于非编译型的就算了
     if (&filetype=="c" || &filetype=="cpp") 
-       let outfilename=expand("%:r")
+       let outfilename="/tmp/".expand("%:r")
     elseif &filetype=="java" 
-        let outfilename=expand("%:r").".class"
+        let outfilename="/tmp/".expand("%:r").".class"
     endif
 
     if filereadable(outfilename)
-        let outdeletedsuccess=delete("./".outfilename) "maybe useable
+        let outdeletedsuccess=delete(outfilename) "maybe useable
         if(outdeletedsuccess!=0)
             set makeprg=make
             echohl WarningMsg | echo "Fail to make! I cannot delete the ".outfilename | echohl None
@@ -160,7 +160,7 @@ function Do_OneFileMake()
             execute "!java %<"
             return
         else
-            execute "!./\"%<\"" 
+            execute "!\"/tmp/%<\""
             return 
         endif
     endif 

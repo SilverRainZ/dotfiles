@@ -28,6 +28,9 @@ export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias felix='pacman -Syu'
+alias qtox='XDG_CURRENT_DESKTOP= qtox'
+alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
+alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
 
 # vim-cn
 upimg(){

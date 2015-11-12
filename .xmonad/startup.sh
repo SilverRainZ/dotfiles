@@ -19,7 +19,7 @@ pnmixer &
 
 fcitx &
 
-# Set the background color<
+# Set the background color
 xsetroot -solid midnightblue &
 
 # Dual screens
@@ -32,7 +32,4 @@ compton -b -c &
 sleep 1 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 
 # have a rest
-rest.sh &
-
-# 
-sudo mentohust
+rest.sh

@@ -26,7 +26,7 @@ myStartupHook = do
     -- Startup script
     spawn "~/.xmonad/startup.sh"
 
-myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "", "min"]
+myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "vbox", "min"]
 
 myManageHook = composeAll
     [ isFullscreen              --> doFloat
@@ -37,15 +37,19 @@ myManageHook = composeAll
     , className =? "Firefox"    --> doShift "web" 
     , className =? "Gvim"       --> doShift "code"
     , className =? "qTox"       --> doShift "im"
-    , className =? "Irc"    --> doShift "im"
+    , className =? "Telegram"   --> doShift "im"
     , className =? "konsole"    --> doShift "term"
-    , className =? "Okular"    --> doShift "doc"
+    , className =? "Okular"     --> doShift "doc"
+    , className =? "Wps"        --> doShift "doc"
+    , className =? "Wpp"        --> doShift "doc"
+    , className =? "Et"         --> doShift "doc"
     , className =? "dolphin"    --> doShift "fm"
+    , className =? "VirtualBox" --> doShift "vbox"
     ] 
 
 -- myManageHook = manageDocks <+> manageHook defaultConfig
 
-myLoyoutHook = avoidStruts  $  layoutHook defaultConfig
+myLoyoutHook = avoidStruts $ layoutHook defaultConfig
 
 myLogHook xmproc = dynamicLogWithPP xmobarPP
             { ppOutput = hPutStrLn xmproc

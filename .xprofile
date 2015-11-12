@@ -1,6 +1,7 @@
 #!/bin/sh
 
 export BROWSER=firefox
+export EDITOR=vim
 
 # language
 export LANG=zh_CN.UTF-8

@@ -29,9 +29,10 @@ myStartupHook = do
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "vbox", "min"]
 
 myManageHook = composeAll
-    [ isFullscreen              --> doFloat
+    [ isFullscreen              --> doCenterFloat
     , className =? "feh"        --> doCenterFloat
     , className =? "MPlayer"    --> doCenterFloat
+    , className =? "burp-StartBurp" --> doCenterFloat
     , className =? "trayer"     --> doIgnore
     -- , className =? "Wine"       --> doIgnore
     , className =? "Firefox"    --> doShift "web" 

@@ -208,8 +208,21 @@ Plugin 'scrooloose/nerdtree'
 " nerdtree 
 map <C-n> :NERDTreeToggle<CR>
 
-" Plugin YCM
+" ---------------------- YCM ---------------------------
 nnoremap <C-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <C-k> :YcmForceCompileAndDiagnostics<CR>
+
+let g:ycm_global_ycm_extra_conf = ''
+autocmd FileType c let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/c.py'
+autocmd FileType cpp let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/cpp.py'
+
+let g:ycm_confirm_extra_conf = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_server_keep_logfiles = 1
+" let g:ycm_server_log_level = 'debug'
+set tags+=./.tags
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

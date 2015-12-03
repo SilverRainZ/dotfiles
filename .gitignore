@@ -1,4 +1,5 @@
 *.o
+*.pyc
 
 # ssh
 known_hosts

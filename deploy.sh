@@ -11,5 +11,5 @@ for f in $files; do
     link "$f" "$target/$f"
 done
 
-ln -sf .ssh/config ~/.ssh
+ln -sf $PWD/.ssh/config ~/.ssh
 chmod 600 ~/.ssh/config

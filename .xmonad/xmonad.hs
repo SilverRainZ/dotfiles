@@ -24,12 +24,12 @@ myFocusedBorderColor = "#00ffff"
 myStartupHook = do
     setDefaultCursor xC_left_ptr
     -- Startup script
-    spawn "~/.xmonad/startup.sh"
+    -- spawn "~/.xmonad/startup.sh"
 
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "vbox", "min"]
 
 myManageHook = composeAll
-    [ isFullscreen              --> doCenterFloat
+    [ isFullscreen              --> doFloat
     , className =? "feh"        --> doCenterFloat
     , className =? "MPlayer"    --> doCenterFloat
     , className =? "burp-StartBurp" --> doCenterFloat

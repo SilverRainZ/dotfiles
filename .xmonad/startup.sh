@@ -30,6 +30,3 @@ compton -b -c &
 
 # Set wallpaper wit feh
 sleep 1 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
-
-# have a rest
-rest.sh

@@ -36,7 +36,6 @@ language messages zh_CN.utf-8
 set go=
 colorscheme solarized
 set background=dark
-"set guifont=Sayo\ UV\ Console\ HC\ 11 找不到 belleve 的这个字体了...
 set guifont=Tsentsiu\ Mono\ HJ\ 12
 set laststatus=2
 
@@ -126,7 +125,7 @@ function Do_OneFileMake()
     if &filetype=="c"
         set makeprg=gcc\ -o\ \"/tmp/%<\"\ \"%\"
     elseif &filetype=="cpp"
-        set makeprg=g++\ -o\ \"/tmp/%<\"\ \"%\"
+        set makeprg=g++\ -std=c++11\ -o\ \"/tmp/%<\"\ \"%\"
     elseif &filetype=="java"
         set makeprg=javac\ \"%\"
     elseif &filetype=="haskell"

@@ -30,8 +30,10 @@ myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "vbox", "min"]
 
 myManageHook = composeAll
     [ isFullscreen              --> doFloat
+    , className =? "Dia"        --> doFloat
     , className =? "feh"        --> doCenterFloat
     , className =? "MPlayer"    --> doCenterFloat
+    , className =? "Zenity"     --> doCenterFloat
     , className =? "burp-StartBurp" --> doCenterFloat
     , className =? "trayer"     --> doIgnore
     -- , className =? "Wine"       --> doIgnore
@@ -76,5 +78,6 @@ main = do
         `additionalKeys`
         [ ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s -e \'mv $f ~/Pictures/Screenshots/\'")
         , ((0, xK_Print), spawn "scrot -e \'mv $f ~/Pictures/Screenshots/\'")
+        , ((mod4Mask, xK_c), spawn "mcime")
         ]
 

@@ -31,7 +31,7 @@ alias felix='pacman -Syu'
 alias qtox='XDG_CURRENT_DESKTOP= qtox'
 alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
 alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
-alias wps='wps -style=gtk'
+# alias wps='wps -style=gtk'
 
 # vim-cn
 upimg(){

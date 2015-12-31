@@ -26,7 +26,7 @@ myStartupHook = do
     -- Startup script
     -- spawn "~/.xmonad/startup.sh"
 
-myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ext", "vbox", "min"]
+myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "game", "vbox", "min"]
 
 myManageHook = composeAll
     [ isFullscreen              --> doFloat
@@ -34,7 +34,7 @@ myManageHook = composeAll
     , className =? "feh"        --> doCenterFloat
     , className =? "MPlayer"    --> doCenterFloat
     , className =? "Zenity"     --> doCenterFloat
-    , className =? "burp-StartBurp" --> doCenterFloat
+    , className =? "burp-StartBurp"                     --> doCenterFloat
     , className =? "trayer"     --> doIgnore
     -- , className =? "Wine"       --> doIgnore
     , className =? "Firefox"    --> doShift "web" 
@@ -47,6 +47,10 @@ myManageHook = composeAll
     , className =? "Wpp"        --> doShift "doc"
     , className =? "Et"         --> doShift "doc"
     , className =? "dolphin"    --> doShift "fm"
+    , className =? "DDNet"      --> doShift "game"
+    , className =? "teeworlds"  --> doShift "game"
+    , className =? "net-minecraft-bootstrap-Bootstrap"  --> doShift "game"
+    , className =? "Minecraft 1.8"                      --> doShift "game"
     , className =? "VirtualBox" --> doShift "vbox"
     ] 
 

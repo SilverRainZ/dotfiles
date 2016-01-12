@@ -36,7 +36,7 @@ language messages zh_CN.utf-8
 set go=
 colorscheme solarized
 set background=dark
-set guifont=Tsentsiu\ Mono\ HJ\ 12
+set guifont=Tsentsiu\ Mono\ HG\ 12
 set laststatus=2
 
 "关闭声音

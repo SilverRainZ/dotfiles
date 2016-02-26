@@ -11,7 +11,7 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Cursor
 
-myTerminal = "konsole"
+myTerminal = "terminator"
 
 myModMask = mod4Mask
 
@@ -41,7 +41,7 @@ myManageHook = composeAll
     , className =? "Gvim"       --> doShift "code"
     , className =? "qTox"       --> doShift "im"
     , className =? "Telegram"   --> doShift "im"
-    , className =? "konsole"    --> doShift "term"
+    , className =? "terminator"                         --> doShift "term"
     , className =? "Okular"     --> doShift "doc"
     , className =? "Wps"        --> doShift "doc"
     , className =? "Wpp"        --> doShift "doc"
@@ -60,7 +60,7 @@ myLoyoutHook = avoidStruts $ layoutHook defaultConfig
 
 myLogHook xmproc = dynamicLogWithPP xmobarPP
             { ppOutput = hPutStrLn xmproc
-            , ppTitle = xmobarColor "green" "" . shorten 0
+            , ppTitle = xmobarColor "green" "" . shorten 50
             }
 
 
@@ -78,10 +78,3 @@ main = do
         , layoutHook = myLoyoutHook
         , logHook = myLogHook xmproc
         } 
-        -- Key bind
-        `additionalKeys`
-        [ ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s -e \'mv $f ~/Pictures/Screenshots/\'")
-        , ((0, xK_Print), spawn "scrot -e \'mv $f ~/Pictures/Screenshots/\'")
-        , ((mod4Mask, xK_c), spawn "mcime")
-        ]
-

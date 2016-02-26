@@ -1,0 +1,28 @@
+# add `xbindkeys` into you .xinitrc
+
+# require `xorg-xbacklight`
+# Increase Brightness
+"xbacklight -inc 10"
+    XF86MonBrightnessUp
+
+# Decrease Brightness
+"xbacklight -dec 10"
+    XF86MonBrightnessDown
+
+# require `pamixer` and `pluseaudio`
+# Increase volume
+"pamixer --increase 5"
+    XF86AudioRaiseVolume
+
+# Decrease volume
+"pamixer --decrease 5"
+    XF86AudioLowerVolume
+
+# screenshot
+# why use `sleep 0,2`?
+# see: https://bbs.archlinux.org/viewtopic.php?id=86507
+"sleep 0.2; scrot -s -e 'mv $f ~/Pictures/Screenshots'":
+    Control+Alt + a
+
+"scrot -e 'mv $f ~/Pictures/Screenshots'"
+    Control+Alt+ f

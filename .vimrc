@@ -36,7 +36,7 @@ language messages zh_CN.utf-8
 set go=
 colorscheme solarized
 set background=dark
-set guifont=Tsentsiu\ Mono\ HG\ 12
+set guifont=Iosevka\ 14
 set laststatus=2
 
 "关闭声音
@@ -192,8 +192,8 @@ set nocompatible
 set t_Co=256
 set laststatus=2
 set encoding=utf8
-let g:Powerline_symbols = 'compatible'  " no fancy, too bother
 let g:powerline_pycmd = "py3"
+let g:Powerline_symbols = 'compatible'  " no fancy, too bother
 
 " -------------------- nerdtree -----------------------
 map <C-n> :NERDTreeToggle<CR>
@@ -214,8 +214,8 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 " set tags+=./.tags
 
 " -------------------- doxygen -----------------------
-let g:doxygenToolkit_authorName="LastAvengers"
-let g:doxygenToolkit_briefTag_funcName="yes"
+let g:doxygenToolkit_authorName = "LastAvengers"
+let g:doxygenToolkit_briefTag_funcName = "yes"
 
 map <F3>a :DoxAuthor
 map <F3>f :Dox

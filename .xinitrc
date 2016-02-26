@@ -7,6 +7,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# .xprofile contains some environment varibles
 source ~/.xprofile
 
 
@@ -33,12 +34,15 @@ fcitx &
 xsetroot -solid midnightblue &
 
 # Dual screens
-xrandr --output VGA-0 --auto --output LVDS --auto --right-of VGA-0 &
+xrandr --output DP2 --auto --output eDP1 --auto --right-of DP2 &
 
 # Composite manager
 compton -b -c &
 
 # Set wallpaper wit feh
 feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg
+
+# key bindings
+xbindkeys &
 
 exec xmonad

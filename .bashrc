@@ -22,7 +22,10 @@ alias qtox='XDG_CURRENT_DESKTOP= qtox'
 alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
 alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
 alias vin='vim --noplugin'
+
+# custome gitalias
 alias gitl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
+alias gits='git status'
 
 # vim-cn
 upimg(){

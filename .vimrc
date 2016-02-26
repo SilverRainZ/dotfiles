@@ -173,41 +173,32 @@ function ToggleFullscreen()
     call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
 endf
 
-" ==================== 独立插件配置 =======================
-" 依云的 fcitx.vim 
-set ttimeoutlen=100 
 
-" =============Vundle https://github.com/gmarik/Vundle.vim================
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" ===================================================
+" ==================== Plugin =======================
+" ===================================================
+" all plugins are managed by pacman
+" community/vim-nerdtree
+" community/powerline-vim
+" community/vim-doxygentoolkit
+" archlinuxcn/vim-fcitx
+" archlinuxcn/vim-youcompleteme-git
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" -------------------- fcitx -----------------------
+set ttimeoutlen=100
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" The ultimate vim statusline utility.
-Plugin 'Lokaltog/vim-powerline'
-" powerline
+" -------------------- powerline -----------------------
 set nocompatible
 set t_Co=256
 set laststatus=2
 set encoding=utf8
 let g:Powerline_symbols = 'compatible'  " no fancy, too bother
+let g:powerline_pycmd = "py3"
 
-" A code-completion engine for Vim 
-" Plugin 'Valloric/YouCompleteMe'
-
-" A tree explorer plugin for vim. 
-Plugin 'scrooloose/nerdtree'
-" nerdtree 
+" -------------------- nerdtree -----------------------
 map <C-n> :NERDTreeToggle<CR>
 
-" ---------------------- YCM ---------------------------
+" -------------------- YCM -----------------------
 nnoremap <C-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <C-k> :YcmForceCompileAndDiagnostics<CR>
 
@@ -220,20 +211,13 @@ let g:syntastic_always_populate_loc_list = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 " let g:ycm_server_keep_logfiles = 1
 " let g:ycm_server_log_level = 'debug'
-set tags+=./.tags
+" set tags+=./.tags
 
+" -------------------- doxygen -----------------------
+let g:doxygenToolkit_authorName="LastAvengers"
+let g:doxygenToolkit_briefTag_funcName="yes"
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+map <F3>a :DoxAuthor
+map <F3>f :Dox
+map <F3>b :DoxBlock
+map <F3>c O/** */<Left><Left>

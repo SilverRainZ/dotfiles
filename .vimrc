@@ -214,8 +214,8 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 " set tags+=./.tags
 
 " -------------------- doxygen -----------------------
-let g:doxygenToolkit_authorName = "LastAvengers"
-let g:doxygenToolkit_briefTag_funcName = "yes"
+let g:DoxygenToolkit_authorName = "LastAvengers <lastavengers@outlook.com>"
+let g:DoxygenToolkit_briefTag_funcName = "yes"
 
 map <F3>a :DoxAuthor
 map <F3>f :Dox

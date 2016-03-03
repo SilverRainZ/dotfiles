@@ -57,7 +57,7 @@ myManageHook = composeAll . concat $
     , [className =? a    --> doShift "vbox" | a <- appVbox]
     ]
 
-myLoyoutHook = avoidStruts $ layoutHook defaultConfig
+myLayoutHook = avoidStruts $ layoutHook defaultConfig
 
 myLogHook xmproc = dynamicLogWithPP $ defaultPP
                     { ppCurrent         = dzenColor "#87ceff" "#1a1a1a" . pad
@@ -100,7 +100,7 @@ main = do
         , workspaces = myWorkspaces
         , startupHook = myStartupHook
         , manageHook = myManageHook
-        , layoutHook = smartBorders $ myLoyoutHook
+        , layoutHook = smartBorders $ myLayoutHook
         , logHook = myLogHook xmproc
         }
         -- key binds? use xbindkeys~

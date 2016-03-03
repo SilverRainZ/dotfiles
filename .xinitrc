@@ -10,6 +10,18 @@ fi
 # .xprofile contains some environment varibles
 source ~/.xprofile
 
+# Dual screens auto dectection
+internal="^\(\(eDP\|LVDS\)-\?[0-9]\+\)"
+external="^\(\(VGA\|DVI\|DP\|HDMI\)-\?[0-9]\+\)"
+pattern="connected \(primary \)\?\([0-9]\+\)x.*$"
+
+inter_scr=$(xrandr 2> /dev/null | grep "$internal $pattern" | sed "s/$internal $pattern/\1/")
+exter_scr=$(xrandr 2> /dev/null | grep "$external $pattern" | sed "s/$external $pattern/\1/")
+
+if [ ! -z "$exter_scr" ] ; then
+    xrandr --output ${exter_scr} --auto --output ${inter_scr} --auto --right-of ${exter_scr}
+fi
+
 # Load resources
 xrdb -merge .Xresources &
 
@@ -20,7 +32,7 @@ compton -b -c &
 
 # Set up an icon tray
 # trayer DOESN'T support `--monitor` option, pls install trayer-srg form AUR
-trayer --edge top --align right --widthtype percent --width 10 \
+trayer --edge top --align right --widthtype percent --width 11 \
        --SetDockType true --SetPartialStrut true --transparent true --alpha 0 \
        --tint 0x1a1a1a --expand true --heighttype pixel --height 18 --monitor primary &
 
@@ -34,9 +46,6 @@ fcitx &
 
 # Set the background color
 xsetroot -solid midnightblue &
-
-# Dual screens
-xrandr --output DP2 --auto --output eDP1 --auto --right-of DP2 &&
 
 # Set wallpaper wit feh
 sleep 0.2 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &

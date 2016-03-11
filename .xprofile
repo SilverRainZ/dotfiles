@@ -15,6 +15,7 @@ export XMODIFIERS="@im=fcitx"
 
 # qt5
 export QT_STYLE_OVERRIDE=breeze
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CURRENT_DESKTOP=kde

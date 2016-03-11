@@ -19,7 +19,9 @@ set so=5
 
 "高亮当前行列
 set cursorline 
-set cursorcolumn
+if has("gui_running")
+    set cursorcolumn
+endif
 
 "兼容dos & unix 文本
 set fileformats=unix,dos
@@ -34,7 +36,11 @@ language messages zh_CN.utf-8
 
 "界面
 set go=
-colorscheme solarized
+
+if has("gui_running")
+    colorscheme solarized
+endif
+
 set background=dark
 set guifont=Iosevka\ 14
 set laststatus=2
@@ -46,6 +52,7 @@ set novisualbell
 " Tab 与缩进
 filetype indent on      " 对不同语言的智能缩进
 set autoindent
+set cindent
 set expandtab           " Tab 扩展为空格
 set tabstop=4           " 编辑时制表符占用空格数
 set shiftwidth=4        " 格式化时 Tab 占用 四个空格
@@ -193,7 +200,7 @@ set t_Co=256
 set laststatus=2
 set encoding=utf8
 let g:powerline_pycmd = "py3"
-let g:Powerline_symbols = 'compatible'  " no fancy, too bother
+let g:powerline_symbols = 'compatible'  " no fancy, too bother
 
 " -------------------- nerdtree -----------------------
 map <C-n> :NERDTreeToggle<CR>

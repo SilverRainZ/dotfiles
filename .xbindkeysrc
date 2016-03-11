@@ -11,11 +11,11 @@
 
 # require `pamixer` and `pluseaudio`
 # Increase volume
-"pamixer --increase 5"
+"pamixer --increase 2"
     XF86AudioRaiseVolume
 
 # Decrease volume
-"pamixer --decrease 5"
+"pamixer --decrease 2"
     XF86AudioLowerVolume
 
 # screenshot

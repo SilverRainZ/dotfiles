@@ -53,4 +53,6 @@ sleep 0.2 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 # key bindings
 xbindkeys &
 
+synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0') &
+
 sleep 0.2 && exec xmonad

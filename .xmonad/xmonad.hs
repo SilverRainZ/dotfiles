@@ -31,17 +31,17 @@ myStartupHook = do
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "game", "vbox", "min"]
 
 appFloat    = ["Dia"]
-appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
+appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"] ++ appGame
 appIgnore   = ["trayer", "dzen"]
 
 appWeb  = ["Firefox"]
 appCode = ["Gvim"]
 appTerm = ["Terminator"]
-appIM   = ["Telegram", "qTox"]
+appIM   = ["telegram-desktop", "qTox"]
 appFm   = []
 appDoc  = ["Wps", "Wpp", "Et", "Okular"]
-appGame = ["teeworlds", "DDNet", "net-minecraft-bootstrap-Bootstrap", "Minecraft 1.8"]
-appVbox = []
+appGame = ["teeworlds", "DDNet", "net-minecraft-bootstrap-Bootstrap", "Minecraft 1.8", "Minecraft 1.9"]
+appVbox = ["VirtualBox"]
 
 myManageHook = composeAll . concat $
     [ [isFullscreen      --> doFloat]
@@ -85,8 +85,8 @@ myLogHook xmproc = dynamicLogWithPP $ defaultPP
 --
 myBitmapsDir = "/home/la/.xmonad/dzen2"
 myDzen2Wrapper = "/home/la/.xmonad/start_dzen2.sh"
-myXmonadBar = myDzen2Wrapper ++ " -wp 70 -h 18 -x 0 -y 0 -ta l"
-myStatusBar = "conky | " ++ myDzen2Wrapper ++" -xp 70 -wp 20 -h 18 -y 0 -ta r"
+myXmonadBar = myDzen2Wrapper ++ " -wp 60 -h 18 -x 0 -y 0 -ta l"
+myStatusBar = "conky | " ++ myDzen2Wrapper ++" -xp 60 -wp 30 -h 18 -y 0 -ta r"
 
 main = do
     xmproc <- spawnPipe myXmonadBar

@@ -3,7 +3,7 @@
 # date: 2015-7-21
 
 # env var
-PATH=$PATH:~/.gem/ruby/2.2.0/bin 
+PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
 case "$TERM" in
     xterm)
@@ -24,8 +24,10 @@ alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
 alias vin='vim --noplugin'
 
 # custome gitalias
-alias gitl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
-alias gits='git status'
+alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
+alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
 
 # vim-cn
 upimg(){

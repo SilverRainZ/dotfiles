@@ -2,7 +2,7 @@ conky.config = {
     out_to_console = true,
     out_to_console = true,
     out_to_x = false,
-    update_interval = 5
+    update_interval = 2
 }
  
 --  ${if_up wlp4s0}\
@@ -17,10 +17,20 @@ conky.config = {
 --  ${endif}\
 
 conky.text = [[
-^fg(\#87ceff)^i(/home/la/.xmonad/dzen2/cpu.xbm) ^fg(\#aaaaaa)${cpu}% \
-^fg(\#87ceff)^i(/home/la/.xmonad/dzen2/mem.xbm) ^fg(\#aaaaaa)${memperc}% \
-${if_existing /sys/class/power_supply/BAT0} \
-${battery} \
-${endif} \
+^fg(\#87ceff)^i(/home/la/.xmonad/dzen2/cpu.xbm) ^fg(\#aaaaaa)${cpu}%  \
+^fg(\#87ceff)^i(/home/la/.xmonad/dzen2/mem.xbm) ^fg(\#aaaaaa)${memperc}%  \
+${if_existing /sys/class/power_supply/BAT0}\
+${if_match "${battery}" == "full"}\
+^fg(\#87ceff)^i(/home/la/.xmonad/dzen2/battery.xbm) ^fg(\#aaaaaa)full  \
+${else}${if_match ${battery_percent BAT0} >= 80}\
+^fg(\#87ceff)^i(/home/la/.xmonad/dzen2/battery.xbm) ^fg(\#aaaaaa)${battery_percent BAT0}%  \
+${else}${if_match ${battery_percent BAT0} >= 40}\
+^fg(\#00cd00)^i(/home/la/.xmonad/dzen2/battery.xbm) ^fg(\#aaaaaa)${battery_percent BAT0}%  \
+${else}\
+^fg(\#ee799f)^i(/home/la/.xmonad/dzen2/battery.xbm) ^fg(\#aaaaaa)${battery_percent BAT0}%  \
+${endif}\
+${endif}\
+${endif}\
+${endif}\
 ^fg(\#87ceff)^i(/home/la/.xmonad/dzen2/clock.xbm) ^fg(\#aaaaaa)${time %Y-%m-%d} ${time %R}
 ]]

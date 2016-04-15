@@ -130,7 +130,7 @@ function Do_OneFileMake()
     echo "file saved."
     "设置make参数
     if &filetype=="c"
-        set makeprg=gcc\ -o\ \"/tmp/%<\"\ \"%\"
+        set makeprg=gcc\ -lm\ -o\ \"/tmp/%<\"\ \"%\"
     elseif &filetype=="cpp"
         set makeprg=g++\ -std=c++11\ -o\ \"/tmp/%<\"\ \"%\"
     elseif &filetype=="java"

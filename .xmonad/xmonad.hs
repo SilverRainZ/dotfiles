@@ -30,17 +30,17 @@ myStartupHook = do
 
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "game", "vbox", "min"]
 
-appFloat    = ["Dia"]
+appFloat    = ["Dia", "Gimp", "Krita"]
 appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"] ++ appGame
 appIgnore   = ["trayer", "dzen"]
 
-appWeb  = ["Firefox"]
-appCode = ["Gvim"]
+appWeb  = ["Firefox", "chromium"]
+appCode = ["Gvim", "Atom"]
 appTerm = ["Terminator"]
 appIM   = ["telegram-desktop", "qTox"]
 appFm   = []
-appDoc  = ["Wps", "Wpp", "Et", "Okular"]
-appGame = ["teeworlds", "DDNet", "net-minecraft-bootstrap-Bootstrap", "Minecraft 1.8", "Minecraft 1.9"]
+appDoc  = ["Wps", "Wpp", "Et", "Okular", "Gimp", "Krita"]
+appGame = ["teeworlds", "DDNet", "teeworlds-ddnet", "net-minecraft-bootstrap-Bootstrap", "Minecraft 1.8", "Minecraft 1.9"]
 appVbox = ["VirtualBox"]
 
 myManageHook = composeAll . concat $

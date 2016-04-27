@@ -22,6 +22,9 @@ export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CURRENT_DESKTOP=kde
 export XDG_DESKTOP_DIR=$HOME/
 
+# wine
+export WINEARCH=win32
+
 # wechall scoreboard
 export WECHALLUSER="LastAvengers"
 export WECHALLTOKEN="ED8E2-83FF7-4AD9B-4CF7B-FF06B-80DCF"

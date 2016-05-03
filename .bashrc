@@ -14,6 +14,11 @@ case "$TERM" in
         ;;
 esac
 
+# vim-cn
+upimg(){
+    curl -F "name=@$1" https://img.vim-cn.com
+}
+
 # alias
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
@@ -29,7 +34,4 @@ alias gs='git status'
 alias ga='git add'
 alias gd='git diff'
 
-# vim-cn
-upimg(){
-    curl -F "name=@$1" https://img.vim-cn.com
-}
+source ~/.workalias

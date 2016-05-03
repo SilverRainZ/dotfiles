@@ -24,6 +24,7 @@ export XDG_DESKTOP_DIR=$HOME/
 
 # wine
 export WINEARCH=win32
+export WINEPREFIX=~/.wine
 
 # wechall scoreboard
 export WECHALLUSER="LastAvengers"

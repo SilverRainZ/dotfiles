@@ -1,0 +1,61 @@
+#!/usr/bin/sh
+# vim:ft=sh
+# usage:
+# work --start
+#
+# work --stop
+#
+
+notify="notify-send 'Crash' 'Do not try this during work!!!' --icon=dialog-error"
+
+cmds=(
+    'mc'
+    'teeworlds-ddnet'
+    )
+
+domains=(
+    'bbs.nyaa.cat'
+    'bilibili.com'
+    'fishroom.tuna.moe'
+    'hometown.scau.edu.cn'
+    'inoreader.com'
+    'lofter.com'
+    'tieba.baidu.com'
+    'twitter.com'
+    'weibo.com'
+    'zhihu.com'
+    )
+
+if [[ "$1" == "--start" ]]; then
+
+    for domain in "${domains[@]}"; do
+        echo -n "blocking domain $domain ... "
+        sudo iptables --list | grep $domain > /dev/null && echo "exist, break." && continue
+        sudo iptables -A OUTPUT -p tcp -m string --string "$domain" --algo kmp -j REJECT \
+            && echo "done."
+    done
+
+    cat /dev/null > ~/.workalias
+    for cmd in "${cmds[@]}"; do
+        echo -n "aliasing command $cmd ... "
+        echo "alias $cmd=\"$notify\"" >>  ~/.workalias \
+            && echo "done."
+    done
+
+elif [[ "$1" == "--stop" ]]; then
+
+    for domain in "${domains[@]}"; do
+        echo -n "unblocking $domain... "
+        sudo iptables -D OUTPUT -p tcp -m string --string "$domain" --algo kmp -j REJECT \
+            && echo "done."
+    done
+
+    echo -n "unaliasing command $cmd ... "
+    cat /dev/null > ~/.workalias \
+            && echo "done."
+
+else
+    echo "wrong or missing parameter."
+fi
+
+exec $SHELL

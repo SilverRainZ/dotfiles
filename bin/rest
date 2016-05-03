@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+# Author: LastAvengers@outlook.com
+# Date: 2015-9-12
+# Dependency: libnotify (xfce4-notifyd)
+
+for pid in $(pidof -x "$0"); do
+    if [ $pid != $$ ]; then
+        echo "$0: already running with PID $pid"
+        exit 1
+    fi
+done
+
+while [ true ]; do
+    sleep 40m
+    notify-send '该休息了' \
+                '你已经连续对着屏幕 40 分钟了... :(' \
+                --icon=dialog-information
+done

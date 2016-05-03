@@ -19,7 +19,7 @@ inter_scr=$(xrandr 2> /dev/null | grep "$internal $pattern" | sed "s/$internal $
 exter_scr=$(xrandr 2> /dev/null | grep "$external $pattern" | sed "s/$external $pattern/\1/")
 
 if [ ! -z "$exter_scr" ] ; then
-    xrandr --output ${exter_scr} --auto --output ${inter_scr} --primary --auto --left-of ${exter_scr}
+    xrandr --output ${exter_scr} --auto --output ${inter_scr} --primary --auto --right-of ${exter_scr}
 fi
 
 # Load resources
@@ -53,6 +53,8 @@ sleep 0.2 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 # key bindings
 xbindkeys &
 
-synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0') &
+touchpad &
+
+rest &
 
 sleep 0.2 && exec xmonad

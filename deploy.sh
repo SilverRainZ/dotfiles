@@ -4,12 +4,13 @@ files=$(ls -a1| egrep -v '^.$|^..$|README.md|.gitignore|.git|deploy.sh|.director
 target=~
 
 link(){
-    ln -sf "$PWD/$1" "$2"
+    ln -sfv "$PWD/$1" "$2"
 }
 
 for f in $files; do
-    link "$f" "$target/$f"
+    link "$f" "$target"
 done
 
-ln -sf $PWD/.ssh/config ~/.ssh
+mkdir $target/.ssh || true
+ln -sf $PWD/.ssh/config $target/.ssh/config
 chmod 600 ~/.ssh/config

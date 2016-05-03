@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+java -jar ~/Games/Minecraft.jar
+# java -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080 -jar ~/Games/Minecraft.jar
+

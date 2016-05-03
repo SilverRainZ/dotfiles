@@ -1,0 +1,19 @@
+#!/usr/bin/sh
+# Usage: y=xx m=xx d=xx ./hurdlog [-m]
+# if ENV y/m/x no specified, get it from `date`
+# if argument `-m` specified, just match myself :)
+
+[[ -z $y ]] && y=$(date +%Y)
+[[ -z $m ]] && m=$(date +%m)
+[[ -z $d ]] && d=$(date +%d)
+
+if [[ "$1" == "-m" ]]; then
+    filter="grep --color=auto LastAvengers"
+else
+    filter="grep --color=auto -e <\s.*>"
+fi
+
+echo "=== #hurd channel log $y-$m-$d ==="
+wget -qO- http://richtlijn.be/~larstiq/hurd/hurd-$y-$m-$d | $filter
+echo "=== end ==="
+

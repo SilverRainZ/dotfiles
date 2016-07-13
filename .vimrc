@@ -2,7 +2,7 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin        " 还是习惯那些快捷键啊
 
-syntax on 
+syntax on
 syntax enable
 
 filetype on
@@ -12,13 +12,13 @@ filetype plugin on
 set number
 
 " 打开文件自动切换到该文件目录
-set autochdir 
+set autochdir
 
 " 距离底部五行时滚屏
 set so=5
 
 "高亮当前行列
-set cursorline 
+set cursorline
 if has("gui_running")
     set cursorcolumn
 endif
@@ -31,7 +31,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
 set fileencoding=utf-8
-set fenc=gbk
+set fenc=utf-8
 language messages zh_CN.utf-8
 
 "界面
@@ -46,8 +46,8 @@ set guifont=Iosevka\ 14
 set laststatus=2
 
 "关闭声音
-set vb t_vb= 
-set novisualbell 
+set vb t_vb=
+set novisualbell
 
 " Tab 与缩进
 filetype indent on      " 对不同语言的智能缩进
@@ -57,6 +57,7 @@ set expandtab           " Tab 扩展为空格
 set tabstop=4           " 编辑时制表符占用空格数
 set shiftwidth=4        " 格式化时 Tab 占用 四个空格
 set softtabstop=4       " 连续四个空格视为 Tab
+set cc=80
 
 " 折叠
 set foldmethod=syntax   " 基于语法进行代码折叠
@@ -79,6 +80,8 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 au BufRead,BufNewFile _pentadactylrc set filetype=pentadactyl
 au BufNewFile,BufRead *.asm set filetype=fasm
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.wiki set filetype=wikipedia
+au BufRead *.defs set filetype=c
 
 " 以下类型输入左花括号自动补全
 au FileType c,cpp,h,java,css inoremap <buffer> {<CR> {<CR>}<Esc>O
@@ -108,10 +111,10 @@ function NightMode()
     else
         set bg=light
         let g:isNightMode=0
-    endif 
-endfunction 
+    endif
+endfunction
 
-" <F9>单个文件编译 
+" <F9>单个文件编译
 "支持c/c++, python, java, haskell
 map <F9> :call Do_OneFileMake()<CR>
 imap <F9> <ESC>:call Do_OneFileMake()<CR>
@@ -126,7 +129,7 @@ function Do_OneFileMake()
         echohl WarningMsg | echo "Fail to make! Please select the right file!" | echohl None
         return
     endif
-    exec "w" 
+    exec "w"
     echo "file saved."
     "设置make参数
     if &filetype=="c"
@@ -143,9 +146,9 @@ function Do_OneFileMake()
         return
     endif
     "删除旧文件,对于非编译型的就算了
-    if (&filetype=="c" || &filetype=="cpp") 
+    if (&filetype=="c" || &filetype=="cpp")
        let outfilename="/tmp/".expand("%:r")
-    elseif &filetype=="java" 
+    elseif &filetype=="java"
         let outfilename="/tmp/".expand("%:r").".class"
     endif
 
@@ -159,7 +162,7 @@ function Do_OneFileMake()
     endif
     "静默编译
     execute "silent make"
-    set makeprg=make   
+    set makeprg=make
     "编译成功后执行
     if filereadable(outfilename)
         if &filetype=="java"
@@ -167,9 +170,9 @@ function Do_OneFileMake()
             return
         else
             execute "!\"/tmp/%<\""
-            return 
+            return
         endif
-    endif 
+    endif
     "不成功弹出错误信息
     execute "silent copen 6"
 endfunction
@@ -213,18 +216,28 @@ let g:ycm_global_ycm_extra_conf = ''
 autocmd FileType c let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/c.py'
 autocmd FileType cpp let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/cpp.py'
 
+
 let g:ycm_confirm_extra_conf = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_server_keep_logfiles = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_server_keep_logfiles = 1
 " let g:ycm_server_log_level = 'debug'
 " set tags+=./.tags
 
 " -------------------- doxygen -----------------------
-let g:DoxygenToolkit_authorName = "LastAvengers <lastavengers@outlook.com>"
+let g:DoxygenToolkit_authorName = "Shengyu Zhang <lastavengers@outlook.com>"
 let g:DoxygenToolkit_briefTag_funcName = "yes"
 
 map <F3>a :DoxAuthor
 map <F3>f :Dox
 map <F3>b :DoxBlock
 map <F3>c O/** */<Left><Left>
+
+" -------------------- hurd -----------------------
+" let g:loaded_youcompleteme = 1
+" set noexpandtab         " Tab 扩展为空格
+" set tabstop=8           " 编辑时制表符占用空格数
+" set shiftwidth=8        " 格式化时 Tab 占用 四个空格
+" set softtabstop=0       " 连续四个空格视为 Tab

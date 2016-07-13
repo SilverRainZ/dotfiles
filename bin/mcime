@@ -33,4 +33,3 @@ test -z "$_mcchat_input" && exit 0
 # xdotool key t
 sleep 0.50
 xdotool type --delay 350 "$_mcchat_input"
-xdotool key Return

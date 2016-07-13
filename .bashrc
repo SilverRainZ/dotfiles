@@ -16,7 +16,7 @@ esac
 
 # vim-cn
 upimg(){
-    curl -F "name=@$1" https://img.vim-cn.com
+    curl -F "name=@$1" http://img.tjm.moe
 }
 
 # alias
@@ -26,6 +26,7 @@ alias felix='pacman -Syu'
 alias qtox='XDG_CURRENT_DESKTOP= qtox'
 alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
 alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
+alias goldendict='XDG_CURRENT_DESKTOP= goldendict'
 alias vin='vim --noplugin'
 
 # custome gitalias

@@ -1,4 +1,5 @@
 import System.IO
+import Data.List
 
 import XMonad
 import XMonad.ManageHook
@@ -28,33 +29,43 @@ myStartupHook = do
     -- Startup script
     -- spawn "~/.xmonad/startup.sh"
 
-myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "game", "vbox", "min"]
+myWorkspaces = ["web", "code", "term", "im", "mail", "doc", "fm", "ent", "misc"]
 
 appFloat    = ["Dia", "Gimp", "Krita"]
-appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"] ++ appGame
+appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
 appIgnore   = ["trayer", "dzen"]
 
 appWeb  = ["Firefox", "chromium"]
-appCode = ["Gvim", "Atom"]
+appCode = ["Gvim", "Atom", "ReText"]
 appTerm = ["Terminator"]
-appIM   = ["telegram-desktop", "qTox", "Wine"]
+appIM   = ["telegram-desktop", "qTox", "Wine", "Srain"]
+appMail = ["Thunderbird"]
 appFm   = []
 appDoc  = ["Wps", "Wpp", "Et", "Okular", "Gimp", "Krita"]
-appGame = ["teeworlds", "DDNet", "teeworlds-ddnet", "net-minecraft-bootstrap-Bootstrap", "Minecraft 1.8", "Minecraft 1.9"]
-appVbox = ["VirtualBox"]
+-- TODO
+appEnt  = [ "teeworlds"
+          , "DDNet"
+          , "teeworlds-ddnet"
+          , "net-minecraft-bootstrap-Bootstrap"
+          , "netease-cloud-music"
+          ]
+appMisc = ["VirtualBox"]
 
 myManageHook = composeAll . concat $
-    [ [isFullscreen      --> doFloat]
-    , [className =? a    --> doCenterFloat  | a <- appCenter]
-    , [className =? a    --> doIgnore       | a <- appIgnore]
-    , [className =? a    --> doShift "web"  | a <- appWeb]
-    , [className =? a    --> doShift "code" | a <- appCode]
-    , [className =? a    --> doShift "im"   | a <- appIM]
-    , [className =? a    --> doShift "term" | a <- appTerm]
-    , [className =? a    --> doShift "doc"  | a <- appDoc]
-    , [className =? a    --> doShift "fm"   | a <- appFm]
-    , [className =? a    --> doShift "game" | a <- appGame]
-    , [className =? a    --> doShift "vbox" | a <- appVbox]
+    [ [isFullscreen   --> doFloat]
+    , [className =? a --> doCenterFloat  | a <- appCenter]
+    , [className =? a --> doIgnore       | a <- appIgnore]
+    , [className =? a --> doShift "web"  | a <- appWeb]
+    , [className =? a --> doShift "code" | a <- appCode]
+    , [className =? a --> doShift "term" | a <- appTerm]
+    , [className =? a --> doShift "im"   | a <- appIM]
+    , [className =? a --> doShift "mail" | a <- appMail]
+    , [className =? a --> doShift "doc"  | a <- appDoc]
+    , [className =? a --> doShift "fm"   | a <- appFm]
+    , [className =? a --> doShift "ent"  | a <- appEnt]
+    , [className =? a --> doShift "misc" | a <- appMisc]
+
+    , [(isPrefixOf "Minecraft") <$> className --> doShift "ent"]
     ]
 
 myLayoutHook = avoidStruts $ layoutHook defaultConfig

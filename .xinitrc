@@ -48,7 +48,7 @@ fcitx &
 xsetroot -solid midnightblue &
 
 # Set wallpaper wit feh
-sleep 0.2 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
+sleep 0.2 && feh --bg-scale /home/la/pictures/Wallpapers/bg.jpg &
 
 # key bindings
 xbindkeys &

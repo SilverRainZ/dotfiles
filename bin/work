@@ -24,6 +24,7 @@ domains=(
     'twitter.com'
     'weibo.com'
     'zhihu.com'
+    'plus.google.com'
     )
 
 if [[ "$1" == "--start" ]]; then
@@ -58,4 +59,4 @@ else
     echo "wrong or missing parameter."
 fi
 
-exec $SHELL
+source ~/.workalias

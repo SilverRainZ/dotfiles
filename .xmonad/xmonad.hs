@@ -29,7 +29,9 @@ myStartupHook = do
     -- Startup script
     -- spawn "~/.xmonad/startup.sh"
 
-myWorkspaces = ["web", "code", "term", "im", "mail", "doc", "fm", "ent", "misc"]
+myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ent",  "mail", "misc"]
+-- myWorkspaces = zipWith (++) [ show x ++ ":" | x <- [1..9] ++ [0]]
+--                          ["web", "code", "term", "im", "doc", "fm", "ent", "mail", "misc"]
 
 appFloat    = ["Dia", "Gimp", "Krita"]
 appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
@@ -44,7 +46,7 @@ appFm   = []
 appDoc  = ["Wps", "Wpp", "Et", "Okular", "Gimp", "Krita"]
 -- TODO
 appEnt  = [ "teeworlds"
-          , "DDNet"
+          , "ddnet"
           , "teeworlds-ddnet"
           , "net-minecraft-bootstrap-Bootstrap"
           , "netease-cloud-music"
@@ -74,7 +76,7 @@ myLogHook xmproc = dynamicLogWithPP $ defaultPP
                     { ppCurrent         = dzenColor "#87ceff" "#1a1a1a" . pad
                     , ppVisible         = dzenColor "#aaaaaa" "#1a1a1a" . pad
                     , ppHidden          = dzenColor "#aaaaaa" "#1a1a1a" . pad
-                    -- , ppHiddenNoWindows = dzenColor "#7b7b7b" "#1a1a1a" . pad
+                    , ppHiddenNoWindows = dzenColor "#7b7b7b" "#1a1a1a" . pad
                     , ppUrgent          = dzenColor "#ff0000" "#1a1a1a" . pad
                     , ppWsSep           = " "
                     , ppSep             = "  |  "

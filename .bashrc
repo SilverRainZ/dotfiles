@@ -28,6 +28,7 @@ alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
 alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
 alias goldendict='XDG_CURRENT_DESKTOP= goldendict'
 alias vin='vim --noplugin'
+alias _p='proxychains'
 
 # custome gitalias
 alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'

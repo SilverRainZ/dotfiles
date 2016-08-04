@@ -5,3 +5,8 @@
 	default = simple
 [core]
 	editor = vim --noplugin
+[sendemail]
+	smtpserver = smtp-mail.outlook.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = lastavengers@outlook.com

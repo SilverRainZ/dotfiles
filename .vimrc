@@ -114,6 +114,19 @@ function NightMode()
     endif
 endfunction
 
+map <F2> :call RelativeNumber()<CR>
+imap <F2> <ESC>:call RelativeNumber()<CR>
+let g:isRelativeNumber=1
+function RelativeNumber()
+    if (g:isRelativeNumber==0)
+        set relativenumber
+        let g:isRelativeNumber=1
+    else
+        set norelativenumber
+        let g:isRelativeNumber=0
+    endif
+endfunction
+
 " <F9>单个文件编译
 "支持c/c++, python, java, haskell
 map <F9> :call Do_OneFileMake()<CR>

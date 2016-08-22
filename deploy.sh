@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-files=$(ls -a1| egrep -v '^.$|^..$|README.md|.gitignore|.git|deploy.sh|.directory|.ssh|shell')
+files=$(ls -A1 | egrep -v 'README.md|.gitignore|.git|deploy.sh')
 target=~
 
 link(){
@@ -10,7 +10,3 @@ link(){
 for f in $files; do
     link "$f" "$target"
 done
-
-mkdir $target/.ssh || true
-ln -sf $PWD/.ssh/config $target/.ssh/config
-chmod 600 ~/.ssh/config

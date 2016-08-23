@@ -1,0 +1,40 @@
+# ~/.alias
+
+alias _='sudo'
+alias _p='proxychains'
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -a'
+alias vin='vim --noplugin'
+alias grep='grep --color=auto'
+alias felix='pacman -Syu'
+# alias qtox='XDG_CURRENT_DESKTOP= qtox'
+# alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
+# alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
+# alias goldendict='XDG_CURRENT_DESKTOP= goldendict'
+
+## systemd alias
+alias sstart='systemctl start'
+alias sstop='systemctl stop'
+alias sre='systemctl restart'
+alias sstat='systemctl status'
+alias jour='journalctl -a -f'
+
+alias pacsyu='pacman -Syu'
+alias pacss='pacman -Ss'
+
+## git alias
+alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
+alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gcm='git commit'
+
+## cd alias
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+source ~/.workalias
+

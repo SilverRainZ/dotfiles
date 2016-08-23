@@ -1,1 +1,2 @@
-source ~/.bashrc
+PATH=$HOME/bin:$PATH
+source $HOME/.alias

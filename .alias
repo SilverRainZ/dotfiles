@@ -25,6 +25,7 @@ alias pacss='pacman -Ss'
 
 ## git alias
 alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
+alias gp='git push'
 alias gs='git status'
 alias ga='git add'
 alias gd='git diff'

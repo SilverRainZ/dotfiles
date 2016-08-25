@@ -33,4 +33,11 @@ if [[ $? != 0 ]]; then
     exit 1
 fi
 
+echo  ">> Uploading signture ..."
+scp $TMPDIR/$PKG.sig $REMOTE:$REPO/$1/
+if [[ $? != 0 ]]; then
+    echo "** Can not upload signture"
+    exit 1
+fi
+
 echo  ">> All Done."

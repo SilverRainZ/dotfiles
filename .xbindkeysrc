@@ -21,8 +21,8 @@
 # screenshot
 # why use `sleep 0,2`?
 # see: https://bbs.archlinux.org/viewtopic.php?id=86507
-"sleep 0.2; scrot -s -e 'mv $f ~/Pictures/Screenshots'":
+"sleep 0.2; scrot -s -e 'mv $f ~/sreenshots'":
     Control+Alt + a
 
-"scrot -e 'mv $f ~/Pictures/Screenshots'"
+"scrot -e 'mv $f ~/screenshots'"
     Control+Alt+ f

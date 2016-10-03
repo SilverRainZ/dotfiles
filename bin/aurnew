@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+if [[ -z  $1 ]]; then
+    echo "Usage: aurnew <PACKAGE NAME>"
+    exit 0
+fi
+
+git clone ssh://aur@aur.archlinux.org/$1.git

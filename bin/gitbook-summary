@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+# @file gitbook-summary
+# @brief Simple script to generate gitbook SUMMARY.md
+# @author Shengyu Zhang <lastavengers@outlook.com>
+# @version 
+# @date 2016-10-03
+
+import os
+
+MAX_DEPTH = 10
+
+def fname2title(fname):
+    return fname.replace('-', ' ').title()
+    
+def gen(base, cur, depth = 0):
+    if (depth > MAX_DEPTH):
+        return
+    indent = depth * 4 * ' '
+
+    files = os.listdir()
+    for f in files:
+        if f[0] in ['.', '_']:
+            continue
+
+        if os.path.isdir(f):
+            chapter = fname2title(f)
+            path = os.path.realpath(f)[len(base):]
+            print(indent + '* [%s](%s/%s.md)' % (chapter, path, f))
+
+            # Next
+            os.chdir(f)
+            gen(base, f, depth + 1)
+            os.chdir('..')
+        else:
+            name, ext = os.path.splitext(f)
+            if name in ['SUMMARY', 'README', cur]:
+                continue
+            if ext != '.md':
+                continue
+
+            section = fname2title(name)
+            path = os.path.realpath(f)[len(base):]
+            print(indent + '* [%s](%s)' % (section, path))
+
+if __name__ == '__main__':
+    cwd = os.getcwd()
+    base = os.path.realpath(cwd)
+    gen(base, cwd, 0)

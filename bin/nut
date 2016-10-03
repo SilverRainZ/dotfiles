@@ -1,2 +1,0 @@
-#!/usr/bin/sh
-nohup /opt/nutstore/bin/nutstore-pydaemon.py >/dev/null 2>&1

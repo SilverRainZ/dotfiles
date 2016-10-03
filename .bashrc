@@ -2,6 +2,8 @@
 # ~/.bashrc
 # date: 2015-7-21
 
+export PATH=$PATH:$HOME/bin
+
 case "$TERM" in
     xterm)
         export TERM=xterm-256color

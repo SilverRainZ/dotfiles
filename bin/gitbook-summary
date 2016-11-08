@@ -10,7 +10,7 @@ import os
 MAX_DEPTH = 10
 
 def fname2title(fname):
-    return fname.replace('-', ' ').title()
+    return fname
     
 def gen(base, cur, depth = 0):
     if (depth > MAX_DEPTH):
@@ -45,4 +45,9 @@ def gen(base, cur, depth = 0):
 if __name__ == '__main__':
     cwd = os.getcwd()
     base = os.path.realpath(cwd)
+
+    print(os.path.basename(cwd).title())
+    print('===')
+    print()
+
     gen(base, cwd, 0)

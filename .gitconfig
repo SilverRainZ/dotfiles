@@ -10,3 +10,5 @@
 	smtpserverport = 587
 	smtpencryption = tls
 	smtpuser = lastavengers@outlook.com
+[branch]
+	autosetuprebase = always

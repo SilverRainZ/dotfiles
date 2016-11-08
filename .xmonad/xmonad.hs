@@ -38,9 +38,9 @@ appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
 appIgnore   = ["trayer", "dzen"]
 
 appWeb  = ["Firefox", "chromium"]
-appCode = ["Gvim", "Atom", "ReText"]
+appCode = ["Gvim", "Atom", "ReText", "WizNote"]
 appTerm = ["Terminator"]
-appIM   = ["telegram-desktop", "qTox", "Wine", "Srain"]
+appIM   = ["telegram-desktop", "qTox", "Wine", "Srain", "Rocket.Chat+"]
 appMail = ["Thunderbird"]
 appFm   = ["Pcmanfm"]
 appDoc  = ["Wps", "Wpp", "Et", "Okular", "Gimp", "Krita"]
@@ -49,7 +49,9 @@ appEnt  = [ "teeworlds"
           , "ddnet"
           , "teeworlds-ddnet"
           , "net-minecraft-bootstrap-Bootstrap"
+          , "net-minecraft-launchwrapper-Launch"
           , "netease-cloud-music"
+          , "Steam"
           ]
 appMisc = ["VirtualBox"]
 

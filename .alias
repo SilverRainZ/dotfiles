@@ -30,12 +30,15 @@ alias gs='git status'
 alias ga='git add'
 alias gd='git diff'
 alias gcm='git commit'
+alias gco='git checkout'
 
 ## cd alias
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
+alias mj8='make -j8'
 
 source ~/.workalias
 

@@ -53,6 +53,8 @@ sleep 0.2 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 # key bindings
 xbindkeys &
 
+xscreensaver -no-splash &
+
 touchpad &
 
 rest &

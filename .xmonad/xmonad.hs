@@ -11,8 +11,10 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 
 import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.EZConfig(additionalKeysP)
 import XMonad.Util.Cursor
+
+import XMonad.Actions.CycleWS
 
 myTerminal = "terminator"
 
@@ -103,6 +105,7 @@ myDzen2Wrapper = "/home/la/.xmonad/start_dzen2.sh"
 myXmonadBar = myDzen2Wrapper ++ " -wp 60 -h 18 -x 0 -y 0 -ta l"
 myStatusBar = "conky | " ++ myDzen2Wrapper ++" -xp 60 -wp 30 -h 18 -y 0 -ta r"
 
+myKeys = [ ("M-n", swapNextScreen) ]
 main = do
     xmproc <- spawnPipe myXmonadBar
     spawn myStatusBar
@@ -119,4 +122,4 @@ main = do
         , logHook = myLogHook xmproc
         }
         -- key binds? use xbindkeys~
-        `additionalKeys` []
+        `additionalKeysP` myKeys

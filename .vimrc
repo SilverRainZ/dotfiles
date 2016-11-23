@@ -157,6 +157,9 @@ function Do_OneFileMake()
     elseif &filetype=="python"
         execute "!python -i %"
         return
+    elseif &filetype=="rust"
+        execute "!cargo run"
+        return
     endif
     "删除旧文件,对于非编译型的就算了
     if (&filetype=="c" || &filetype=="cpp")

@@ -1,13 +1,19 @@
 # ~/.alias
 
+# commonly used
 alias _='sudo'
 alias _p='proxychains'
+alias l='ls'
+alias m='make'
+alias v='vim'
+
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 alias ll='ls -l'
 alias la='ls -a'
+
 alias vin='vim --noplugin'
-alias grep='grep --color=auto'
-alias felix='pacman -Syu'
 # alias qtox='XDG_CURRENT_DESKTOP= qtox'
 # alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
 # alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
@@ -20,8 +26,10 @@ alias sre='systemctl restart'
 alias sstat='systemctl status'
 alias jour='journalctl -a -f'
 
+# package manager
 alias pacsyu='pacman -Syu'
 alias pacss='pacman -Ss'
+alias felix='pacman -Syu'
 
 ## git alias
 alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
@@ -41,4 +49,3 @@ alias .....='cd ../../../..'
 alias mj8='make -j8'
 
 source ~/.workalias
-

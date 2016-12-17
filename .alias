@@ -39,6 +39,7 @@ alias ga='git add'
 alias gd='git diff'
 alias gcm='git commit'
 alias gco='git checkout'
+alias gst='git stash'
 
 ## cd alias
 alias ..='cd ..'
@@ -47,5 +48,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias mj8='make -j8'
+alias cr='cargo run'
 
 source ~/.workalias

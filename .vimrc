@@ -23,6 +23,7 @@ if has("gui_running")
     set cursorcolumn
 endif
 
+match ErrorMsg "\s\+$"
 "兼容dos & unix 文本
 set fileformats=unix,dos
 
@@ -57,7 +58,12 @@ set expandtab           " Tab 扩展为空格
 set tabstop=4           " 编辑时制表符占用空格数
 set shiftwidth=4        " 格式化时 Tab 占用 四个空格
 set softtabstop=4       " 连续四个空格视为 Tab
-set cc=80
+
+" 折行
+set wrap
+set colorcolumn=80
+" set textwidth=80
+" set formatoptions+=mM
 
 " 折叠
 set foldmethod=syntax   " 基于语法进行代码折叠
@@ -71,7 +77,7 @@ set noundofile
 
 "语法折叠
 set foldmethod=syntax
-set foldcolumn=0  " 设置折叠区域的宽度
+set foldcolumn=0        " 设置折叠区域的宽度
 set foldlevel=100
 " 用空格键来开关折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
@@ -138,7 +144,7 @@ function Do_OneFileMake()
         return
     endif
     let sourcefileename=expand("%:t")
-    if (sourcefileename=="" || (&filetype!="cpp" && &filetype!="c" && &filetype!="java" && &filetype!="haskell" && &filetype!="python"))
+    if (sourcefileename=="" || (&filetype!="cpp" && &filetype!="c" && &filetype!="java" && &filetype!="haskell" && &filetype!="python" && &filetype!="rust"))
         echohl WarningMsg | echo "Fail to make! Please select the right file!" | echohl None
         return
     endif

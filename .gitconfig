@@ -1,5 +1,5 @@
 [user]
-	email = lastavengers@outlook.com
+	email = silverrainz@outlook.com
 	name = Shengyu Zhang
 [push]
 	default = simple
@@ -9,4 +9,4 @@
 	smtpserver = smtp-mail.outlook.com
 	smtpserverport = 587
 	smtpencryption = tls
-	smtpuser = lastavengers@outlook.com
+	smtpuser = silverrainz@outlook.com

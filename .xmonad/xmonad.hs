@@ -44,7 +44,7 @@ appCode = ["Gvim", "Atom", "ReText", "WizNote"]
 appTerm = ["Terminator"]
 appIM   = ["telegram-desktop", "qTox", "Wine", "Srain", "Rocket.Chat+"]
 appMail = ["Thunderbird"]
-appFm   = ["Pcmanfm"]
+appFm   = ["Pcmanfm", "Nautilus"]
 appDoc  = ["Wps", "Wpp", "Et", "Okular", "Gimp", "Krita"]
 -- TODO
 appEnt  = [ "teeworlds"

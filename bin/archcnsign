@@ -1,7 +1,15 @@
 #!/usr/bin/bash
 
+err(){
+    echo -e "\033[31;1m** $1\033[0m"
+}
+
+info(){
+    echo -e "\033[32;1m>>\033[0m $1"
+}
+
 if [[ -z  $1 ]]; then
-    echo "Usage: archcnsign <PACKAGE NAME>"
+    info "Usage: archcnsign <PACKAGE NAME>"
     exit 0
 fi
 
@@ -9,35 +17,35 @@ TMPDIR=/tmp/archcnsign
 REMOTE=archlinuxcn
 REPO=gitrepo
 
-echo ">> Creating temp directory..."
+info "Creating temp directory..."
 mkdir $TMPDIR 2>/dev/null || true
 
-echo ">> Connecting to '$REMOTE'..."
+info "Connecting to '$REMOTE'..."
 PKG=$(ssh $REMOTE "cd $REPO/$1 && ls -1 *.pkg.tar.xz | tail -n1")
 if [[ -z $PKG ]]; then
-    echo "** Package '$1' not found"
+    err "Package '$1' not found"
     exit 1
 fi
 
-echo  ">> Fetching $PKG..."
+info "Fetching $PKG..."
 scp $REMOTE:$REPO/$1/$PKG $TMPDIR/$PKG
 if [[ $? != 0 ]]; then
-    echo "** Can not fetch package '$PKG'"
+    err "Can not fetch package '$PKG'"
     exit 1
 fi
 
-echo  ">> GPG Signing..."
+info "GPG Signing..."
 gpg --detach-sign $TMPDIR/$PKG
 if [[ $? != 0 ]]; then
-    echo "** Can not sign package '$PKG'"
+    err "Can not sign package '$PKG'"
     exit 1
 fi
 
-echo  ">> Uploading signture ..."
+info "Uploading signture ..."
 scp $TMPDIR/$PKG.sig $REMOTE:$REPO/$1/
 if [[ $? != 0 ]]; then
-    echo "** Can not upload signture"
+    err "Can not upload signture"
     exit 1
 fi
 
-echo  ">> All Done."
+info "All Done."

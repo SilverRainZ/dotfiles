@@ -3,7 +3,7 @@
 
 source $HOME/.bashrc
 
-# Prompt
+# Prompt {{{1
 autoload -U promptinit && promptinit
 setopt prompt_subst
 
@@ -27,26 +27,33 @@ git_prompt() {
 PROMPT=$'/%B%F{cyan} %n %F{white}@ %F{magenta}%m %F{black}%T %F{white}->%(?..%F{red}[%?]) %F{green}%~ $(git_prompt) %b
 \\ %B%(!.%F{red}%#.%F{blue}$) %F{white}%b'
 
-
-# History
+# History {{{1
 HISTSIZE=100000
 SAVEHIST=10000
 ## 不记录重复的历史
 setopt HIST_IGNORE_DUPS
 setopt share_history
 HISTFILE=$HOME/.zsh_history
+## 在命令前添加空格，不将此命令添加到记录文件中
+setopt hist_ignore_space
 
-# 补全
+# 补全 {{{1
 autoload -U compinit && compinit
 
 setopt AUTO_LIST
 setopt AUTO_MENU
-setopt MENU_COMPLETE
-setopt complete_in_word   # complete /v/c/a/p
-setopt no_nomatch		  # enhanced bash wildcard completion
+unset MENU_COMPLETE         # bash style complete
+setopt complete_in_word     # complete /v/c/a/p
+setopt no_nomatch		    # enhanced bash wildcard completion
 setopt magic_equal_subst
 setopt noautoremoveslash
 setopt null_glob
+
+## 使用缓存，某些命令的补全很耗时的
+zstyle ':completion:*' use-cache on
+_cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}/zsh
+zstyle ':completion:*' cache-path $_cache_dir
+unset _cache_dir
 
 ## 方向键选中候选项
 zstyle ':completion:*' menu select
@@ -54,7 +61,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion::complete:feh:*' file-patterns '*.{gif,png,jpeg,jpg,svg}:images:images *(-/):directories:directories'
 
 
-# 目录
+# 目录 {{{1
 setopt auto_cd      # if not a command, try to cd to it.
 
 ## 目录栈
@@ -76,7 +83,7 @@ setopt pushdignoredups
 setopt pushdminus
 
 
-# Key bilding
+# Key bilding {{{1
 bindkey -e
 
 ## Functional key
@@ -103,3 +110,5 @@ bindkey '^[n' down-line-or-search
 # Plugin
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] \
     && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# vim: se fdm=marker:

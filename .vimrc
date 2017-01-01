@@ -238,7 +238,6 @@ let g:ycm_global_ycm_extra_conf = ''
 autocmd FileType c let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/c.py'
 autocmd FileType cpp let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/cpp.py'
 
-
 let g:ycm_confirm_extra_conf = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -249,7 +248,7 @@ let g:ycm_server_keep_logfiles = 1
 " set tags+=./.tags
 
 " -------------------- doxygen -----------------------
-let g:DoxygenToolkit_authorName = "Shengyu Zhang <lastavengers@outlook.com>"
+let g:DoxygenToolkit_authorName = "Shengyu Zhang <silverrainz@outlook.com>"
 let g:DoxygenToolkit_briefTag_funcName = "yes"
 
 map <F3>a :DoxAuthor

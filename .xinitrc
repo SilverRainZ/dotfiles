@@ -19,7 +19,7 @@ inter_scr=$(xrandr 2> /dev/null | grep "$internal $pattern" | sed "s/$internal $
 exter_scr=$(xrandr 2> /dev/null | grep "$external $pattern" | sed "s/$external $pattern/\1/")
 
 if [ ! -z "$exter_scr" ] ; then
-    xrandr --output ${exter_scr} --auto --output ${inter_scr} --primary --auto --left-of ${exter_scr}
+    xrandr --output ${exter_scr} --auto --output ${inter_scr} --primary --auto --right-of ${exter_scr}
 fi
 
 # Load resources
@@ -50,10 +50,12 @@ xsetroot -solid midnightblue &
 # Set wallpaper wit feh
 sleep 0.2 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 
-# key bindings
+# Key bindings
 xbindkeys &
 
 xscreensaver -no-splash &
+
+numlockx on &
 
 touchpad &
 

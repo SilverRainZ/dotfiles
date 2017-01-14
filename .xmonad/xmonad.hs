@@ -35,7 +35,7 @@ myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ent",  "mail", "misc"
 -- myWorkspaces = zipWith (++) [ show x ++ ":" | x <- [1..9] ++ [0]]
 --                          ["web", "code", "term", "im", "doc", "fm", "ent", "mail", "misc"]
 
-appFloat    = ["Dia", "Gimp", "Krita"]
+appFloat    = ["Dia", "Gimp", "krita"]
 appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
 appIgnore   = ["trayer", "dzen"]
 
@@ -45,7 +45,7 @@ appTerm = ["Terminator"]
 appIM   = ["telegram-desktop", "qTox", "Wine", "Srain", "Rocket.Chat+"]
 appMail = ["Thunderbird"]
 appFm   = ["Pcmanfm", "Nautilus"]
-appDoc  = ["Wps", "Wpp", "Et", "Okular", "Gimp", "Krita"]
+appDoc  = ["Wps", "Wpp", "Et", "okular", "Gimp", "krita"]
 -- TODO
 appEnt  = [ "teeworlds"
           , "ddnet"

@@ -42,7 +42,7 @@ appIgnore   = ["trayer", "dzen"]
 appWeb  = ["Firefox", "chromium"]
 appCode = ["Gvim", "Atom", "ReText", "WizNote"]
 appTerm = ["Terminator"]
-appIM   = ["telegram-desktop", "qTox", "Wine", "Srain", "Rocket.Chat+"]
+appIM   = ["telegram-desktop", "qTox", "Wine", "Srain", "Rocket.Chat+", "Hexchat"]
 appMail = ["Thunderbird"]
 appFm   = ["Pcmanfm", "Nautilus"]
 appDoc  = ["Wps", "Wpp", "Et", "okular", "Gimp", "krita"]
@@ -109,15 +109,15 @@ myKeys = [ ("M-n", swapNextScreen) ]
 main = do
     xmproc <- spawnPipe myXmonadBar
     spawn myStatusBar
-    xmonad $ defaultConfig 
+    xmonad $ defaultConfig
         { modMask = myModMask
         , terminal = myTerminal
         , borderWidth = myBorderWidth
         , normalBorderColor = myNormalBorderColor
         , focusedBorderColor = myFocusedBorderColor
         , workspaces = myWorkspaces
-        , startupHook = myStartupHook
-        , manageHook = myManageHook
+        , startupHook = docksStartupHook <+> myStartupHook
+        , manageHook = manageDocks <+> myManageHook
         , layoutHook = smartBorders $ myLayoutHook
         , logHook = myLogHook xmproc
         }

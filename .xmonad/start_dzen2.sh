@@ -34,4 +34,4 @@ FG='#aaaaaa'
 BG='#1a1a1a'
 FONT='-*-terminus-*-r-normal-*-*-110-*-*-*-*-iso8859-*'
 
-cat - | dzen2 $arg "$@" -bg $BG -fg $FG -fn $FONT -e 'button2=;' -xs 1
+cat - | dzen2 $arg "$@" -dock -bg $BG -fg $FG -fn $FONT -e 'button2=;' -xs 1

@@ -1,4 +1,4 @@
-# LastAvengers' .bashrc
+# SilverRainZ's .bashrc
 # ~/.bashrc
 # date: 2015-7-21
 
@@ -15,7 +15,7 @@ esac
 
 # vim-cn
 upimg(){
-    curl -F "name=@$1" http://img.tjm.moe
+    curl -F "name=@$1" http://img.vim-cn.com
 }
 
 # Envirnment varible

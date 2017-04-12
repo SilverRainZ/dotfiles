@@ -120,6 +120,7 @@ function NightMode()
     endif
 endfunction
 
+" <F2> 相对行号
 map <F2> :call RelativeNumber()<CR>
 imap <F2> <ESC>:call RelativeNumber()<CR>
 let g:isRelativeNumber=1

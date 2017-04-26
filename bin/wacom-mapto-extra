@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+devices=$(xsetwacom --list devices 2> /dev/null | cut -f1)
+
+# internal="^\(\(eDP\|LVDS\)-\?[0-9]\+\)"
+external="^\(\(VGA\|DVI\|DP\|HDMI\)-\?[0-9]\+\)"
+pattern="connected \(primary \)\?\([0-9]\+\)x.*$"
+
+# inter_scr=$(xrandr 2> /dev/null | grep "$internal $pattern" | sed "s/$internal $pattern/\1/")
+exter_scr=$(xrandr 2> /dev/null | grep "$external $pattern" | sed "s/$external $pattern/\1/")
+
+IFS=$'\n'
+if [ ! -z "$exter_scr" ] ; then
+    for dev in ${devices}; do
+        dev=$(echo ${dev} | xargs); # Trim leading and trailing space
+        xsetwacom set "${dev}" MapToOutput ${exter_scr};
+        echo "Map '${dev}' to ${exter_scr}";
+    done
+fi

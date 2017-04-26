@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
-cd ~/pkg/aur/srain-git/
+if [[ -n $1 ]]; then
+    cd ~/pkg/aur/srain-dev/
+else
+    cd ~/pkg/aur/srain-git/
+fi
+
 makepkg -Ccfsim

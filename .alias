@@ -49,5 +49,3 @@ alias .....='cd ../../../..'
 
 alias mj8='make -j8'
 alias cr='cargo run'
-
-source ~/.workalias

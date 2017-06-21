@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 err(){
-    echo -e "\033[31;1m** $1\033[0m"
+    echo -e "\033[31;1m**\033[0m $1"
 }
 
 info(){

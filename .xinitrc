@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rm ~/.xmonad/xmonad-x86_64-linux
+
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
   [ -x "$f" ] && . "$f"

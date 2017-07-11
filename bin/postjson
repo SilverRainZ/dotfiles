@@ -1,0 +1,8 @@
+#!/bin/sh
+
+json=$1
+url=$2
+header="Content-Type: appliaction/json"
+
+echo curl -H "${header}" -X POST -d @${json} ${url}
+curl -H "${header}" -X POST -d @${json} ${url}

@@ -90,7 +90,7 @@ au BufNewFile,BufRead *.wiki set filetype=wikipedia
 au BufRead *.defs set filetype=c
 
 " 以下类型输入左花括号自动补全
-au FileType c,cpp,h,java,css,rust inoremap <buffer> {<CR> {<CR>}<Esc>O
+au FileType c,cpp,h,java,css,rust,go inoremap <buffer> {<CR> {<CR>}<Esc>O
 
 " Normal 模式下禁用输入法(Windows Only?)
 set iminsert=0

@@ -25,8 +25,8 @@
     Control+Alt + a
 
 "scrot -e 'mv $f ~/screenshots'"
-    Control+Alt+ f
+    Control + Shift + f
 
 # 大佬我锁屏了
 "xscreensaver-command --lock"
-    Shift+Mod2+Mod4 + l
+    Shift + Mod2 + Mod4 + l

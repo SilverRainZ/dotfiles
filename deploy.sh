@@ -18,5 +18,5 @@ done
 files=$(ls -A1 .config)
 target=~/.config
 for f in $files; do
-    link "$f" "$target"
+    link ".config/$f" "$target"
 done

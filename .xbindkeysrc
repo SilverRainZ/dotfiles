@@ -18,14 +18,12 @@
 "pamixer --decrease 2"
     XF86AudioLowerVolume
 
-# screenshot
-# why use `sleep 0,2`?
-# see: https://bbs.archlinux.org/viewtopic.php?id=86507
-"sleep 0.2; scrot -s -e 'mv $f ~/screenshots'":
-    Control+Alt + a
+# Screenshot
+"shot -s"
+    Control + Alt + a
 
-"scrot -e 'mv $f ~/screenshots'"
-    Control + Shift + f
+"shot -d 1"
+    Control + Alt + f
 
 # 大佬我锁屏了
 "xscreensaver-command --lock"

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+FMT="%F_%T.png"
+OUTPUT=~/Pictures/Screenshots
+
+FILEPATH=${OUTPUT}/$(date +${FMT})
+
+echo ${FILEPATH}
+echo ${FILEPATH} | xclip
+
+maim $@ -f png ${FILEPATH}

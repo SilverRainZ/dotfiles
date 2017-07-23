@@ -1,12 +1,12 @@
 [user]
-	email = silverrainz@outlook.com
+	email = i@srain.im
 	name = Shengyu Zhang
 [push]
 	default = simple
 [core]
 	editor = vim --noplugin
 [sendemail]
-	smtpserver = smtp-mail.outlook.com
-	smtpserverport = 587
+	smtpserver = smtp.yandex.com
+	smtpserverport = 465
 	smtpencryption = tls
-	smtpuser = silverrainz@outlook.com
+	smtpuser = i@srain.im

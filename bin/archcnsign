@@ -15,7 +15,7 @@ fi
 
 TMPDIR=/tmp/archcnsign
 REMOTE=archlinuxcn
-REPO=gitrepo
+REPO=pkg/gitrepo
 
 info "Creating temp directory..."
 mkdir $TMPDIR 2>/dev/null || true

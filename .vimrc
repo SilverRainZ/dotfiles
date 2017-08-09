@@ -249,7 +249,7 @@ let g:ycm_server_keep_logfiles = 1
 " set tags+=./.tags
 
 " -------------------- doxygen -----------------------
-let g:DoxygenToolkit_authorName = "Shengyu Zhang <silverrainz@outlook.com>"
+let g:DoxygenToolkit_authorName = "Shengyu Zhang <i@srain.im>"
 let g:DoxygenToolkit_briefTag_funcName = "yes"
 
 map <F3>a :DoxAuthor

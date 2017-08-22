@@ -18,11 +18,13 @@
 /relay Orizon
 /relay yobot
 /relay offbot
-/relay tg2offtopic
 /relay tg2game
 /relay akarin3
 /relay akarin3_
 /relay fakeOrizon
+/relay tg2arch
+/relay tg2offtopic
+/relay tg2linuxba
 
 /ignore wbsdty331
 /ignore Nishikino-Maki
@@ -37,7 +39,11 @@
 /ignore quininer[m]
 /ignore NotSimpleBot
 /ignore testbot
+/ignore ngkaho1234
 
+/rignore quininer ^quininer.*
+/rignore quininer[m] ^quininer[m].*
+/rignore ngkaho1234 ^ngkaho1234.*
 /rignore fishroom-sticker .*\(sticker\)
 /rignore akarin-sticker Sticker:.*
 /rignore horo-emoji 🤦

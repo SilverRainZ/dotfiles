@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 files=$(ls -A1 | egrep -v 'README.md|deploy.sh|.gitignore|.git$|.config')
 target=~

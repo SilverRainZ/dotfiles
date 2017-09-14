@@ -1,17 +1,11 @@
 /server connect freenode
 
-/join #linuxba
+/join #srain
 /join #gzlug
 /join #tuna
-/join #tuna-random
 /join #ustc_lug
-/join #srain
 /join #debian-cn
-/join #archlinux-cn
-/join #archlinux-cn-game
-/join #archlinux-cn-offtopic
 /join #chinalug
-/join #neuos
 
 /relay xmppbot
 /relay teleboto

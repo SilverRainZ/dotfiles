@@ -6,6 +6,8 @@
 /join #ustc_lug
 /join #debian-cn
 /join #chinalug
+/join #archlinux-cn
+/join #archlinux-cn-offtopic
 
 /relay xmppbot
 /relay teleboto
@@ -29,15 +31,9 @@
 /ignore wsdjeg
 /ignore SimpleBot
 /ignore Yangtse
-/ignore quininer
-/ignore quininer[m]
 /ignore NotSimpleBot
 /ignore testbot
-/ignore ngkaho1234
 
-/rignore quininer ^quininer.*
-/rignore quininer[m] ^quininer[m].*
-/rignore ngkaho1234 ^ngkaho1234.*
 /rignore fishroom-sticker .*\(sticker\)
 /rignore akarin-sticker Sticker:.*
 /rignore horo-emoji 🤦

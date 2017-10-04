@@ -13,7 +13,7 @@ source ~/.xprofile
 # Dual screens auto dectection
 internal="^\(\(eDP\|LVDS\)-\?[0-9]\+\)"
 external="^\(\(VGA\|DVI\|DP\|HDMI\)-\?[0-9]\+\)"
-pattern="connected \(primary \)\?\([0-9]\+\)x.*$"
+pattern="connected \(primary \)\?\([0-9]\+x\)\?.*$"
 
 inter_scr=$(xrandr 2> /dev/null | grep "$internal $pattern" | sed "s/$internal $pattern/\1/")
 exter_scr=$(xrandr 2> /dev/null | grep "$external $pattern" | sed "s/$external $pattern/\1/")

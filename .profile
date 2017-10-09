@@ -18,3 +18,4 @@ export CHROOT=$HOME/chroot
 # Path
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$HOME/go/bin

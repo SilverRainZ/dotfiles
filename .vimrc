@@ -231,23 +231,6 @@ let g:powerline_symbols = 'compatible'  " no fancy, too bother
 " -------------------- nerdtree -----------------------
 map <C-n> :NERDTreeToggle<CR>
 
-" -------------------- YCM -----------------------
-nnoremap <C-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <C-k> :YcmForceCompileAndDiagnostics<CR>
-
-let g:ycm_global_ycm_extra_conf = ''
-autocmd FileType c let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/c.py'
-autocmd FileType cpp let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf/cpp.py'
-
-let g:ycm_confirm_extra_conf = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_server_keep_logfiles = 1
-" let g:ycm_server_log_level = 'debug'
-" set tags+=./.tags
-
 " -------------------- doxygen -----------------------
 let g:DoxygenToolkit_authorName = "Shengyu Zhang <i@srain.im>"
 let g:DoxygenToolkit_briefTag_funcName = "yes"
@@ -263,3 +246,32 @@ map <F3>c O/** */<Left><Left>
 " set tabstop=8           " 编辑时制表符占用空格数
 " set shiftwidth=8        " 格式化时 Tab 占用 四个空格
 " set softtabstop=0       " 连续四个空格视为 Tab
+
+" -------------------- cquery & lsp -----------------------
+autocmd FileType c setlocal omnifunc=lsp#complete
+
+nnoremap <C-j> :LspDefinition<CR>
+nnoremap <C-k> :LspReference<CR>
+
+let g:lsp_async_completion = 1
+if executable('cquery')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'cquery',
+                \ 'cmd': {server_info->['cquery', '--language-server']},
+                \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+                \ 'initialization_options': { 'cacheDirectory': '/tmp/cquery' },
+                \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                \ })
+endif
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:SuperTabCrMapping = 0
+let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType c
+            \ if &omnifunc != '' |
+            \     call SuperTabChain(&omnifunc, '<c-p>') |
+            \ endif

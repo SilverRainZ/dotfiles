@@ -232,7 +232,7 @@ let g:powerline_symbols = 'compatible'  " no fancy, too bother
 map <C-n> :NERDTreeToggle<CR>
 
 " -------------------- doxygen -----------------------
-let g:DoxygenToolkit_authorName = "Shengyu Zhang <i@srain.im>"
+let g:DoxygenToolkit_authorName = "Shengyu Zhang <i@silverrainz.me>"
 let g:DoxygenToolkit_briefTag_funcName = "yes"
 
 map <F3>a :DoxAuthor

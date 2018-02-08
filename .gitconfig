@@ -1,5 +1,5 @@
 [user]
-	email = i@srain.im
+	email = i@silverrainz.me
 	name = Shengyu Zhang
 [push]
 	default = simple
@@ -9,4 +9,4 @@
 	smtpserver = smtp.yandex.com
 	smtpserverport = 465
 	smtpencryption = tls
-	smtpuser = i@srain.im
+	smtpuser = i@silverrainz.me

@@ -270,7 +270,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:SuperTabCrMapping = 0
-let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 autocmd FileType c
             \ if &omnifunc != '' |
             \     call SuperTabChain(&omnifunc, '<c-p>') |

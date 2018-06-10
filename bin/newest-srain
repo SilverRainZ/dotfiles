@@ -6,4 +6,4 @@ else
     cd ~/pkg/aur/srain-git/
 fi
 
-makepkg -Ccfsim
+makepkg -Ccfsi

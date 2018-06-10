@@ -16,5 +16,5 @@ source $HOME/.alias
 
 # vim-cn
 upimg(){
-    curl -F "name=@$1" http://img.vim-cn.com
+    curl -F "name=@$1" https://img.vim-cn.com
 }

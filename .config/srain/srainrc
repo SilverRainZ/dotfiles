@@ -9,6 +9,7 @@
 /join #archlinux-cn-offtopic
 /join #linuxba
 /join #ircv3
+/join #krita
 
 /relay xmppbot
 /relay teleboto
@@ -35,6 +36,8 @@
 /ignore NotSimpleBot
 /ignore testbot
 /ignore jackness
+/ignore 变换布偶君
+/ignore ShadowRZ
 
 /rignore fishroom-sticker .*\(sticker\)
 /rignore akarin-sticker Sticker:.*

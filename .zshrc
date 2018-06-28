@@ -29,12 +29,12 @@ host_prompt(){
     if [[ -z ${SSH_CLIENT} ]]; then
         echo '%F{magenta}%m%f'
     else
-        echo '%F{magenta}%m%f %F{red}(remote)%f'
+        echo '%F{magenta}%m (%F{red}remote%F{magenta})%f'
     fi
 }
 
 PROMPT=$'%F{green}/%f %B%F{cyan}%n%f %F{white}@%f $(host_prompt) %F{black}%T%f %F{white}->%(?..%F{red}[%?])%f %F{green}%~%f %F$(git_prompt)%f %b
-%F{green}\\%f  %B%(!.%F{red}%#.%F{blue}$) %F{white}%b'
+%F{green}\\%f %B%(!.%F{red}%#.%F{blue}$) %F{white}%b'
 
 # History {{{1
 HISTSIZE=100000

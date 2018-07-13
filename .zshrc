@@ -11,7 +11,7 @@ setopt prompt_subst
 ## ref: http://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
 git_prompt() {
     git rev-parse --git-dir > /dev/null 2>&1 && \
-        branch=$(git symbolic-ref HEAD | cut -d'/' -f3)
+        branch=$(git symbolic-ref HEAD | cut -d'/' -f3-)
 
     if [[ -z $branch ]]; then
         echo $branch

@@ -5,7 +5,7 @@ alias _='sudo'
 alias _p='proxychains'
 alias l='ls'
 alias m='make'
-alias v='vim'
+alias v='nvim'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -13,11 +13,9 @@ alias grep='grep --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 
-alias vin='vim --noplugin'
-# alias qtox='XDG_CURRENT_DESKTOP= qtox'
-# alias wiznote='XDG_CURRENT_DESKTOP= WizNote'
-# alias cutegram='XDG_CURRENT_DESKTOP= cutegram'
-# alias goldendict='XDG_CURRENT_DESKTOP= goldendict'
+alias vim='nvim'
+alias vin='nvim --noplugin'
+alias gvim='oni'
 
 ## systemd alias
 alias sstart='systemctl start'

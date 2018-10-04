@@ -38,10 +38,10 @@ myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ent",  "mail", "misc"
 appFloat    = ["Dia", "Gimp", "krita"]
 appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
 -- appIgnore   = ["trayer", "dzen"]
-appIgnore   = []
+appIgnore   = ["Peek"]
 
 appWeb  = ["Firefox", "chromium", "Nightly"]
-appCode = ["Gvim", "Atom", "ReText", "WizNote"]
+appCode = ["Gvim", "Atom", "ReText", "WizNote", "oni"]
 appTerm = ["Terminator"]
 appIM   = ["qTox", "Wine", "Srain", "Srain-dev", "Rocket.Chat+", "Hexchat", "TelegramDesktop"]
 appMail = ["Thunderbird"]

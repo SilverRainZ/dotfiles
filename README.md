@@ -1,2 +1,0 @@
-# dotfiles
-LastAvengers' dotfiles.

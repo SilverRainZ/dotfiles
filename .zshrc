@@ -1,6 +1,8 @@
 # [[ -f /usr/share/oh-my-zsh/oh-my-zsh.sh ]] \
 #    && source /usr/share/oh-my-zsh/oh-my-zsh.sh
 
+export LA_ZSHRC_LOADED=$(($LA_ZSHRC_LOADED+1))
+
 source $HOME/.bashrc
 
 # Prompt {{{1

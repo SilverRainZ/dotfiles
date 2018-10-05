@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export LA_XPROFILE_LOADED=$(($LA_XPROFILE_LOADED+1))
+
 export BROWSER=firefox
 export EDITOR=gvim
 

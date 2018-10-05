@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+env | grep -E 'LA_.*_LOADED'

@@ -2,6 +2,8 @@
 # ~/.bashrc
 # date: 2015-7-21
 
+export LA_BASHRC_LOADED=$(($LA_BASHRC_LOADED+1))
+
 case "$TERM" in
     xterm)
         export TERM=xterm-256color
@@ -11,7 +13,6 @@ case "$TERM" in
         ;;
 esac
 
-source $HOME/.profile
 source $HOME/.alias
 
 # vim-cn

@@ -1,5 +1,7 @@
 # ~/.alias
 
+export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
+
 # commonly used
 alias _='sudo'
 alias _p='proxychains'

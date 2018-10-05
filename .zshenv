@@ -1,2 +1,3 @@
-PATH=$HOME/bin:$PATH
-source $HOME/.alias
+export LA_ZSHENV_LOADED=$(($LA_ZSHENV_LOADED+1))
+
+source ~/.alias

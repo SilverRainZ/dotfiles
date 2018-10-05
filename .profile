@@ -1,3 +1,5 @@
+export LA_PROFILE_LOADED=$(($LA_PROFILE_LOADED+1))
+
 export VISUAL=vim
 export EDITOR=$VISUAL
 

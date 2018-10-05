@@ -19,3 +19,12 @@ source $HOME/.alias
 upimg(){
     curl -F "name=@$1" https://img.vim-cn.com
 }
+
+# Init pyenv if it is installed
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    # Init pyenv-virtualenv if it is installed
+    if command -v pyenv-virtualenv 1>/dev/null 2>&1; then
+        eval "$(pyenv virtualenv-init -)"
+    fi
+fi

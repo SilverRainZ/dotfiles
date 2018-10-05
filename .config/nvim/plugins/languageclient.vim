@@ -1,8 +1,13 @@
-" TODO: rust/python language servers
+" TODO: rust language server
+
+" pacman -S archlinuxcn/ccls-git
+" pacman -S archlinuxcn/go-langserver-git
+" pacman -S python-language-server python-pyflakes yapf
 let g:LanguageClient_serverCommands = {
     \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log', '--init={"cacheDirectory":"/tmp/ccls-cache"}'],
     \ 'c': ['ccls', '--log-file=/tmp/ccls.log', '--init={"cacheDirectory":"/tmp/ccls-cache"}'],
     \ 'go': ['go-langserver', '-diagnostics', '-gocodecompletion', '-logfile=/tmp/go-langserver.log'],
+    \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>

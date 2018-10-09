@@ -11,9 +11,6 @@ let $PLUGIN_CONFIG='$XDG_CONFIG_HOME/nvim/plugins'
 
 " pacman -S vim-doxygentoolkit
 
-source $PLUGIN_CONFIG/airline.vim
-source $PLUGIN_CONFIG/doxygentoolkit.vim
-
 " Plugin managed by vim-plug {{{1
 " Run `:PlugInstall` to install plugins
 
@@ -23,6 +20,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
 
 " Completion manager
 Plug 'ncm2/ncm2'
@@ -50,8 +48,11 @@ call plug#end()
 
 " Plugin config {{{1
 
+" source $PLUGIN_CONFIG/solarized.vim
+source $PLUGIN_CONFIG/nord.vim
+source $PLUGIN_CONFIG/airline.vim
+source $PLUGIN_CONFIG/doxygentoolkit.vim
 source $PLUGIN_CONFIG/nerdtree.vim
-source $PLUGIN_CONFIG/solarized.vim
 source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/languageclient.vim
 

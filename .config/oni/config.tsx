@@ -26,13 +26,16 @@ export const configuration = {
 
     "oni.loadInitVim": true,
     "oni.useDefaultConfig": false,
-    "editor.fontSize": "14px",
+    "editor.fontSize": "15px",
     "editor.fontFamily": "Iosevka",
 
+    "autoClosingPairs.enabled": false,
+
     // UI customizations
-    "ui.colorscheme": "nord",
+    "ui.colorscheme": "n/a",
     "ui.animations.enabled": true,
     "ui.fontSmoothing": "auto",
 
-    "sidebar.default.open": false,
+    "oni.hideMenu": true,
+    "sidebar.enabled": false,
 }

@@ -105,7 +105,10 @@ myDzen2Wrapper = "/home/la/.xmonad/start_dzen2.sh"
 myXmonadBar = myDzen2Wrapper ++ " -wp 60 -h 18 -x 0 -y 0 -ta l"
 myStatusBar = "conky | " ++ myDzen2Wrapper ++" -xp 60 -wp 30 -h 18 -y 0 -ta r"
 
-myKeys = [ ("M-n", swapNextScreen) ]
+myKeys = [ ("M-n", swapNextScreen)
+         , ("M-p", spawn "dmenu_run -x 0 -y 0 -w 0 -fn 'Iosevka-18'")
+         ]
+
 main = do
     xmproc <- spawnPipe myXmonadBar
     spawn myStatusBar

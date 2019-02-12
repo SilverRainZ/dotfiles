@@ -17,7 +17,6 @@ pattern="connected \(primary \)\?\([0-9]\+\)x.*$"
 width=$(xrandr 2> /dev/null | grep "$internal $pattern" | sed "s/$internal $pattern/\3/")
 # width=$(xrandr 2> /dev/null | grep "$external $pattern" | sed "s/$external $pattern/\3/")
 
-echo $width
 while [ 1 ] ; do
     if [ "$1" == "-wp" ] ; then
         arg="$arg -w `expr $(expr $width '*' $2) / 100`"
@@ -32,6 +31,6 @@ done
 
 FG='#aaaaaa'
 BG='#1a1a1a'
-FONT='-*-terminus-*-r-normal-*-*-110-*-*-*-*-iso8859-*'
+FONT='-*-terminus-*-r-normal-*-24-110-*-*-*-*-iso8859-*'
 
-cat - | dzen2 $arg "$@" -dock -bg $BG -fg $FG -fn $FONT -e 'button2=;' -xs 1
+cat - | dzen2 $arg "$@" -dock -bg $BG -fg $FG -fn $FONT -e 'button2=;' -xs 1 -h 36

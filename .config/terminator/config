@@ -12,6 +12,7 @@
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -21,6 +22,9 @@
   [[default]]
     background_color = "#2e3440"
     cursor_color = "#D8DEE9"
+    font = Iosevka 14
     foreground_color = "#d8dee9"
     palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
     scrollback_lines = 5000
+    show_titlebar = True
+    use_system_font = False

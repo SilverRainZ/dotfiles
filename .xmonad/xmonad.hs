@@ -41,12 +41,12 @@ appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
 appIgnore   = ["Peek"]
 
 appWeb  = ["Firefox", "chromium", "Nightly"]
-appCode = ["Gvim", "Atom", "ReText", "WizNote", "oni"]
+appCode = ["Gvim", "Atom", "ReText", "WizNote", "oni", "NeovimGtk"]
 appTerm = ["Terminator"]
 appIM   = ["qTox", "Wine", "Srain", "Srain-dev", "Rocket.Chat", "Hexchat", "TelegramDesktop"]
 appMail = ["Thunderbird"]
 appFm   = ["Pcmanfm", "Nautilus"]
-appDoc  = ["Wps", "Wpp", "Et", "okular", "Gimp", "krita"]
+appDoc  = ["Wps", "Wpp", "Et", "okular", "Gimp", "krita", "Zeal"]
 -- TODO
 appEnt  = [ "teeworlds"
           , "DDNet"

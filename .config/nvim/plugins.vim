@@ -43,6 +43,8 @@ Plug 'junegunn/fzf'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+Plug 'rhysd/vim-clang-format'
+
 " Initialize plugin system
 call plug#end()
 
@@ -55,6 +57,7 @@ source $PLUGIN_CONFIG/doxygentoolkit.vim
 source $PLUGIN_CONFIG/nerdtree.vim
 source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/languageclient.vim
+source $PLUGIN_CONFIG/clang_format.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

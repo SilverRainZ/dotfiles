@@ -12,18 +12,25 @@ setopt prompt_subst
 ## git prompt
 ## ref: http://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
 git_prompt() {
-    git rev-parse --git-dir > /dev/null 2>&1 && \
-        branch=$(git symbolic-ref HEAD | cut -d'/' -f3-)
+    git rev-parse --git-dir > /dev/null 2>&1 || return
 
-    if [[ -z $branch ]]; then
-        echo $branch
+    branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3-)
+    tag=$(git describe --tag 2>/dev/null)
+    head=$(git rev-parse --short HEAD)
+
+    if [[ ! -z ${branch} ]]; then
+        prompt=${branch}
+    elif [[ ! -z ${tag} ]]; then
+        prompt=${tag}
     else
-        is_clean=$(git status --short)
-        if [[ ! -z $is_clean ]]; then
-            is_clean="%F{yellow}x"
-        fi
-        echo "%F{blue}git:(%F{red}$branch%F{blue}) $is_clean%f";
+        prompt=${head}
     fi
+
+    is_clean=$(git status --short)
+    if [[ ! -z ${is_clean} ]]; then
+        is_clean="%F{yellow}x"
+    fi
+    echo "%F{blue}git:(%F{red}${prompt}%F{blue}) ${is_clean}%f";
 }
 
 ## host prompt

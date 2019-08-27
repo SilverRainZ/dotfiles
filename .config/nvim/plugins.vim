@@ -45,6 +45,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'rhysd/vim-clang-format'
 
+" Change and enhance features of * (highlight and search)
+" ref: https://stackoverflow.com/a/13682379
+Plug 'vim-scripts/star-search'
+
 " Initialize plugin system
 call plug#end()
 

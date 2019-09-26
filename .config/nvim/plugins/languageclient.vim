@@ -14,3 +14,6 @@ nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> <C-j> :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+au FileType cpp set formatexpr=LanguageClient#textDocument_rangeFormatting()
+autocmd BufWritePre *.cpp :call LanguageClient#textDocument_formatting_sync()

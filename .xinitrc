@@ -44,7 +44,7 @@ nm-applet --sm-disable &
 #
 pnmixer &
 
-fcitx &
+fcitx5 &
 
 # Set the background color
 xsetroot -solid midnightblue &

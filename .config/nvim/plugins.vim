@@ -39,6 +39,7 @@ Plug 'autozimu/LanguageClient-neovim', {
             \ 'do': 'bash install.sh',
             \ }
 
+" Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

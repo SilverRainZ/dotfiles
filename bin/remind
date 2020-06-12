@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SUMMARY="Remind"
+BODY="Your command has just been executed."
+if [ ! -z $1 ]; then
+    body=$1
+fi
+
+notify-send \
+        --urgency=critical \
+        --app-name=la.Reminder \
+        --icon=dialog-information \
+        "${SUMMARY}" "${BODY}"

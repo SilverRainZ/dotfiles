@@ -9,6 +9,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeysP)
@@ -16,7 +17,7 @@ import XMonad.Util.Cursor
 
 import XMonad.Actions.CycleWS
 
-myTerminal = "terminator"
+myTerminal = "tilix"
 
 myModMask = mod4Mask
 
@@ -30,6 +31,8 @@ myStartupHook = do
     setDefaultCursor xC_left_ptr
     -- Startup script
     -- spawn "~/.xmonad/startup.sh"
+    -- Initializes EwmhDesktops and advertises EWMH support to the X server
+    ewmhDesktopsStartup
 
 myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ent",  "mail", "misc"]
 -- myWorkspaces = zipWith (++) [ show x ++ ":" | x <- [1..9] ++ [0]]
@@ -37,12 +40,11 @@ myWorkspaces = ["web", "code", "term", "im", "doc", "fm", "ent",  "mail", "misc"
 
 appFloat    = ["Dia", "Gimp", "krita"]
 appCenter   = ["feh", "MPlayer", "Zenity", "burp-StartBurp"]
--- appIgnore   = ["trayer", "dzen"]
-appIgnore   = ["Peek"]
+appIgnore   = ["trayer", "dzen", "Peek"]
 
-appWeb  = ["Firefox", "chromium", "Nightly"]
+appWeb  = ["firefox", "Firefox", "chromium", "Nightly"]
 appCode = ["Gvim", "Atom", "ReText", "WizNote", "oni", "NeovimGtk"]
-appTerm = ["Terminator"]
+appTerm = ["Terminator", "Tilix"]
 appIM   = ["qTox", "Wine", "Srain", "Srain-dev", "Rocket.Chat", "Hexchat", "TelegramDesktop"]
 appMail = ["Thunderbird"]
 appFm   = ["Pcmanfm", "Nautilus"]
@@ -54,6 +56,8 @@ appEnt  = [ "teeworlds"
           , "net-minecraft-launchwrapper-Launch"
           , "netease-cloud-music"
           , "Steam"
+          , "Kodi"
+          , "scrcpy"
           ]
 appMisc = ["VirtualBox"]
 

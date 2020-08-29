@@ -48,6 +48,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " ref: https://stackoverflow.com/a/13682379
 Plug 'vim-scripts/star-search'
 
+Plug 'gu-fan/riv.vim'
+
 " Initialize plugin system
 call plug#end()
 

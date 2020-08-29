@@ -28,3 +28,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
         eval "$(pyenv virtualenv-init -)"
     fi
 fi
+
+# Fix tilix VTE configuration Issue
+# Ref: https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
+if [[ $TILIX_ID ]]; then
+    source /etc/profile.d/vte.sh
+fi

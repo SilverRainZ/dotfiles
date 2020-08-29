@@ -55,7 +55,7 @@ sleep 0.2 && feh --bg-scale /home/la/Pictures/Wallpapers/bg.jpg &
 # Key bindings
 xbindkeys &
 
-xscreensaver -no-splash &
+# xscreensaver -no-splash &
 
 numlockx on &
 

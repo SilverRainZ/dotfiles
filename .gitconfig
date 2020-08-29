@@ -10,3 +10,5 @@
 	smtpserverport = 465
 	smtpencryption = tls
 	smtpuser = i@silverrainz.me
+[pull]
+	ff = only

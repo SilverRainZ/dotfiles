@@ -13,7 +13,7 @@ Desktop environment     *N/A*
 Window manager          `XMonad`_
 Web browser             `Firefox`_
 Shell                   `Zsh`_
-Terminal                `Terminator`_
+Terminal                `Tilix`_
 Terminal multiplexer    `tmux`_
 Editor                  `Neovim`_ and `Oni`_
 IRC client              `Srain`_
@@ -23,7 +23,7 @@ IRC client              `Srain`_
 .. _XMonad: https://xmonad.org/
 .. _Firefox: https://www.mozilla.org/firefox/
 .. _Zsh: http://zsh.org/
-.. _Terminator: https://gnometerminator.blogspot.com/p/introduction.html
+.. _Tilix: https://gnunn1.github.io/tilix-web/
 .. _tmux: https://github.com/tmux/tmux
 .. _Neovim: https://neovim.io/
 .. _Oni: https://www.onivim.io/

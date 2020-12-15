@@ -50,6 +50,8 @@ Plug 'vim-scripts/star-search'
 
 Plug 'gu-fan/riv.vim'
 
+Plug 'Vimjas/vim-python-pep8-indent'
+
 " Initialize plugin system
 call plug#end()
 

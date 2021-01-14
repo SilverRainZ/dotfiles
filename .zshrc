@@ -125,8 +125,14 @@ bindkey '^[p' up-line-or-search
 bindkey '^[n' down-line-or-search
 
 
-# Plugin
+# Plugins {{{1
+
+## zsh-syntax-highlighting
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] \
     && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # vim: se fdm=marker:

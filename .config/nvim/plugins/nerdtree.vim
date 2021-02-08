@@ -9,7 +9,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close tab if the only window left open is a NERDTree?
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "*",
     \ "Staged"    : "+",
     \ "Untracked" : "?",
@@ -21,3 +21,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '-',
     \ "Unknown"   : "?"
     \ }
+
+let NERDTreeIgnore = [
+            \ '\.pyc$',
+            \ '__pycache__'
+            \ ]

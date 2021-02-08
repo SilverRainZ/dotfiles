@@ -34,3 +34,8 @@ fi
 if [[ $TILIX_ID ]]; then
     source /etc/profile.d/vte.sh
 fi
+
+# Source for TTY
+if [ "$TERM" = "linux" ]; then
+    source .tty
+fi

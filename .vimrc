@@ -14,7 +14,7 @@ set cursorcolumn
 " 图形界面下不显示任何控件
 set guioptions=
 
-set guifont=Iosevka\ 14
+set guifont=Iosevka:h16
 
 " 始终显示状态栏
 set laststatus=2

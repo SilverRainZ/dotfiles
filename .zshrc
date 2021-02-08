@@ -135,4 +135,8 @@ bindkey '^[n' down-line-or-search
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+## zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^j' autosuggest-accept
+
 # vim: se fdm=marker:

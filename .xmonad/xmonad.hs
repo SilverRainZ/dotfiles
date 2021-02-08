@@ -47,8 +47,8 @@ appCode = ["Gvim", "Atom", "ReText", "WizNote", "oni", "NeovimGtk"]
 appTerm = ["Terminator", "Tilix"]
 appIM   = ["qTox", "Wine", "Srain", "Srain-dev", "Rocket.Chat", "Hexchat", "TelegramDesktop"]
 appMail = ["Thunderbird"]
-appFm   = ["Pcmanfm", "Nautilus"]
-appDoc  = ["Wps", "Wpp", "Et", "okular", "Gimp", "krita", "Zeal"]
+appFm   = ["Pcmanfm", "Org.gnome.Nautilus", "Syncthing GTK", "Thunar"]
+appDoc  = ["Wps", "Wpp", "Et", "okular", "Gimp", "krita", "Zeal", "frescobaldi", "Evince"]
 -- TODO
 appEnt  = [ "teeworlds"
           , "DDNet"

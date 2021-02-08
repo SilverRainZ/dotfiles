@@ -61,6 +61,4 @@ numlockx on &
 
 touchpad &
 
-rest &
-
 sleep 0.2 && exec xmonad

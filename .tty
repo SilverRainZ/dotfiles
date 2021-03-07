@@ -3,6 +3,9 @@
 #
 # :date: 2020-02-08
 
+# Use C locale
+export LANG=C
+
 # Set TTY font
 #
 # /usr/share/kbd/consolefonts/
@@ -40,5 +43,6 @@ echo -en "\e]PE8fbcbb " #cyan
 echo -en "\e]PFeceff4 " #white,foreground
 
 clear # epaint the whole background with the new color
+cat /etc/issue # login splash again
 
 # vim: set filetype=sh:

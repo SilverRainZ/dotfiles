@@ -8,6 +8,8 @@ alias _p='proxychains'
 alias l='ls'
 alias m='make'
 alias v='nvim'
+alias py='python'
+alias k='snippet'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -59,3 +61,11 @@ alias .....='cd ../../../..'
 
 alias mj8='make -j8'
 alias cr='cargo run'
+
+## notes alias
+alias n='cd ~/bullet'
+alias s='snippet'
+alias sv='snippet view'
+alias se='snippet edit'
+alias si='snippet invoke'
+alias sc='snippet clip'

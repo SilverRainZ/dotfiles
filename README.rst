@@ -10,7 +10,7 @@ I use...
 ======================= ========================================================
 Distribution            `Arch Linux`_
 Desktop environment     *N/A*
-Window manager          `XMonad`_
+Window manager          `Sway`_
 Web browser             `Firefox`_
 Shell                   `Zsh`_
 Terminal                `Tilix`_
@@ -20,7 +20,7 @@ IRC client              `Srain`_
 ======================= ========================================================
 
 .. _Arch Linux: https://archlinux.org/
-.. _XMonad: https://xmonad.org/
+.. _Sway: https://swaywm.org/
 .. _Firefox: https://www.mozilla.org/firefox/
 .. _Zsh: http://zsh.org/
 .. _Tilix: https://gnunn1.github.io/tilix-web/

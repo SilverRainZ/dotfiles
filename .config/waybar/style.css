@@ -13,13 +13,13 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 10px;
     background: transparent;
     color: white;
 }
 
 #workspaces button.focused {
-    background: #64727D;
+    background: alpha(white, 0.3);
     border-bottom: 3px solid alpha(white, 0.7);
 }
 
@@ -32,7 +32,8 @@ window#waybar {
 #network,
 #pulseaudio,
 #battery {
-    margin: 0 4px;
+    padding: 0 3px;
+    margin: 0 2px;
 }
 
 #clock{
@@ -41,7 +42,7 @@ window#waybar {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: alpha(white, 0.3);
 }
 
 #battery.charging {
@@ -68,5 +69,6 @@ window#waybar {
 
 #tray {
     margin: 0 5px;
+    padding: 0 5px;
     background-color: #64727D;
 }

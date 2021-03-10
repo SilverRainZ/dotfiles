@@ -286,14 +286,14 @@ bar {
 # Theme:
 #
     # Set cursor theme
-#     set $cursor_theme Breeze-Adapta
-#     set $cursor_size 16
-# 
-#     seat seat0 xcursor_theme $cursor_theme $cursor_size
-# 
-#     set $gnome-schema org.gnome.desktop.interface
-#     exec_always {
-#         gsettings set $gnome-schema cursor-theme $cursor_theme
-#     }
+    set $cursor_theme Breeze-Adapta-Cursor
+    set $cursor_size 16
+
+    seat seat0 xcursor_theme $cursor_theme $cursor_size
+
+    set $gnome-schema org.gnome.desktop.interface
+    exec_always {
+        gsettings set $gnome-schema cursor-theme $cursor_theme
+    }
 
 include /etc/sway/config.d/*

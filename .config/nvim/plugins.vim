@@ -40,7 +40,7 @@ Plug 'autozimu/LanguageClient-neovim', {
             \ }
 
 " Multi-entry selection UI.
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -48,9 +48,13 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " ref: https://stackoverflow.com/a/13682379
 Plug 'vim-scripts/star-search'
 
-Plug 'gu-fan/riv.vim'
+Plug 'marshallward/vim-restructuredtext'
 
 Plug 'Vimjas/vim-python-pep8-indent'
+
+Plug 'Chiel92/vim-autoformat'
+
+Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Initialize plugin system
 call plug#end()
@@ -64,6 +68,7 @@ source $PLUGIN_CONFIG/doxygentoolkit.vim
 source $PLUGIN_CONFIG/nerdtree.vim
 source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/languageclient.vim
+source $PLUGIN_CONFIG/autoformat.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

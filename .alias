@@ -10,6 +10,8 @@ alias m='make'
 alias v='nvim'
 alias py='python'
 alias k='snippet'
+alias p='pacman'
+
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -60,7 +62,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias mj8='make -j8'
-alias cr='cargo run'
+alias cr='cargo'
 
 ## notes alias
 alias n='cd ~/bullet'

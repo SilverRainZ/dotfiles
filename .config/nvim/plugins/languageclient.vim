@@ -10,6 +10,15 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
     \ }
 
+let g:LanguageClient_hideVirtualTextsOnInsert = 1
+
+" Custom color highlight for virtual text
+highlight LCCodeLenshl ctermfg=239 guifg=#44475A
+
+let g:LanguageClient_codeLensDisplay = {
+            \   "virtualTexthl": "LCCodeLenshl",
+            \ }
+
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> <C-j> :call LanguageClient#textDocument_definition()<CR>

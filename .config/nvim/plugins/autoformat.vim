@@ -8,13 +8,13 @@ let g:autoformat_verbosemode = 0
 function! FindAstylerc()
     let l:astylerc = '.astylerc'
     let l:cur = '%:p:h'
-    let l:home = expand('~/' . astylerc)
-    let l:root = '/' . astylerc
+    let l:home = expand('~')
+    let l:root = '/'
     let l:found = 0
 
     while 1
-        let f = expand(cur) . '/' . astylerc
-        if filereadable(f)
+        let f = expand(cur)
+        if filereadable(f . astylerc)
             let found = 1
             break
         endif
@@ -27,7 +27,7 @@ function! FindAstylerc()
     if !found
         return ''
     else
-        return f
+        return f . astylerc
     endif
 endfunction
 

@@ -6,7 +6,7 @@ let g:autoformat_remove_trailing_spaces = 0
 let g:autoformat_verbosemode = 0
 
 function! FindAstylerc()
-    let l:astylerc = '.astylerc'
+    let l:astylerc = '/.astylerc'
     let l:cur = '%:p:h'
     let l:home = expand('~')
     let l:root = '/'

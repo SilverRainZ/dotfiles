@@ -158,5 +158,8 @@ au InsertEnter * se noimd
 au InsertLeave * se imd
 au FocusGained * se imd
 
+" reStructuredText
+au FileType rst set shiftwidth=3
+
 " vim modeline {{{1
 " vim: set fdm=marker:

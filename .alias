@@ -9,9 +9,7 @@ alias l='ls'
 alias m='make'
 alias v='nvim'
 alias py='python'
-alias k='snippet'
 alias p='pacman'
-
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -66,8 +64,3 @@ alias cr='cargo'
 
 ## notes alias
 alias n='cd ~/bullet'
-alias s='snippet'
-alias sv='snippet view'
-alias se='snippet edit'
-alias si='snippet invoke'
-alias sc='snippet clip'

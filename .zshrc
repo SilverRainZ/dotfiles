@@ -139,4 +139,9 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^j' autosuggest-accept
 
+## sphinxnotes-snippet
+eval "$(snippet integration --zsh)"
+bindkey '^kv' snippet-view
+bindkey '^ke' snippet-edit
+
 # vim: se fdm=marker:

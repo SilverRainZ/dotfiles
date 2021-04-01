@@ -70,6 +70,10 @@ input type:keyboard {
     xkb_options caps:escape
 }
 
+input type:touchpad {
+    events disabled
+}
+
 ### Key bindings
 #
 # Basics:

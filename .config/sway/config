@@ -170,6 +170,7 @@ input type:touchpad {
     assign [app_id="firefox"] $ws_web
     assign [class="Nightly"] $ws_web
     assign [class="Chromium"] $ws_web
+    assign [class="fluent-reader"] $ws_web
     # Workspace (code) edit
     assign [class="oni"] $ws_edit
     # Workspace terminal

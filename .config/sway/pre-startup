@@ -30,7 +30,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # ref: https://github.com/swaywm/sway/wiki/Running-programs-natively-under-wayland
 export XDG_SESSION_TYPE=wayland
 # for firefox
-export MOZ_ENABLE_WAYLAND=1
+# export MOZ_ENABLE_WAYLAND=1
 
 # wine
 export WINEARCH=win32

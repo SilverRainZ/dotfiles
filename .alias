@@ -10,6 +10,8 @@ alias m='make'
 alias v='nvim'
 alias py='python'
 alias p='pacman'
+alias n='cd ~/bullet'
+alias t='tmux'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -61,6 +63,3 @@ alias .....='cd ../../../..'
 
 alias mj8='make -j8'
 alias cr='cargo'
-
-## notes alias
-alias n='cd ~/bullet'

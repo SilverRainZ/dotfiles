@@ -140,8 +140,6 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^j' autosuggest-accept
 
 ## sphinxnotes-snippet
-eval "$(snippet integration --zsh)"
-bindkey '^kv' snippet-view
-bindkey '^ke' snippet-edit
+eval "$(snippet integration --zsh --zsh-binding)"
 
 # vim: se fdm=marker:

@@ -64,11 +64,9 @@ call plug#end()
 " Plugin managed by others {{{1
 
 let snippet_nvim = tempname()
-call system('snippet integration --nvim >' . snippet_nvim)
+call system('snippet integration --vim --vim-binding>' . snippet_nvim)
 execute 'source ' . snippet_nvim
 call delete(snippet_nvim)
-nmap <C-k>v :call g:SphinxNotesSnippetListAndView()<CR>
-nmap <C-k>e :call g:SphinxNotesSnippetListAndEdit()<CR>
 
 " Plugin config {{{1
 

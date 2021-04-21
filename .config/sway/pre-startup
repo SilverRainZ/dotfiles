@@ -2,7 +2,7 @@
 
 export LA_SWAY_PRE_STARTUP_LOADED=$(($LA_SWAY_PRE_STARTUP_LOADED+1))
 
-export BROWSER=firefox
+export BROWSER=firefox-nightly
 
 # cursor
 export XCURSOR_THEME='Breeze_Adapta'

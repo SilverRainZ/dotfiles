@@ -58,6 +58,8 @@ Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'cespare/vim-toml'
 
+Plug 'vim-voom/VOoM'
+
 " Initialize plugin system
 call plug#end()
 
@@ -78,6 +80,7 @@ source $PLUGIN_CONFIG/nerdtree.vim
 source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/languageclient.vim
 source $PLUGIN_CONFIG/autoformat.vim
+source $PLUGIN_CONFIG/voom.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

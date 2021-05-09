@@ -39,3 +39,6 @@ export WINEPREFIX=~/.wine
 # ref: https://wiki.archlinux.org/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# Start fcitx5
+fcitx5 &

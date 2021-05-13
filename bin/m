@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+
+while true; do
+    if [ -f Makefile ]; then
+        make $*
+        exit $?
+    fi
+    if ! git rev-parse --is-inside-work-tree 2>&1 1>/dev/null; then
+        break
+    fi
+    cd ..
+done

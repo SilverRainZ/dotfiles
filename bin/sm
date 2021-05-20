@@ -1,4 +1,9 @@
 #!/usr/bin/sh
+#
+# Smart Make
+# ==========
+#
+# Wrapper for spawning various build system.
 
 while true; do
     if [ -f Makefile ]; then

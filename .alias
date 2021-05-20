@@ -6,6 +6,7 @@ export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 alias _='sudo'
 alias _p='proxychains'
 alias l='ls'
+alias m='make'
 alias v='nvim'
 alias py='python'
 alias p='pacman'

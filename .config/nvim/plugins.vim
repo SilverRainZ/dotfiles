@@ -60,6 +60,8 @@ Plug 'cespare/vim-toml'
 
 Plug 'vim-voom/VOoM'
 
+Plug 'airblade/vim-rooter'
+
 " Initialize plugin system
 call plug#end()
 

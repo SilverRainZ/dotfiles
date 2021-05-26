@@ -62,6 +62,8 @@ Plug 'vim-voom/VOoM'
 
 Plug 'airblade/vim-rooter'
 
+Plug 'junegunn/goyo.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -83,6 +85,7 @@ source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/languageclient.vim
 source $PLUGIN_CONFIG/autoformat.vim
 source $PLUGIN_CONFIG/voom.vim
+source $PLUGIN_CONFIG/goyo.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

@@ -2,7 +2,8 @@
 
 export LA_SWAY_PRE_STARTUP_LOADED=$(($LA_SWAY_PRE_STARTUP_LOADED+1))
 
-export BROWSER=firefox-nightly
+# follow xprofile
+source $HOME/.xprofile
 
 # cursor
 export XCURSOR_THEME='Breeze_Adapta'
@@ -12,33 +13,11 @@ export LANG=zh_CN.UTF-8
 export LANGUAGE=zh_CN:en_US
 export LC_CTYPE=en_US.UTF-8
 
-# fcitx moudle
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-
-# qt5
-export QT_STYLE_OVERRIDE=breeze
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-# XDG dirs
-# See also ~/.config/user-dirs.dirs
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-
 # running programs natively under Wayland
 # ref: https://github.com/swaywm/sway/wiki/Running-programs-natively-under-wayland
 export XDG_SESSION_TYPE=wayland
 # for firefox
 # export MOZ_ENABLE_WAYLAND=1
 
-# wine
-export WINEARCH=win32
-export WINEPREFIX=~/.wine
-
-# ref: https://wiki.archlinux.org/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing
-export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-
-# Start fcitx5
+# start fcitx5
 fcitx5 &

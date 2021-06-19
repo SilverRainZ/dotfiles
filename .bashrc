@@ -21,13 +21,13 @@ upimg(){
 }
 
 # Init pyenv if it is installed
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-    # Init pyenv-virtualenv if it is installed
-    if command -v pyenv-virtualenv 1>/dev/null 2>&1; then
-        eval "$(pyenv virtualenv-init -)"
-    fi
-fi
+# if command -v pyenv 1>/dev/null 2>&1; then
+#     eval "$(pyenv init -)"
+#     # Init pyenv-virtualenv if it is installed
+#     if command -v pyenv-virtualenv 1>/dev/null 2>&1; then
+#         eval "$(pyenv virtualenv-init -)"
+#     fi
+# fi
 
 # Fix tilix VTE configuration Issue
 # Ref: https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue

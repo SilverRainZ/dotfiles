@@ -10,8 +10,11 @@ alias m='make'
 alias v='nvim'
 alias py='python'
 alias p='pacman'
-alias n='cd ~/bullet'
 alias t='tmux'
+
+# freqently used path
+alias n='cd ~/documents/bullet'
+alias i='cd ~/documents/endoscope'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

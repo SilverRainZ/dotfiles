@@ -1,4 +1,7 @@
-autocmd BufRead *.rst,*.md :Goyo 80
+" autocmd BufRead *.rst,*.md :Goyo 80
+" autocmd BufLeave *.rst,*.md :Goyo!
+
+map <C-g> :Goyo<CR>
 
 function! s:goyo_enter()
     " Smart Wrap
@@ -14,13 +17,6 @@ function! s:goyo_enter()
     elseif exists('$TMUX')
         silent !tmux set status off
     endif
-
-    " Ensure :q to quit even when Goyo is active
-    " https://github.com/junegunn/goyo.vim/wiki/Customization#ensure-q-to-quit-even-when-goyo-is-active
-    let b:quitting = 0
-    let b:quitting_bang = 0
-    autocmd QuitPre <buffer> let b:quitting = 1
-    cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
 endfunction
 
 function! s:goyo_leave()
@@ -34,16 +30,6 @@ function! s:goyo_leave()
         set linespace=0
     elseif exists('$TMUX')
         silent !tmux set status on
-    endif
-
-    " Ensure :q to quit even when Goyo is active
-    " Quit Vim if this is the only remaining buffer
-    if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-        if b:quitting_bang
-            qa!
-        else
-            qa
-        endif
     endif
 endfunction
 

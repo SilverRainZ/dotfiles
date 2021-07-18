@@ -48,8 +48,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " ref: https://stackoverflow.com/a/13682379
 Plug 'vim-scripts/star-search'
 
-Plug 'marshallward/vim-restructuredtext'
-
 Plug 'Vimjas/vim-python-pep8-indent'
 
 Plug 'Chiel92/vim-autoformat'
@@ -63,6 +61,8 @@ Plug 'vim-voom/VOoM'
 Plug 'airblade/vim-rooter'
 
 Plug 'junegunn/goyo.vim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Initialize plugin system
 call plug#end()
@@ -86,6 +86,7 @@ source $PLUGIN_CONFIG/languageclient.vim
 source $PLUGIN_CONFIG/autoformat.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim
+source $PLUGIN_CONFIG/treesitter.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

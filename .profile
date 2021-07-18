@@ -22,6 +22,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then

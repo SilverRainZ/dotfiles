@@ -1,5 +1,6 @@
-au BufWrite *.c :Autoformat
-au BufWrite *.h :Autoformat
+"au BufWrite *.c :Autoformat
+"au BufWrite *.h :Autoformat
+au BufWrite *.rs :Autoformat
 
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0

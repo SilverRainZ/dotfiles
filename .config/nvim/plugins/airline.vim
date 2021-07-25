@@ -10,10 +10,4 @@ let g:airline#extensions#tabline#show_splits=0
 let g:airline#extensions#tabline#show_buffers=0
 let g:airline#extensions#tabline#show_tab_type=0
 
-if (g:colors_name=="solarized")
-    let g:airline_solarized_bg='dark'
-    let g:solarized_termcolors=256
-    let g:airline_theme='solarized'
-elseif (g:colors_name=="nord")
-    let g:airline_theme='nord'
-endif
+let g:airline_theme='nord_minimal'

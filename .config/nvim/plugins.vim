@@ -7,8 +7,6 @@ let $PLUGIN_CONFIG='$XDG_CONFIG_HOME/nvim/plugins'
 
 " pacman -S vim-a
 
-" pacman -S vim-airline
-
 " pacman -S vim-doxygentoolkit
 
 " Plugin managed by vim-plug {{{1
@@ -19,8 +17,7 @@ call plug#begin($PLUGIN_CACHE)
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'arcticicestudio/nord-vim'
+Plug 'shaunsingh/nord.nvim'
 
 " Completion manager
 Plug 'ncm2/ncm2'
@@ -63,6 +60,10 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/goyo.vim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()

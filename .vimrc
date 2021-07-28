@@ -94,11 +94,17 @@ imap <C-v> <C-r>+
 " Always paste from copied content (set :h quote0)
 map <C-P> "0p
 
+" F keys {{{2
+"
 map <F1> :call NightMode()<CR>
 imap <F1> <ESC>:call NightMode()<CR>
 
 map <F2> :call RelativeNumber()<CR>
 imap <F2> <ESC>:call RelativeNumber()<CR>
+
+" Smart make
+map <F9> :!sm<CR>
+imap <F2> <ESC>:!sm<CR>
 
 map <silent> <F11> :call ToggleFullscreen()<CR>
 

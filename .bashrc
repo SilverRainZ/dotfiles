@@ -39,3 +39,6 @@ fi
 if [ "$TERM" = "linux" ]; then
     source .tty
 fi
+
+# sphinxnotes-snippet
+eval "$(snippet integration --sh --sh-binding)"

@@ -140,6 +140,20 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^j' autosuggest-accept
 
 ## sphinxnotes-snippet
-eval "$(snippet integration --zsh --zsh-binding)"
+eval "$(snippet integration --zsh-binding)"
+
+### Override snippet_z_url
+function la_snippet_url() {
+    selection=$(snippet_list ds)
+    [ -z "$selection" ] && return
+
+    echo "$BROWSER \$($SNIPPET get --url $selection)"
+    sleep 0.2 && swaymsg workspace "1.web: 🌏" 1>/dev/null &
+}
+function la_snippet_url_wrapper() {
+    snippet_z_bind_wrapper la_snippet_url
+}
+zle -N la_snippet_url_wrapper
+bindkey '^ku' la_snippet_url_wrapper
 
 # vim: se fdm=marker:

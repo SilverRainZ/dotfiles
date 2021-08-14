@@ -11,6 +11,8 @@ alias v='nvim'
 alias py='python'
 alias p='pacman'
 alias t='tmux'
+alias o='xdg-open'
+alias open='xdg-open'
 
 # freqently used path
 alias n='cd ~/documents/bullet'

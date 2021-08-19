@@ -17,7 +17,7 @@ export LC_CTYPE=en_US.UTF-8
 # ref: https://github.com/swaywm/sway/wiki/Running-programs-natively-under-wayland
 export XDG_SESSION_TYPE=wayland
 # for firefox
-# export MOZ_ENABLE_WAYLAND=1
+export MOZ_ENABLE_WAYLAND=1
 
 # start fcitx5
 fcitx5 &

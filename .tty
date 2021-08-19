@@ -17,7 +17,7 @@ export LANG=C
 #     as well as the IBM VGA, vt100 and xterm pseudographic characters.
 #   - {number}: size
 #   - {n,b}: normal and bold (except for 6x12)
-setfont ter-v18b
+setfont ter-v32b
 
 # Set Color Palette
 #

@@ -24,7 +24,7 @@ set $menu dmenu_path \
         --no-overlap --fb '#000000dd' --nb '#000000cc' \
         | xargs swaymsg exec --
 # Your preferred wallpaper
-set $wallpaper /home/la/pictures/bg.png
+set $wallpaper /home/la/pictures/wallpapers/bg
 # Your preferred screenlocker
 set $lock swaylock --daemonize --color 000000ff
 
@@ -103,7 +103,10 @@ input type:touchpad {
     bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     bindsym $mod+Shift+o exec $lock
-#
+
+    # Screenshot
+    bindsym Ctrl+Alt+a exec shot -s
+
 # Moving around:
 #
     # Move your focus around

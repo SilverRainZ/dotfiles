@@ -1,11 +1,15 @@
 #!/bin/sh
 
 FMT="%F_%T.png"
-OUTPUT=~/pictures/Screenshots
+OUTPUT=~/pictures/screenshots
 
 FILEPATH=${OUTPUT}/$(date +${FMT})
 
 echo ${FILEPATH}
-echo ${FILEPATH} | xclip
+echo ${FILEPATH} | wl-copy
 
-maim $@ -f png ${FILEPATH}
+if [ "$1" == "-s" ]; then
+    grim -g "$(slurp)" -t png ${FILEPATH}
+else
+    grim -t png ${FILEPATH}
+fi

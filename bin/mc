@@ -1,7 +1,0 @@
-#!/usr/bin/sh
-
-if [[ "$1" == "-p" ]]; then
-    java -DsocksProxyHost=127.0.0.1 -DsocksProxyPort=1080 -jar ~/Games/Minecraft.jar
-else
-    java -jar ~/Games/Minecraft.jar
-fi

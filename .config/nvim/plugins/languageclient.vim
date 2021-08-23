@@ -3,11 +3,16 @@
 " pacman -S archlinuxcn/ccls-git
 " Would be better to use gopls of master@go-tools.
 " pacman -S python-language-server python-pyflakes yapf
+" pacman -S vala-language-server
+" pacman -S rust-analyzer
 let g:LanguageClient_serverCommands = {
     \ 'cpp': ['ccls', '--log-file=/tmp/ccls.log', '--init={"cacheDirectory":"/tmp/ccls-cache", "index": {"threads": 1}}'],
     \ 'c': ['ccls', '--log-file=/tmp/ccls.log', '--init={"cacheDirectory":"/tmp/ccls-cache", "index": {"threads": 1}}'],
     \ 'go': ['/home/la/go/bin/gopls'],
     \ 'python': ['pyls', '--log-file=/tmp/pyls.log'],
+    \ 'vala': ['vala-language-server'],
+    \ 'genie': ['vala-language-server'],
+    \ 'rust': ['rust-analyzer'],
     \ }
 
 let g:LanguageClient_hideVirtualTextsOnInsert = 1

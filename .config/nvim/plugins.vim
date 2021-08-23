@@ -55,7 +55,7 @@ Plug 'cespare/vim-toml'
 
 Plug 'vim-voom/VOoM'
 
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 
 Plug 'junegunn/goyo.vim'
 
@@ -65,15 +65,12 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'arrufat/vala.vim'
+
 " Initialize plugin system
 call plug#end()
 
 " Plugin managed by others {{{1
-
-let snippet_nvim = tempname()
-call system('snippet integration --vim --vim-binding>' . snippet_nvim)
-execute 'source ' . snippet_nvim
-call delete(snippet_nvim)
 
 " Plugin config {{{1
 
@@ -88,6 +85,7 @@ source $PLUGIN_CONFIG/autoformat.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim
 source $PLUGIN_CONFIG/treesitter.vim
+source $PLUGIN_CONFIG/sphinxnotes-snippet.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

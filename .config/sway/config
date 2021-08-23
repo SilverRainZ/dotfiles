@@ -177,6 +177,7 @@ input type:touchpad {
     assign [class="fluent-reader"] $ws_web
     # Workspace (code) edit
     assign [class="oni"] $ws_edit
+    assign [class="gnvim"] $ws_edit
     # Workspace terminal
     assign [app_id="tilix"] $ws_term
     # Workspace IM
@@ -190,13 +191,21 @@ input type:touchpad {
     assign [app_id="evince"] $ws_doc
     # Workspace file manager
     assign [app_id="Thunar"] $ws_fm
-    assign [app_id="syncthing-gtk"] $ws_fm
     # Workspace game
     assign [class="DDNet"] $ws_ent
     assign [class="Steam"] $ws_ent
     assign [class="Kodi"] $ws_ent
     # Workspace game
     assign [class="VirtualBox"] $ws_vm
+#
+    # Imgage viewer
+    for_window [app_id="eog"] floating enable
+    for_window [class="feh"] floating enable
+
+    # Desktop widget
+    for_window [app_id="qv2ray"] floating enable
+    for_window [app_id="iwgtk"] floating enable
+    for_window [app_id="syncthing-gtk"] floating enable
 
 #
 # Layout stuff:

@@ -18,6 +18,3 @@ export LC_CTYPE=en_US.UTF-8
 export XDG_SESSION_TYPE=wayland
 # for firefox
 export MOZ_ENABLE_WAYLAND=1
-
-# start fcitx5
-fcitx5 &

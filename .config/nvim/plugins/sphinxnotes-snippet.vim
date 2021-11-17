@@ -1,5 +1,5 @@
 let snippet_nvim = tempname()
-call system('snippet integration --vim --vim-binding>' . snippet_nvim)
+call system('snippet integration --vim --nvim-binding>' . snippet_nvim)
 execute 'source ' . snippet_nvim
 call delete(snippet_nvim)
 

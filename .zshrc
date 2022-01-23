@@ -156,4 +156,8 @@ function la_snippet_url_wrapper() {
 zle -N la_snippet_url_wrapper
 bindkey '^ku' la_snippet_url_wrapper
 
+# autojump
+# pacman -S archlinuxcn/autojump
+source /etc/profile.d/autojump.sh
+
 # vim: se fdm=marker:

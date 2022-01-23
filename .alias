@@ -15,7 +15,7 @@ alias o='xdg-open'
 
 # freqently used path
 alias n='cd ~/documents/bullet'
-alias i='cd ~/documents/endoscope'
+alias u='cd ~/documents/tellub'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

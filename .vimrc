@@ -104,7 +104,7 @@ imap <F2> <ESC>:call RelativeNumber()<CR>
 
 " Smart make
 map <F9> :!sm<CR>
-imap <F2> <ESC>:!sm<CR>
+imap <F9> <ESC>:!sm<CR>
 
 map <silent> <F11> :call ToggleFullscreen()<CR>
 

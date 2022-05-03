@@ -31,10 +31,11 @@ Plug 'ncm2/ncm2-bufword'
 " Plug 'ncm2/ncm2-go'
 " Plug 'ncm2/ncm2-jedi'
 
-Plug 'autozimu/LanguageClient-neovim', {
-            \ 'branch': 'next',
-            \ 'do': 'bash install.sh',
-            \ }
+" Use nvim-lspconfig instead.
+" Plug 'autozimu/LanguageClient-neovim', {
+"             \ 'branch': 'next',
+"             \ 'do': 'bash install.sh',
+"             \ }
 
 " Multi-entry selection UI.
 Plug 'junegunn/fzf.vim'
@@ -80,7 +81,7 @@ source $PLUGIN_CONFIG/airline.vim
 source $PLUGIN_CONFIG/doxygentoolkit.vim
 source $PLUGIN_CONFIG/nerdtree.vim
 source $PLUGIN_CONFIG/ncm2.vim
-source $PLUGIN_CONFIG/languageclient.vim
+" $PLUGIN_CONFIG/languageclient.vim
 source $PLUGIN_CONFIG/autoformat.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim

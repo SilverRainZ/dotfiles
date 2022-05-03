@@ -8,5 +8,7 @@ set nocompatible
 source $HOME/.vimrc
 source $XDG_CONFIG_HOME/nvim/plugins.vim
 
+lua require('plugins')
+
 " vim modeline {{{1
 " vim: set fdm=marker:

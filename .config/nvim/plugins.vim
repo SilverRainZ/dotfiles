@@ -38,9 +38,14 @@ Plug 'ncm2/ncm2-bufword'
 "             \ }
 
 " Multi-entry selection UI.
+if has('mac')
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+endif
 Plug 'junegunn/fzf.vim'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Ah-doc for Go 1.18
+" let g:go_fmt_command = 'gofmt'
 
 " Change and enhance features of * (highlight and search)
 " ref: https://stackoverflow.com/a/13682379
@@ -67,6 +72,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'arrufat/vala.vim'
+
+if has('mac')
+    Plug 'CodeFalling/fcitx-vim-osx'
+endif
 
 " Initialize plugin system
 call plug#end()

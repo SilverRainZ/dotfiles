@@ -6,6 +6,6 @@ call delete(snippet_nvim)
 function! g:SphinxNotesSnippetUrl(id)
     let url_list = systemlist(join(['snippet', 'get', '--url', a:id], ' '))
     for url in url_list
-        echo system('firefox ' . shellescape(url))
+        echo system('url ' . shellescape(url))
     endfor
 endfunction

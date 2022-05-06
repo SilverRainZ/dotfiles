@@ -1,0 +1,11 @@
+#!/bin/sh
+
+URL=$1
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    FF="firefox"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    FF="/Applications/Firefox.app/Contents/MacOS/firefox"
+fi
+
+$FF --new-tab $URL

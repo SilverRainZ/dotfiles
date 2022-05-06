@@ -3,6 +3,8 @@
 URL=$1
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # TODO: Detect sway
+    sleep 0.2 && swaymsg workspace "1.web: 🌏" 1>/dev/null &
     FF="firefox"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     FF="/Applications/Firefox.app/Contents/MacOS/firefox"

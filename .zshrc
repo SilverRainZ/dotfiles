@@ -154,10 +154,6 @@ function la_snippet_url() {
     selection=$(snippet_list ds)
     [ -z "$selection" ] && return
 
-    # TODO: Detect sway
-    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        sleep 0.2 && swaymsg workspace "1.web: 🌏" 1>/dev/null &
-    fi
     echo "url \$($SNIPPET get --url $selection)"
 }
 function la_snippet_url_wrapper() {

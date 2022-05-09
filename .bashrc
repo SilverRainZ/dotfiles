@@ -15,30 +15,32 @@ esac
 
 source $HOME/.alias
 
-# vim-cn
-upimg(){
-    curl -F "name=@$1" https://img.vim-cn.com
-}
-
-# Init pyenv if it is installed
-# if command -v pyenv 1>/dev/null 2>&1; then
-#     eval "$(pyenv init -)"
-#     # Init pyenv-virtualenv if it is installed
-#     if command -v pyenv-virtualenv 1>/dev/null 2>&1; then
-#         eval "$(pyenv virtualenv-init -)"
-#     fi
-# fi
-
-# Fix tilix VTE configuration Issue
-# Ref: https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
+# tilix
 if [[ $TILIX_ID ]]; then
+    # Fix tilix VTE configuration Issue
+    # Ref: https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
     source /etc/profile.d/vte.sh
 fi
 
-# Source for TTY
+# TTY
 if [ "$TERM" = "linux" ]; then
     source .tty
 fi
 
+# iterm2
+if [[ "$ITERM_SESSION_ID" ]]; then
+    source "${HOME}/.iterm2_shell_integration.zsh"
+fi
+
 # sphinxnotes-snippet
 eval "$(snippet integration --sh --sh-binding)"
+
+# autojump
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # pacman -S archlinuxcn/autojump
+    source /etc/profile.d/autojump.sh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    source /usr/local/etc/profile.d/autojump.sh
+fi
+
+# vim: se fdm=marker:

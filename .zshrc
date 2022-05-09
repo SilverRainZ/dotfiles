@@ -128,36 +128,38 @@ bindkey '^[n' down-line-or-search
 # Plugins {{{1
 
 ## zsh-syntax-highlighting
-[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] \
-    && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 ## fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    source ~/.fzf.zsh
+fi
 
 ## zsh-autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 bindkey '^j' autosuggest-accept
 
 ## sphinxnotes-snippet
 eval "$(snippet integration --zsh-binding)"
-
 ### Override snippet_z_url
 function la_snippet_url() {
     selection=$(snippet_list ds)
     [ -z "$selection" ] && return
 
-    echo "$BROWSER \$($SNIPPET get --url $selection)"
-    sleep 0.2 && swaymsg workspace "1.web: 🌏" 1>/dev/null &
+    echo "url \$($SNIPPET get --url $selection)"
 }
 function la_snippet_url_wrapper() {
     snippet_z_bind_wrapper la_snippet_url
 }
 zle -N la_snippet_url_wrapper
 bindkey '^ku' la_snippet_url_wrapper
-
-# autojump
-# pacman -S archlinuxcn/autojump
-source /etc/profile.d/autojump.sh
 
 # vim: se fdm=marker:

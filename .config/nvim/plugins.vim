@@ -43,9 +43,7 @@ if has('mac')
 endif
 Plug 'junegunn/fzf.vim'
 
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Ah-doc for Go 1.18
-" let g:go_fmt_command = 'gofmt'
+Plug 'fatih/vim-go'
 
 " Change and enhance features of * (highlight and search)
 " ref: https://stackoverflow.com/a/13682379
@@ -96,6 +94,7 @@ source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim
 source $PLUGIN_CONFIG/treesitter.vim
 source $PLUGIN_CONFIG/sphinxnotes-snippet.vim
+source $PLUGIN_CONFIG/go.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

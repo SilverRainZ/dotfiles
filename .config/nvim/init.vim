@@ -1,5 +1,5 @@
 if empty($XDG_CONFIG_HOME)
-    let $XDG_CONFIG_HOME='$HOME/.config'
+    let $XDG_CONFIG_HOME =expand('~/.config')
 endif
 
 " Say goodbye to vi

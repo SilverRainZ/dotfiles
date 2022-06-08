@@ -63,9 +63,6 @@ Plug 'vim-voom/VOoM'
 
 Plug 'junegunn/goyo.vim'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -92,7 +89,6 @@ source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/autoformat.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim
-source $PLUGIN_CONFIG/treesitter.vim
 source $PLUGIN_CONFIG/sphinxnotes-snippet.vim
 source $PLUGIN_CONFIG/go.vim
 

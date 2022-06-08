@@ -11,9 +11,12 @@ packer = require('packer').startup(function()
 
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Syntax highlight
 end)
 
-require 'nvim-lspconfig'
-require 'nvim-cmp'
+require 'lspconfig-cfg'
+require 'cmp-cfg'
+require 'treesitter-cfg'
 
 return packer

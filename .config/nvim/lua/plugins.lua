@@ -13,10 +13,13 @@ packer = require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Syntax highlight
+
+  use 'rmagatti/goto-preview' -- Preview LSP in floating windows
 end)
 
 require 'lspconfig-cfg'
 require 'cmp-cfg'
 require 'treesitter-cfg'
+require 'goto-preview-cfg'
 
 return packer

@@ -135,7 +135,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 ## fzf
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source /usr/share/fzf/key-bindings.zsh
+    source /usr/share/fzf/completion.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.fzf.zsh
 fi
 

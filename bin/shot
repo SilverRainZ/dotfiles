@@ -1,6 +1,8 @@
 #!/bin/sh
 
-FMT="%F_%T.png"
+# Format `%H%M%S` is `%T`(`%H:%M:%S`) without colons(`:`).
+# Colon is not friendly to some OS (Windows, Android, macOS), don't get in trouble.
+FMT="%F_%H%M%S.png"
 OUTPUT=~/pictures/screenshots
 
 FILEPATH=${OUTPUT}/$(date +${FMT})

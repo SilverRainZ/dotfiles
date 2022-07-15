@@ -68,11 +68,18 @@ set foldmethod=syntax
 set nofoldenable        " 启动 vim 时关闭折叠代码
 set foldcolumn=0        " 设置折叠区域的宽度
 set foldlevel=100
+" 切换折叠状态
+nnoremap zz @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 以下类型输入左花括号自动补全
 au FileType c,cpp,h,java,css,rust,go inoremap <buffer> {<CR> {<CR>}<Esc>O
 
 " Key binds {{{1
+
+" Set leader key to space
+" https://stackoverflow.com/a/446293
+let mapleader=" "
+nnoremap <SPACE> <Nop>
 
 map j gj
 map k gk

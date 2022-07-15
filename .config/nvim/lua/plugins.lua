@@ -15,11 +15,23 @@ packer = require('packer').startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Syntax highlight
 
   use 'rmagatti/goto-preview' -- Preview LSP in floating windows
+
+  use {
+      'nvim-telescope/telescope.nvim',  -- Fuzzy finder
+      requires = {
+          'nvim-lua/plenary.nvim',
+          'ahmedkhalf/project.nvim',
+      }
+  }
+
+  -- use 'ahmedkhalf/project.nvim'
 end)
 
 require 'lspconfig-cfg'
 require 'cmp-cfg'
 require 'treesitter-cfg'
+-- require 'project-cfg'
+require 'telescope-cfg'
 require 'goto-preview-cfg'
 
 return packer

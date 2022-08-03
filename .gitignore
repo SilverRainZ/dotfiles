@@ -19,3 +19,4 @@ known_hosts
 .xmonad/xmonad.state
 
 .directory
+_build

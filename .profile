@@ -18,7 +18,7 @@ export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 export CHROOT=$HOME/chroot
 
 # Path {{{1
-export PATH=$PATH:$HOME/bin
+export PATH=$HOME/bin:$PATH
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.local/bin

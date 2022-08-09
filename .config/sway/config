@@ -315,6 +315,7 @@ bar {
     exec_always {
         gsettings set $gnome-schema cursor-theme $cursor_theme
     }
+    default_border none
 
 #
 # Autostart:

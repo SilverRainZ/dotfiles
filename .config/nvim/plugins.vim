@@ -17,7 +17,11 @@ call plug#begin($PLUGIN_CACHE)
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Themes
 Plug 'shaunsingh/nord.nvim'
+Plug 'ishan9299/nvim-solarized-lua'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Completion manager
 Plug 'ncm2/ncm2'
@@ -62,9 +66,6 @@ Plug 'vim-voom/VOoM'
 " Plug 'airblade/vim-rooter'
 
 Plug 'junegunn/goyo.vim'
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 Plug 'arrufat/vala.vim'
 

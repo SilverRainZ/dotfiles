@@ -35,6 +35,6 @@ require('telescope').load_extension('projects')
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '<leader>fp', '<cmd>Telescope projects<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_project_files<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope git_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)

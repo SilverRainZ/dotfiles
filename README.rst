@@ -27,7 +27,7 @@ IRC client              `Srain`_
 .. _Tilix: https://gnunn1.github.io/tilix-web/
 .. _tmux: https://github.com/tmux/tmux
 .. _Neovim: https://neovim.io/
-.. _Srain: https://srain.im/
+.. _Srain: https://srain.silverrainz.me/
 
 How to?
 =======

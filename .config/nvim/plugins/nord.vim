@@ -1,4 +1,4 @@
-set background=light
+set background=dark
 set termguicolors
 
 if exists('g:gnvim')

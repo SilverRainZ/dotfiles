@@ -1,4 +1,4 @@
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 let NERDTreeShowBookmarks=1
 
@@ -9,7 +9,7 @@ function! StartUp()
     end
 endfunction
 
-autocmd VimEnter * call StartUp()
+" autocmd VimEnter * call StartUp()
 
 " Close tab if the only window left open is a NERDTree?
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

@@ -3,12 +3,6 @@
 let $PLUGIN_CACHE='$HOME/.local/share/nvim/plugged'
 let $PLUGIN_CONFIG='$XDG_CONFIG_HOME/nvim/plugins'
 
-" Plugin managed by pacman {{{1
-
-" pacman -S vim-a
-
-" pacman -S vim-doxygentoolkit
-
 " Plugin managed by vim-plug {{{1
 " Run `:PlugInstall` to install plugins
 
@@ -63,8 +57,6 @@ Plug 'cespare/vim-toml'
 
 Plug 'vim-voom/VOoM'
 
-" Plug 'airblade/vim-rooter'
-
 Plug 'junegunn/goyo.vim'
 
 Plug 'arrufat/vala.vim'
@@ -80,13 +72,11 @@ call plug#end()
 
 " Plugin config {{{1
 
-" source $PLUGIN_CONFIG/solarized.vim
 source $PLUGIN_CONFIG/nord.vim
 source $PLUGIN_CONFIG/airline.vim
 source $PLUGIN_CONFIG/doxygentoolkit.vim
 source $PLUGIN_CONFIG/nerdtree.vim
 source $PLUGIN_CONFIG/ncm2.vim
-" $PLUGIN_CONFIG/languageclient.vim
 source $PLUGIN_CONFIG/autoformat.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim

@@ -20,17 +20,14 @@ packer = require('packer').startup(function()
       'nvim-telescope/telescope.nvim',  -- Fuzzy finder
       requires = {
           'nvim-lua/plenary.nvim',
-          'ahmedkhalf/project.nvim',
+          'nvim-telescope/telescope-file-browser.nvim',
       }
   }
-
-  -- use 'ahmedkhalf/project.nvim'
 end)
 
 require 'lspconfig-cfg'
 require 'cmp-cfg'
 require 'treesitter-cfg'
--- require 'project-cfg'
 require 'telescope-cfg'
 require 'goto-preview-cfg'
 

@@ -4,12 +4,11 @@ export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 
 # commonly used
 alias _='sudo'
+alias m='make'
 alias _p='proxychains'
 alias l='ls'
-alias m='make'
 alias v='nvim'
 alias py='python3'
-alias p='pacman'
 alias t='tmux'
 alias o='xdg-open'
 

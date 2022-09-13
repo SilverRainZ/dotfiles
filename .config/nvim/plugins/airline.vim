@@ -1,10 +1,7 @@
-if exists("g:gui_oni")
-    let g:loaded_airline=1
-    set laststatus=0
-endif
-
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
+" Works with bufferline.nvim
+" https://github.com/akinsho/bufferline.nvim#faq
+let g:airline#extensions#tabline#enabled=0
 " https://github.com/vim-airline/vim-airline/issues/1043
 let g:airline#extensions#tabline#show_splits=0
 let g:airline#extensions#tabline#show_buffers=0

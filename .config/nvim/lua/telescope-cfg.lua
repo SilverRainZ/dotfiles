@@ -38,8 +38,6 @@ require('telescope').setup{
       theme = theme,
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
-      -- The default dir_icon   can not be displayed
-      dir_icon = '',
       mappings = {
         ["i"] = {
             -- your custom insert mode mappings

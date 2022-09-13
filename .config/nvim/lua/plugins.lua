@@ -23,6 +23,13 @@ packer = require('packer').startup(function()
           'nvim-telescope/telescope-file-browser.nvim',
       }
   }
+
+  use {
+      'akinsho/bufferline.nvim',
+      tag = "v2.*",
+      requires = 'kyazdani42/nvim-web-devicons'
+  }
+
 end)
 
 require 'lspconfig-cfg'
@@ -30,5 +37,6 @@ require 'cmp-cfg'
 require 'treesitter-cfg'
 require 'telescope-cfg'
 require 'goto-preview-cfg'
+require 'bufferline-cfg'
 
 return packer

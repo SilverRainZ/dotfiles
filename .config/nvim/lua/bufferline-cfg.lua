@@ -7,5 +7,7 @@ require("bufferline").setup{
     options = {
         -- https://github.com/akinsho/bufferline.nvim/issues/386
         -- separator_style = "slant",
+
+        mode = 'tabs',
     }
 }

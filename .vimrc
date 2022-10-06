@@ -54,6 +54,8 @@ set tabstop=4           " 编辑时制表符占用空格数
 set shiftwidth=4        " 格式化时 Tab 占用 四个空格
 set softtabstop=4       " 连续四个空格视为 Tab
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " 距离边缘 n 行时滚屏
 set scrolloff=5
 

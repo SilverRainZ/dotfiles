@@ -1,5 +1,8 @@
 export LA_PROFILE_LOADED=$(($LA_PROFILE_LOADED+1))
 
+# https://github.com/python-poetry/poetry/issues/1917#issuecomment-1235998997
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+
 export VISUAL=vim
 export EDITOR=$VISUAL
 

@@ -8,10 +8,11 @@ OUTPUT=~/pictures/screenshots
 FILEPATH=${OUTPUT}/$(date +${FMT})
 
 echo ${FILEPATH}
-echo ${FILEPATH} | wl-copy
 
 if [ "$1" == "-s" ]; then
     grim -g "$(slurp)" -t png ${FILEPATH}
 else
     grim -t png ${FILEPATH}
 fi
+
+wl-copy --type image/png < ${FILEPATH}

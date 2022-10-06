@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export QT_QPA_PLATFORM=xcb
+exec /usr/bin/synology-drive

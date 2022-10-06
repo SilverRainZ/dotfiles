@@ -32,7 +32,16 @@ set $lock swaylock --daemonize --color 000000ff
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $wallpaper fill
-output * scale 2.0
+# output * scale 2.5
+
+# Multiple monitors
+#
+# Use: swaymsg -t get_outputs
+set $out_master DP-3
+set $out_slave eDP-1
+output $out_master scale 1.5 pos 0 0
+output $out_slave scale 2.5 pos 0 2160
+
 #
 # Example configuration:
 #
@@ -208,6 +217,7 @@ input type:touchpad {
     for_window [app_id="syncthing-gtk"] floating enable
     for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="blueman-manager"] floating enable
+    for_window [app_id="clash-verge"] floating enable
 
 #
 # Layout stuff:
@@ -323,6 +333,11 @@ bar {
 exec fcitx5
 exec syncthing-gtk
 exec blueman-applet
-exec qv2ray
+exec clash-verge
 
 include /etc/sway/config.d/*
+
+#
+# Others:
+#
+# focus_on_window_activation smart

@@ -32,15 +32,18 @@ set $lock swaylock --daemonize --color 000000ff
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $wallpaper fill
-# output * scale 2.5
 
 # Multiple monitors
 #
 # Use: swaymsg -t get_outputs
-set $out_master DP-3
-set $out_slave eDP-1
-output $out_master scale 1.5 pos 0 0
-output $out_slave scale 2.5 pos 0 2160
+set $out_external 'BenQ Corporation BenQ EW3270U 58K06820019'
+set $out_internal eDP-1
+output $out_external scale 1.5 pos 0 0
+output $out_internal scale 2.5 pos 0 1440
+
+# https://github.com/swaywm/sway/wiki#clamshell-mode
+bindswitch --reload --locked lid:on output $out_internal disable
+bindswitch --reload --locked lid:off output $out_internal enable
 
 #
 # Example configuration:

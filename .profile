@@ -1,7 +1,9 @@
 export LA_PROFILE_LOADED=$(($LA_PROFILE_LOADED+1))
 
-# https://github.com/python-poetry/poetry/issues/1917#issuecomment-1235998997
-export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+# Use Engish for TUI.
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US
+export LC_CTYPE=en_US.UTF-8
 
 export VISUAL=vim
 export EDITOR=$VISUAL
@@ -43,6 +45,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH=$HOME/git/go/bin:$PATH
 fi
 
+# Some patches.
+#
+# https://github.com/python-poetry/poetry/issues/1917#issuecomment-1235998997
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # rustup
 source $HOME/.cargo/env

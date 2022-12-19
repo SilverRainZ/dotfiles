@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export PYTHONPATH=/home/la/git/litconf:$PYTHONPATH
+exec python -m sphinxnotes.litconf

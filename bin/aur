@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+if [[ -z $2 ]]; then
+    cat <<EOF
+    Usage: aur <ACTION> <PACKAGE>
+EOF
+fi
+
+git clone ssh://aur@aur.archlinux.org/$1.git

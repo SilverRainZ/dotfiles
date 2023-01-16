@@ -1,5 +1,3 @@
-local theme = 'ivy'
-
 require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
@@ -24,8 +22,14 @@ require('telescope').setup{
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
     --
-    find_files = { theme = theme },
-    git_files = { theme = theme },
+    find_files = { theme = "ivy" },
+    git_files = { theme = "ivy" },
+
+    diagnostics = { theme = "dropdown" },
+    lsp_definitions = { theme = "cursor" },
+    lsp_implementations = { theme = "cursor" },
+    lsp_references = { theme = "cursor" },
+    lsp_type_definitions = { theme = "cursor" },
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -35,7 +39,7 @@ require('telescope').setup{
     -- please take a look at the readme of the extension you want to configure
     --
     file_browser = {
-      theme = theme,
+      theme = 'ivy',
       -- disables netrw and use telescope-file-browser in its place
       hijack_netrw = true,
       mappings = {

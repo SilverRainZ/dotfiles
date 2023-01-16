@@ -5,7 +5,10 @@
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 -- 'e': means error.
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>e',
+-- '<cmd>lua vim.diagnostic.open_float()<CR>',
+'<cmd>Telescope diagnostics<CR>',
+opts)
 vim.api.nvim_set_keymap('n', '<leader>ne', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>Ne', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 -- 'q': Open quickfix windows.
@@ -22,12 +25,22 @@ local on_attach = function(client, bufnr)
   --
   -- Many servers do not implement this method.
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd',
+  -- '<cmd>lua vim.lsp.buf.definition()<CR>',
+  '<cmd>Telescope lsp_definitions<CR>',
+  opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gi',
+  -- '<cmd>lua vim.lsp.buf.implementation()<CR>',
+  '<cmd>Telescope lsp_implementations<CR>',
+  opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gr',
+  -- '<cmd>lua vim.lsp.buf.references()<CR>',
+  '<cmd>Telescope lsp_references<CR>',
+  opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>gt',
+  -- '<cmd>lua vim.lsp.buf.type_definition()<CR>',
+  '<cmd>Telescope lsp_type_definitions<CR>',
+  opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   -- Conflicts with sphinxnotes-snippet.
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
@@ -49,7 +62,7 @@ for _, lsp in pairs(servers) do
 end
 
 
-require'glow-hover'.setup {
+require 'glow-hover'.setup {
  -- The followings are the default values
  max_width = 50,
  padding = 10,

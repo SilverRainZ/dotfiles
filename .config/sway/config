@@ -35,30 +35,13 @@ output * bg $wallpaper fill
 
 # Multiple monitors
 #
-# Use: swaymsg -t get_outputs
-
-# For la's BenQ.
-set $out_external 'BenQ Corporation BenQ EW3270U 58K06820019'
-set $out_internal eDP-1
-output $out_external scale 1.5 pos 0 0
-output $out_internal scale 2.5 pos 0 1440
-
-# For bt's Dell, 3860/1.5 = 2560
-# set $out_external 'Dell Inc. DELL U2720Q FZXCY13'
-# set $out_internal eDP-1
-# output $out_external scale 1.5 pos 0 0
-# output $out_internal scale 2.5 pos 2560 0
-
-# https://github.com/swaywm/sway/wiki#clamshell-mode
-bindswitch --reload --locked lid:on output $out_internal disable
-bindswitch --reload --locked lid:off output $out_internal enable
-
-#
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+exec_always /home/la/.config/sway/multi-monitors.sh
 
 ### Idle configuration
 #

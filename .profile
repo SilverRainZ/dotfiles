@@ -55,6 +55,6 @@ source $HOME/.cargo/env
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
-    source ~/.config/sway/pre-startup
+    source ~/.config/sway/init.sh
     exec sway
 fi

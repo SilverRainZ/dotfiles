@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export LA_SWAY_PRE_STARTUP_LOADED=$(($LA_SWAY_PRE_STARTUP_LOADED+1))
+export LA_SWAY_INIT_LOADED=$(($LA_SWAY_INIT_LOADED+1))
 
 # Language
 #

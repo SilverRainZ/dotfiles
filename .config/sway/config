@@ -340,7 +340,7 @@ bar {
 exec fcitx5
 exec syncthing-gtk
 exec blueman-applet
-exec clash-verge
+exec qv2ray
 
 include /etc/sway/config.d/*
 

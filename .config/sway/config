@@ -303,11 +303,7 @@ bar {
 #
 # Media Keys:
 #
-    exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob \
-        --background-color '#33000000' \
-        --border-color '#aaffffff' \
-        --bar-color '#aaffffff' \
-        --timeout 500
+    exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
     # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     # bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%

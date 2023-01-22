@@ -8,9 +8,6 @@ let $PLUGIN_CONFIG='$XDG_CONFIG_HOME/nvim/plugins'
 
 call plug#begin($PLUGIN_CACHE)
 
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
 " Themes
 Plug 'shaunsingh/nord.nvim'
 Plug 'ishan9299/nvim-solarized-lua'
@@ -29,12 +26,6 @@ Plug 'ncm2/ncm2-bufword'
 " Plug 'ncm2/ncm2-go'
 " Plug 'ncm2/ncm2-jedi'
 
-" Use nvim-lspconfig instead.
-" Plug 'autozimu/LanguageClient-neovim', {
-"             \ 'branch': 'next',
-"             \ 'do': 'bash install.sh',
-"             \ }
-
 " Multi-entry selection UI.
 if has('mac')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -48,12 +39,6 @@ Plug 'fatih/vim-go'
 Plug 'vim-scripts/star-search'
 
 Plug 'Vimjas/vim-python-pep8-indent'
-
-Plug 'Chiel92/vim-autoformat'
-
-Plug 'stsewd/sphinx.nvim', { 'do': ':UpdateRemotePlugins' }
-
-Plug 'cespare/vim-toml'
 
 Plug 'vim-voom/VOoM'
 
@@ -74,10 +59,7 @@ call plug#end()
 
 source $PLUGIN_CONFIG/nord.vim
 source $PLUGIN_CONFIG/airline.vim
-source $PLUGIN_CONFIG/doxygentoolkit.vim
-source $PLUGIN_CONFIG/nerdtree.vim
 source $PLUGIN_CONFIG/ncm2.vim
-source $PLUGIN_CONFIG/autoformat.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim
 source $PLUGIN_CONFIG/sphinxnotes-snippet.vim

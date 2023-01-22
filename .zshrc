@@ -76,9 +76,6 @@ unset _cache_dir
 ## 方向键选中候选项
 zstyle ':completion:*' menu select
 
-zstyle ':completion::complete:feh:*' file-patterns '*.{gif,png,jpeg,jpg,svg}:images:images *(-/):directories:directories'
-
-
 # 目录 {{{1
 setopt auto_cd      # if not a command, try to cd to it.
 
@@ -100,8 +97,17 @@ setopt pushdignoredups
 ## This reverts the +/- operators.
 setopt pushdminus
 
+# For tmux plugin, tmux-window-name
+# https://github.com/ofirgall/tmux-window-name#zshrc
+tmux-window-name() {
+	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+}
+if [[ "$TMUX" ]]; then
+    add-zsh-hook chpwd tmux-window-name
+fi
 
 # Key bilding {{{1
+# Use `bindkey -l` list existing keymap names.
 bindkey -e
 
 ## Functional key
@@ -127,6 +133,13 @@ bindkey '^[n' down-line-or-search
 
 # Plugins {{{1
 
+## fzf-tab
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # pass
+fi
+
 ## zsh-syntax-highlighting
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -142,13 +155,20 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.fzf.zsh
 fi
 
+# Nord theme, https://github.com/ianchesal/nord-fzf
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
+    --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
+    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
+
 ## zsh-autosuggestions
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-bindkey '^j' autosuggest-accept
+bindkey '^n' autosuggest-accept
 
 ## sphinxnotes-snippet
 eval "$(snippet integration --zsh-binding)"

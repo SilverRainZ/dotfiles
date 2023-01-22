@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# format: SESSION: n windows (CREATED_TIME)
+tmux attach -t $(tmux list-sessions | fzf | cut -f1 -d:)

@@ -1,7 +1,6 @@
-# [[ -f /usr/share/oh-my-zsh/oh-my-zsh.sh ]] \
-#    && source /usr/share/oh-my-zsh/oh-my-zsh.sh
-
 export LA_ZSHRC_LOADED=$(($LA_ZSHRC_LOADED+1))
+
+# TODO: Clean up this.
 
 source $HOME/.bashrc
 
@@ -107,8 +106,11 @@ if [[ "$TMUX" ]]; then
 fi
 
 # Key bilding {{{1
-# Use `bindkey -l` list existing keymap names.
+# - Use `bindkey` list existing bindings.
+# - Use `bindkey -l` list existing keymap names.
 bindkey -e
+
+bindkey -r "^j"
 
 ## Functional key
 bindkey  "${terminfo[khome]}"   beginning-of-line

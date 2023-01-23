@@ -5,28 +5,31 @@ export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 # commonly used
 alias _='sudo'
 alias m='make'
+alias mj8='make -j8'
 alias _p='proxychains'
-alias l='ls'
-alias v='nvim'
 alias py='python3'
-alias t='tmux'
 alias o='xdg-open'
+alias grep='grep --color=auto'
 
 # freqently used path
 alias n='cd ~/documents/bullet'
 alias u='cd ~/documents/ronin'
 
+# ls.
+alias l='ls --color=auto'
 alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
 alias ll='ls -l'
 alias la='ls -a'
 
+# Neovim.
+alias v='nvim'
 alias vim='nvim'
 alias vin='nvim --noplugin'
-gvim() {
-    nohup oni $@ 1>/dev/null 2>&1 & disown
-}
+
+# Tmux.
+alias t='tmux'
+alias ta='tmux attach'
+alias ts='tmux-select-sessions'
 
 ## systemd alias
 alias sstart='systemctl start'
@@ -43,8 +46,6 @@ alias usstat='systemctl --user status'
 alias ujour='journalctl --user -a -f'
 
 # package manager
-alias pacsyu='pacman -Syu'
-alias pacss='pacman -Ss'
 alias felix='sudo pacman -Syu'
 
 ## git alias
@@ -58,12 +59,10 @@ alias gd='git diff'
 alias gcm='git commit'
 alias gco='git checkout'
 alias gst='git stash'
+alias grs='git restore --staged'
 
 ## cd alias
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
-alias mj8='make -j8'
-alias cr='cargo'

@@ -51,7 +51,7 @@ fi
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # rustup
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then

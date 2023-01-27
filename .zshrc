@@ -190,19 +190,22 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 bindkey '^n' autosuggest-accept
 
-## sphinxnotes-snippet
-eval "$(snippet integration --zsh-binding)"
-### Override snippet_z_url
-function la_snippet_url() {
-    selection=$(snippet_list ds)
-    [ -z "$selection" ] && return
+## sphinxnotes-snippet, optional.
+## https://sphinx.silverrainz.me/snippet/
+if command -v snippet &> /dev/null; then
+    eval "$(snippet integration --zsh-binding)"
+    ### Override snippet_z_url
+    function la_snippet_url() {
+        selection=$(snippet_list ds)
+        [ -z "$selection" ] && return
 
-    echo "url \$($SNIPPET get --url $selection)"
-}
-function la_snippet_url_wrapper() {
-    snippet_z_bind_wrapper la_snippet_url
-}
-zle -N la_snippet_url_wrapper
-bindkey '^ku' la_snippet_url_wrapper
+        echo "url \$($SNIPPET get --url $selection)"
+    }
+    function la_snippet_url_wrapper() {
+        snippet_z_bind_wrapper la_snippet_url
+    }
+    zle -N la_snippet_url_wrapper
+    bindkey '^ku' la_snippet_url_wrapper
+fi
 
 # vim: se fdm=marker:

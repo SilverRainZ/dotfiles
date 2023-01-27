@@ -37,8 +37,9 @@ if [[ "$ITERM_SESSION_ID" ]]; then
     source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
-# sphinxnotes-snippet, only enabled when not sourced by zsh.
-if [[ -z "$ZSH_VERSION" ]]; then
+# sphinxnotes-snippet, optional.
+# https://sphinx.silverrainz.me/snippet/
+if command -v snippet &> /dev/null; then
     eval "$(snippet integration --sh --sh-binding)"
 fi
 

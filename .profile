@@ -41,8 +41,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH=/usr/local/opt/util-linux/sbin:$PATH
     export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
     export PATH=/usr/local/Cellar/gtk4/4.4.1/bin/:$PATH
-    # go 1.18
-    export PATH=$HOME/git/go/bin:$PATH
+    export PATH=$HOME/git/go/bin:$PATH # go built from source
+fi
+
+# Homebrew on Linux
+# https://docs.brew.sh/Homebrew-on-Linux
+if [[ -d /home/linuxbrew ]]; then
+    export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # Some patches.

@@ -46,6 +46,3 @@ export MOZ_ENABLE_WAYLAND=1         # for firefox
 export QT_QPA_PLATFORM=wayland      # qt
 # ref: https://github.com/swaywm/sway/wiki/Running-programs-natively-under-wayland
 export XDG_SESSION_TYPE=wayland     # run natively
-
-# Init tmux seesion and layout.
-exec /home/la/.config/tmux/init.sh

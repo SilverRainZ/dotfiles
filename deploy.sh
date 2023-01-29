@@ -8,7 +8,7 @@ link(){
 }
 
 # Link home
-files=$(ls -A1 | egrep -v 'README.md|deploy.sh|.gitignore|.git$|.config')
+files=$(ls -A1 | egrep -v 'README.rst|deploy.sh|.gitignore|.git$|.config|Makefile|conf.py|index.rst')
 target=~
 for f in $files; do
     link "$f" "$target"

@@ -176,7 +176,7 @@ input type:touchpad {
     # Workspace web
     assign [app_id="firefox"] $ws_web
     assign [class="Nightly"] $ws_web
-    assign [class="Chromium"] $ws_web
+    assign [app_id="chromium"] $ws_web
     assign [class="fluent-reader"] $ws_web
     # Workspace (code) edit
     assign [class="oni"] $ws_edit
@@ -185,6 +185,7 @@ input type:touchpad {
     assign [app_id="tilix"] $ws_term
     # Workspace IM
     assign [app_id="srain"] $ws_im
+    assign [class="Feishu"] $ws_im
     # Workspace document viewer
     assign [class="Wps"] $ws_doc
     assign [class="Wpp"] $ws_doc
@@ -212,6 +213,8 @@ input type:touchpad {
     for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="blueman-manager"] floating enable
     for_window [app_id="clash-verge"] floating enable
+    ## Feishu's preview window.
+    for_window [title="图片"] floating enable
 
 #
 # Layout stuff:

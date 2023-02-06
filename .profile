@@ -42,11 +42,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
     export PATH=/usr/local/Cellar/gtk4/4.4.1/bin/:$PATH
     export PATH=$HOME/git/go/bin:$PATH # go built from source
+    export PATH=/usr/local/Cellar/zig/0.9.1_1/bin:$PATH
 fi
 
-# Homebrew on Linux
-# https://docs.brew.sh/Homebrew-on-Linux
-if [[ -d /home/linuxbrew ]]; then
+
+# Homebrew 
+if [[ -f /usr/local/bin/brew ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+elif [[ -d /home/linuxbrew ]]; then
+    # https://docs.brew.sh/Homebrew-on-Linux
     export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
@@ -58,6 +62,12 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # rustup
 # source $HOME/.cargo/env
+
+# Go from source
+# export PATH=$HOME/git/go/bin:$PATH
+
+# ByteDance private profile
+source $HOME/.btprofile
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then

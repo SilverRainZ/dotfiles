@@ -142,7 +142,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh;;
     esac
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    # pass
+    source ~/.manual/fzf-tab/fzf-tab.plugin.zsh
 fi
 
 ## zsh-syntax-highlighting

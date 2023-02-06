@@ -19,6 +19,6 @@ inoremap <C-c> <ESC>
 " hides the menu. Use this mapping to close the menu.
 inoremap <expr> <CR> (pumvisible() ? "\<C-y>" : "\<CR>")
 
-" Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Use <C-j/k> to select the popup menu:
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"

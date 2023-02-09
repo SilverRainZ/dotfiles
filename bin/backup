@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [[ -z  $1 ]]; then
+    echo "Usage: backup <FILENAME>"
+    exit 1
+fi
+
+if [[ -f $1_ ]]; then
+    echo "File $1_ already exists"
+    exit 1
+fi
+
+cp $1{,_}

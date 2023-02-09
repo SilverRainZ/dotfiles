@@ -96,15 +96,6 @@ setopt pushdignoredups
 ## This reverts the +/- operators.
 setopt pushdminus
 
-# For tmux plugin, tmux-window-name
-# https://github.com/ofirgall/tmux-window-name#zshrc
-tmux-window-name() {
-	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
-}
-if [[ "$TMUX" ]]; then
-    add-zsh-hook chpwd tmux-window-name
-fi
-
 # Key bilding {{{1
 # - Use `bindkey` list existing bindings.
 # - Use `bindkey -l` list existing keymap names.

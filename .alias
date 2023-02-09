@@ -31,21 +31,7 @@ alias t='tmux'
 alias ta='tmux attach'
 alias ts='tmux-select-sessions'
 
-## systemd alias
-alias sstart='systemctl start'
-alias sstop='systemctl stop'
-alias sre='systemctl restart'
-alias sstat='systemctl status'
-alias jour='journalctl -a -f'
-
-## systemd --user alias
-alias usstart='systemctl --user start'
-alias usstop='systemctl --user stop'
-alias usre='systemctl --user restart'
-alias usstat='systemctl --user status'
-alias ujour='journalctl --user -a -f'
-
-# package manager
+# Package manager
 alias felix='sudo pacman -Syu'
 
 ## git alias
@@ -60,6 +46,7 @@ alias gcm='git commit'
 alias gco='git checkout'
 alias gst='git stash'
 alias grs='git restore --staged'
+alias gr='cd $(git rev-parse --show-toplevel)' # cd to git root
 
 ## cd alias
 alias ..='cd ..'

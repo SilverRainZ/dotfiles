@@ -11,8 +11,8 @@ call plug#begin($PLUGIN_CACHE)
 " Themes
 Plug 'shaunsingh/nord.nvim'
 Plug 'ishan9299/nvim-solarized-lua'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline' " FIXME: seems conflicts with xkbswitch
+" Plug 'vim-airline/vim-airline-themes'
 
 " Completion manager
 Plug 'ncm2/ncm2'
@@ -47,7 +47,11 @@ Plug 'junegunn/goyo.vim'
 Plug 'arrufat/vala.vim'
 
 if has('mac')
-    Plug 'CodeFalling/fcitx-vim-osx'
+    " https://zhuanlan.zhihu.com/p/49411224
+    Plug 'lyokha/vim-xkbswitch', {'as': 'xkbswitch'}
+    let g:XkbSwitchEnabled = 1
+    let g:XkbSwitchIMappings = ['cn']
+    let g:XkbSwitchIMappingsTr = {'cn': {'<': '', '>': ''}}
 endif
 
 " Initialize plugin system
@@ -58,7 +62,7 @@ call plug#end()
 " Plugin config {{{1
 
 source $PLUGIN_CONFIG/nord.vim
-source $PLUGIN_CONFIG/airline.vim
+" source $PLUGIN_CONFIG/airline.vim
 source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim

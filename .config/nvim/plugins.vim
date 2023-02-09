@@ -14,18 +14,6 @@ Plug 'ishan9299/nvim-solarized-lua'
 " Plug 'vim-airline/vim-airline' " FIXME: seems conflicts with xkbswitch
 " Plug 'vim-airline/vim-airline-themes'
 
-" Completion manager
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-
-" Completion Sources
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-bufword'
-" Plug 'ncm2/ncm2-pyclang'
-" Plug 'ncm2/ncm2-go'
-" Plug 'ncm2/ncm2-jedi'
-
 " Multi-entry selection UI.
 if has('mac')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -63,7 +51,6 @@ call plug#end()
 
 source $PLUGIN_CONFIG/nord.vim
 " source $PLUGIN_CONFIG/airline.vim
-source $PLUGIN_CONFIG/ncm2.vim
 source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim
 source $PLUGIN_CONFIG/sphinxnotes-snippet.vim

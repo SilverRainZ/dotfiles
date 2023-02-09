@@ -36,12 +36,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
     export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
     export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-    export PATH=$PATH:$HOME/Library/Python/3.9/bin
+    export PATH=$PATH:$HOME/Library/Python/3.10/bin
     export PATH=/usr/local/opt/util-linux/bin:$PATH
     export PATH=/usr/local/opt/util-linux/sbin:$PATH
     export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
     export PATH=/usr/local/Cellar/gtk4/4.4.1/bin/:$PATH
-    export PATH=$HOME/git/go/bin:$PATH # go built from source
     export PATH=/usr/local/Cellar/zig/0.9.1_1/bin:$PATH
 fi
 
@@ -62,9 +61,6 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # rustup
 # source $HOME/.cargo/env
-
-# Go from source
-# export PATH=$HOME/git/go/bin:$PATH
 
 # ByteDance private profile
 source $HOME/.btprofile

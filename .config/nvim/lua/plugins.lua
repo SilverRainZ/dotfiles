@@ -9,8 +9,13 @@ packer = require('packer').startup(function()
   -- Beautify LSPs hover.
   use 'JASONews/glow-hover'
 
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'hrsh7th/nvim-cmp'                -- autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp'            -- LSP source
+  use 'hrsh7th/cmp-buffer'              -- vim buffer words source
+  use 'amarakon/nvim-cmp-buffer-lines'  -- vim buffer lines source
+  use 'hrsh7th/cmp-path'                -- filesystem path source
+  use 'hrsh7th/cmp-cmdline'
+  use 'andersevenrud/cmp-tmux'          -- tmux source
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Syntax highlight
 

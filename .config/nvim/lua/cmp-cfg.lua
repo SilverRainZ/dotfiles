@@ -10,6 +10,7 @@ cmp.setup {
     -- Comfirm/Complete/Abort
     ['<CR>'] = cmp.mapping.confirm { select = true },
     ['<C-y>'] = cmp.mapping.confirm { select = true },
+    ['<Tab>'] = cmp.mapping.confirm { select = true },
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
     ['<C-c>'] = cmp.mapping.abort(),

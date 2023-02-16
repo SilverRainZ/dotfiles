@@ -35,6 +35,11 @@ packer = require('packer').startup(function()
       requires = 'kyazdani42/nvim-web-devicons'
   }
 
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+  }
+
 end)
 
 require 'lspconfig-cfg'
@@ -43,5 +48,6 @@ require 'treesitter-cfg'
 require 'telescope-cfg'
 require 'goto-preview-cfg'
 require 'bufferline-cfg'
+require 'trouble-cfg'
 
 return packer

@@ -1,0 +1,144 @@
+env:
+  TERM: xterm-256color
+
+################################################################################ 
+
+key_bindings:
+  # Copy and paste.
+  - { key: V,         mods: Command|Shift, action: Paste                       }
+
+  # For macOS: swap Ctrl and command
+  - { key: A,         mods: Command,       chars: "\x01"                       }
+  - { key: B,         mods: Command,       chars: "\x02"                       }
+  - { key: C,         mods: Command,       chars: "\x03"                       }
+  - { key: D,         mods: Command,       chars: "\x04"                       }
+  - { key: E,         mods: Command,       chars: "\x05"                       }
+  - { key: F,         mods: Command,       chars: "\x06"                       }
+  - { key: G,         mods: Command,       chars: "\x07"                       }
+  - { key: H,         mods: Command,       chars: "\x08"                       }
+  - { key: I,         mods: Command,       chars: "\x09"                       }
+  - { key: J,         mods: Command,       chars: "\x0A"                       }
+  - { key: K,         mods: Command,       chars: "\x0B"                       }
+  - { key: L,         mods: Command,       chars: "\x0C"                       }
+  - { key: M,         mods: Command,       chars: "\x0D"                       }
+  - { key: N,         mods: Command,       chars: "\x0E"                       }
+  - { key: O,         mods: Command,       chars: "\x0F"                       }
+  - { key: P,         mods: Command,       chars: "\x10"                       }
+  - { key: Q,         mods: Command,       chars: "\x11"                       }
+  - { key: R,         mods: Command,       chars: "\x12"                       }
+  - { key: S,         mods: Command,       chars: "\x13"                       }
+  - { key: T,         mods: Command,       chars: "\x14"                       }
+  - { key: U,         mods: Command,       chars: "\x15"                       }
+  - { key: V,         mods: Command,       chars: "\x16"                       }
+  - { key: W,         mods: Command,       chars: "\x17"                       }
+  - { key: X,         mods: Command,       chars: "\x18"                       }
+  - { key: Y,         mods: Command,       chars: "\x19"                       }
+  - { key: Z,         mods: Command,       chars: "\x1A"                       }
+
+  # Unbind add ctrl keys.
+  - { key: A,         mods: Control,       action: None                        }
+  - { key: B,         mods: Control,       action: None                        }
+  - { key: C,         mods: Control,       action: None                        }
+  - { key: D,         mods: Control,       action: None                        }
+  - { key: E,         mods: Control,       action: None                        }
+  - { key: F,         mods: Control,       action: None                        }
+  - { key: G,         mods: Control,       action: None                        }
+  - { key: H,         mods: Control,       action: None                        }
+  - { key: I,         mods: Control,       action: None                        }
+  - { key: J,         mods: Control,       action: None                        }
+  - { key: K,         mods: Control,       action: None                        }
+  - { key: L,         mods: Control,       action: None                        }
+  - { key: M,         mods: Control,       action: None                        }
+  - { key: N,         mods: Control,       action: None                        }
+  - { key: O,         mods: Control,       action: None                        }
+  - { key: P,         mods: Control,       action: None                        }
+  - { key: Q,         mods: Control,       action: None                        }
+  - { key: R,         mods: Control,       action: None                        }
+  - { key: S,         mods: Control,       action: None                        }
+  - { key: T,         mods: Control,       action: None                        }
+  - { key: U,         mods: Control,       action: None                        }
+  - { key: V,         mods: Control,       action: None                        }
+  - { key: W,         mods: Control,       action: None                        }
+  - { key: X,         mods: Control,       action: None                        }
+  - { key: Y,         mods: Control,       action: None                        }
+  - { key: Z,         mods: Control,       action: None                        }
+
+################################################################################ 
+# Font
+
+font:
+  normal:
+    family: Iosevka
+    style: Regular
+  bold:
+    style: Bold
+  italic:
+    style: Italic
+  bold_italic:
+    style: Bold Italic
+  size: 18.0
+
+################################################################################ 
+# nord-alacritty
+# https://github.com/arcticicestudio/nord-alacritty/blob/main/src/nord.yml
+
+
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+
+colors:
+  primary:
+    background: '#2e3440'
+    foreground: '#d8dee9'
+    dim_foreground: '#a5abb6'
+  cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  vi_mode_cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  selection:
+    text: CellForeground
+    background: '#4c566a'
+  search:
+    matches:
+      foreground: CellBackground
+      background: '#88c0d0'
+    footer_bar:
+      background: '#434c5e'
+      foreground: '#d8dee9'
+  normal:
+    black: '#3b4252'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#88c0d0'
+    white: '#e5e9f0'
+  bright:
+    black: '#4c566a'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#8fbcbb'
+    white: '#eceff4'
+  dim:
+    black: '#373e4d'
+    red: '#94545d'
+    green: '#809575'
+    yellow: '#b29e75'
+    blue: '#68809a'
+    magenta: '#8c738c'
+    cyan: '#6d96a5'
+    white: '#aeb3bb'
+

@@ -10,13 +10,13 @@ I use...
 ======================= ========================================================
 Distribution            `Arch Linux`_ (for live) and macOS_ (for work)
 Desktop environment     *N/A*
-Window manager          `Sway`_
-Web browser             `Firefox`_
-Shell                   `Zsh`_
-Terminal                `Tilix`_
-Terminal multiplexer    `tmux`_
-Editor                  `Neovim`_ (TODO: Find a Neovim GUI frontend)
-IRC client              `Srain`_
+Window manager          Sway_
+Web browser             Firefox_
+Shell                   Zsh_
+Terminal                Tilix_ and Alacritty_
+Terminal multiplexer    tmux_
+Editor                  Neovim_
+IRC client              Srain_
 ======================= ========================================================
 
 .. _Arch Linux: https://archlinux.org/
@@ -28,6 +28,7 @@ IRC client              `Srain`_
 .. _tmux: https://github.com/tmux/tmux
 .. _Neovim: https://neovim.io/
 .. _Srain: https://srain.silverrainz.me/
+.. _Alacritty: https://alacritty.org/
 
 How to?
 =======

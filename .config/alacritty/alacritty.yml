@@ -1,6 +1,12 @@
 env:
   TERM: xterm-256color
 
+window:
+  # Require alacritty 0.12.0
+  option_as_alt: Both
+
+  startup_mode: SimpleFullscreen
+
 ################################################################################ 
 
 key_bindings:
@@ -15,6 +21,8 @@ key_bindings:
   - { key: E,         mods: Command,       chars: "\x05"                       }
   - { key: F,         mods: Command,       chars: "\x06"                       }
   - { key: G,         mods: Command,       chars: "\x07"                       }
+    # On macOS, Command+H used to hide a window of font app.
+    # Disable it by: https://github.com/alacritty/alacritty/issues/5346#issuecomment-1055695103
   - { key: H,         mods: Command,       chars: "\x08"                       }
   - { key: I,         mods: Command,       chars: "\x09"                       }
   - { key: J,         mods: Command,       chars: "\x0A"                       }

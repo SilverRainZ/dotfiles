@@ -30,6 +30,7 @@ alias vin='nvim --noplugin'
 alias t='tmux'
 alias ta='tmux attach'
 alias ts='tmux-select-sessions'
+alias reset='reset; tmux clear-history'
 
 # Package manager
 alias felix='sudo pacman -Syu'

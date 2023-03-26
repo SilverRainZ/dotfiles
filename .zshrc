@@ -183,7 +183,7 @@ bindkey '^n' autosuggest-accept
 
 ## sphinxnotes-snippet, optional.
 ## https://sphinx.silverrainz.me/snippet/
-if command -v snippet &> /dev/null; then
+if [[ -z "$SSH_CLIENT" ]] && command -v snippet &> /dev/null; then
     eval "$(snippet integration --zsh-binding)"
     ### Override snippet_z_url
     function la_snippet_url() {

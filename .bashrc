@@ -39,7 +39,7 @@ fi
 
 # sphinxnotes-snippet, optional.
 # https://sphinx.silverrainz.me/snippet/
-if command -v snippet &> /dev/null; then
+if [[ -z "$SSH_CLIENT" ]] && command -v snippet &> /dev/null; then
     eval "$(snippet integration --sh --sh-binding)"
 fi
 

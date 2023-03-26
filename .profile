@@ -63,7 +63,9 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 # source $HOME/.cargo/env
 
 # ByteDance private profile
-source $HOME/.btprofile
+if [[ -f ~/.bytedprofile ]]; then
+    source ~/.bytedprofile
+fi
 
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then

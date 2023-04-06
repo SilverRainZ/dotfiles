@@ -21,10 +21,10 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 
-# Neovim.
-alias v='nvim'
-alias vim='nvim'
-alias vin='nvim --noplugin'
+# Alias for Neovim, :req:`archlinuxcn/neovim-symlinks`.
+alias v='vim'
+alias vim='vim'
+alias vin='vim --noplugin'
 
 # Tmux.
 alias t='tmux'

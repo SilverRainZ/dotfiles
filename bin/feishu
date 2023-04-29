@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# require aur/feishu-bin
+/usr/bin/feishu \
+    --force-device-scale-factor=1.2

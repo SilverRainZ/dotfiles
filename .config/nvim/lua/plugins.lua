@@ -31,7 +31,7 @@ packer = require('packer').startup(function()
 
   use {
       'akinsho/bufferline.nvim',
-      tag = "v2.*",
+      tag = "v4.*",
       requires = 'kyazdani42/nvim-web-devicons'
   }
 

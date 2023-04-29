@@ -320,13 +320,15 @@ bar {
     }
     default_border none
 
+    gaps inner 10
+    smart_gaps off
 #
 # Autostart:
 #
 exec fcitx5
 exec syncthing-gtk
 exec blueman-applet
-exec qv2ray
+exec clash-verge
 
 include /etc/sway/config.d/*
 

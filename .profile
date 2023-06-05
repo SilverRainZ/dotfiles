@@ -36,7 +36,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
     export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
     export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-    export PATH=$PATH:$HOME/Library/Python/3.10/bin
+    export PATH=$PATH:$HOME/Library/Python/3.11/bin
     export PATH=/usr/local/opt/util-linux/bin:$PATH
     export PATH=/usr/local/opt/util-linux/sbin:$PATH
     export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
@@ -60,7 +60,7 @@ fi
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # rustup
-# source $HOME/.cargo/env
+source $HOME/.cargo/env
 
 # ByteDance private profile
 if [[ -f ~/.bytedprofile ]]; then

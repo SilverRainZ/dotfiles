@@ -92,7 +92,7 @@ input type:touchpad {
     bindsym $mod+p exec $menu
 
     # Toggle notificaion panel
-    bindsym $mod+Shift+n exec $notify
+    bindsym $mod+n exec $notify
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -140,33 +140,36 @@ input type:touchpad {
 # Workspaces:
 #
     set $ws_web  "1.web: 🌏"
-    set $ws_term "2.term: 🔯"
-    set $ws_fm   "3.fm: 📁"
+    set $ws_any  "2.any: 🔯"
+    set $ws_term "3.term: 💻"
     set $ws_im   "4.im: 📧"
-
-    set $ws_ent  "8.game: 🎮"
-    set $ws_vm   "9.vm: 💿"
+    set $ws_fm   "5.fm: 📁"
+    set $ws_doc  "6.doc: 🗒"
+    set $ws_ent  "7.game: 🎮"
+    set $ws_vm   "8.vm: 💿"
     set $ws_misc "0.misc: 🏗"
 
     # battery '🔋'
     # Switch to workspace
     bindsym $mod+1 workspace $ws_web
-    bindsym $mod+2 workspace $ws_term
-    bindsym $mod+3 workspace $ws_fm
+    bindsym $mod+2 workspace $ws_any
+    bindsym $mod+3 workspace $ws_term
     bindsym $mod+4 workspace $ws_im
-
-    bindsym $mod+8 workspace $ws_ent
-    bindsym $mod+9 workspace $ws_vm
+    bindsym $mod+5 workspace $ws_fm
+    bindsym $mod+6 workspace $ws_doc
+    bindsym $mod+7 workspace $ws_ent
+    bindsym $mod+8 workspace $ws_vm
     bindsym $mod+0 workspace $ws_misc
 
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace $ws_web
-    bindsym $mod+Shift+2 move container to workspace $ws_term
-    bindsym $mod+Shift+3 move container to workspace $ws_fm
+    bindsym $mod+Shift+2 move container to workspace $ws_any
+    bindsym $mod+Shift+3 move container to workspace $ws_term
     bindsym $mod+Shift+4 move container to workspace $ws_im
-
-    bindsym $mod+Shift+8 move container to workspace $ws_ent
-    bindsym $mod+Shift+9 move container to workspace $ws_vm
+    bindsym $mod+Shift+5 move container to workspace $ws_fm
+    bindsym $mod+Shift+6 move container to workspace $ws_doc
+    bindsym $mod+Shift+7 move container to workspace $ws_game
+    bindsym $mod+Shift+8 move container to workspace $ws_vm
     bindsym $mod+Shift+0 move container to workspace $ws_misc
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
@@ -175,20 +178,22 @@ input type:touchpad {
     assign [app_id="firefox"] $ws_web
     assign [class="Nightly"] $ws_web
     assign [app_id="chromium"] $ws_web
-    assign [class="fluent-reader"] $ws_web
+    # Workspace any
+    assign [class="dida"] $ws_any
     # Workspace terminal
     assign [app_id="tilix"] $ws_term
     # Workspace IM
     assign [app_id="srain"] $ws_im
     assign [class="Feishu"] $ws_im
+    assign [class="com.alibabainc.dingtalk"] $ws_im
     # Workspace document viewer
-    assign [class="Wps"] $ws_fm
-    assign [class="Wpp"] $ws_fm
-    assign [class="Et"] $ws_fm
-    assign [class="kirta"] $ws_fm
-    assign [class="Zeal"] $ws_fm
-    assign [app_id="evince"] $ws_fm
-    assign [app_id="sioyek"] $ws_fm
+    assign [class="Wps"] $ws_doc
+    assign [class="Wpp"] $ws_doc
+    assign [class="Et"] $ws_doc
+    assign [class="kirta"] $ws_doc
+    assign [class="Zeal"] $ws_doc
+    assign [app_id="evince"] $ws_doc
+    assign [app_id="sioyek"] $ws_doc
     # Workspace file manager
     assign [app_id="Thunar"] $ws_fm
     # Workspace game
@@ -197,6 +202,7 @@ input type:touchpad {
     assign [class="Kodi"] $ws_ent
     # Workspace game
     assign [class="VirtualBox"] $ws_vm
+    assign [app_id="gnome-boxes"] $ws_vm
 #
     # Imgage viewer
     for_window [app_id="eog"] floating enable
@@ -316,8 +322,7 @@ bar {
     default_border none
 
     gaps inner 10
-    smart_gaps off
-#
+    smart_gaps on
 # Autostart:
 #
 exec swaync

@@ -1,4 +1,3 @@
-set background=dark
 set termguicolors
 
 if exists('g:gnvim')
@@ -8,4 +7,3 @@ else
 endif
 
 colorscheme nord
-" colorscheme solarized

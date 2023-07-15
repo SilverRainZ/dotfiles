@@ -141,6 +141,10 @@ function NightMode()
     endif
 endfunction
 
+if filereadable(expand("~/.cache/light-and-dark/sun"))
+    call NightMode()
+endif
+
 " 相对行号
 let g:isRelativeNumber=0
 function RelativeNumber()

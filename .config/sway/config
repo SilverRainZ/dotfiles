@@ -46,6 +46,20 @@ output * bg $wallpaper fill
 
 exec_always /home/la/.config/sway/multi-monitors.sh
 
+# Moving focus:
+#
+    bindsym $mod+Alt+k focus output up
+    bindsym $mod+Alt+j focus output down
+    bindsym $mod+Alt+h focus output left
+    bindsym $mod+Alt+l focus output right
+
+# Moving workspace:
+#
+    bindsym $mod+Alt+Shift+k move workspace to output up
+    bindsym $mod+Alt+Shift+j move workspace to output down
+    bindsym $mod+Alt+Shift+h move workspace to output left
+    bindsym $mod+Alt+Shift+l move workspace to output right
+
 ### Idle configuration
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off

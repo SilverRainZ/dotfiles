@@ -220,19 +220,24 @@ input type:touchpad {
     # Workspace game
     assign [class="VirtualBox"] $ws_vm
     assign [app_id="gnome-boxes"] $ws_vm
-#
-    # Imgage viewer
+
+    # Image viewer
     for_window [app_id="eog"] floating enable
     for_window [class="feh"] floating enable
+    ## Feishu's image preview window.
+    for_window [title="图片"] floating enable
+
+    # Video player
+    for_window [app_id="io.github.coslyk.moonplayer"] floating enable
+    for_window [class="vlc"] floating enable
 
     # Desktop widget
     for_window [app_id="iwgtk"] floating enable
     for_window [app_id="syncthing-gtk"] floating enable
     for_window [app_id="pavucontrol"] floating enable
+    for_window [app_id="com.github.wwmm.easyeffects"] floating enable
     for_window [app_id="blueman-manager"] floating enable
     for_window [app_id="clash-verge"] floating enable
-    ## Feishu's preview window.
-    for_window [title="图片"] floating enable
 
 #
 # Layout stuff:

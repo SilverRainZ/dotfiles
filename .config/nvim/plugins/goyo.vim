@@ -3,6 +3,8 @@
 
 map <C-g> :Goyo<CR>
 
+let g:goyo_width = 120
+
 function! s:goyo_enter()
     " Smart Wrap
     " https://stackoverflow.com/questions/1204149/smart-wrap-in-vim

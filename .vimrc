@@ -86,7 +86,10 @@ nnoremap zz @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 以下类型输入左花括号自动补全
 au FileType c,cpp,h,java,css,rust,go inoremap <buffer> {<CR> {<CR>}<Esc>O
+
+" 箭头快捷输入
 au FileType go,rst,markdown abbreviate -> →
+au FileType rust abbreviate --> →
 
 " Key binds {{{1
 

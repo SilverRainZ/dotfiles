@@ -60,7 +60,7 @@ fi
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # rustup
-source $HOME/.cargo/env
+[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
 
 # ByteDance private profile
 if [[ -f ~/.bytedprofile ]]; then

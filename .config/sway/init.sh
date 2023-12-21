@@ -14,7 +14,8 @@ export BROWSER=firefox
 export EDITOR=nvim
 
 # Fcitx moudle
-export GTK_IM_MODULE=fcitx
+# https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#TL.3BDR_Do_we_still_need_XMODIFIERS.2C_GTK_IM_MODULE_and_QT_IM_MODULE.3F
+# export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 

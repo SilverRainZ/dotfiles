@@ -13,7 +13,6 @@ clamshell_mode() {
 outputs=$(swaymsg --pretty --type get_outputs)
 echo $outputs
 
-
 if echo "$outputs" | grep "$OUT_BENQ"; then
     echo Output: $OUT_BENQ
     swaymsg "output '$OUT_BENQ' scale 1.5 pos 0 0"
@@ -26,5 +25,5 @@ elif echo "$outputs" | grep "$OUT_DELL"; then
     clamshell_mode "$OUT_BUILTIN"
 else
     echo Output: ALL
-    swaymsg "output * scale 2.2"
+    swaymsg "output * scale 2.3"
 fi

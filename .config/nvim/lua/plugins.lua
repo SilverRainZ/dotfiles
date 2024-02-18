@@ -6,8 +6,7 @@ vim.cmd [[packadd packer.nvim]]
 packer = require('packer').startup(function()
   -- Collection of configurations for the built-in LSP client
   use 'neovim/nvim-lspconfig'
-  -- Beautify LSPs hover.
-  use 'JASONews/glow-hover'
+  use "lewis6991/hover.nvim"
 
   use 'hrsh7th/nvim-cmp'                -- autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp'            -- LSP source

@@ -41,7 +41,6 @@ local on_attach = function(client, bufnr)
   -- '<cmd>lua vim.lsp.buf.type_definition()<CR>',
   '<cmd>Telescope lsp_type_definitions<CR>',
   opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   -- Conflicts with sphinxnotes-snippet.
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
@@ -61,11 +60,14 @@ for _, lsp in pairs(servers) do
   }
 end
 
-
-require 'glow-hover'.setup {
- -- The followings are the default values
- max_width = 50,
- padding = 10,
- border = 'shadow',
- glow_path = 'glow'
+require("hover").setup {
+  init = function()
+    require("hover.providers.lsp")
+  end,
+  preview_opts = { border = 'single' },
+  -- Whether the contents of a currently open hover window should be moved
+  -- to a :h preview-window when pressing the hover keymap.
+  preview_window = false,
+  title = true,
 }
+vim.keymap.set('n', 'K', require("hover").hover, {desc = "hover.nvim"})

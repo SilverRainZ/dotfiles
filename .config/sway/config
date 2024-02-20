@@ -234,10 +234,10 @@ input type:touchpad {
     # Desktop widget
     for_window [app_id="iwgtk"] floating enable
     for_window [app_id="syncthing-gtk"] floating enable
-    for_window [app_id="pavucontrol"] floating enable
     for_window [app_id="com.github.wwmm.easyeffects"] floating enable
     for_window [app_id="blueman-manager"] floating enable
     for_window [app_id="clash-verge"] floating enable
+    for_window [app_id="localsend"] floating enable
 
 #
 # Layout stuff:
@@ -314,12 +314,10 @@ bar {
 #
     exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
-    # bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    # bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    # bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-    bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-    bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-    bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+    # TODO: wob
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
     bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
     bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym XF86MonBrightnessUp exec brightnessctl set +5%

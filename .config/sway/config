@@ -18,13 +18,7 @@ set $term tilix
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-# Note: colors are picked from https://www.nordtheme.com/.
-set $menu fuzzel --prompt 🚀  \
-        --border-width=0 --width=50 --vertical-pad=20 --line-height=25 \
-        --background-color=#4c566add --selection-color=#2e3440ff \
-        --text-color=#d8dee9ff --selection-text-color=#eceff4ff \
-        --match-color=#81a1c1ff --selection-match-color=#88c0d0ff \
-        | xargs swaymsg exec --
+set $menu fuzzel | xargs swaymsg exec --
 # Your preferred wallpaper
 set $wallpaper /home/la/pictures/wallpapers/bg
 # Your preferred screenlocker

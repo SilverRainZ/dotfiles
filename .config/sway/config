@@ -193,14 +193,16 @@ input type:touchpad {
 
     # Workspace web
     assign [app_id="firefox"] $ws_web
-    assign [class="Nightly"] $ws_web
+    for_window [app_id="firefox"] focus_on_window_activation focus
     assign [app_id="chromium"] $ws_web
+    for_window [app_id="chromium"] focus_on_window_activation focus
     # Workspace any
     assign [class="dida"] $ws_any
     # Workspace terminal
     assign [app_id="tilix"] $ws_term
     # Workspace IM
     assign [app_id="srain"] $ws_im
+    for_window [app_id="srain"] focus_on_window_activation focus
     assign [class="Feishu"] $ws_im
     assign [class="com.alibabainc.dingtalk"] $ws_im
     # Workspace document viewer
@@ -232,12 +234,12 @@ input type:touchpad {
     for_window [class="vlc"] floating enable
 
     # Desktop widget
-    for_window [app_id="iwgtk"] floating enable
-    for_window [app_id="syncthing-gtk"] floating enable
-    for_window [app_id="com.github.wwmm.easyeffects"] floating enable
-    for_window [app_id="blueman-manager"] floating enable
-    for_window [app_id="clash-verge"] floating enable
-    for_window [app_id="localsend"] floating enable
+    for_window [app_id="iwgtk"] floating enable, focus_on_window_activation focus
+    for_window [app_id="syncthing-gtk"] floating enable, focus_on_window_activation focus
+    for_window [app_id="com.github.wwmm.easyeffects"] floating enable, focus_on_window_activation focus
+    for_window [app_id="blueman-manager"] floating enable, focus_on_window_activation focus
+    for_window [app_id="clash-verge"] floating enable, focus_on_window_activation focus
+    for_window [app_id="localsend"] floating enable, focus_on_window_activation focus
 
 #
 # Layout stuff:

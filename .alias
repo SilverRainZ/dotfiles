@@ -14,6 +14,7 @@ alias grep='grep --color=auto'
 # freqently used path
 alias n='cd ~/documents/bullet'
 alias u='cd ~/documents/ronin'
+alias ws='cd ~/workspace'
 
 # ls.
 alias l='ls --color=auto'

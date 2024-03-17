@@ -6,8 +6,7 @@
 local opts = { noremap=true, silent=true }
 -- 'e': means error.
 vim.api.nvim_set_keymap('n', '<leader>e',
--- '<cmd>lua vim.diagnostic.open_float()<CR>',
-"<cmd>Trouble<cr>", -- :require:`trouble-nvim`
+'<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>',
 opts)
 vim.api.nvim_set_keymap('n', '<leader>ne', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>Ne', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)

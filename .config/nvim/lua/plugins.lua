@@ -35,9 +35,11 @@ packer = require('packer').startup(function()
   }
 
   use {
-    "folke/trouble.nvim",
-    requires = "nvim-tree/nvim-web-devicons",
+    'folke/trouble.nvim',
+    requires = 'nvim-tree/nvim-web-devicons',
   }
+
+  use 'kylechui/nvim-surround'
 
 end)
 
@@ -48,5 +50,6 @@ require 'telescope-cfg'
 require 'goto-preview-cfg'
 require 'bufferline-cfg'
 require 'trouble-cfg'
+require 'surround'
 
 return packer

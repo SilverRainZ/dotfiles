@@ -14,7 +14,8 @@ packer = require('packer').startup(function()
   use 'amarakon/nvim-cmp-buffer-lines'  -- vim buffer lines source
   use 'hrsh7th/cmp-path'                -- filesystem path source
   use 'hrsh7th/cmp-cmdline'
-  use 'andersevenrud/cmp-tmux'          -- tmux source
+  use 'andersevenrud/cmp-tmux'              -- tmux source
+  use 'quangnguyen30192/cmp-nvim-ultisnips' -- snippet source
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Syntax highlight
 

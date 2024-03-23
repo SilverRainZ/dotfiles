@@ -180,6 +180,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 bindkey '^n' autosuggest-accept
+bindkey '^j' autosuggest-accept
 
 ## sphinxnotes-snippet, optional.
 ## https://sphinx.silverrainz.me/snippet/

@@ -42,6 +42,9 @@ if has('mac')
     let g:XkbSwitchIMappingsTr = {'cn': {'<': '', '>': ''}}
 endif
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Initialize plugin system
 call plug#end()
 
@@ -55,6 +58,7 @@ source $PLUGIN_CONFIG/voom.vim
 source $PLUGIN_CONFIG/goyo.vim
 source $PLUGIN_CONFIG/sphinxnotes-snippet.vim
 source $PLUGIN_CONFIG/go.vim
+source $PLUGIN_CONFIG/ultisnips.vim
 
 " vim modeline {{{1
 " vim: set fdm=marker:

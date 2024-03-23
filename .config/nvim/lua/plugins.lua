@@ -18,6 +18,11 @@ packer = require('packer').startup(function()
   use 'quangnguyen30192/cmp-nvim-ultisnips' -- snippet source
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Syntax highlight
+  use {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+  }
 
   use 'rmagatti/goto-preview' -- Preview LSP in floating windows
 

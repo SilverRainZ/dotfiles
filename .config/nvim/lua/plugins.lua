@@ -17,12 +17,13 @@ packer = require('packer').startup(function()
   use 'andersevenrud/cmp-tmux'              -- tmux source
   use 'quangnguyen30192/cmp-nvim-ultisnips' -- snippet source
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- Syntax highlight
   use {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    after = "nvim-treesitter",
-    requires = "nvim-treesitter/nvim-treesitter",
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    requires = 'nvim-treesitter/nvim-treesitter-textobjects',
+    dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
   }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   use 'rmagatti/goto-preview' -- Preview LSP in floating windows
 

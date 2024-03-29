@@ -32,6 +32,7 @@ packer = require('packer').startup(function()
       requires = {
           'nvim-lua/plenary.nvim',
           'nvim-telescope/telescope-file-browser.nvim',
+          'smartpde/telescope-recent-files', -- :h oldfiles
       }
   }
 

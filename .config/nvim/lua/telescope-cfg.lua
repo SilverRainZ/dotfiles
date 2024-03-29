@@ -59,6 +59,7 @@ require('telescope').setup{
 }
 
 require("telescope").load_extension "file_browser"
+require("telescope").load_extension 'recent_files'
 
 vim.api.nvim_exec([[
 
@@ -80,3 +81,4 @@ vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Telescope file_browser<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope git_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>fo',  [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]], opts)

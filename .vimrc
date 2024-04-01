@@ -128,8 +128,6 @@ imap <F2> <ESC>:call RelativeNumber()<CR>
 map <F9> :!sm<CR>
 imap <F9> <ESC>:!sm<CR>
 
-map <silent> <F11> :call ToggleFullscreen()<CR>
-
 " Helper functions  {{{1
 
 " 切换亮暗背景色
@@ -159,11 +157,6 @@ function RelativeNumber()
         let g:isRelativeNumber=0
     endif
 endfunction
-
-" 全屏 依赖 wmctrl
-function ToggleFullscreen()
-    call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
-endf
 
 " Completion {{{1
 

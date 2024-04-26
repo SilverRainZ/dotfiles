@@ -49,6 +49,8 @@ packer = require('packer').startup(function()
 
   use 'kylechui/nvim-surround'
 
+  use 'j-hui/fidget.nvim'
+
 end)
 
 require 'lspconfig-cfg'
@@ -58,6 +60,7 @@ require 'telescope-cfg'
 require 'goto-preview-cfg'
 require 'bufferline-cfg'
 require 'trouble-cfg'
-require 'surround'
+require 'surround-cfg'
+require 'fidget-cfg'
 
 return packer

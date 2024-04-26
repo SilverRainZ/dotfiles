@@ -15,7 +15,11 @@ require('telescope').setup{
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
       }
-    }
+    },
+
+    -- Shorten long path.
+    -- https://github.com/nvim-telescope/telescope.nvim/issues/895#issuecomment-1021972829
+    path_display = {'smart'},
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:

@@ -60,6 +60,10 @@ fi
 # https://github.com/python-poetry/poetry/issues/1917#issuecomment-1235998997
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
+# Use --break-system-packages by default.
+# https://veronneau.org/python-311-pip-and-breaking-system-packages.html
+export PIP_BREAK_SYSTEM_PACKAGES=1
+
 # rustup
 [ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
 

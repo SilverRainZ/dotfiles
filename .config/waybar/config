@@ -32,10 +32,10 @@
         "format-alt": "{:%y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}%  "
     },
     "battery": {
         "states": {
@@ -44,28 +44,27 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
+        "format-alt": "{time} {icon} ",
         "format-good": "", // An empty format will hide the module
         "format-full": "", // An empty format will hide the module
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": "Disconnected ⚠ ",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "wireplumber": {
         "format": "{volume}% {icon}",
         "format-muted": "",
-        "on-click": "helvum",
         "format-icons": ["", "", ""],
-        "on-click": "easyeffects",
+        "on-click": "pavucontrol",
     },
 }
 

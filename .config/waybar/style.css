@@ -30,8 +30,9 @@ window#waybar {
 #cpu,
 #memory,
 #network,
-#pulseaudio,
+#wireplumber,
 #battery {
+    background-color: alpha(white, 0.15);
     padding: 0 3px;
     margin: 0 2px;
 }

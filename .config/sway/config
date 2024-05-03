@@ -234,6 +234,7 @@ input type:touchpad {
     for_window [app_id="blueman-manager"] floating enable, focus_on_window_activation focus
     for_window [app_id="clash-verge"] floating enable, focus_on_window_activation focus
     for_window [app_id="localsend"] floating enable, focus_on_window_activation focus
+    for_window [app_id="pavucontrol"] floating enable, focus_on_window_activation focus
 
 #
 # Layout stuff:

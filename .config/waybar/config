@@ -61,10 +61,10 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "wireplumber": {
-        "format": "{volume}% {icon}",
+        "format": "{volume}% {icon} ",
         "format-muted": "",
         "format-icons": ["", "", ""],
-        "on-click": "pavucontrol",
+        "on-click": "qpwgraph",
     },
 }
 

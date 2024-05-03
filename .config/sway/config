@@ -42,17 +42,17 @@ exec_always /home/la/.config/sway/multi-monitors.sh
 
 # Moving focus:
 #
-    bindsym $mod+Alt+k focus output up
-    bindsym $mod+Alt+j focus output down
-    bindsym $mod+Alt+h focus output left
-    bindsym $mod+Alt+l focus output right
+bindsym $mod+Alt+k focus output up
+bindsym $mod+Alt+j focus output down
+bindsym $mod+Alt+h focus output left
+bindsym $mod+Alt+l focus output right
 
 # Moving workspace:
 #
-    bindsym $mod+Alt+Shift+k move workspace to output up
-    bindsym $mod+Alt+Shift+j move workspace to output down
-    bindsym $mod+Alt+Shift+h move workspace to output left
-    bindsym $mod+Alt+Shift+l move workspace to output right
+bindsym $mod+Alt+Shift+k move workspace to output up
+bindsym $mod+Alt+Shift+j move workspace to output down
+bindsym $mod+Alt+Shift+h move workspace to output left
+bindsym $mod+Alt+Shift+l move workspace to output right
 
 ### Idle configuration
 #
@@ -93,97 +93,98 @@ input type:touchpad {
 #
 # Basics:
 #
-    # Start a terminal
-    bindsym $mod+Shift+Return exec $term
+# Start a terminal
+bindsym $mod+Shift+Return exec $term
 
-    # Kill/Close focused window
-    bindsym $mod+c kill
+# Kill/Close focused window
+bindsym $mod+c kill
 
-    # Start your launcher
-    bindsym $mod+p exec $menu
+# Start your launcher
+bindsym $mod+p exec $menu
 
-    # Toggle notificaion panel
-    bindsym $mod+n exec $notify
+# Toggle notificaion panel
+bindsym $mod+n exec $notify
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
 
-    # Reload the configuration file
-    bindsym $mod+Shift+r reload
-    # bindsym $mod+Shift+r exec swaynag -t warning -m 'Reloading swaying...'
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+# bindsym $mod+Shift+r exec swaynag -t warning -m 'Reloading swaying...'
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-    bindsym $mod+Shift+o exec $lock
+bindsym $mod+Shift+o exec $lock
 
-    # Screenshot
-    bindsym Ctrl+Alt+a exec shot -s
+# Screenshot
+bindsym Ctrl+Alt+a exec shot -s
 
 # Moving around:
 #
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
 #
 # Workspaces:
 #
-    set $ws_web  "1.web: 🌏"
-    set $ws_any  "2.any: 🔯"
-    set $ws_term "3.term: 💻"
-    set $ws_im   "4.im: 📧"
-    set $ws_fm   "5.fm: 📁"
-    set $ws_doc  "6.doc: 🗒"
-    set $ws_ent  "7.game: 🎮"
-    set $ws_vm   "8.vm: 💿"
-    set $ws_misc "0.misc: 🏗"
+set $ws_web  "1.web: 🌏"
+set $ws_any  "2.any: 🔯"
+set $ws_term "3.term: 💻"
+set $ws_im   "4.im: 📧"
+set $ws_fm   "5.fm: 📁"
+set $ws_doc  "6.doc: 🗒"
+set $ws_ent  "7.game: 🎮"
+set $ws_vm   "8.vm: 💿"
+set $ws_misc "0.misc: 🏗"
 
-    # battery '🔋'
-    # Switch to workspace
-    bindsym $mod+1 workspace $ws_web
-    bindsym $mod+2 workspace $ws_any
-    bindsym $mod+3 workspace $ws_term
-    bindsym $mod+4 workspace $ws_im
-    bindsym $mod+5 workspace $ws_fm
-    bindsym $mod+6 workspace $ws_doc
-    bindsym $mod+7 workspace $ws_ent
-    bindsym $mod+8 workspace $ws_vm
-    bindsym $mod+0 workspace $ws_misc
+# battery '🔋'
+# Switch to workspace
+bindsym $mod+1 workspace $ws_web
+bindsym $mod+2 workspace $ws_any
+bindsym $mod+3 workspace $ws_term
+bindsym $mod+4 workspace $ws_im
+bindsym $mod+5 workspace $ws_fm
+bindsym $mod+6 workspace $ws_doc
+bindsym $mod+7 workspace $ws_ent
+bindsym $mod+8 workspace $ws_vm
+bindsym $mod+0 workspace $ws_misc
 
-    # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace $ws_web
-    bindsym $mod+Shift+2 move container to workspace $ws_any
-    bindsym $mod+Shift+3 move container to workspace $ws_term
-    bindsym $mod+Shift+4 move container to workspace $ws_im
-    bindsym $mod+Shift+5 move container to workspace $ws_fm
-    bindsym $mod+Shift+6 move container to workspace $ws_doc
-    bindsym $mod+Shift+7 move container to workspace $ws_ent
-    bindsym $mod+Shift+8 move container to workspace $ws_vm
-    bindsym $mod+Shift+0 move container to workspace $ws_misc
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws_web
+bindsym $mod+Shift+2 move container to workspace $ws_any
+bindsym $mod+Shift+3 move container to workspace $ws_term
+bindsym $mod+Shift+4 move container to workspace $ws_im
+bindsym $mod+Shift+5 move container to workspace $ws_fm
+bindsym $mod+Shift+6 move container to workspace $ws_doc
+bindsym $mod+Shift+7 move container to workspace $ws_ent
+bindsym $mod+Shift+8 move container to workspace $ws_vm
+bindsym $mod+Shift+0 move container to workspace $ws_misc
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
 
     # Workspace web
     assign [app_id="firefox"] $ws_web
@@ -235,44 +236,47 @@ input type:touchpad {
     for_window [app_id="clash-verge"] floating enable, focus_on_window_activation focus
     for_window [app_id="localsend"] floating enable, focus_on_window_activation focus
     for_window [app_id="pavucontrol"] floating enable, focus_on_window_activation focus
+    for_window [app_id="qpwgraph"] floating enable, focus_on_window_activation focus
 
 #
 # Layout stuff:
 #
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
-    bindsym $mod+u focus parent
+# Move focus to the parent container
+bindsym $mod+u focus parent
+
 #
 # Scratchpad:
 #
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
 
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+z move scratchpad
+# Move the currently focused window to the scratchpad
+bindsym $mod+z move scratchpad
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+Shift+z scratchpad show
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+Shift+z scratchpad show
+
 #
 # Resizing containers:
 #
@@ -309,32 +313,31 @@ bar {
 #
 # Media Keys:
 #
+exec avizo-service
 bindsym XF86AudioRaiseVolume exec volumectl -u up
 bindsym XF86AudioLowerVolume exec volumectl -u down
 bindsym XF86AudioMute exec volumectl toggle-mute
 bindsym XF86AudioMicMute exec volumectl -m toggle-mute
-
 bindsym XF86MonBrightnessUp exec lightctl up
 bindsym XF86MonBrightnessDown exec lightctl down
 
-exec avizo-service
 #
 # Theme:
 #
-    # Set cursor theme
-    set $cursor_theme Breeze-Adapta-Cursor
-    set $cursor_size 36
+# Set cursor theme
+set $cursor_theme Breeze-Adapta-Cursor
+set $cursor_size 36
 
-    seat seat0 xcursor_theme $cursor_theme $cursor_size
+seat seat0 xcursor_theme $cursor_theme $cursor_size
 
-    set $gnome-schema org.gnome.desktop.interface
-    exec_always {
-        gsettings set $gnome-schema cursor-theme $cursor_theme
-    }
-    default_border none
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema cursor-theme $cursor_theme
+}
+default_border none
 
-    gaps inner 10
-    smart_gaps on
+gaps inner 10
+smart_gaps on
 
 # Autostart:
 #

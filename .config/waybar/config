@@ -26,10 +26,21 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
         "format": "{:%m-%d %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
-        "format-alt": "{:%y-%m-%d}"
+        "tooltip-format": "<tt>{calendar}</tt>",
+        // "format-alt": "{:%y-%m-%d}"
+        "calendar": {
+            "mode"          : "months",
+            "weeks-pos"     : "right",
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "on-click": "gnome-calendar"
     },
     "cpu": {
         "format": "{usage}%  ",
@@ -58,7 +69,8 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
         "format-linked": "{ifname} (No IP)  ",
         "format-disconnected": "Disconnected ⚠ ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "iwgtk"
     },
     "wireplumber": {
         "format": "{volume}% {icon} ",

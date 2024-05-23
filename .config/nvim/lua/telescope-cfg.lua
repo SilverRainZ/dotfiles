@@ -12,6 +12,7 @@ require('telescope').setup{
         ["<C-h>"] = actions.which_key,
         ["<Esc>"] = actions.close,
         ["<C-c>"] = actions.close,
+        ["<C-n>"] = actions.close, -- for file_browser
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
       }
@@ -32,12 +33,13 @@ require('telescope').setup{
     --
     find_files = { theme = "ivy" },
     git_files = { theme = "ivy" },
+    live_grep = { theme = "ivy" },
 
     diagnostics = { theme = "dropdown" },
-    lsp_definitions = { theme = "cursor" },
-    lsp_implementations = { theme = "cursor" },
-    lsp_references = { theme = "cursor" },
-    lsp_type_definitions = { theme = "cursor" },
+    lsp_definitions = { theme = "dropdown" },
+    lsp_implementations = { theme = "dropdown" },
+    lsp_references = { theme = "dropdown" },
+    lsp_type_definitions = { theme = "dropdown" },
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -63,7 +65,6 @@ require('telescope').setup{
 }
 
 require("telescope").load_extension "file_browser"
-require("telescope").load_extension 'recent_files'
 
 vim.api.nvim_exec([[
 
@@ -80,9 +81,9 @@ endfunction
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>Telescope file_browser<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope git_files<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>fo',  [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]], opts)
+local builtin = require('telescope.builtin')
+local extensions = require("telescope").extensions
+vim.keymap.set('n', '<C-n>', extensions.file_browser.file_browser, {})
+vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})

@@ -1,64 +1,93 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-packer = require('packer').startup(function()
+
+require("lazy").setup({
   -- Collection of configurations for the built-in LSP client
-  use 'neovim/nvim-lspconfig'
-  use "lewis6991/hover.nvim"
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      "lewis6991/hover.nvim",
+      'rmagatti/goto-preview', -- preview LSP in floating windows
+    },
+    config = function()
+      require 'lspconfig-cfg'
+      require 'goto-preview-cfg'
+    end
+  },
 
-  use 'hrsh7th/nvim-cmp'                -- autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp'            -- LSP source
-  use 'hrsh7th/cmp-buffer'              -- vim buffer words source
-  use 'amarakon/nvim-cmp-buffer-lines'  -- vim buffer lines source
-  use 'hrsh7th/cmp-path'                -- filesystem path source
-  use 'hrsh7th/cmp-cmdline'
-  use 'andersevenrud/cmp-tmux'              -- tmux source
-  use 'quangnguyen30192/cmp-nvim-ultisnips' -- snippet source
 
-  use {
+  -- nvim-cmp.
+  {
+    'hrsh7th/nvim-cmp',                -- autocompletion plugin
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',            -- LSP source
+      'hrsh7th/cmp-buffer',              -- vim buffer words source
+      'amarakon/nvim-cmp-buffer-lines',  -- vim buffer lines source
+      'hrsh7th/cmp-path',                -- filesystem path source
+      'hrsh7th/cmp-cmdline',
+      'andersevenrud/cmp-tmux',              -- tmux source
+      'quangnguyen30192/cmp-nvim-ultisnips', -- snippet source
+    },
+    config = function()
+      require 'cmp-cfg'
+    end
+  },
+
+  -- Treesitter.
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    requires = 'nvim-treesitter/nvim-treesitter-textobjects',
-    dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
-  }
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
+    config = function()
+      require 'treesitter-cfg'
+    end
+  },
 
-  use 'rmagatti/goto-preview' -- Preview LSP in floating windows
+  -- Telescope fuzzy finder.
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.7',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-file-browser.nvim',
+    },
+    config = function()
+      require 'telescope-cfg'
+    end
+  },
 
-  use {
-      'nvim-telescope/telescope.nvim',  -- Fuzzy finder
-      requires = {
-          'nvim-lua/plenary.nvim',
-          'nvim-telescope/telescope-file-browser.nvim',
-      }
-  }
+  -- UI Beautify
+  { 
+    'j-hui/fidget.nvim', -- notifications and LSP progress message
+    config = function()
+      require 'fidget-cfg'
+    end
+  },
+  {
+    'akinsho/bufferline.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require 'bufferline-cfg'
+    end
+  },
 
-  use {
-      'akinsho/bufferline.nvim',
-      requires = 'kyazdani42/nvim-web-devicons'
-  }
+  -- Fast edit.
+  {
+    'kylechui/nvim-surround',
+    config = function()
+      require 'surround-cfg'
+    end
+  },
+})
 
-  use {
-    'folke/trouble.nvim',
-    requires = 'nvim-tree/nvim-web-devicons',
-  }
-
-  use 'kylechui/nvim-surround'
-
-  use 'j-hui/fidget.nvim'
-
-end)
-
-require 'lspconfig-cfg'
-require 'cmp-cfg'
-require 'treesitter-cfg'
-require 'telescope-cfg'
-require 'goto-preview-cfg'
-require 'bufferline-cfg'
-require 'trouble-cfg'
-require 'surround-cfg'
-require 'fidget-cfg'
-
-return packer

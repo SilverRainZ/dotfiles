@@ -6,7 +6,6 @@ endif
 set nocompatible
 
 source $HOME/.vimrc
-source $XDG_CONFIG_HOME/nvim/plugins.vim
 
 lua require('plugins')
 

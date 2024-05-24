@@ -14,9 +14,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
+local PLUGIN_VIM_CONFIG = '$XDG_CONFIG_HOME/nvim/plugins/'
+
 require("lazy").setup({
-  -- Collection of configurations for the built-in LSP client
-  {
+  -- ==========
+  -- Completion
+  -- ==========
+
+  { -- Collection of configurations for the built-in LSP client
     'neovim/nvim-lspconfig',
     dependencies = {
       "lewis6991/hover.nvim",
@@ -29,7 +34,6 @@ require("lazy").setup({
   },
 
 
-  -- nvim-cmp.
   {
     'hrsh7th/nvim-cmp',                -- autocompletion plugin
     dependencies = {
@@ -46,15 +50,30 @@ require("lazy").setup({
     end
   },
 
-  -- Treesitter.
+  -- ==========
+  -- Formatters
+  -- ==========
   {
+    'fatih/vim-go',
+    config = function()
+      vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'go.vim')
+    end
+  },
+  'Vimjas/vim-python-pep8-indent',
+
+  -- ================
+  -- Syntax highlight
+  -- ================
+  { -- Treesitter.
     'nvim-treesitter/nvim-treesitter',
     config = function()
       require 'treesitter-cfg'
     end
   },
 
-  -- Telescope fuzzy finder.
+  -- ============
+  -- Fuzzy finder
+  -- ============
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.7',
@@ -67,9 +86,21 @@ require("lazy").setup({
     end
   },
 
+  -- required by sphinxnotes-snippet
+  'junegunn/fzf.vim',
+  'junegunn/fzf',
+
+  -- ===========
   -- UI Beautify
-  { 
-    'j-hui/fidget.nvim', -- notifications and LSP progress message
+  -- ===========
+  { -- theme, nord with ligth variant
+    'rmehri01/onenord.nvim',
+    config = function()
+      require 'onenord-cfg'
+    end
+  },
+  { -- notifications and LSP progress message
+    'j-hui/fidget.nvim',
     config = function()
       require 'fidget-cfg'
     end
@@ -82,12 +113,48 @@ require("lazy").setup({
     end
   },
 
-  -- Fast edit.
+  -- ============
+  -- Fast editing
+  -- ============
   {
     'kylechui/nvim-surround',
     config = function()
       require 'surround-cfg'
     end
   },
+  {  -- snippet manager
+    'SirVer/ultisnips',
+    dependencies ='honza/vim-snippets',
+  },
+  -- Change and enhance features of * (highlight and search)
+  -- ref: https://stackoverflow.com/a/13682379
+  'vim-scripts/star-search',
+  {
+    'junegunn/goyo.vim',
+    config = function()
+      vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'goyo.vim')
+    end
+  },
+  {
+    'vim-voom/VOoM',
+    config = function()
+      vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'voom.vim')
+    end
+  },
+  { -- like vim-fcitx, but for macOS
+    -- https://zhuanlan.zhihu.com/p/49411224
+    name = 'xkbswitch',
+    'lyokha/vim-xkbswitch',
+    config = function()
+      vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'xkbswitch.vim')
+    end
+  },
 })
 
+-- ======================
+-- Manual managed plugins
+-- ======================
+
+-- https://sphinx.silverrainz.me/snippet/
+vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'sphinxnotes-snippet.vim')
+vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'sphinxnotes-snippet.vim')

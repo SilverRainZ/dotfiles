@@ -145,7 +145,10 @@ require("lazy").setup({
     -- https://zhuanlan.zhihu.com/p/49411224
     name = 'xkbswitch',
     'lyokha/vim-xkbswitch',
-    config = function()
+    lazy = false,
+    init = function()
+      -- *MUST* in init function rather than config function.
+      -- https://github.com/lyokha/vim-xkbswitch/issues/66#issuecomment-1627647615
       vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'xkbswitch.vim')
     end
   },

@@ -86,7 +86,7 @@ key_bindings:
 
 font:
   normal:
-    family: Iosevka
+    family: Iosevka Nerd Font
     style: Regular
   bold:
     style: Bold

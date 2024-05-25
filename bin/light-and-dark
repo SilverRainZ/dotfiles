@@ -2,44 +2,77 @@
 #
 # Toggle light and dark mode.
 
-TILIX_PROFILE=com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/
+# set -x
 
-dark() {
-    echo Dark
-
-    export GTK_THEME=Nordic
-
-    # Nord.
-    export TILIX_FG="#FDF6E3"
-    export TILIX_BG="#2E3440"
-    export TILIX_PALETTE= "['#3B4252', '#BF616A', '#A3BE8C', '#EBCB8B', '#81A1C1', '#B48EAD', '#88C0D0', '#E5E9F0', '#4C566A', '#BF616A', '#A3BE8C', '#EBCB8B', '#81A1C1', '#B48EAD', '#8FBCBB', '#ECEFF4']"
+# For apps which follow XDG specs: GTK apps, neovim (f-person/auto-dark-mode.nvim) and so on.
+#
+# TODO: org.gnome.desktop.interface or org.freedesktop.appearance?
+# https://www.reddit.com/r/swaywm/comments/s60xet/what_are_the_implications_for_us/
+xdg_light() {
+    export XDG_COLOR_SCHEME=prefer-light
+}
+xdg_dark() {
+    export XDG_COLOR_SCHEME=prefer-dark
+}
+xdg_toggle() {
+    gsettings set org.gnome.desktop.interface color-scheme $XDG_COLOR_SCHEME
 }
 
-light() {
-    echo Light
-
-    export GTK_THEME=Arc
-
-    # Solarized Light.
+# For Tilix.
+tilix_dark() {
+    export TILIX_FG="#FDF6E3"
+    export TILIX_BG="#2E3440"
+    export TILIX_PALETTE="['#3B4252', '#BF616A', '#A3BE8C', '#EBCB8B', '#81A1C1', '#B48EAD', '#88C0D0', '#E5E9F0', '#4C566A', '#BF616A', '#A3BE8C', '#EBCB8B', '#81A1C1', '#B48EAD', '#8FBCBB', '#ECEFF4']"
+}
+tilix_light() {
+    # Solarized Light. TODO: one nord
     export TILIX_FG="#657B83"
     export TILIX_BG="#FDF6E3"
     export TILIX_PALETTE="['#073642', '#DC322F', '#859900', '#B58900', '#268BD2', '#D33682', '#2AA198', '#EEE8D5', '#002B36', '#CB4B16', '#586E75', '#657B83', '#839496', '#6C71C4', '#93A1A1', '#FDF6E3']"
+}
+tilix_toggle() {
+    TILIX_PROFILE=com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/
+    gsettings set $TILIX_PROFILE foreground-color $TILIX_FG
+    gsettings set $TILIX_PROFILE background-color $TILIX_BG
+    gsettings set $TILIX_PROFILE palette "$TILIX_PALETTE"
+}
+
+
+# Use different themes for light and dark mode.
+gtk_light() {
+    export GTK_THEME=Arc # jnsh/arc-theme
+}
+gtk_dark() {
+    export GTK_THEME=Nordic # EliverLara/Nordic
+}
+gtk_toggle() {
+    gsettings set org.gnome.desktop.interface gtk-theme $GTK_THEME
+    gsettings set org.gnome.desktop.wm.preferences theme $GTK_THEME
+}
+
+sunraise() {
+    xdg_light
+    tilix_light
+    gtk_light
+}
+sunset() {
+    xdg_dark
+    tilix_dark
+    gtk_dark
+}
+toggle() {
+    xdg_toggle
+    tilix_toggle
+    gtk_toggle
 }
 
 # Flag of light/dark mode.
 SUN=~/.cache/light-and-dark/sun
 mkdir -p $(dirname $SUN) || true
-
 if [ -f $SUN ]; then
-    rm $SUN && dark
+    rm $SUN && sunset
 else
-    touch $SUN && light
+    touch $SUN && sunraise
 fi
 
-# GTK Apps.
-gsettings set org.gnome.desktop.interface gtk-theme $GTK_THEME
-
-# Tilix Apps.
-gsettings set $TILIX_PROFILE foreground-color $TILIX_FG
-gsettings set $TILIX_PROFILE background-color $TILIX_BG
-gsettings set $TILIX_PROFILE palette $TILIX_PALETTE
+toggle

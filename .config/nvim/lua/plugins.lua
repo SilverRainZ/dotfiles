@@ -99,6 +99,18 @@ require("lazy").setup({
       require 'onenord-cfg'
     end
   },
+  { -- See also ~/bin/light-and-dark.
+    "f-person/auto-dark-mode.nvim",
+    opts = {
+      update_interval = 1000,
+      set_dark_mode = function()
+        vim.api.nvim_set_option("background", "dark")
+      end,
+      set_light_mode = function()
+        vim.api.nvim_set_option("background", "light")
+      end,
+    },
+  },
   { -- notifications and LSP progress message
     'j-hui/fidget.nvim',
     config = function()

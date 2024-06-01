@@ -8,7 +8,7 @@ I use...
 ========
 
 ======================= ========================================================
-Distribution            `Arch Linux`_ (for live) and macOS_ (for work)
+Distribution            `Arch Linux`_ (for life) and macOS_ (for work)
 Desktop environment     *N/A*
 Window manager          Sway_
 Web browser             Firefox_

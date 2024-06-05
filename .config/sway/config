@@ -142,11 +142,6 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-# Ditto, with arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 #
 # Workspaces:
@@ -183,6 +178,10 @@ bindsym $mod+Shift+6 move container to workspace $ws_doc
 bindsym $mod+Shift+7 move container to workspace $ws_ent
 bindsym $mod+Shift+8 move container to workspace $ws_vm
 bindsym $mod+Shift+0 move container to workspace $ws_misc
+# Always on the top.
+# https://github.com/swaywm/sway/issues/2742
+bindsym $mod+Shift+Up sticky toggle
+
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 
@@ -229,14 +228,13 @@ bindsym $mod+Shift+0 move container to workspace $ws_misc
     for_window [class="vlc"] floating enable
 
     # Desktop widget
-    for_window [app_id="iwgtk"] floating enable, focus_on_window_activation focus
-    for_window [app_id="syncthing-gtk"] floating enable, focus_on_window_activation focus
-    for_window [app_id="com.github.wwmm.easyeffects"] floating enable, focus_on_window_activation focus
-    for_window [app_id="blueman-manager"] floating enable, focus_on_window_activation focus
-    for_window [app_id="clash-verge"] floating enable, focus_on_window_activation focus
-    for_window [app_id="localsend"] floating enable, focus_on_window_activation focus
-    for_window [app_id="pavucontrol"] floating enable, focus_on_window_activation focus
-    for_window [app_id="qpwgraph"] floating enable, focus_on_window_activation focus
+    for_window [app_id="iwgtk"] floating enable, sticky enable
+    for_window [app_id="syncthing-gtk"] floating enable, sticky enable
+    for_window [app_id="blueman-manager"] floating enable, sticky enable
+    for_window [app_id="clash-verge"] floating enable, sticky enable
+    for_window [app_id="localsend"] floating enable, sticky enable
+    for_window [app_id="pavucontrol"] floating enable, sticky enable
+    for_window [app_id="qpwgraph"] floating enable, sticky enable
 
 #
 # Layout stuff:

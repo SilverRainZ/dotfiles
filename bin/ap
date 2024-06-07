@@ -1,2 +1,0 @@
-#!/usr/bin/sh
-create_ap wlp4s0 enp0s25 la-arch mypasswd --no-virt

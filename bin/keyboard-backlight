@@ -1,9 +1,0 @@
-#!/bin/sh
-# Control the keyboard backlight brightness level. 
-# ref: https://wiki.archlinux.org/title/keyboard_backlight
-
-if [ -z $1 ]; then
-    brightnessctl --device='tpacpi::kbd_backlight' info
-else
-    brightnessctl --device='tpacpi::kbd_backlight' set $1
-fi

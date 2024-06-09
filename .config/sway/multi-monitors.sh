@@ -1,4 +1,5 @@
 #!/bin/sh
+# https://github.com/swaywm/sway/wiki#clamshell-mode
 
 # All known monitors.
 OUT_BUILTIN='eDP-1'
@@ -27,3 +28,12 @@ else
     echo Output: ALL
     swaymsg "output * scale 2.3"
 fi
+
+# Prevent bulitin display is enabled when laptop lid is closed.
+LID_STATE_FILE="/proc/acpi/button/lid/LID/state"
+read -r LS < "$LID_STATE_FILE"
+case "$LS" in
+    *open)   swaymsg output "$OUT_BUILTIN" enable;;
+    *closed) swaymsg output "$OUT_BUILTIN" disable;;
+    *)       echo "could not get lid state" >&2 ; exit 1;;
+esac

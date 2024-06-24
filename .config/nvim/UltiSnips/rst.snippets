@@ -1,79 +1,56 @@
 # Modified from: https://github.com/jonathansick/sickvim/blob/main/vim/UltiSnips/rst.snippets
+#
+# What is b,i,w?
+# See :h UltiSnips-snippet-options
+# or https://github.com/Linfee/ultisnips-zh-doc/blob/21205695b0de754e70b4bca0bab266cd0d40db23/doc/UltiSnips_zh.txt#L600
 
 # Should >0 for overwriting honza/vim-snippets's rst.snippets
-priority 1
+priority 99
 
-global !p
-import vim
-import re
-
-from wcwidth import wcswidth
-
-# CJK chars
-# http://stackoverflow.com/questions/2718196/find-all-chinese-text-in-a-string-using-python-and-regex
-CJK_RE = re.compile(u'[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〺〻㐀-䶵一-鿃豈-鶴侮-頻並-龎]', re.UNICODE)
-
-def has_cjk(char):
-	"""
-	Detect char contains CJK character
-
-	:param char: characters needs to be detect
-	"""
-	try:
-		next(CJK_RE.finditer(char))
-	except StopIteration:
-		return False
-	else:
-		return True
-
-def rst_char_len(char):
-	return wcswidth(char)
-
-endglobal
-
-snippet em "Emphasize string" i
-`!p
-# dirty but works with CJK charactor detection
-if has_cjk(vim.current.line):
-	snip.rv ="\ "`*${1:${VISUAL:Em}}*`!p
-if has_cjk(vim.current.line):
-	snip.rv ="\ "
-else:
-	snip.rv = " "
-`$0
+snippet * "Emphasize text"
+*${1:Text}* $0
 endsnippet
 
-snippet st "Strong string" i
-`!p
-if has_cjk(vim.current.line):
-	snip.rv =" "`**${1:${VISUAL:Strong}}**`!p
-if has_cjk(vim.current.line):
-	snip.rv =" "
-else:
-	snip.rv = " "
-`$0
+snippet : "Role"
+:${1:Role}:\`${2:Text}\` $0
 endsnippet
 
-snippet di "Directive" b
+snippet ： "Role"
+:${1:Role}:\`${2:Text}\` $0
+endsnippet
+
+snippet | "Substitution"
+|${1:Reference}| $0
+endsnippet
+
+snippet ｜ "Substitution"
+|${1:Reference}| $0
+endsnippet
+
+snippet .. "Directive" b
 .. $1:: ${2:Arguments}
 
    ${3:Content}
 
-`$0
+$0
 endsnippet
 
-snippet ro "Role" w
-:$1:\`$2\`
+snippet 。。 "Directive" b
+.. $1:: ${2:Arguments}
+
+   ${3:Content}
+
+$0
 endsnippet
 
-snippet elk "Named Hyperlink" b
+snippet _ "Named Hyperlink"
 \`$1\`_
 
 .. _`!p snip.rv = t[1]`: ${2:https://example.com}
 $0
 endsnippet
 
-snippet alk "Anonymous Hyperlink" b
+snippet __ "Anonymous Hyperlink"
 \`$1\`__
 
 __ ${2:https://example.com}

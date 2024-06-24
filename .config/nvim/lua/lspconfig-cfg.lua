@@ -55,7 +55,7 @@ end
 --
 -- esbonio: pip install esbonio
 -- gopls: go install golang.org/x/tools/gopls@latest
-local servers = { 'pyright', 'rust_analyzer', 'gopls', 'esbonio' }
+local servers = { 'pyright', 'rust_analyzer', 'gopls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,

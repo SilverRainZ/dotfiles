@@ -156,7 +156,7 @@ require("lazy").setup({
   { -- like vim-fcitx, but for macOS
     -- https://zhuanlan.zhihu.com/p/49411224
     'lyokha/vim-xkbswitch',
-    enabled = vim.fn.has('mac') == 1,
+    cond = vim.fn.has('mac') == 1, -- NOTE: use cond instead of disable
     lazy = false,
     init = function()
       -- *MUST* in init function rather than config function.
@@ -166,7 +166,7 @@ require("lazy").setup({
   },
   { -- require fcitx5-remote
     'lilydjwg/fcitx.vim',
-    enabled = vim.fn.has('linux') == 1,
+    cond = vim.fn.has('linux') == 1, -- NOTE: use cond instead of disable
   },
 })
 

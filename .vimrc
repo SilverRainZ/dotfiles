@@ -130,22 +130,6 @@ imap <F9> <ESC>:!sm<CR>
 
 " Helper functions  {{{1
 
-" 切换亮暗背景色
-let g:isNightMode=1
-function NightMode()
-    if (g:isNightMode==0)
-        set bg=dark
-        let g:isNightMode=1
-    else
-        set bg=light
-        let g:isNightMode=0
-    endif
-endfunction
-
-if filereadable(expand("~/.cache/light-and-dark/sun"))
-    call NightMode()
-endif
-
 " 相对行号
 let g:isRelativeNumber=0
 function RelativeNumber()
@@ -206,5 +190,6 @@ au FocusGained * se imd
 " reStructuredText
 let g:rst_style = 1
 
+set bg=dark
 " vim modeline {{{1
 " vim: set fdm=marker:

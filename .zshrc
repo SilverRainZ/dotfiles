@@ -162,6 +162,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # Nord theme, https://github.com/ianchesal/nord-fzf
+# TODO: standalone file: https://github.com/junegunn/fzf/discussions/2528
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
     --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1

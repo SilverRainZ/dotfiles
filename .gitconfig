@@ -21,6 +21,7 @@
 	defaultBranch = master
 
 # https://dandavison.github.io/delta/configuration.html
+# :pacman:`git-delta`
 [core]
     pager = delta
 [interactive]

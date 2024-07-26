@@ -10,11 +10,12 @@ alias _p='proxychains'
 alias py='python3'
 alias o='xdg-open'
 alias grep='grep --color=auto'
+alias g='grep --color=auto -r'
 
 # freqently used path
 alias n='cd ~/documents/bullet'
 alias u='cd ~/documents/ronin'
-alias ws='cd ~/workspace'
+alias ws='cd ~/workspace/$(ls ~/workspace | fzf)'
 
 # ls.
 alias l='ls --color=auto'
@@ -49,6 +50,7 @@ alias gco='git checkout'
 alias gst='git stash'
 alias grs='git restore --staged'
 alias gr='cd $(git rev-parse --show-toplevel)' # cd to git root
+alias gg='git grep'
 
 ## cd alias
 alias ..='cd ..'

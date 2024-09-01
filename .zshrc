@@ -189,7 +189,7 @@ if [[ -z "$SSH_CLIENT" ]] && command -v snippet &> /dev/null; then
     eval "$(snippet integration --zsh-binding)"
     ### Override snippet_z_url
     function la_snippet_url() {
-        selection=$(snippet_list ds)
+        selection=$(snippet_list --tags ds)
         [ -z "$selection" ] && return
 
         echo "url \$($SNIPPET get --url $selection)"

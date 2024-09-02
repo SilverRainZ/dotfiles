@@ -20,7 +20,10 @@ require('telescope').setup{
 
     -- Shorten long path.
     -- https://github.com/nvim-telescope/telescope.nvim/issues/895#issuecomment-1021972829
-    path_display = {'smart'},
+    path_display = {
+      'smart',
+      'filename_first',
+    },
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:

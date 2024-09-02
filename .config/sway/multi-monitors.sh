@@ -26,7 +26,7 @@ elif echo "$outputs" | grep "$OUT_DELL"; then
     clamshell_mode "$OUT_BUILTIN"
 else
     echo Output: ALL
-    swaymsg "output * scale 2.3"
+    swaymsg "output * scale 2.5"
 fi
 
 # Prevent bulitin display is enabled when laptop lid is closed.

@@ -142,9 +142,10 @@ require("lazy").setup({
   -- ref: https://stackoverflow.com/a/13682379
   'vim-scripts/star-search',
   {
-    'junegunn/goyo.vim',
+    "folke/zen-mode.nvim",
+    opts = {},
     config = function()
-      vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'goyo.vim')
+      vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'zen-mode.vim')
     end
   },
   {

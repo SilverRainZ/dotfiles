@@ -169,6 +169,17 @@ require("lazy").setup({
     'lilydjwg/fcitx.vim',
     cond = vim.fn.has('linux') == 1, -- NOTE: use cond instead of disable
   },
+
+  -- ======
+  -- Others
+  -- ======
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = function()
+      require 'toggleterm-cfg'
+    end
+  }
 })
 
 -- ======================

@@ -85,11 +85,11 @@ set foldlevel=100
 nnoremap zz @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " 以下类型输入左花括号自动补全
-au FileType c,cpp,h,java,css,rust,go inoremap <buffer> {<CR> {<CR>}<Esc>O
+au FileType c,cpp,h,java,css,rust,go,lua inoremap <buffer> {<CR> {<CR>}<Esc>O
 
-" 箭头快捷输入
-au FileType go,rst,markdown abbreviate -> →
-au FileType rust abbreviate --> →
+" 箭头快捷输入，buffer-local
+au FileType go,rst,markdown iabbrev <buffer> -> →
+au FileType rust,python iabbrev <buffer> --> →
 
 " Key binds {{{1
 
@@ -118,9 +118,6 @@ map <C-P> "0p
 
 " F keys {{{2
 "
-map <F1> :call NightMode()<CR>
-imap <F1> <ESC>:call NightMode()<CR>
-
 map <F2> :call RelativeNumber()<CR>
 imap <F2> <ESC>:call RelativeNumber()<CR>
 
@@ -188,7 +185,8 @@ au InsertLeave * se imd
 au FocusGained * se imd
 
 " reStructuredText
-let g:rst_style = 1
+let g:rst_style = 1 " equal to expandtab shiftwidth=3 softtabstop=3 tabstop=8
+au FileType rst setlocal breakindent
 
 set bg=dark
 " vim modeline {{{1

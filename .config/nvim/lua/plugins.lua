@@ -150,9 +150,8 @@ require("lazy").setup({
   'vim-scripts/star-search',
   {
     "folke/zen-mode.nvim",
-    opts = {},
     config = function()
-      vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'zen-mode.vim')
+      require 'zen-mode-cfg'
     end
   },
   {
@@ -186,7 +185,7 @@ require("lazy").setup({
     config = function()
       require 'toggleterm-cfg'
     end
-  }
+  },
 })
 
 -- ======================

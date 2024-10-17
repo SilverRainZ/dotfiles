@@ -192,7 +192,7 @@ if [[ -z "$SSH_CLIENT" ]] && command -v snippet &> /dev/null; then
         selection=$(snippet_list --tags ds)
         [ -z "$selection" ] && return
 
-        echo "url \$($SNIPPET get --url $selection)"
+        echo "la-open \$($SNIPPET get --url $selection)"
     }
     function la_snippet_url_wrapper() {
         snippet_z_bind_wrapper la_snippet_url

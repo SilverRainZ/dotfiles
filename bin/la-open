@@ -1,4 +1,5 @@
 #!/bin/sh
+# LA's replacement of xdg-open.
 
 URL=$1
 

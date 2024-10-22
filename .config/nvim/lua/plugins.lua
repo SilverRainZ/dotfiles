@@ -44,6 +44,7 @@ require("lazy").setup({
       'hrsh7th/cmp-cmdline',
       'andersevenrud/cmp-tmux',              -- tmux source
       'quangnguyen30192/cmp-nvim-ultisnips', -- snippet source
+      'onsails/lspkind.nvim',                -- pretty completion list
     },
     config = function()
       require 'cmp-cfg'

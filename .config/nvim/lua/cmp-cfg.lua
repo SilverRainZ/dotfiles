@@ -34,6 +34,7 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
   }),
+
   sources = {
     { name = 'ultisnips', option = { priority = 99 }},
     { name = 'nvim_lsp' },
@@ -53,6 +54,18 @@ cmp.setup {
       vim.fn['UltiSnips#Anon'](args.body)
     end,
   },
+
+  -- https://github.com/onsails/lspkind.nvim?tab=readme-ov-file#option-2-nvim-cmp
+  formatting = {
+    format = require('lspkind').cmp_format({
+      mode = 'symbol_text', -- show symbol+text annotations
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      -- can also be a function to dynamically calculate max width such as 
+      -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+      ellipsis_char = '… ', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+    }),
+  }
 }
 
 -- `/` cmdline setup.

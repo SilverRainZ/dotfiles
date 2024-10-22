@@ -4,7 +4,7 @@
 [push]
 	default = simple
 [core]
-	editor = vim --noplugin
+	editor = vim
 [sendemail]
 	smtpserver = smtp.yandex.com
 	smtpserverport = 465

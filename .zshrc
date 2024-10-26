@@ -129,7 +129,7 @@ bindkey '^[n' down-line-or-search
 ## fzf-tab, TODO: use zinit?, :pacman:`fzf-tab-git`
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     case $OSID in
-        arch)
+        arch*) # arch, archarm, ...
             source /usr/share/zsh/plugins/fzf-tab-git/fzf-tab.plugin.zsh;;
     esac
 elif [[ "$OSTYPE" == "darwin"* ]]; then
@@ -139,7 +139,7 @@ fi
 ## zsh-syntax-highlighting
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     case $OSID in
-        arch)
+        arch*)
             source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;;
         debian)
             source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;;
@@ -151,7 +151,7 @@ fi
 ## fzf
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     case $OSID in
-        arch)
+        arch*)
             source /usr/share/fzf/key-bindings.zsh
             source /usr/share/fzf/completion.zsh;;
         debian)
@@ -172,7 +172,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 ## zsh-autosuggestions
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     case $OSID in
-        arch)
+        arch*)
             source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh;;
         debian)
             source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh;;

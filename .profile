@@ -73,6 +73,8 @@ if [[ -f ~/.bytedprofile ]]; then
 fi
 
 # If running from tty1 start sway
+# FIXME: Start sway from TTY cause ~/.profile is sourced multiple times.
+# Use a display manager to fix it?
 if [ "$(tty)" = "/dev/tty1" ]; then
     source ~/.config/sway/init.sh
     exec sway

@@ -126,7 +126,7 @@ bindkey '^[n' down-line-or-search
 
 # Plugins {{{1
 
-## fzf-tab, TODO: use zinit?
+## fzf-tab, TODO: use zinit?, :pacman:`fzf-tab-git`
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     case $OSID in
         arch)

@@ -76,7 +76,7 @@
         "format": "{volume}% {icon} ",
         "format-muted": "",
         "format-icons": ["", "", ""],
-        "on-click": "qpwgraph",
+        "on-click": "flatpak run com.saivert.pwvucontrol",
     },
 }
 

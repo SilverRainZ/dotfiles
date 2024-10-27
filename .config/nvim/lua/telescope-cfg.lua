@@ -81,12 +81,3 @@ endfunction
 " autocmd VimEnter * call StartUp()
 
 ]], false)
-
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local builtin = require('telescope.builtin')
-local extensions = require("telescope").extensions
-vim.keymap.set('n', '<C-n>', extensions.file_browser.file_browser, {})
-vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})

@@ -13,8 +13,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 local PLUGIN_VIM_CONFIG = '$XDG_CONFIG_HOME/nvim/plugins/'
+local islocal = os.getenv('SSH_CLIENT') == nil
 
 require("lazy").setup({
   -- ==========
@@ -36,6 +36,7 @@ require("lazy").setup({
 
   {
     'hrsh7th/nvim-cmp',                -- autocompletion plugin
+    cond = islocal, -- disable for after/plugin/cmp_nvim_ultisnips.lua takes 997.8ms
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',            -- LSP source
       'hrsh7th/cmp-buffer',              -- vim buffer words source
@@ -78,9 +79,16 @@ require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.7',
+    lazy = true, -- rquire keys
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-file-browser.nvim',
+    },
+    keys = {
+      { '<C-n>', function() require("telescope").extensions.file_browser.file_browser() end },
+      { '<leader>ff', function() require('telescope.builtin').git_files() end },
+      { '<leader>fg', function() require('telescope.builtin').live_grep() end },
+      { '<leader>fo', function() require('telescope.builtin').oldfiles() end },
     },
     config = function()
       require 'telescope-cfg'
@@ -102,6 +110,7 @@ require("lazy").setup({
   },
   { -- See also ~/bin/light-and-dark.
     "f-person/auto-dark-mode.nvim",
+    cond = islocal,
     opts = {
       update_interval = 1000,
       set_dark_mode = function()
@@ -164,7 +173,7 @@ require("lazy").setup({
   { -- like vim-fcitx, but for macOS
     -- https://zhuanlan.zhihu.com/p/49411224
     'lyokha/vim-xkbswitch',
-    cond = vim.fn.has('mac') == 1, -- NOTE: use cond instead of disable
+    cond = vim.fn.has('mac') == 1 and islocal,
     lazy = false,
     init = function()
       -- *MUST* in init function rather than config function.
@@ -174,7 +183,7 @@ require("lazy").setup({
   },
   { -- require fcitx5-remote
     'lilydjwg/fcitx.vim',
-    cond = vim.fn.has('linux') == 1, -- NOTE: use cond instead of disable
+    cond = vim.fn.has('linux') == 1 and islocal,
   },
 
   -- ======

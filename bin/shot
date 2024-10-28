@@ -1,18 +1,29 @@
 #!/bin/sh
 
-# Format `%H%M%S` is `%T`(`%H:%M:%S`) without colons(`:`).
-# Colon is not friendly to some OS (Windows, Android, macOS), don't get in trouble.
-FMT="%F_%H%M%S.png"
-OUTPUT=~/pictures/screenshots
+set -x
 
-FILEPATH=${OUTPUT}/$(date +${FMT})
-
-echo ${FILEPATH}
+tmpfile=$(mktemp)
 
 if [ "$1" == "-s" ]; then
-    grim -g "$(slurp)" -t png ${FILEPATH}
+    grim -g "$(slurp)" -t png $tmpfile
 else
-    grim -t png ${FILEPATH}
+    grim -t png $tmpfile
+fi
+ 
+zenity --question \
+       --text="选择一个操作：" \
+       --ok-label="复制到剪贴板" \
+       --cancel-label="保存到本地并复制路径"
+
+if [ $? -eq 0 ]; then
+    wl-copy --type image/png < $tmpfile
+else
+    # Format `%H%M%S` is `%T`(`%H:%M:%S`) without colons(`:`).
+    # Colon is not friendly to other OS (Windows, Android, macOS).
+    # See also https://github.com/syncthing/syncthing/issues/9395.
+    file=$(xdg-user-dir PICTURES)/screenshots/$(date +"%F_%H%M%S.png")
+    mv $tmpfile "$file"
+    wl-copy "$file"
 fi
 
-wl-copy --type image/png < ${FILEPATH}
+rm $tmpfile

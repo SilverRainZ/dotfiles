@@ -204,6 +204,11 @@ require("lazy").setup({
       require 'toggleterm-cfg'
     end
   },
+  {
+    'martineausimon/nvim-lilypond-suite',
+    config = function() require('nvls').setup({}) end,
+  },
+  'stsewd/sphinx.nvim',
 })
 
 -- ======================

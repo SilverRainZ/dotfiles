@@ -185,6 +185,14 @@ require("lazy").setup({
     'lilydjwg/fcitx.vim',
     cond = vim.fn.has('linux') == 1 and islocal,
   },
+  {
+    "HakonHarnes/img-clip.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+    },
+  },
 
   -- ======
   -- Others

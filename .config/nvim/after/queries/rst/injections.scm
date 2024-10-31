@@ -1,6 +1,18 @@
+; extends
+
 ((directive
-  name: (type) @_type
-  body: (body
-    (content) @injection.content))
-  (#set! injection.language "python")
-  (#eq? @_type "lily"))
+   name: (type) @_type
+   body: (body (content) @injection.content))
+ (#any-of?
+  @_type
+  "friend" "book" "artwork" "artist" "gallery" "event"
+  "leetcode" "term" "jour" "okr" "people" "rhythm" "dev")
+ (#set! injection.language "rst"))
+
+((directive
+   name: (type) @_type
+   body: (body (content) @injection.content))
+ (#any-of?
+  @_type
+  "lily")
+ (#set! injection.language "lilypond"))

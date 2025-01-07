@@ -212,9 +212,12 @@ bindsym $mod+Shift+Up sticky toggle
     assign [app_id="evince"] $ws_doc
     assign [app_id="sioyek"] $ws_doc
     assign [app_id="calibre-gui"] $ws_doc
+    assign [app_id="org.kde.digikam"] $ws_doc
+    for_window [app_id="org.kde.digikam"] floating enable
     # Workspace game
     assign [class="DDNet"] $ws_ent
     assign [class="Steam"] $ws_ent
+    assign [class="steam"] $ws_ent
     assign [class="Kodi"] $ws_ent
     # Workspace game
     assign [class="VirtualBox"] $ws_vm

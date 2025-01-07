@@ -60,3 +60,6 @@ alias .....='cd ../../../..'
 
 # SystemD
 alias sys=systemctl
+
+# Git-delta
+alias diff=delta

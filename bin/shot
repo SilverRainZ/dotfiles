@@ -22,8 +22,9 @@ else
     # Colon is not friendly to other OS (Windows, Android, macOS).
     # See also https://github.com/syncthing/syncthing/issues/9395.
     file=$(xdg-user-dir PICTURES)/screenshots/$(date +"%F_%H%M%S.png")
-    mv $tmpfile "$file"
+    cp $tmpfile "$file"
     wl-copy "$file"
 fi
 
+# Clean up.
 rm $tmpfile

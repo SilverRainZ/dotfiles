@@ -5,6 +5,7 @@
 OUT_BUILTIN='eDP-1'
 OUT_BENQ='BNQ BenQ EW3270U 58K06820019'
 OUT_DELL='Dell Inc. DELL U2720Q FZXCY13'
+OUT_CHANGHONG='ChangHong Electric Co.,Ltd CHFHD 0x00000001'
 
 clamshell_mode() {
     swaymsg "bindswitch --reload --locked lid:off output $1 enable"
@@ -24,9 +25,13 @@ elif echo "$outputs" | grep "$OUT_DELL"; then
     swaymsg "output '$OUT_BUILTIN' scale 2.5 pos 0 0"
     swaymsg "output '$OUT_DELL' scale 1.5 pos 2560 0" # 3860/1.5 = 2560
     clamshell_mode "$OUT_BUILTIN"
+elif echo "$outputs" | grep "$OUT_CHANGHONG"; then
+    swaymsg "output '$OUT_CHANGHONG' scale 2.0 pos 0 0"
+    swaymsg "output '$OUT_BUILTIN' scale 3.0 pos 0 520" # 1080/2
+    clamshell_mode "$OUT_BUILTIN"
 else
     echo Output: ALL
-    swaymsg "output * scale 2.5"
+    swaymsg "output * scale 3.0"
 fi
 
 # Prevent bulitin display is enabled when laptop lid is closed.

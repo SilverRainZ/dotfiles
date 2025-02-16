@@ -28,6 +28,8 @@
     diffFilter = delta --color-only
 [delta]
     features = decorations
+    paging = always
+    hyperlinks = true
 [merge]
     conflictstyle = diff3
 [diff]

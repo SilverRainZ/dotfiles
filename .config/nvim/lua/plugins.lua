@@ -102,7 +102,7 @@ require("lazy").setup({
   -- ===========
   -- UI Beautify
   -- ===========
-  { -- theme, nord with ligth variant
+  { -- Nord theme with ligth variant
     'rmehri01/onenord.nvim',
     config = function()
       require 'onenord-cfg'
@@ -129,7 +129,10 @@ require("lazy").setup({
   },
   {
     'akinsho/bufferline.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      'rmehri01/onenord.nvim',
+    },
     config = function()
       require 'bufferline-cfg'
     end

@@ -6,6 +6,7 @@ OUT_BUILTIN='eDP-1'
 OUT_BENQ='BNQ BenQ EW3270U 58K06820019'
 OUT_DELL='Dell Inc. DELL U2720Q FZXCY13'
 OUT_CHANGHONG='ChangHong Electric Co.,Ltd CHFHD 0x00000001'
+OUT_SANC='SAC HDMI 000000010000'
 
 clamshell_mode() {
     swaymsg "bindswitch --reload --locked lid:off output $1 enable"
@@ -28,6 +29,10 @@ elif echo "$outputs" | grep "$OUT_DELL"; then
 elif echo "$outputs" | grep "$OUT_CHANGHONG"; then
     swaymsg "output '$OUT_CHANGHONG' scale 2.0 pos 0 0"
     swaymsg "output '$OUT_BUILTIN' scale 3.0 pos 0 520" # 1080/2
+    clamshell_mode "$OUT_BUILTIN"
+elif echo "$outputs" | grep "$OUT_SANC"; then
+    swaymsg "output '$OUT_SANC' scale 1.0 pos 0 0"
+    swaymsg "output '$OUT_BUILTIN' scale 3.0 pos 1920 0" # 1920/1.5
     clamshell_mode "$OUT_BUILTIN"
 else
     echo Output: ALL

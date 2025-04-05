@@ -32,7 +32,7 @@ elif echo "$outputs" | grep "$OUT_CHANGHONG"; then
     clamshell_mode "$OUT_BUILTIN"
 elif echo "$outputs" | grep "$OUT_SANC"; then
     swaymsg "output '$OUT_SANC' scale 1.0 pos 0 0"
-    swaymsg "output '$OUT_BUILTIN' scale 3.0 pos 1920 0" # 1920/1.5
+    swaymsg "output '$OUT_BUILTIN' scale 3.0 pos 0 1080"
     clamshell_mode "$OUT_BUILTIN"
 else
     echo Output: ALL

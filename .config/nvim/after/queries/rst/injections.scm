@@ -6,7 +6,8 @@
  (#any-of?
   @_type
   "friend" "book" "artwork" "artist" "gallery" "event"
-  "leetcode" "term" "jour" "okr" "people" "rhythm" "dev")
+  "leetcode" "term" "jour" "okr" "people" "rhythm" "dev"
+  "okr")
  (#set! injection.language "rst"))
 
 ((directive

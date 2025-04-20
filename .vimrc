@@ -50,7 +50,9 @@ set fileformats=unix,dos
 
 " 编码
 set encoding=utf-8
-set termencoding=utf-8
+if exists('+termencoding') " :h hidden-options
+    set termencoding=utf-8
+endif
 set fileencodings=utf-8,chinese,latin-1
 set fileencoding=utf-8
 set fenc=utf-8
@@ -179,10 +181,12 @@ set noundofile
 " Normal 模式下禁用输入法(Windows Only?)
 set iminsert=0
 set imsearch=0
-se imd
-au InsertEnter * se noimd
-au InsertLeave * se imd
-au FocusGained * se imd
+if exists('+imdisable') " :h hidden-options
+    se imd
+    au InsertEnter * se noimd
+    au InsertLeave * se imd
+    au FocusGained * se imd
+endif
 
 " reStructuredText
 let g:rst_style = 1 " equal to expandtab shiftwidth=3 softtabstop=3 tabstop=8

@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term tilix
+set $term kitty
 set $filemgr nautilus
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -198,6 +198,7 @@ bindsym $mod+Shift+Up sticky toggle
     assign [class="dida"] $ws_todo
     # Workspace terminal
     assign [app_id="tilix"] $ws_term
+    assign [app_id="kitty"] $ws_term
     # Workspace IM
     assign [app_id="srain"] $ws_im
     for_window [app_id="srain"] focus_on_window_activation focus

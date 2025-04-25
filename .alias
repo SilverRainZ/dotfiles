@@ -3,7 +3,7 @@
 export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 
 # commonly used
-alias _='sudo ' # preverse aliases, https://unix.stackexchange.com/a/349290
+alias _='sudo ' # keep aliases, https://unix.stackexchange.com/a/349290
 alias m='make'
 alias mj8='make -j8'
 alias _p='proxychains'
@@ -59,7 +59,35 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # SystemD
-alias sys=systemctl
+# NOTE: The magic number *6* is the lines of "systemctl list-units" legend.
+# After writing this I found github.com/joehillen/sysz :'(
+list_units() {
+    systemctl $1 list-units --state=running,failed,waiting | \
+    head -n -6 | \
+    fzf --header-lines 1 \
+        --accept-nth=1 \
+        --no-hscroll \
+        --preview="SYSTEMD_COLORS=1 systemctl $1 status {1}" \
+        --preview-window=down
+}
+
+## --system
+alias s='systemctl'
+alias sps="list_units"
+alias sstart='s start $(sps)'
+alias sstop='s stop $(sps)'
+alias sre='s restart  $(sps)'
+alias jour='journalctl --unit $(sps)'
+
+## --user
+alias us='systemctl --user' # TODO: conflicts with ronin
+alias ups="list_units --user"
+alias ujour='journalctl --user --unit $(usps)'
+alias ustart='s start $(sps)'
+alias ustop='us stop $(sps)'
+alias ure='us restart  $(sps)'
 
 # Git-delta
 alias diff=delta
+
+# vim: set ft=bash:

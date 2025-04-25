@@ -3,7 +3,7 @@
 export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 
 # commonly used
-alias _='sudo'
+alias _='sudo ' # preverse aliases, https://unix.stackexchange.com/a/349290
 alias m='make'
 alias mj8='make -j8'
 alias _p='proxychains'

@@ -82,10 +82,10 @@ alias jour='journalctl --unit $(sps)'
 ## --user
 alias us='systemctl --user' # TODO: conflicts with ronin
 alias ups="list_units --user"
-alias ujour='journalctl --user --unit $(usps)'
 alias ustart='s start $(sps)'
 alias ustop='us stop $(sps)'
 alias ure='us restart  $(sps)'
+alias ujour='journalctl --user --unit $(ups)'
 
 # Git-delta
 alias diff=delta

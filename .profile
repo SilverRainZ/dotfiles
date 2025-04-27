@@ -5,8 +5,8 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US
 export LC_CTYPE=en_US.UTF-8
 
-export VISUAL=vim
-export EDITOR=$VISUAL
+export VISUAL=nvim
+export EDITOR=nvim
 
 # Less colorful output
 export LESS=-R

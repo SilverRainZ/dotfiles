@@ -34,3 +34,8 @@ How to?
 =======
 
 Run ``./deploy.sh`` to deploy dotfiles via soft link.
+
+See also...
+===========
+
+`Are we Wayland yet? <https://arewewaylandyet.com/>`_

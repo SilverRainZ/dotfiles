@@ -11,6 +11,8 @@ alias py='python3'
 alias o='xdg-open'
 alias grep='grep --color=auto'
 alias g='grep --color=auto -r'
+alias rm='trash'    # move to trash
+alias rrm='/bin/rm' # the real rm
 
 # freqently used path
 alias n='cd ~/documents/bullet'
@@ -33,6 +35,9 @@ alias t='tmux'
 alias ta='tmux attach'
 alias ts='tmux-select-sessions'
 alias reset='reset; tmux clear-history'
+
+# File manager.
+alias f='yazi'
 
 # Package manager
 alias felix='sudo pacman -Syu'
@@ -59,10 +64,10 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # SystemD
-# NOTE: The magic number *6* is the lines of "systemctl list-units" legend.
-# After writing this I found github.com/joehillen/sysz :'(
 list_units() {
-    systemctl $1 list-units --state=running,failed,waiting | \
+    # NOTE: The magic number *6* is the lines of "systemctl list-units" legend.
+    # After writing this I found github.com/joehillen/sysz :'(
+    systemctl $1 list-units --state=running,failed,waiting,dead | \
     head -n -6 | \
     fzf --header-lines 1 \
         --accept-nth=1 \
@@ -73,19 +78,19 @@ list_units() {
 
 ## --system
 alias s='systemctl'
-alias sps="list_units"
-alias sstart='s start $(sps)'
-alias sstop='s stop $(sps)'
-alias sre='s restart  $(sps)'
-alias jour='journalctl --unit $(sps)'
+alias sls="list_units"
+alias sstart='s start $(sls) && s status $_'
+alias sstop='s stop $(sls) && s status $_'
+alias sre='s restart $(sls) && s status $_'
+alias jour='journalctl --unit $(sls)'
 
 ## --user
 alias us='systemctl --user' # TODO: conflicts with ronin
-alias ups="list_units --user"
-alias ustart='s start $(sps)'
-alias ustop='us stop $(sps)'
-alias ure='us restart  $(sps)'
-alias ujour='journalctl --user --unit $(ups)'
+alias uls="list_units --user"
+alias ustart='us start $(uls) && us status $_'
+alias ustop='us stop $(uls) && us status $_'
+alias ure='us restart  $(uls) && us status $_'
+alias ujour='journalctl --user --unit $(uls)'
 
 # Git-delta
 alias diff=delta

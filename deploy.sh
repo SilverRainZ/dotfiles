@@ -5,18 +5,18 @@ link(){
 }
 
 # Link home
-files=$(ls -A1 | egrep -v 'README.rst|deploy.sh|.gitignore|.git$|.config|Makefile|conf.py|index.rst')
+files=$(ls -A1 | grep -Ev 'README.rst|deploy.sh|\.gitignore|\.git$|\.config|Makefile|archpkgs.txt')
 target=~
 for f in $files; do
-    unlink "$target" || true
-    link "$f" "$target"
+    unlink $target/$f 2>/dev/null || true
+    link $f $target
 done
 
 # Link xdg config home
-files=$(ls -A1 .config)
+files=$(ls -A1 $PWD/.config)
 target=~/.config
-mkdir -p $target || true
+mkdir -p $target 2>/dev/null || true
 for f in $files; do
-    unlink "$target/$f" || true
-    link ".config/$f" "$target/$f"
+    unlink $target/$f 2>/dev/null || true
+    link .config/$f $target/$f
 done

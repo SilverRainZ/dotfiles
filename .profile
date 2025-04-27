@@ -8,6 +8,13 @@ export LC_CTYPE=en_US.UTF-8
 export VISUAL=nvim
 export EDITOR=nvim
 
+# XDG dirs
+#
+# See also ~/.config/user-dirs.dirs
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+source ~/.config/user-dirs.dirs
+
 # Less colorful output
 export LESS=-R
 export LESS_TERMCAP_me=$(printf '\e[0m')

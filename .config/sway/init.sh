@@ -16,12 +16,6 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
-# XDG dirs
-#
-# See also ~/.config/user-dirs.dirs
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-
 # Wine.
 export WINEARCH=win32
 export WINEPREFIX=~/.wine

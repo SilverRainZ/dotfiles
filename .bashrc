@@ -18,7 +18,7 @@ case "$TERM" in
         ;;
 esac
 
-source $HOME/.alias
+source ~/.sh/alias.sh
 
 # tilix
 if [[ $TILIX_ID ]]; then
@@ -29,12 +29,12 @@ fi
 
 # TTY
 if [ "$TERM" = "linux" ]; then
-    source .tty
+    source ~/.sh/tty.sh
 fi
 
 # iterm2
 if [[ "$ITERM_SESSION_ID" ]]; then
-    source "${HOME}/.iterm2_shell_integration.zsh"
+    source ~/.iterm2_shell_integration.zsh
 fi
 
 # sphinxnotes-snippet, optional.

@@ -17,7 +17,15 @@ alias rrm='/bin/rm' # the real rm
 # freqently used path
 alias n='cd ~/documents/bullet'
 alias u='cd ~/documents/ronin'
+
+# Workspace manager
 alias ws='cd ~/workspace/$(ls ~/workspace | fzf)'
+_wsnew() {
+    fn="$(date +%Y-%m)_$1_$(pypinyin -f slug -s zhao $1)"
+    mkdir -p ~/workspace/$fn
+    cd ~/workspace/$fn
+}
+alias wsnew='_wsnew'
 
 # ls.
 alias l='ls --color=auto'
@@ -64,7 +72,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # SystemD
-list_units() {
+_list_systemd_units() {
     # NOTE: The magic number *6* is the lines of "systemctl list-units" legend.
     # After writing this I found github.com/joehillen/sysz :'(
     systemctl $1 list-units --state=running,failed,waiting,dead | \
@@ -78,7 +86,7 @@ list_units() {
 
 ## --system
 alias s='systemctl'
-alias sls="list_units"
+alias sls="_list_systemd_units"
 alias sstart='s start $(sls) && s status $_'
 alias sstop='s stop $(sls) && s status $_'
 alias sre='s restart $(sls) && s status $_'
@@ -86,7 +94,7 @@ alias jour='journalctl --unit $(sls)'
 
 ## --user
 alias us='systemctl --user' # TODO: conflicts with ronin
-alias uls="list_units --user"
+alias uls="_list_systemd_units --user"
 alias ustart='us start $(uls) && us status $_'
 alias ustop='us stop $(uls) && us status $_'
 alias ure='us restart  $(uls) && us status $_'

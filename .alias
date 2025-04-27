@@ -87,9 +87,9 @@ _list_systemd_units() {
 ## --system
 alias s='systemctl'
 alias sls="_list_systemd_units"
-alias sstart='s start $(sls) && s status $_'
-alias sstop='s stop $(sls) && s status $_'
-alias sre='s restart $(sls) && s status $_'
+alias sstart='_ s start $(sls) && s status $_'
+alias sstop='_ s stop $(sls) && s status $_'
+alias sre='_ s restart $(sls) && s status $_'
 alias jour='journalctl --unit $(sls)'
 
 ## --user

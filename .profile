@@ -7,6 +7,7 @@ export LC_CTYPE=en_US.UTF-8
 
 export VISUAL=nvim
 export EDITOR=nvim
+export TERMINAL=kitty
 
 # XDG dirs
 #

@@ -15,7 +15,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term kitty
-set $filemgr nautilus
+set $filemgr nemo
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -204,6 +204,7 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="srain"] focus_on_window_activation focus
     assign [class="Feishu"] $ws_im
     assign [class="com.alibabainc.dingtalk"] $ws_im
+    assign [app_id="thunderbird"] $ws_im
     # Workspace document viewer
     assign [class="Wps"] $ws_doc
     assign [class="Wpp"] $ws_doc
@@ -245,6 +246,7 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="it.catboy.ripdrag"] floating enable, sticky enable
     for_window [app_id="zenity"] floating enable
     for_window [app_id="com.saivert.pwvucontrol"] floating enable, sticky enable
+    for_window [app_id="nemo"] floating enable, sticky enable
 
     # File manager
     for_window [app_id="org.gnome.Nautilus"] floating enable
@@ -350,14 +352,16 @@ gaps inner 10
 smart_gaps on
 
 # Autostart:
-#
 exec swaync
 exec fcitx5
-exec syncthing-gtk
+exec syncthing-gtk --minimized
 exec blueman-applet
 exec clash-verge
 exec localsend
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec thunderbird
+exec firefox
+exec dida
+exec $term
 
 include /etc/sway/config.d/*
 

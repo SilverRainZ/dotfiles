@@ -1,0 +1,13 @@
+alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
+alias gp='git push'
+alias gpl='git pull'
+alias gf='git fetch'
+alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gcm='git commit'
+alias gco='git checkout'
+alias gst='git stash'
+alias grs='git restore --staged'
+alias gr='cd $(git rev-parse --show-toplevel)' # cd to git root
+alias gg='git grep'

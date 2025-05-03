@@ -2,19 +2,19 @@
 
 export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 
-# commonly used
+# Commonly used
 alias _='sudo ' # keep aliases, https://unix.stackexchange.com/a/349290
-alias m='make'
+alias m='sm'    # smart make, see ~/bin/sm
 alias mj8='make -j8'
 alias _p='proxychains'
 alias py='python3'
 alias o='xdg-open'
 alias grep='grep --color=auto'
 alias g='grep --color=auto -r'
-alias rm='trash'    # move to trash
+alias rm='trash'    # move to trash, NOTE: DO NOT fallback
 alias rrm='/bin/rm' # the real rm
 
-# freqently used path
+# Freqently used path
 alias n='cd ~/documents/bullet'
 alias u='cd ~/documents/ronin'
 
@@ -28,19 +28,35 @@ _wsnew() {
 alias wsnew='_wsnew'
 
 # ls.
-alias l='ls --color=auto'
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -a'
+if command -v eza 2>&1 >/dev/null; then
+    # https://gist.github.com/AppleBoiy/04a249b6f64fd0fe1744aff759a0563b
+    alias _eza='eza --color=always --group-directories-first --icons --classify=always'
+    alias l='_eza --git '
+    alias ll='_eza -l'
+    alias la='_eza -la --group'
+    alias lx='_eza -la --header --created --accessed --modified --time-style=long-iso --links --extended'
+    alias l.="_eza -a | grep -E '^\.'"
+    alias tree='_eza --tree --level=2'
+else
+    alias l='ls --color=auto'
+    alias ls='ls --color=auto'
+    alias ll='ls -l'
+    alias la='ls -a'
+fi
 
 # Neovim.
-alias v='nvim'
-alias vim='nvim'
-alias vin='nvim --noplugin'
+if command -v nvim 2>&1 >/dev/null; then
+    alias v='nvim'
+    alias vim='nvim'
+    alias vin='nvim --noplugin'
+else
+    alias v='vim'
+    alias vin='vim --noplugin'
+fi
 
 # Tmux.
-alias t='tmux'
-alias ta='tmux attach'
+alias t='tmux new-session -A'
+alias ta='t'
 alias ts='tmux-select-sessions'
 alias reset='reset; tmux clear-history'
 

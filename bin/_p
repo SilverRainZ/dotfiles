@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# -i to make sure aliases can be used.
+proxychains bash -i -c "$*"

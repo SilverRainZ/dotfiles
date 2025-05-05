@@ -6,7 +6,6 @@ export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 alias _='sudo ' # keep aliases, https://unix.stackexchange.com/a/349290
 alias m='make'
 alias mj8='make -j8'
-alias _p='proxychains'
 alias py='python3'
 alias o='xdg-open'
 alias grep='grep --color=auto'

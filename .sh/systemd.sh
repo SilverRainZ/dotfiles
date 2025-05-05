@@ -34,7 +34,7 @@ _sysls() {
 }
 
 ## --system
-alias s='sudo systemctl' alias sls="_sysls 0 0"
+alias s='sudo systemctl'
 alias sls="_sysls 0 0"
 alias slsf="_sysls 0 1"
 alias sstart='s start $(slsf static,disabled) && s status $_'

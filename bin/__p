@@ -1,6 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-export http_proxy="socks5://127.0.0.1:1080"
-export https_proxy="socks5://127.0.0.1:1080"
+# TODO: buggy?
 
-exec $*
+# -i to make sure aliases can be used.
+env \
+    http_proxy="socks5://127.0.0.1:1080" \
+    https_proxy="socks5://127.0.0.1:1080" \
+    bash -i -c "env | grep _proxy && $*"

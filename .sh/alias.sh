@@ -4,7 +4,7 @@ export LA_ALIAS_LOADED=$(($LA_ALIAS_LOADED+1))
 
 # Commonly used
 alias _='sudo ' # keep aliases, https://unix.stackexchange.com/a/349290
-alias m='sm'    # smart make, see ~/bin/sm
+alias m='make'
 alias mj8='make -j8'
 alias _p='proxychains'
 alias py='python3'
@@ -19,7 +19,7 @@ alias n='cd ~/documents/bullet'
 alias nn='cd ~/documents/ronin'
 
 # Workspace manager
-alias ws='cd ~/workspace/$(ls ~/workspace | fzf)'
+alias ws='cd ~/workspace/$('/bin/ls' ~/workspace | fzf)'
 _wsnew() {
     fn="$(date +%Y-%m)_$1_$(pypinyin -f slug -s zhao $1)"
     mkdir -p ~/workspace/$fn

@@ -212,6 +212,8 @@ require("lazy").setup({
     config = function() require('nvls').setup({}) end,
   },
   'stsewd/sphinx.nvim',
+
+  'sindrets/diffview.nvim',
 })
 
 -- ======================

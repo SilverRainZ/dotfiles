@@ -30,7 +30,13 @@
     features = decorations
     paging = always
     hyperlinks = true
-[merge]
-    conflictstyle = diff3
 [diff]
     colorMoved = default
+
+[merge]
+  tool = diffview
+[mergetool]
+  prompt = false
+  keepBackup = false
+[mergetool "diffview"]
+  cmd = nvim -n -c "DiffviewOpen" "$MERGE"

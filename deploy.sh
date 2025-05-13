@@ -12,11 +12,20 @@ for f in $files; do
     link $f $target
 done
 
-# Link xdg config home
+# Link XDG config home.
 files=$(ls -A1 $PWD/.config)
 target=~/.config
 mkdir -p $target 2>/dev/null || true
 for f in $files; do
     unlink $target/$f 2>/dev/null || true
     link .config/$f $target/$f
+done
+
+# Link SystemD user config
+files=$(ls -A1 $PWD/.config/systemd/user/)
+target=~/.config/systemd/user/
+mkdir -p $target 2>/dev/null || true
+for f in $files; do
+    unlink $target/$f 2>/dev/null || true
+    link .config/systemd/user/$f $target/$f
 done

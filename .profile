@@ -80,6 +80,10 @@ if [[ -f ~/.bytedprofile ]]; then
     source ~/.bytedprofile
 fi
 
+# Make systemd aware of your modified $PATH.
+# https://wiki.archlinux.org/title/Systemd/User#PATH
+systemctl --user import-environment PATH
+
 # If running from tty1 start sway
 # FIXME: Start sway from TTY cause ~/.profile is sourced multiple times.
 # Use a display manager to fix it?

@@ -190,12 +190,22 @@ bindsym $mod+Shift+Up sticky toggle
 # We just use 1-10 as the default.
 
     # Workspace web
+
+    ## Firefox.
     assign [app_id="firefox"] $ws_web
     for_window [app_id="firefox"] focus_on_window_activation focus
+    for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable, sticky enable
+    for_window [app_id="firefox" title="Page Info .*"] floating enable, sticky enable
+    for_window [app_id="firefox" title="Extension: .*"] floating enable, sticky enable
+    ### Firefox PWA.
+    for_window [app_id="FFPWA-.*"] floating enable
+    ## Chromium.
     assign [app_id="chromium"] $ws_web
     for_window [app_id="chromium"] focus_on_window_activation focus
-    # Workspace any
+    # Workspace todo
     assign [class="dida"] $ws_todo
+    assign [app_id="anki"] $ws_todo
+    for_window [app_id="anki"] floating enable
     # Workspace terminal
     assign [app_id="tilix"] $ws_term
     assign [app_id="kitty"] $ws_term
@@ -205,6 +215,12 @@ bindsym $mod+Shift+Up sticky toggle
     assign [class="Feishu"] $ws_im
     assign [class="com.alibabainc.dingtalk"] $ws_im
     assign [app_id="thunderbird"] $ws_im
+    for_window [app_id="fluffychat"] focus_on_window_activation focus
+    assign [app_id="fluffychat"] $ws_im
+    for_window [app_id="fluffychat"] focus_on_window_activation focus
+    assign [class="wechat"] $ws_im
+    ## Feishu's image preview window.
+    for_window [title="图片"] floating enable
     # Workspace document viewer
     assign [class="Wps"] $ws_doc
     assign [class="Wpp"] $ws_doc
@@ -221,15 +237,13 @@ bindsym $mod+Shift+Up sticky toggle
     assign [class="Steam"] $ws_ent
     assign [class="steam"] $ws_ent
     assign [class="Kodi"] $ws_ent
-    # Workspace game
+    # Workspace vm
     assign [class="VirtualBox"] $ws_vm
     assign [app_id="gnome-boxes"] $ws_vm
 
     # Image viewer
     for_window [app_id="eog"] floating enable
     for_window [class="feh"] floating enable
-    ## Feishu's image preview window.
-    for_window [title="图片"] floating enable
 
     # Video player
     for_window [app_id="io.github.coslyk.moonplayer"] floating enable
@@ -246,10 +260,11 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="it.catboy.ripdrag"] floating enable, sticky enable
     for_window [app_id="zenity"] floating enable
     for_window [app_id="com.saivert.pwvucontrol"] floating enable, sticky enable
-    for_window [app_id="nemo"] floating enable, sticky enable
+    for_window [app_id="org.gnome.Calendar"] floating enable, sticky enable
 
     # File manager
     for_window [app_id="org.gnome.Nautilus"] floating enable
+    for_window [app_id="nemo"] floating enable, sticky enable
 #
 # Layout stuff:
 #

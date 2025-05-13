@@ -96,12 +96,14 @@ setopt pushdignoredups
 ## This reverts the +/- operators.
 setopt pushdminus
 
-# Key bilding {{{1
+# Key blindings {{{1
 # - Use `bindkey` list existing bindings.
 # - Use `bindkey -l` list existing keymap names.
 bindkey -e
 
-bindkey -r "^j"
+bindkey "^l" kill-line
+bindkey "^f" forward-word
+bindkey "^b" backward-word
 
 ## Functional key
 bindkey  "${terminfo[khome]}"   beginning-of-line
@@ -113,16 +115,6 @@ bindkey  "${terminfo[kcud1]}"   down-line-or-history
 bindkey  "${terminfo[kcub1]}"   backward-char
 bindkey  "${terminfo[kcuf1]}"   forward-char
 bindkey  "${terminfo[kdch1]}"   delete-char # original: kdch1=\E[3~
-
-
-## <- and -> (Linux only?)
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
-## Search in history (thx lilydjwg :D)
-bindkey '^[p' up-line-or-search
-bindkey '^[n' down-line-or-search
-
 
 # Plugins {{{1
 
@@ -160,6 +152,9 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     source ~/.fzf.zsh
 fi
+bindkey '^n' fzf-completion
+bindkey '^r' fzf-history-widget
+# bindkey '^f' fzf-completion
 
 # Nord theme, https://github.com/ianchesal/nord-fzf
 # TODO: standalone file: https://github.com/junegunn/fzf/discussions/2528
@@ -180,7 +175,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-bindkey '^n' autosuggest-accept
 bindkey '^j' autosuggest-accept
 
 ## sphinxnotes-snippet, optional.

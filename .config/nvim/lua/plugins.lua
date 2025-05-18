@@ -214,6 +214,14 @@ require("lazy").setup({
   'stsewd/sphinx.nvim',
 
   'sindrets/diffview.nvim',
+
+  {
+    'xvzc/chezmoi.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require 'zen-mode-cfg'
+    end
+  },
 })
 
 -- ======================

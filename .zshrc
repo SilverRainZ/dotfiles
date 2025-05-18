@@ -55,6 +55,9 @@ HISTFILE=$HOME/.zsh_history
 setopt hist_ignore_space
 
 # 补全 {{{1
+
+fpath=(~/.zsh/completions $fpath) # *MUST* before compinit
+
 autoload -U compinit && compinit
 
 setopt AUTO_LIST

@@ -22,8 +22,8 @@ for f in $files; do
 done
 
 # Link SystemD user config
-files=$(ls -A1 $PWD/.config/systemd/user/)
-target=~/.config/systemd/user/
+files=$(ls -A1 $PWD/.config/systemd/user)
+target=~/.config/systemd/user
 mkdir -p $target 2>/dev/null || true
 for f in $files; do
     unlink $target/$f 2>/dev/null || true

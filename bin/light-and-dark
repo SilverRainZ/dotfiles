@@ -18,26 +18,6 @@ xdg_toggle() {
     gsettings set org.gnome.desktop.interface color-scheme $XDG_COLOR_SCHEME
 }
 
-# For Tilix.
-tilix_dark() {
-    export TILIX_FG="#FDF6E3"
-    export TILIX_BG="#2E3440"
-    export TILIX_PALETTE="['#3B4252', '#BF616A', '#A3BE8C', '#EBCB8B', '#81A1C1', '#B48EAD', '#88C0D0', '#E5E9F0', '#4C566A', '#BF616A', '#A3BE8C', '#EBCB8B', '#81A1C1', '#B48EAD', '#8FBCBB', '#ECEFF4']"
-}
-tilix_light() {
-    # Solarized Light. TODO: one nord
-    export TILIX_FG="#657B83"
-    export TILIX_BG="#FDF6E3"
-    export TILIX_PALETTE="['#073642', '#DC322F', '#859900', '#B58900', '#268BD2', '#D33682', '#2AA198', '#EEE8D5', '#002B36', '#CB4B16', '#586E75', '#657B83', '#839496', '#6C71C4', '#93A1A1', '#FDF6E3']"
-}
-tilix_toggle() {
-    TILIX_PROFILE=com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/
-    gsettings set $TILIX_PROFILE foreground-color $TILIX_FG
-    gsettings set $TILIX_PROFILE background-color $TILIX_BG
-    gsettings set $TILIX_PROFILE palette "$TILIX_PALETTE"
-}
-
-
 # Use different themes for light and dark mode.
 gtk_light() {
     export GTK_THEME=Arc # jnsh/arc-theme
@@ -52,17 +32,14 @@ gtk_toggle() {
 
 sunraise() {
     xdg_light
-    tilix_light
     gtk_light
 }
 sunset() {
     xdg_dark
-    tilix_dark
     gtk_dark
 }
 toggle() {
     xdg_toggle
-    tilix_toggle
     gtk_toggle
 }
 

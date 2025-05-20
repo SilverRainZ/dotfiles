@@ -48,6 +48,7 @@ alias f='yazi'
 
 # Package manager
 alias felix='sudo pacman -Syu'
+alias pacdiff='DIFFPROG=delta pacdiff' # :pacman:`pacman-contrib,git-delta`
 
 ## git alias
 ## cd alias

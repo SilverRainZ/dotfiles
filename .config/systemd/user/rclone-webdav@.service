@@ -1,8 +1,0 @@
-[Unit]
-Description=Dead simple WebDAV server powered by RCLONE
-
-[Service]
-ExecStart=/usr/bin/rclone serve webdav %i
-
-[Install]
-WantedBy=default.target

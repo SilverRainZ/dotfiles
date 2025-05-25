@@ -1,9 +1,0 @@
-[Unit]
-Description=Run Simple Application as SystemD service
-
-[Service]
-ExecStart=%h/srv/systemd/%i/run.sh
-WorkingDirectory=%h/srv/systemd/%i
-
-[Install]
-WantedBy=default.target

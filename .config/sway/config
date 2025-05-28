@@ -154,8 +154,8 @@ set $ws_web  "1.web: 🌏"
 set $ws_todo  "2.todo: 🎯"
 set $ws_term "3.term: 💻"
 set $ws_im   "4.im: 📧"
-set $ws_fm   "5.fm: 📁"
-set $ws_doc  "6.doc: 🗒"
+set $ws_doc  "5.doc: 📖"
+set $ws_fm   "6.fm: 📁"
 set $ws_ent  "7.game: 🎮"
 set $ws_vm   "8.vm: 💿"
 set $ws_misc "0.misc: 🏗"
@@ -166,8 +166,8 @@ bindsym $mod+1 workspace $ws_web
 bindsym $mod+2 workspace $ws_todo
 bindsym $mod+3 workspace $ws_term
 bindsym $mod+4 workspace $ws_im
-bindsym $mod+5 workspace $ws_fm
-bindsym $mod+6 workspace $ws_doc
+bindsym $mod+5 workspace $ws_doc
+bindsym $mod+6 workspace $ws_fm
 bindsym $mod+7 workspace $ws_ent
 bindsym $mod+8 workspace $ws_vm
 bindsym $mod+0 workspace $ws_misc
@@ -177,8 +177,8 @@ bindsym $mod+Shift+1 move container to workspace $ws_web
 bindsym $mod+Shift+2 move container to workspace $ws_todo
 bindsym $mod+Shift+3 move container to workspace $ws_term
 bindsym $mod+Shift+4 move container to workspace $ws_im
-bindsym $mod+Shift+5 move container to workspace $ws_fm
-bindsym $mod+Shift+6 move container to workspace $ws_doc
+bindsym $mod+Shift+5 move container to workspace $ws_doc
+bindsym $mod+Shift+6 move container to workspace $ws_fm
 bindsym $mod+Shift+7 move container to workspace $ws_ent
 bindsym $mod+Shift+8 move container to workspace $ws_vm
 bindsym $mod+Shift+0 move container to workspace $ws_misc
@@ -204,8 +204,6 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="chromium"] focus_on_window_activation focus
     # Workspace todo
     assign [class="dida"] $ws_todo
-    assign [app_id="anki"] $ws_todo
-    for_window [app_id="anki"] floating enable
     # Workspace terminal
     assign [app_id="tilix"] $ws_term
     assign [app_id="kitty"] $ws_term
@@ -232,6 +230,8 @@ bindsym $mod+Shift+Up sticky toggle
     assign [app_id="calibre-gui"] $ws_doc
     assign [app_id="org.kde.digikam"] $ws_doc
     for_window [app_id="org.kde.digikam"] floating enable
+    assign [app_id="anki"] $ws_doc
+    for_window [app_id="anki"] floating enable
     # Workspace game
     assign [class="DDNet"] $ws_ent
     assign [class="Steam"] $ws_ent

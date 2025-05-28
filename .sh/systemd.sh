@@ -19,7 +19,6 @@ _sysls() {
     else
         STATE="--state=$3"
     fi
-
     # NOTE: The magic number *6* is the lines of "systemctl list-units" legend.
     # After writing this I found github.com/joehillen/sysz :'(
     echo systemctl $WIDE $ACTION $STATE >&2
@@ -40,7 +39,8 @@ alias slsf="_sysls 0 1"
 alias sstart='s start $(slsf static,disabled) && s status $_'
 alias sstop='s stop $(sls running,failed) && s status $_'
 alias sre='s restart $(sls) && s status $_'
-alias jour='journalctl --unit $(sls)'
+alias sj='journalctl --unit $(sls) --all --reverse'
+alias sjf='journalctl --unit $(sls) --all --follow'
 
 ## --user
 alias u='systemctl --user' # TODO: conflicts with ronin
@@ -49,4 +49,5 @@ alias ulsf="_sysls 1 1"
 alias ustart='u start $(ulsf static,disabled) && u status $_'
 alias ustop='u stop $(uls running,failed) && u status $_'
 alias ure='u restart $(uls) && u status $_'
-alias ujour='journalctl --user --unit $(uls)'
+alias uj='journalctl --user --unit $(uls) --all --reverse'
+alias ujf='journalctl --user --unit $(uls) --all --follow'

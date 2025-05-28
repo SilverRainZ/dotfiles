@@ -16,7 +16,7 @@ alias rrm='/bin/rm' # the real rm
 
 # Freqently used path
 alias n='cd ~/documents/bullet'
-alias nn='cd ~/documents/ronin'
+alias nn='cd ~/documents/bullet/in'
 
 # Workspace manager
 alias ws='cd ~/workspace/$('/bin/ls' ~/workspace | fzf)'

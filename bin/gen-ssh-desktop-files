@@ -19,12 +19,13 @@ EOF
 
 }
 
-HOSTS=(rpi3 tcc ds218p n100)
+HOSTS=(rpi3 tcc ds218p n100 claw)
 PRETTY_HOSTS=(
     'Raspberry Pi 3'
     'Tencent Cloud'
     'Synology 218+'
     'XCY N100'
+    'Claw Cloud 2C4G'
 )
 
 for i in ${!HOSTS[@]}; do

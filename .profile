@@ -89,5 +89,9 @@ systemctl --user import-environment PATH
 # Use a display manager to fix it?
 if [ "$(tty)" = "/dev/tty1" ]; then
     source ~/.config/sway/init.sh
-    exec sway
+    if [[ -z $(lspci | grep VGA | grep NVIDIA) ]]; then
+        exec sway
+    else
+        exec sway --unsupported # for swanpc's RTX3060
+    fi
 fi

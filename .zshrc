@@ -41,7 +41,16 @@ host_prompt(){
     fi
 }
 
-PROMPT=$'%F{green}/%f %B%F{cyan}%n%f %F{white}@%f $(host_prompt) %F{black}%T%f %F{white}->%(?..%F{red}[%?])%f %F{green}%~%f %F$(git_prompt)%f %b
+chezmoi_prompt(){
+    [[ -z ${CHEZMOI} ]] && return
+
+    # if [[ ! -z ${is_clean} ]]; then
+    #     is_clean="%F{yellow}x"
+    # fi
+    echo "%F{blue}chezmoi:(%F{red}${CHEZMOI_DEST_DIR}%F{blue}) ${is_clean}%f";
+}
+
+PROMPT=$'%F{green}/%f %B%F{cyan}%n%f %F{white}@%f $(host_prompt) %F{black}%T%f %F{white}->%(?..%F{red}[%?])%f %F{green}%~%f %F$(git_prompt)%f %F$(chezmoi_prompt)%f %b
 %F{green}\\%f %B%(!.%F{red}%#.%F{blue}$) %F{white}%b'
 
 # History {{{1

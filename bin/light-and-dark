@@ -15,10 +15,13 @@ xdg_dark() {
     export XDG_COLOR_SCHEME=prefer-dark
 }
 xdg_toggle() {
+    # For neovim's f-person/auto-dark-mode.nvim.
+    # :pacman:`xdg-desktop-portal-gtk`
+    # systemctl --uesr restart xdg-desktop-portal
     gsettings set org.gnome.desktop.interface color-scheme $XDG_COLOR_SCHEME
 }
 
-# Use different themes for light and dark mode.
+# Use different GTK themes for light and dark mode.
 gtk_light() {
     export GTK_THEME=Arc # jnsh/arc-theme
 }
@@ -30,17 +33,33 @@ gtk_toggle() {
     gsettings set org.gnome.desktop.wm.preferences theme $GTK_THEME
 }
 
+kitty_light() {
+    unlink ~/.config/kitty/theme.conf
+    ln -s ~/.config/kitty/latte.conf ~/.config/kitty/theme.conf
+}
+kitty_dark() {
+    unlink ~/.config/kitty/theme.conf
+    ln -s ~/.config/kitty/nord.conf ~/.config/kitty/theme.conf
+}
+kitty_toggle() {
+    # https://sw.kovidgoyal.net/kitty/conf/#kitty-conf
+    kill -USR1 $(pidof kitty)
+}
+
 sunraise() {
     xdg_light
     gtk_light
+    kitty_light
 }
 sunset() {
     xdg_dark
     gtk_dark
+    kitty_dark
 }
 toggle() {
     xdg_toggle
     gtk_toggle
+    kitty_toggle
 }
 
 # Flag of light/dark mode.

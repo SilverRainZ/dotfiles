@@ -211,6 +211,7 @@ bindsym $mod+Shift+Up sticky toggle
     assign [app_id="srain"] $ws_im
     for_window [app_id="srain"] focus_on_window_activation focus
     assign [class="Feishu"] $ws_im
+    assign [class="Bytedance-feishu"] $ws_im
     assign [class="com.alibabainc.dingtalk"] $ws_im
     assign [app_id="thunderbird"] $ws_im
     for_window [app_id="fluffychat"] focus_on_window_activation focus
@@ -258,13 +259,17 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="pavucontrol"] floating enable, sticky enable
     for_window [app_id="qpwgraph"] floating enable, sticky enable
     for_window [app_id="it.catboy.ripdrag"] floating enable, sticky enable
-    for_window [app_id="zenity"] floating enable
     for_window [app_id="com.saivert.pwvucontrol"] floating enable, sticky enable
     for_window [app_id="org.gnome.Calendar"] floating enable, sticky enable
 
     # File manager
     for_window [app_id="org.gnome.Nautilus"] floating enable
     for_window [app_id="nemo"] floating enable, sticky enable
+
+    # Zenity/yad
+    for_window [app_id="zenity"] floating enable
+    for_window [app_id="xdg-desktop-portal-gtk"] floating enable
+    for_window [app_id="yad"] floating enable
 #
 # Layout stuff:
 #

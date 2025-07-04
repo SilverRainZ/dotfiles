@@ -10,7 +10,7 @@ gen() {
 Type=Application
 Name=SSH to $PRETTY_HOST
 Comment=Connect to $PRETTY_HOST via SSH
-Exec=ssh $HOST
+Exec=kitten ssh $HOST
 Icon=network-wired
 Terminal=true
 Categories=Network;RemoteAccess;
@@ -19,13 +19,14 @@ EOF
 
 }
 
-HOSTS=(rpi3 tcc ds218p n100 claw)
+HOSTS=(rpi3 tcc ds218p n100 claw swanpc)
 PRETTY_HOSTS=(
     'Raspberry Pi 3'
     'Tencent Cloud'
     'Synology 218+'
     'XCY N100'
     'Claw Cloud 2C4G'
+    "Swan's PC"
 )
 
 for i in ${!HOSTS[@]}; do

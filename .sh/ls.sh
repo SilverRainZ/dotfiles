@@ -10,6 +10,7 @@ if command -v eza 2>&1 >/dev/null; then
     alias lx='_eza -la --header --created --accessed --modified --time-style=long-iso --links --extended'
     alias l.="_eza -a | grep -E '^\.'"
     alias tree='_eza --tree --level=2'
+    alias treee='_eza --tree'
 else
     alias l='ls --color=auto'
     alias ls='ls --color=auto'

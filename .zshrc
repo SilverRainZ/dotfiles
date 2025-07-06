@@ -207,4 +207,13 @@ if [[ -z "$SSH_CLIENT" ]] && command -v snippet &> /dev/null; then
     bindkey '^ku' la_snippet_url_wrapper
 fi
 
+# tmux-window-name
+# https://github.com/ofirgall/tmux-window-name?tab=readme-ov-file#automatic-rename-after-changing-dir
+tmux-window-name() {
+    if [[ ! -z $TMUX_PLUGIN_MANAGER_PATH ]]; then
+        ($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+    fi
+}
+add-zsh-hook chpwd tmux-window-name
+
 # vim: se fdm=marker:

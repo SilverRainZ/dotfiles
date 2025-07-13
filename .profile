@@ -31,13 +31,18 @@ export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 export CHROOT=$HOME/chroot
 
 # Path {{{1
+
+## LA's custom bin dir.
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/git/etcfiles/bin:$PATH
+export PATH=$HOME/latree/bin:$PATH
+## golang :'(
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/go/bin
+# XDG.
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin
 
-# macOS
+## macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH=/usr/local/bin:$PATH
     export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -54,7 +59,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 
-# Homebrew 
+## Homebrew
 if [[ -f /usr/local/bin/brew ]]; then
     eval "$(/usr/local/bin/brew shellenv)"
 elif [[ -d /home/linuxbrew ]]; then

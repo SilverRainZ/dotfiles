@@ -1,0 +1,10 @@
+[Unit]
+Description=Simple Application: %i/run.sh
+
+[Service]
+ExecStart=%h/srv/%i/run.sh
+WorkingDirectory=%h/srv/%i
+SyslogIdentifier=%i
+
+[Install]
+WantedBy=default.target

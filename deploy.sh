@@ -13,7 +13,7 @@ for f in $files; do
 done
 
 # Link XDG config home.
-files=$(ls -A1 $PWD/.config | grep -Ev 'systemd')
+files=$(ls -A1 $PWD/.config)
 target=~/.config
 mkdir -p $target 2>/dev/null || true
 for f in $files; do
@@ -21,7 +21,7 @@ for f in $files; do
     link .config/$f $target/$f
 done
 
-# Link SystemD user config.
+# Link SystemD user config
 files=$(ls -A1 $PWD/.config/systemd/user)
 target=~/.config/systemd/user
 mkdir -p $target 2>/dev/null || true

@@ -29,7 +29,7 @@ set $notify swaync-client --toggle-panel --skip-wait
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg $wallpaper fill
+output * bg $wallpaper fill
 
 # Multiple monitors
 #
@@ -357,7 +357,7 @@ bindsym XF86MonBrightnessDown exec lightctl down
 # Theme:
 #
 # Set cursor theme
-set $cursor_theme BreezeX-Dark
+set $cursor_theme Breeze-Adapta-Cursor
 set $cursor_size 36
 
 seat seat0 xcursor_theme $cursor_theme $cursor_size
@@ -376,6 +376,7 @@ exec swaync
 exec fcitx5
 exec syncthing-gtk --minimized
 exec blueman-applet
+exec clash-verge
 exec localsend
 exec thunderbird
 exec firefox

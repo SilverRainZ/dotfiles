@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# :pacman:`timg`
+timg --pixelation=kitty --grid=4 --title='%b' --center "$@"

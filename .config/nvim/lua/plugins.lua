@@ -233,6 +233,12 @@ require("lazy").setup({
       require 'zen-mode-cfg'
     end
   },
+
+  {
+    'LhKipp/nvim-nu',
+    build = ':TSInstall nu',
+    opts = {}
+  },
 })
 
 -- ======================
@@ -241,3 +247,5 @@ require("lazy").setup({
 
 -- https://sphinx.silverrainz.me/snippet/
 vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'sphinxnotes-snippet.vim')
+-- https://github.com/ofirgall/tmux-window-name
+require 'tmux-window-name-cfg'

@@ -236,8 +236,10 @@ require("lazy").setup({
 
   {
     'LhKipp/nvim-nu',
+    enabled = false, -- due to https://github.com/nushell/tree-sitter-nu/issues/219
     build = ':TSInstall nu',
-    opts = {}
+    opts = {},
+    dependencies = { 'nvimtools/none-ls.nvim' },
   },
 })
 

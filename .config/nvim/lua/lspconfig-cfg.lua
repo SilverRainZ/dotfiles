@@ -62,6 +62,16 @@ for _, lsp in pairs(servers) do
   }
 end
 
+-- Disabled, see also plugins.lua.
+-- require("lspconfig").nushell.setup({
+--   cmd = {
+--     "nu",
+--     "--config",
+--     vim.env.XDG_CONFIG_HOME .. "/nushell/lsp.nu",
+--     "--lsp",
+--   },
+-- })
+
 require("hover").setup {
   init = function()
     require("hover.providers.lsp")

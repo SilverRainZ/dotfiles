@@ -1,7 +1,10 @@
 -- :TSInstall bash c cpp css go gomod html python rst rust yaml
 require 'nvim-treesitter.configs'.setup {
   highlight = {
-    ensure_installed = { 'go', 'python', 'rst', 'c', 'lua', 'rust', 'bash', 'comment'},
+    ensure_installed = {
+      'go', 'python', 'rst', 'c', 'lua', 'rust', 'bash', 'comment',
+      'nushell', 'scheme',
+    },
     enable = true,
     disable = {},
   },

@@ -21,7 +21,9 @@ else
     # Format `%H%M%S` is `%T`(`%H:%M:%S`) without colons(`:`).
     # Colon is not friendly to other OS (Windows, Android, macOS).
     # See also https://github.com/syncthing/syncthing/issues/9395.
-    file=$(xdg-user-dir PICTURES)/screenshots/$(date +"%F_%H%M%S.png")
+    dir=$(xdg-user-dir PICTURES)/screenshots
+    mkdir -p $dir
+    file=$dir/$(date +"%F_%H%M%S.png")
     cp $tmpfile "$file"
     wl-copy "$file"
 fi

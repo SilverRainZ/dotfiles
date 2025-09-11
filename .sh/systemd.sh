@@ -1,53 +1,71 @@
-# Set of aliases for SYSTEMCTL(1).
+# Set of aliases/helpers for SYSTEMCTL(1).
 
+# Simple aliases.
+alias s='sudo systemctl'
+alias sj='journalctl'
+alias u='systemctl --user'
+alias uj='journalctl --user'
+
+# SystemD unit selector.
 _sysls() {
     # $1: --system or --user
-    # $2: list-units or list-unit-files
-    # $3: states, see also "systemctl list-units --state=help"
-    if [ $1 == 0 ]; then
-        WIDE=--system
-    else
-        WIDE=--user
-    fi
-    if [ $2 == 0 ]; then
-        ACTION=list-units
-    else
-        ACTION=list-unit-files
-    fi
-    if [ -z $3 ]; then
-        STATE=""
-    else
-        STATE="--state=$3"
-    fi
-    # NOTE: The magic number *6* is the lines of "systemctl list-units" legend.
-    # After writing this I found github.com/joehillen/sysz :'(
-    echo systemctl $WIDE $ACTION $STATE >&2
-    systemctl $WIDE $ACTION $STATE | \
-    sed 's/●/ /'| \
-    head -n -6 | \
-    fzf --header-lines 1 \
-        --accept-nth=1 \
-        --no-hscroll \
-        --preview="SYSTEMD_COLORS=1 systemctl $WIDE status {1}" \
-        --preview-window=down
+    # $2: states, see also "systemctl list-units --state=help"
+    WIDE=$1
+    [ -n $2 ] && STATE="--state=$2"
+    cat \
+        <(echo 'UNIT/FILE LOAD/STATE ACTIVE/PRESET SUB DESCRIPTION') \
+        <(systemctl $WIDE list-units --legend=false $STATE) \
+        <(systemctl $WIDE list-unit-files --legend=false $STATE) \
+    | sed 's/●/ /' \
+    | grep . \
+    | column --table --table-columns-limit=5 \
+    | fzf --header-lines=1 \
+          --accept-nth=1 \
+          --no-hscroll \
+          --preview="SYSTEMD_COLORS=1 systemctl $WIDE status {1}" \
+          --preview-window=down
 }
 
-## --system
-alias s='sudo systemctl'
-alias sls="_sysls 0 0"
-alias slsf="_sysls 0 1"
-alias sstart='s start $(slsf static,disabled) && s status $_'
-alias sstop='s stop $(sls running,failed) && s status $_'
-alias sre='s restart $(sls) && s status $_'
-alias sj='journalctl --unit $(sls) --all --reverse'
-alias sjf='journalctl --unit $(sls) --all --follow'
+# Aliases for unit selector.
+alias sls='_sysls --system'
+alias uls='_sysls --user'
+alias sjf='sj --unit $(uls) --all --follow'
+alias ujf='uj --unit $(uls) --all --follow'
 
-## --user
-alias u='systemctl --user' # TODO: conflicts with ronin
-alias uls="_sysls 1 0"
-alias ulsf="_sysls 1 1"
-alias ustart='u start $(ulsf static,disabled) && u status $_'
-alias ustop='u stop $(uls running,failed) && u status $_'
-alias ure='u restart $(uls) && u status $_'
-alias uj='journalctl --user --unit $(uls) --all --reverse'
-alias ujf='journalctl --user --unit $(uls) --all --follow'
+_SYS_ALIASES=(
+    sstart sstop sre
+    ustart ustop ure
+)
+_SYS_CMDS=(
+    's start $(sls static,disabled,failed)'
+    's stop $(sls running,failed)'
+    's restart $(sls)'
+    'u start $(uls static,disabled,failed)'
+    'u stop $(uls running,failed)'
+    'u restart $(uls)'
+)
+
+_sysexec() {
+    for ((j=0; j < ${#_SYS_ALIASES[@]}; j++)); do
+        if [ "$1" == "${_SYS_ALIASES[$j]}" ]; then
+            cmd=$(eval echo "${_SYS_CMDS[$j]}") # expand service name
+            wide=${cmd:0:1}
+            cmd="$cmd && ${wide} status \$_ || ${wide}j -xeu \$_"
+            eval $cmd
+
+            # Push to history.
+            [ -n "$BASH_VERSION" ] && history -s $cmd
+            [ -n "$ZSH_VERSION" ] && print -s $cmd 
+            return
+        fi
+    done
+}
+
+# Generate bash function/zsh widgets.
+for i in ${_SYS_ALIASES[@]}; do
+    source /dev/stdin <<EOF
+$i() {
+    _sysexec $i
+}
+EOF
+done

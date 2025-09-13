@@ -11,7 +11,7 @@ _sysls() {
     # $1: --system or --user
     # $2: states, see also "systemctl list-units --state=help"
     WIDE=$1
-    [ -n $2 ] && STATE="--state=$2"
+    [ -n "$2" ] && STATE="--state=$2"
     cat \
         <(echo 'UNIT/FILE LOAD/STATE ACTIVE/PRESET SUB DESCRIPTION') \
         <(systemctl $WIDE list-units --legend=false $STATE) \

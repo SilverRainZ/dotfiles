@@ -29,7 +29,7 @@ _sysls() {
 # Aliases for unit selector.
 alias sls='_sysls --system'
 alias uls='_sysls --user'
-alias sjf='sj --unit $(uls) --all --follow'
+alias sjf='sj --unit $(sls) --all --follow'
 alias ujf='uj --unit $(uls) --all --follow'
 
 _SYS_ALIASES=(

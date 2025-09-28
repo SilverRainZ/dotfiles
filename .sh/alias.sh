@@ -11,8 +11,6 @@ alias o='xdg-open'
 alias grep='grep --color=auto'
 alias g='grep --color=auto -r'
 alias tsh='trash' # use trash rather than rm
-alias rm='echo "\033[0;31mUse trash or rrm plz!!!\033[0m"' # TODO: remove
-alias rrm='/bin/rm' # the real rm
 
 # Freqently used path
 alias n='cd ~/documents/bullet'

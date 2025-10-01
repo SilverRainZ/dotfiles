@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "wireplumber", "network", "cpu", "memory", "battery", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "wireplumber", "network", "network#speed", "cpu", "memory", "battery", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -71,6 +71,20 @@
         "format-disconnected": "Disconnected ⚠ ",
         // "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "on-click": "iwgtk"
+    },
+    "network#speed": {
+        "interval": 3,
+        "format": "{ifname}",
+        "format-wifi": "   {bandwidthDownBytes}",
+        "format-ethernet": "   {bandwidthDownBytes}",
+        "format-disconnected": "󰌙",
+        "tooltip-format": "{ipaddr}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} 󰌘",
+        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "max-length": 30,
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
     },
     "wireplumber": {
         "format": "{volume}% {icon} ",

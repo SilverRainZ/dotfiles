@@ -1,4 +1,5 @@
 alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit -M'
+alias glf='gl --follow'
 alias gp='git push'
 alias gpl='git pull'
 alias gf='git fetch'

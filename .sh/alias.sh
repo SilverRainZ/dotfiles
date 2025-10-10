@@ -14,7 +14,7 @@ alias tsh='trash' # use trash rather than rm
 
 # Freqently used path
 alias n='cd ~/documents/bullet'
-alias nn='cd ~/documents/bullet/in'
+alias nn='cd ~/documents/bullet/src/in'
 
 # Workspace manager
 alias ws='cd ~/workspace/$('/bin/ls' ~/workspace | fzf)'

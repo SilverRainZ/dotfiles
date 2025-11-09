@@ -57,13 +57,14 @@ end
 -- gopls: go install golang.org/x/tools/gopls@latest
 local servers = { 'pyright', 'rust_analyzer', 'gopls' }
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = on_attach,
-  }
+  })
+  vim.lsp.enable(lsp)
 end
 
 -- Disabled, see also plugins.lua.
--- require("lspconfig").nushell.setup({
+-- vim.lsp.config('nushell', {
 --   cmd = {
 --     "nu",
 --     "--config",

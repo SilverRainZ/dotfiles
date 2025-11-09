@@ -81,9 +81,11 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 
 input type:keyboard {
-    # See /usr/share/X11/xkb/rules/xorg.lst for options
-    # Swap Ctrl and Caps Lock
-    xkb_options ctrl:swapcaps
+    # Make caps lock work as additional control xkb_options caps:ctrl_modifier 
+    # .. seealso::
+    #   /usr/share/X11/xkb/rules/xorg.lst for options
+    #   https://github.com/swaywm/sway/wiki#keyboard-layout
+    xkb_options caps:ctrl_modifier
 }
 
 input type:touchpad {

@@ -3,7 +3,8 @@
 # TODO: buggy?
 
 # -i to make sure aliases can be used.
+# socks5*h*: h for remote DNS!
 env \
-    http_proxy="socks5://127.0.0.1:1080" \
-    https_proxy="socks5://127.0.0.1:1080" \
+    http_proxy="socks5h://127.0.0.1:1080" \
+    https_proxy="socks5h://127.0.0.1:1080" \
     bash -i -c "env | grep _proxy && $*"

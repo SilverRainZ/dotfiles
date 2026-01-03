@@ -63,6 +63,47 @@ require("lazy").setup({
     end
   },
 
+  {
+    'yetone/avante.nvim',
+    -- https://github.com/yetone/avante.nvim/issues/544#issuecomment-2334374237
+    build = 'make',
+    event = 'VeryLazy',
+    version = false,
+    ---@module 'avante'
+    ---@type avante.Config
+    opts = {
+      provider = 'perplexity',
+      providers = {
+        perplexity = {
+          __inherited_from = 'openai',
+          api_key_name = 'PERPLEXITY_API_KEY',
+          endpoint = 'https://api.perplexity.ai',
+          model = 'sonar-pro',
+
+          -- https://github.com/yetone/avante.nvim/issues/2800
+          -- socks5*h*: h for remote DNS!
+          proxy = 'socks5h://127.0.0.1:1080',
+        },
+      },
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-telescope/telescope.nvim',
+      'hrsh7th/nvim-cmp',
+      'nvim-tree/nvim-web-devicons',
+      'HakonHarnes/img-clip.nvim',
+      {
+        -- Make sure to set this up properly if you have lazy=true
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { 'Avante' },
+        },
+        ft = { 'Avante' },
+      },
+    },
+  },
+
   -- ==========
   -- Formatters
   -- ==========

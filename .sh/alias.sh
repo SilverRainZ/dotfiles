@@ -14,7 +14,7 @@ alias tsh='trash' # use trash rather than rm
 
 # Freqently used path
 alias n='cd ~/documents/bullet'
-alias nn='cd ~/documents/bullet/src/in'
+alias nn='cd ~/documents/bullet/src/in/inbox'
 alias nb='cd ~/documents/bullet/blobs'
 alias nl='cd ~/sync/latree'
 
@@ -44,7 +44,8 @@ alias ts='tmux-select-sessions'
 alias reset='reset; tmux clear-history'
 
 # File manager.
-alias f='nohup nemo $PWD 2>&1 1>/dev/null &'
+alias f='yazi'
+alias gf='nohup nemo $PWD 2>&1 1>/dev/null &'
 
 # Package manager
 alias felix='sudo pacman -Syu'

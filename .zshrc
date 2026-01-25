@@ -166,7 +166,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 bindkey '^n' fzf-completion
 bindkey '^r' fzf-history-widget
-# bindkey '^f' fzf-completion
+bindkey '^f' fzf-file-widget
 
 # Nord theme, https://github.com/ianchesal/nord-fzf
 # TODO: standalone file: https://github.com/junegunn/fzf/discussions/2528

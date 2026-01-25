@@ -110,6 +110,9 @@ nmap tc :tabclose<CR>
 nmap vs :vs<CR>
 nmap sp :split<CR>
 
+" Unmap q to prevent accidental touches
+map q <Nop>
+
 " Copy & Paste {{{2
 
 " Windows-style

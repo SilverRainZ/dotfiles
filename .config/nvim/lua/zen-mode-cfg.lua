@@ -6,7 +6,7 @@ function toggle()
   })
 end
 
-vim.keymap.set("n", "<C-g>", toggle, {})
+-- vim.keymap.set("n", "<C-g>", toggle, {})
 
 -- FIXME: doesn't work
 vim.api.nvim_create_autocmd({'VimEnter'},

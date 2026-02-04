@@ -2,7 +2,6 @@ alias gl='git log --color --graph --decorate -M --pretty=oneline --abbrev-commit
 alias glf='gl --follow'
 alias gp='git push'
 alias gpl='git pull --rebase'
-alias gf='git fetch'
 alias gs='git status'
 alias ga='git add'
 alias gd='git diff --submodule=diff'

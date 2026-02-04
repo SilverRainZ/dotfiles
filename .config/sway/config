@@ -21,7 +21,7 @@ set $filemgr nemo
 # on the original workspace that the command was run on.
 set $menu fuzzel | xargs swaymsg exec --
 # Your preferred wallpaper
-set $wallpaper /home/la/pictures/wallpapers/bg
+set $wallpaper /home/la/pictures/bg.jpg
 # Your preferred screenlocker
 set $lock swaylock --daemonize --color 000000ff
 set $notify swaync-client --toggle-panel --skip-wait

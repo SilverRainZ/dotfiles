@@ -46,20 +46,36 @@ kitty_toggle() {
     kill -USR1 $(pidof kitty)
 }
 
+fzf_light() {
+    unlink ~/.config/fzf/theme
+    ln -s ~/.config/fzf/{light.theme,theme}
+}
+fzf_dark() {
+    unlink ~/.config/fzf/theme
+    ln -s ~/.config/fzf/{dark.theme,theme}
+}
+fzf_toggle() {
+    # Nothing to do.
+    return 0
+}
+
 sunraise() {
     xdg_light
     gtk_light
     kitty_light
+    fzf_light
 }
 sunset() {
     xdg_dark
     gtk_dark
     kitty_dark
+    fzf_dark
 }
 toggle() {
     xdg_toggle
     gtk_toggle
     kitty_toggle
+    fzf_toggle
 }
 
 # Flag of light/dark mode.

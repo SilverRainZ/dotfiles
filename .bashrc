@@ -37,10 +37,10 @@ if [[ "$ITERM_SESSION_ID" ]]; then
     source ~/.iterm2_shell_integration.zsh
 fi
 
-# sphinxnotes-snippet, optional.
-# https://sphinx.silverrainz.me/snippet/
-if [[ -z "$SSH_CLIENT" ]] && command -v snippet &> /dev/null; then
-    eval "$(snippet integration --sh --sh-binding)"
+# sphinxnotes-picker, optional.
+# https://sphinx.silverrainz.me/picker/
+if [[ -z "$SSH_CLIENT" ]] && command -v sphinxnotes-picker &> /dev/null; then
+    eval "$(sphinxnotes-picker integration --sh --sh-binding)"
 fi
 
 # autojump, :require:`bin:autojump`.

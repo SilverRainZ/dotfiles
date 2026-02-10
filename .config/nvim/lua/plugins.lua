@@ -269,7 +269,8 @@ require("lazy").setup({
 -- Manual managed plugins
 -- ======================
 
--- https://sphinx.silverrainz.me/snippet/
-vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'sphinxnotes-snippet.vim')
+-- https://sphinx.silverrainz.me/picker/
+vim.cmd('source ' .. PLUGIN_VIM_CONFIG .. 'sphinxnotes-picker.vim')
+
 -- https://github.com/ofirgall/tmux-window-name
 require 'tmux-window-name-cfg'

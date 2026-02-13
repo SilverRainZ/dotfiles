@@ -194,7 +194,7 @@ if [[ -z "$SSH_CLIENT" ]] && command -v sphinxnotes-picker &> /dev/null; then
         selection=$(picker_list --tags ds)
         [ -z "$selection" ] && return
 
-        echo "la-open \$($SNIPPET get --url $selection)"
+        echo "la-open \$($PICKER get --url $selection)"
     }
     function la_picker_url_wrapper() {
         picker_z_bind_wrapper la_picker_url

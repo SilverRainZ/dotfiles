@@ -10,8 +10,7 @@ vim.api.nvim_set_keymap('n', '<leader>e',
 opts)
 vim.api.nvim_set_keymap('n', '<leader>ne', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>Ne', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
--- 'q': Open quickfix windows.
-vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>ge', '<cmd>Telescope diagnostics<CR>', opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer

@@ -258,7 +258,7 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="iwgtk"] floating enable, sticky enable
     for_window [app_id="syncthing-gtk"] floating enable, sticky enable
     for_window [app_id="blueman-manager"] floating enable, sticky enable
-    for_window [class="Clash-verge"] floating enable, sticky enable
+    for_window [app_id="clash-verge"] floating enable, sticky enable
     for_window [app_id="localsend"] floating enable
     for_window [app_id="pavucontrol"] floating enable, sticky enable
     for_window [app_id="qpwgraph"] floating enable, sticky enable

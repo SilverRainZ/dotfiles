@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd ~/git/oratio
+
+cargo run -- run --config ./oratio.yaml

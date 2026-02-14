@@ -1,0 +1,16 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "theme": "nord",
+    "permission": {
+        "read": {
+            "/usr/lib/python3.14": "allow",
+            "/usr/include": "allow",
+            "~/git/": "allow",
+            "~/.local/lib/python*": "allow"
+        }
+    },
+    "plugin": [
+        "@franlol/opencode-md-table-formatter@0.0.3",
+        "@mohak34/opencode-notifier@latest"
+    ]
+}

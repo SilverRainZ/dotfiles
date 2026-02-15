@@ -46,7 +46,9 @@ _SYS_CMDS=(
 )
 
 _sysexec() {
-    for ((j=0; j < ${#_SYS_ALIASES[@]}; j++)); do
+    local cmp='<' start=${ZSH_VERSION:+1}
+    [ -n "$ZSH_VERSION" ] && cmp='<='
+    for ((j=${start:-0}; j $cmp ${#_SYS_ALIASES[@]}; j++)); do
         if [ "$1" == "${_SYS_ALIASES[$j]}" ]; then
             cmd=$(eval echo "${_SYS_CMDS[$j]}") # expand service name
             wide=${cmd:0:1}
@@ -55,7 +57,7 @@ _sysexec() {
 
             # Push to history.
             [ -n "$BASH_VERSION" ] && history -s $cmd
-            [ -n "$ZSH_VERSION" ] && print -s $cmd 
+            [ -n "$ZSH_VERSION" ] && print -s $cmd
             return
         fi
     done

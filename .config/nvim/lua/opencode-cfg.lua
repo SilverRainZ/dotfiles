@@ -1,11 +1,14 @@
 vim.g.opencode_opts = {
   -- Your configuration, if any — see `lua/opencode/config.lua`, or 'goto definition' on the type or field.
   provider = {
+    -- See also simple-daemon@opencode.service
+    -- cmd = 'opencode attach http://localhost:44047',
     enabled = "tmux",
     tmux = {
       -- ...
     }
   }
+
 }
 
 -- Required for `opts.events.reload`.

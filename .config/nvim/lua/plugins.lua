@@ -168,6 +168,11 @@ require("lazy").setup({
     ---@type ibl.config
     opts = {},
   },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "WinLeave" },
+  },
 
   -- ============
   -- Fast editing

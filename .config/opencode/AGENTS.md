@@ -1,1 +1,0 @@
-/home/la/git/promtps/AGENTS.md

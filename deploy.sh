@@ -13,9 +13,13 @@ nolink(){
 }
 
 mkdir -p ~/.config/opencode
+mkdir -p ~/.codex
 mkdir -p ~/.agents/skills
 
 nolink ~/.config/opencode/AGENTS.md
+link AGENTS.md $_
+
+nolink ~/.codex/AGENTS.md
 link AGENTS.md $_
 
 for dir in "skills"/*/; do

@@ -19,3 +19,5 @@ description: 当我要求提交 git 仓库的修改的时候使用
    - 如果我的消息最后附加了一行 "push"，执行 git push 
    - 如果附加了了 "nopush"，不执行 git push 
    - 否则，则询问我要不要 push
+
+   执行 push 时如何遇到 remote 不一致的情况，立刻停止并提醒我

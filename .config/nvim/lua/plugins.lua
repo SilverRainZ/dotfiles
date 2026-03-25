@@ -92,6 +92,7 @@ require("lazy").setup({
   -- ================
   { -- Treesitter.
     'nvim-treesitter/nvim-treesitter',
+    tag = 'v0.10.0',
     config = function()
       require 'treesitter-cfg'
     end

@@ -11,6 +11,13 @@
             "~/.local/lib/python*/**": "allow"
         }
     },
+    "mcp": {
+        "dida": {
+            "enabled": true,
+            "type": "remote",
+            "url": "https://mcp.dida365.com"
+        }
+    },
     "plugin": [
         "@franlol/opencode-md-table-formatter@0.0.3",
         "@mohak34/opencode-notifier@latest"

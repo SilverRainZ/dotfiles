@@ -19,7 +19,7 @@ set $filemgr nemo
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel | xargs swaymsg exec --
+set $menu fuzzel
 # Your preferred wallpaper
 set $wallpaper /home/la/pictures/bg.jpg
 # Your preferred screenlocker

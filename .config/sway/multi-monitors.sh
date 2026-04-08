@@ -32,11 +32,11 @@ elif echo "$outputs" | grep "$OUT_CHANGHONG"; then
     clamshell_mode "$OUT_BUILTIN"
 elif echo "$outputs" | grep "$OUT_SANC"; then
     swaymsg "output '$OUT_SANC' scale 1.0 pos 0 0"
-    swaymsg "output '$OUT_BUILTIN' scale 3.0 pos 0 1080"
+    swaymsg "output '$OUT_BUILTIN' scale 2.8 pos 0 1080"
     clamshell_mode "$OUT_BUILTIN"
 else
     echo Output: ALL
-    swaymsg "output * scale 2.5"
+    swaymsg "output * scale 2.2"
 fi
 
 # Prevent bulitin display is enabled when laptop lid is closed.

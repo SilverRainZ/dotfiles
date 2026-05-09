@@ -7,7 +7,7 @@
 ## 项目约定
 
 - 当输出 Python 代码时，请依照 `~/git/sphinxnotes/any/ruff.toml` 描述的格式
-- 了解项目时，一定读 `README.rst` 和 `docs/README.rst`.
+- 当我要求实现某个功能时，除非说明在当前目录修改，否则默认创建一个新的 git worktree
 
 ## 外部工具
 

@@ -92,7 +92,7 @@ systemctl --user import-environment PATH
 # If running from tty1 start sway
 # FIXME: Start sway from TTY cause ~/.profile is sourced multiple times.
 # Use a display manager to fix it?
-if [ "$(tty)" = "/dev/tty1" ]; then
+if [ "$(tty)" = "/dev/tty0" ] && [ ! -z "$(comamnd -v sway)" ]; then
     source ~/.config/sway/init.sh
     if [[ -z $(lspci | grep VGA | grep NVIDIA) ]]; then
         exec sway

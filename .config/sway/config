@@ -238,6 +238,8 @@ bindsym $mod+Shift+Up sticky toggle
     assign [class="Steam"] $ws_ent
     assign [class="steam"] $ws_ent
     assign [class="Kodi"] $ws_ent
+    assign [app_id="minecraft-launcher"] $ws_ent
+    for_window [app_id="minecraft-launcher"] floating enable
     # Workspace vm
     assign [class="VirtualBox"] $ws_vm
     assign [app_id="gnome-boxes"] $ws_vm

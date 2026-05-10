@@ -11,3 +11,4 @@ alias gst='git stash'
 alias grs='git restore --staged'
 alias gr='cd $(git rev-parse --show-toplevel)' # cd to git root
 alias gg='git grep'
+alias gb='git-browse' # :pacman:`git-extra`

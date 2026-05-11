@@ -13,7 +13,7 @@ description: 当我要求提交 git 仓库的修改的时候使用
 2. git add: 如果 staging area 没有文件，询问我要添加哪些文件；否则，直接进入下一步
 3. write commit message: 查看待提交文件的历史 commit messages，模仿它们格式编写
 4. attach co-author info: 如果你参与了代码的修改，在 commit message body 中加上附加模型的 co-author 信息：
-   - 如果你是 MiniMax，邮箱用 <models@minimax.io>
+   - 如果你是 MiniMax，邮箱用 <model@minimax.io>
    - 如果你是 Codex/GPT，邮箱用 <noreply@openai.com>
 
 5. git commit: 执行 git commit

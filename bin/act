@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+agent=""
+args=()
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --easy)
+            agent="action-easy"
+            shift
+            ;;
+        --mid)
+            agent="action-medium"
+            shift
+            ;;
+        --hard)
+            agent="action-hard"
+            shift
+            ;;
+        --)
+            shift
+            args+=("$@")
+            break
+            ;;
+        -*)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+        *)
+            args+=("$1")
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$agent" ]]; then
+    agent="action-easy"
+fi
+
+exec opencode run "@${agent}" "${args[@]}"

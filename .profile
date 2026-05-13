@@ -35,6 +35,7 @@ export CHROOT=$HOME/chroot
 ## LA's custom bin dir.
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/git/etcfiles/bin:$PATH
+export PATH=$HOME/git/aifiles/bin:$PATH
 export PATH=$HOME/sync/latree/bin:$PATH
 ## golang :'(
 export PATH=$PATH:$GOROOT/bin

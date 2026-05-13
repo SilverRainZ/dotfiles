@@ -38,4 +38,13 @@ Run ``./deploy.sh`` to deploy dotfiles via soft link.
 See also...
 ===========
 
-`Are we Wayland yet? <https://arewewaylandyet.com/>`_
+=================== ======================================================
+dotfiles_           Configuration files of the software I use
+aifiles_            Prompts, skills and configuration of AI agents
+etcfiles_ (private) Configuration files of my hosts managed by chezetc_
+=================== ======================================================
+
+.. _dotfiles: https://github.com/SilverRainZ/dotfiles
+.. _aifiles: https://github.com/SilverRainZ/aifiles
+.. _etcfiles: https://git.in.silverrainz.me/la/etcfiles
+.. _chezetc: https://github.com/SilverRainZ/chezetc

@@ -28,14 +28,16 @@
         },
         "action-easy": {
             "mode": "subagent",
+            "description": "Subagent for running an easy difficulty oneshot task",
+            "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
+            // "steps": 10,
             "model": "opencode/deepseek-v4-flash-free"
-        },
-        "action-medium": {
-            "mode": "subagent",
-            "model": "deepseek/deepseek-v4-flash"
         },
         "action-hard": {
             "mode": "subagent",
+            "description": "Subagent for running a hard difficulty oneshot task",
+            "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
+            // "steps": 30,
             "model": "deepseek/deepseek-v4-pro"
         }
     },

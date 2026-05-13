@@ -9,10 +9,6 @@ while [[ $# -gt 0 ]]; do
             agent="action-easy"
             shift
             ;;
-        --mid)
-            agent="action-medium"
-            shift
-            ;;
         --hard)
             agent="action-hard"
             shift

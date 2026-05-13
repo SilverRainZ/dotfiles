@@ -28,3 +28,11 @@ for dir in "skills"/*/; do
     nolink "~/.agents/skills/$name"
     link "$dir" ~/.agents/skills
 done
+
+echo Installing Agents...
+mkdir -p ~/.agents/agents
+for dir in "agents"/*; do
+    name=$(basename "$dir")
+    nolink "~/.agents/agents/$name"
+    link "$dir" ~/.agents/agents
+done

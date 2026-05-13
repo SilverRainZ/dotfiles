@@ -24,6 +24,18 @@
         },
         "plan": {
             "model": "deepseek/deepseek-v4-pro"
+        },
+        "action-easy": {
+            "mode": "subagent",
+            "model": "opencode/deepseek-v4-flash-free"
+        },
+        "action-medium": {
+            "mode": "subagent",
+            "model": "deepseek/deepseek-v4-flash"
+        },
+        "action-hard": {
+            "mode": "subagent",
+            "model": "deepseek/deepseek-v4-pro"
         }
     },
     "plugin": [

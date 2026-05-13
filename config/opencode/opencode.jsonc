@@ -31,7 +31,8 @@
             "hidden": true,
             "description": "Subagent for running an easy difficulty oneshot task",
             "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
-            // "steps": 10,
+            "temperature": 0.1,
+            "steps": 5,
             "model": "opencode/deepseek-v4-flash-free"
         },
         "action-hard": {
@@ -39,7 +40,8 @@
             "hidden": true,
             "description": "Subagent for running a hard difficulty oneshot task",
             "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
-            // "steps": 30,
+            "temperature": 0.1,
+            "steps": 10,
             "model": "deepseek/deepseek-v4-pro"
         }
     },

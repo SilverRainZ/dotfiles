@@ -8,18 +8,19 @@ description: 当我要求提交 git 仓库的修改的时候使用
 按下面步骤严格执行：
 
 1. create new branch: 
-   - 如果改动很大（修改多个文件、超过 50 lines、修改伴随了测试）且当前在 master/main 分支，询问我要不要切换到新分支，若要，分支名称参考已有的分支
+   - 如果改动较大（修改多个文件、超过 50 lines、修改有专门的测试）且当前在 master/main 分支，用户不介意被提问则询问用户要不要切换到新分支，用户不希望提问则直接创建新分支，分支名称参考已有的分支
    - 否则，进入下一步
-2. git add: 如果 staging area 没有文件，询问我要添加哪些文件；否则，直接进入下一步
-3. write commit message: 查看待提交文件的历史 commit messages，模仿它们格式编写
+2. git add: 
+   - 如果用户提及要添加哪些文件，添加之
+   - 如果没有且 staging area 没有文件，询问我要添加哪些文件
+   - 否则，直接进入下一步
+3. write commit message: 结合改动内容编写 commit meesage，
+   消息格式要模仿对应文件的历史 commit messages
 4. attach co-author info: 如果你参与了代码的修改，在 commit message body 中加上附加模型的 co-author 信息：
    - 如果你是 MiniMax，邮箱用 <model@minimax.io>
    - 如果你是 Codex/GPT，邮箱用 <noreply@openai.com>
    - 如果你是 DeepSeek，邮箱用 <service@deepseek.com>
 5. git commit: 执行 git commit
-6. git push: 
-   - 如果我的消息最后附加了一行 "push"，执行 git push 
-   - 如果附加了了 "nopush"，不执行 git push 
-   - 否则，则询问我要不要 push
+6. git push: 如果用户提到了 push 就执行 git push 
 
    执行 push 时如何遇到 remote 不一致的情况，立刻停止并提醒我

@@ -18,6 +18,14 @@
             "url": "https://mcp.dida365.com"
         }
     },
+    "agent": {
+        "build": {
+            "model": "deepseek/deepseek-v4-flash"
+        },
+        "plan": {
+            "model": "deepseek/deepseek-v4-pro"
+        }
+    },
     "plugin": [
         "@franlol/opencode-md-table-formatter@0.0.3",
         "@mohak34/opencode-notifier@latest"

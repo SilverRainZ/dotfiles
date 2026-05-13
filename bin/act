@@ -33,4 +33,4 @@ if [[ -z "$agent" ]]; then
     agent="action-easy"
 fi
 
-exec opencode run "@${agent}" "${args[@]}"
+exec opencode run --agent "${agent}" "${args[@]}"

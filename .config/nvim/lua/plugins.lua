@@ -47,7 +47,7 @@ require("lazy").setup({
 
   {
     'hrsh7th/nvim-cmp',                -- autocompletion plugin
-    cond = islocal, -- disable for after/plugin/cmp_nvim_ultisnips.lua takes 997.8ms
+    cond = islocal, -- after/plugin/cmp_nvim_ultisnips.lua takes 997.8ms on rpi3
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',            -- LSP source
       'hrsh7th/cmp-buffer',              -- vim buffer words source
@@ -65,6 +65,7 @@ require("lazy").setup({
 
   {
     "NickvanDyke/opencode.nvim",
+    cond = islocal,
     dependencies = {
       -- Recommended for `ask()` and `select()`.
       -- Required for `snacks` provider.
@@ -220,6 +221,7 @@ require("lazy").setup({
   },
   {
     "HakonHarnes/img-clip.nvim",
+    cond = islocal,
     event = "VeryLazy",
     opts = {},
     keys = {
@@ -263,6 +265,7 @@ require("lazy").setup({
 
   {
     '3rd/image.nvim',
+    cond = islocal,
     build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
     config = function()
       require 'image-cfg'

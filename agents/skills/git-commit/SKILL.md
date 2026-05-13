@@ -15,7 +15,7 @@ description: 当我要求提交 git 仓库的修改的时候使用
 4. attach co-author info: 如果你参与了代码的修改，在 commit message body 中加上附加模型的 co-author 信息：
    - 如果你是 MiniMax，邮箱用 <model@minimax.io>
    - 如果你是 Codex/GPT，邮箱用 <noreply@openai.com>
-
+   - 如果你是 DeepSeek，邮箱用 <service@deepseek.com>
 5. git commit: 执行 git commit
 6. git push: 
    - 如果我的消息最后附加了一行 "push"，执行 git push 

@@ -48,6 +48,7 @@
     "plugin": [
         "@franlol/opencode-md-table-formatter@0.0.3",
         "@mohak34/opencode-notifier@latest",
-        "@tarquinen/opencode-dcp@latest"
+        "@tarquinen/opencode-dcp@latest",
+        "superpowers@git+https://github.com/obra/superpowers.git"
     ]
 }

@@ -98,6 +98,7 @@ require("lazy").setup({
       require 'treesitter-cfg'
     end
   },
+  'egberts/vim-syntax-nftables',
 
   -- ============
   -- Fuzzy finder
@@ -265,7 +266,7 @@ require("lazy").setup({
 
   {
     '3rd/image.nvim',
-    cond = islocal,
+    cond = false,
     build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
     config = function()
       require 'image-cfg'

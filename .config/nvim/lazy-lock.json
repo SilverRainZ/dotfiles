@@ -43,5 +43,6 @@
   "vim-go": { "branch": "master", "commit": "f4b4ba17035aebcd222df90375c1cbb1dc4d8c5b" },
   "vim-python-pep8-indent": { "branch": "master", "commit": "60ba5e11a61618c0344e2db190210145083c91f8" },
   "vim-snippets": { "branch": "master", "commit": "ededcf7581962ee616cadab360d5966f3307f11a" },
+  "vim-syntax-nftables": { "branch": "master", "commit": "e2d5187beb55011294fb3e5247a53e0cd6cfab38" },
   "zen-mode.nvim": { "branch": "main", "commit": "8564ce6d29ec7554eb9df578efa882d33b3c23a7" }
 }

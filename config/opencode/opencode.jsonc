@@ -21,7 +21,7 @@
     },
     "agent": {
         "build": {
-            "model": "deepseek/deepseek-v4-flash"
+            "model": "deepseek/deepseek-v4-pro"
         },
         "plan": {
             "model": "deepseek/deepseek-v4-pro"
@@ -32,7 +32,7 @@
             "description": "Subagent for running an easy difficulty oneshot task",
             "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
             "temperature": 0.1,
-            "steps": 5,
+            "steps": 10,
             "model": "opencode/deepseek-v4-flash-free"
         },
         "action-hard": {
@@ -41,7 +41,6 @@
             "description": "Subagent for running a hard difficulty oneshot task",
             "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
             "temperature": 0.1,
-            "steps": 10,
             "model": "deepseek/deepseek-v4-pro"
         }
     },

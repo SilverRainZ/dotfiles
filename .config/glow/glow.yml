@@ -1,0 +1,7 @@
+# style name or JSON path (default "auto")
+# See also https://github.com/charmbracelet/glamour/pull/572
+style: /home/la/.config/glow/nord.json
+# use pager to display markdown
+pager: false
+# word-wrap at width
+width: 80

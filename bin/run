@@ -29,6 +29,8 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+prompt="${args[*]}"
+
 if [[ -z "$agent" ]]; then
     agent="action-easy"
 fi
@@ -44,4 +46,5 @@ fi
 # --attach http://127.0.0.1:44047 \
 exec opencode run \
     --agent "${agent}" \
-    "${args[@]}" | $MD_RENDER
+    --title "[oneshot] ${prompt}" \
+    "${prompt}" | $MD_RENDER

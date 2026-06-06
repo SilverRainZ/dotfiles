@@ -33,9 +33,15 @@ if [[ -z "$agent" ]]; then
     agent="action-easy"
 fi
 
+if command -v glow &>/dev/null; then
+    MD_RENDER=glow
+else
+    MD_RENDER=cat
+fi
+
 # Opencode server ran by user service simple-daemon@opencode.
 # Require opencode>=v1.16.0, see also https://github.com/anomalyco/opencode/issues/27023
 # --attach http://127.0.0.1:44047 \
 exec opencode run \
     --agent "${agent}" \
-    "${args[@]}"
+    "${args[@]}" | $MD_RENDER

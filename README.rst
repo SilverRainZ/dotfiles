@@ -36,12 +36,12 @@ Prompts
 ======================= ========================================================
 `pragmatic-oneshot`_    pragmatic terminal task executor
 `aur-to-archlinuxcn`_   add AUR packages to archlinuxcn repo
-`git-commit`_           structured git commit workflow
+`general-git-commit`_   general git commit workflow, lower priority
 ======================= ========================================================
 
 .. _pragmatic-oneshot: agents/agents/pragmatic-oneshot.md
 .. _aur-to-archlinuxcn: agents/skills/aur-to-archlinuxcn/SKILL.md
-.. _git-commit: agents/skills/git-commit/SKILL.md
+.. _general-git-commit: agents/skills/general-git-commit/SKILL.md
 
 How to?
 =======

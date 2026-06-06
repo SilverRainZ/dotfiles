@@ -1,6 +1,6 @@
 ---
-name: git-commit
-description: 当我要求提交 git 仓库的修改的时候使用
+name: general-git-commit
+description: General git commit workflow, lower priority — only use when no other commit skill is active
 ---
 
 # GitHub Commmit Skill

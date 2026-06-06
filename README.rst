@@ -2,10 +2,13 @@
 dotfiles
 ========
 
-Configuration files of the software I use.
+Dotfiles — then tools and prompts joined.
 
 I use...
 ========
+
+Softwares
+---------
 
 ======================= ========================================================
 Distribution            Arch Linux (for life) and macOS (for work)

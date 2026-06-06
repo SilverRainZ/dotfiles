@@ -1,0 +1,60 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "permission": {
+        "skill": {
+            "*": "allow"
+        },
+        "external_directory": {
+            "/usr/lib/python*/**": "allow",
+            "/usr/include/**": "allow",
+            "~/git/**": "allow",
+            "~/.local/lib/python*/**": "allow",
+            "~/.config/opencode/**": "allow"
+        }
+    },
+    "mcp": {
+        "dida": {
+            "enabled": true,
+            "type": "remote",
+            "url": "https://mcp.dida365.com"
+        }
+    },
+    "agent": {
+        "build": {
+            "model": "deepseek/deepseek-v4-pro"
+        },
+        "plan": {
+            "model": "deepseek/deepseek-v4-pro"
+        },
+        "action-easy": {
+            "mode": "all",
+            "hidden": true,
+            "description": "Subagent for running an easy difficulty oneshot task",
+            "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
+            "temperature": 0.1,
+            "steps": 10,
+            "model": "opencode/deepseek-v4-flash-free",
+            "permission": {
+                "question": "deny"
+            }
+        },
+        "action-hard": {
+            "mode": "all",
+            "hidden": true,
+            "description": "Subagent for running a hard difficulty oneshot task",
+            "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
+            "temperature": 0.1,
+            "model": "deepseek/deepseek-v4-pro",
+            "permission": {
+                "question": "deny"
+            }
+        }
+    },
+    "plugin": [
+        "@franlol/opencode-md-table-formatter@0.0.3",
+        "@mohak34/opencode-notifier@latest",
+        "@tarquinen/opencode-dcp@latest",
+        "superpowers@git+https://github.com/obra/superpowers.git",
+        "opencode-history-search"
+    ]
+}

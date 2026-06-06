@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+agent=""
+args=()
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --easy)
+            agent="action-easy"
+            shift
+            ;;
+        --hard)
+            agent="action-hard"
+            shift
+            ;;
+        --)
+            shift
+            args+=("$@")
+            break
+            ;;
+        -*)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+        *)
+            args+=("$1")
+            shift
+            ;;
+    esac
+done
+
+prompt="${args[*]}"
+
+if [[ -z "$agent" ]]; then
+    agent="action-easy"
+fi
+
+if command -v glow &>/dev/null; then
+    MD_RENDER=glow
+else
+    MD_RENDER=cat
+fi
+
+# Opencode server ran by user service simple-daemon@opencode.
+# Require opencode>=v1.16.0, see also https://github.com/anomalyco/opencode/issues/27023
+# --attach http://127.0.0.1:44047 \
+exec opencode run \
+    --agent "${agent}" \
+    --title "[oneshot] ${prompt}" \
+    "${prompt}" | $MD_RENDER

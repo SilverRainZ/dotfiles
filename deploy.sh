@@ -1,22 +1,49 @@
-#!/bin/sh
+#!/bin/bash
+
+cd "$(dirname "$0")"
 
 link(){
     ln -sfv "$PWD/$1" "$2"
 }
 
-# Link home
-files=$(ls -A1 | grep -Ev 'README.rst|deploy.sh|\.gitignore|\.git$|\.config|Makefile|archpkgs.txt')
-target=~
-for f in $files; do
-    unlink $target/$f 2>/dev/null || true
-    link $f $target
+nolink(){
+    unlink "$1" 2>/dev/null || true
+}
+
+echo Installing home dotfiles...
+for f in home/.*; do
+    [ "$f" = "home/." ] || [ "$f" = "home/.." ] && continue
+    name=$(basename "$f")
+    nolink ~/$name
+    link "$f" ~/
 done
 
-# Link XDG config home.
-files=$(ls -A1 $PWD/.config)
-target=~/.config
-mkdir -p $target 2>/dev/null || true
-for f in $files; do
-    unlink $target/$f 2>/dev/null || true
-    link .config/$f $target/$f
+echo Installing XDG config...
+mkdir -p ~/.config
+for f in config/*; do
+    name=$(basename "$f")
+    nolink ~/.config/$name
+    link "$f" ~/.config
+done
+
+echo Installing Codex configuration...
+mkdir -p ~/.codex
+nolink ~/.codex/AGENTS.md
+link agents/AGENTS.md ~/.codex
+
+echo Installing Skills...
+mkdir -p ~/.agents/skills
+for dir in agents/skills/*/; do
+    [ -d "$dir" ] || continue
+    name=$(basename "$dir")
+    nolink ~/.agents/skills/$name
+    link "$dir" ~/.agents/skills
+done
+
+echo Installing Agents...
+mkdir -p ~/.agents/agents
+for dir in agents/agents/*; do
+    name=$(basename "$dir")
+    nolink ~/.agents/agents/$name
+    link "$dir" ~/.agents/agents
 done

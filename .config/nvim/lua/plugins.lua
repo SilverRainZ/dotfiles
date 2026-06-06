@@ -91,9 +91,9 @@ require("lazy").setup({
   -- ================
   -- Syntax highlight
   -- ================
-  { -- Treesitter.
-    'nvim-treesitter/nvim-treesitter',
-    tag = 'v0.10.0',
+  {
+    'romus204/tree-sitter-manager.nvim',
+    dependencies = {}, -- :pacman:`tree-sitter-cli`
     config = function()
       require 'treesitter-cfg'
     end
@@ -259,7 +259,6 @@ require("lazy").setup({
   {
     'LhKipp/nvim-nu',
     enabled = false, -- due to https://github.com/nushell/tree-sitter-nu/issues/219
-    build = ':TSInstall nu',
     opts = {},
     dependencies = { 'nvimtools/none-ls.nvim' },
   },

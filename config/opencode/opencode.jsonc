@@ -3,12 +3,14 @@
     "permission": {
         "skill": {
             "*": "allow"
-        }, "external_directory": {
+        },
+        "external_directory": {
             "/usr/lib/python*/**": "allow",
             "/usr/include/**": "allow",
             "~/git/**": "allow",
             "~/.local/lib/python*/**": "allow",
-            "~/.config/opencode/**": "allow"
+            "~/.config/opencode/**": "allow",
+            "~/.config/.agent/**": "allow"
         }
     },
     "mcp": {
@@ -20,7 +22,7 @@
     },
     "agent": {
         "build": {
-            "model": "deepseek/deepseek-v4-pro"
+            "model": "deepseek/deepseek-v4-flash"
         },
         "plan": {
             "model": "deepseek/deepseek-v4-pro"

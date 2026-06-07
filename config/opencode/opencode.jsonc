@@ -3,8 +3,7 @@
     "permission": {
         "skill": {
             "*": "allow"
-        },
-        "external_directory": {
+        }, "external_directory": {
             "/usr/lib/python*/**": "allow",
             "/usr/include/**": "allow",
             "~/git/**": "allow",
@@ -47,6 +46,21 @@
             "model": "deepseek/deepseek-v4-pro",
             "permission": {
                 "question": "deny"
+            }
+        }
+    },
+    "provider": {
+        "llama-swap": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "llama-swap",
+            "options": {
+                // See also llama-swap.service
+                "baseURL": "http://127.0.0.1:12434/v1"
+            },
+            "models": {
+                "hy-mt2-1.8b": {
+                    "name": "Hy-MT2-1.8B"
+                }
             }
         }
     },

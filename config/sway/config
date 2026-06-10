@@ -267,6 +267,7 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="it.catboy.ripdrag"] floating enable, sticky enable
     for_window [app_id="com.saivert.pwvucontrol"] floating enable, sticky enable
     for_window [app_id="org.gnome.Calendar"] floating enable, sticky enable
+    for_window [class="eudic"] floating enable, sticky enable
 
     # File manager
     for_window [app_id="org.gnome.Nautilus"] floating enable

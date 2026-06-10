@@ -84,7 +84,7 @@ cd ~/pkg/gitrepo/archlinuxcn/<包名>
 extra-x86_64-build
 ```
 
-默认使用 `extra-x86_64-build`。仅当包的依赖只在 archlinuxcn 仓库中存在时才改用 `archlinuxcn-x86_64-build`。
+默认使用 `extra-x86_64-build`。仅当包的依赖只在 archlinuxcn 仓库中存在且未通过 `repo_depends` 声明时才改用 `archlinuxcn-x86_64-build`。
 
 `extra-x86_64-build` 默认已传递 `-c -n -C` 给 `makechrootpkg`。常用选项：
 
@@ -116,8 +116,8 @@ extra-x86_64-build
 
 ### 4b. 确定 build_prefix
 
-- **`extra-x86_64`**：默认值，用于大多数包。使用 Arch `[extra]` 仓库的 chroot。
-- **`archlinuxcn-x86_64`**：当 PKGBUILD 中的 `depends=()` 或 `makedepends=()` 包含仅在 archlinuxcn 中存在的包时使用。`portable`/`-bin` 类包若依赖 archlinuxcn 工具也使用此值。
+- **`extra-x86_64`**（默认值，可省略）：用于大多数包。使用 Arch `[extra]` 仓库的 chroot。即使依赖 archlinuxcn 包，只要在 `repo_depends` 中声明了所有 archlinuxcn 依赖，就无需改用 `archlinuxcn-x86_64`。
+- **`archlinuxcn-x86_64`**：仅当包的依赖只在 archlinuxcn 中存在且不方便或无法通过 `repo_depends` 声明时使用。例如 `portable`/`-bin` 类包动态依赖 archlinuxcn 工具。
 
 ### 4c. 编写 pre_build / post_build 脚本
 
@@ -163,7 +163,9 @@ maintainers:
 
 **`time_limit_hours`**：构建耗时超过 1 小时的包必须设置（如 `linux-cachyos`、大型 C++/Rust 项目）。典型值：中等包 2，大包 4-6。
 
-**`repo_depends`**：声明对 archlinuxcn 仓库中其他包的构建依赖。检查 PKGBUILD 的 `depends` 和 `makedepends`，找出仅在 archlinuxcn 中存在的包。使用包基名（目录名），而非 pkgname：
+**`repo_depends`**：声明对 archlinuxcn 仓库中其他包的构建依赖。检查 PKGBUILD 的 `depends` 和 `makedepends`，找出仅在 archlinuxcn 中存在的包。使用包基名（目录名），而非 pkgname。
+
+注意：指定了所有 archlinuxcn 依赖后，`build_prefix` 保持默认的 `extra-x86_64` 即可，无需改为 `archlinuxcn-x86_64`。
 
 ```yaml
 repo_depends:
@@ -182,8 +184,6 @@ maintainers:
   - github: SilverRainZ
     email: Shengyu Zhang <la@archlinuxcn.org>
 
-build_prefix: extra-x86_64
-
 pre_build_script: |
   aur_pre_build(maintainers=['上游维护者'])
 
@@ -200,8 +200,6 @@ update_on:
 maintainers:
   - github: SilverRainZ
     email: Shengyu Zhang <la@archlinuxcn.org>
-
-build_prefix: extra-x86_64
 
 pre_build_script: |
   update_pkgver_and_pkgrel(_G.newver.lstrip('v'))
@@ -222,8 +220,6 @@ update_on:
 maintainers:
   - github: SilverRainZ
     email: Shengyu Zhang <la@archlinuxcn.org>
-
-build_prefix: extra-x86_64
 
 pre_build_script: |
   update_pkgver_and_pkgrel(_G.newver.lstrip('v'))
@@ -276,7 +272,7 @@ update_on:
 1. **同时有 aur 源和 soname 重建**：先列 `aur` 源，再列 `alpm` 重建触发条件
 2. **非 AUR 的 -git 包**：用 `github` + `branch: main`，脚本中 `update_pkgver_and_pkgrel(_G.newver)` 不 strip v 前缀
 3. **需要手动更新的大包**：`source: manual` + `manual: 1`（数字越小优先级越高），无 pre_build 脚本
-4. **依赖 archlinuxcn 中其他包的包**：`build_prefix: archlinuxcn-x86_64` + `repo_depends` 列出依赖
+4. **依赖 archlinuxcn 中其他包的包**：通过 `repo_depends` 声明依赖（无需改 `build_prefix`）
 
 ## 第 6 步：确认并提交
 
@@ -302,7 +298,7 @@ addpkg: <包名>
 | 问题                              | 解决方案                                                                          |
 | --------------------------------- | --------------------------------------------------------------------------------- |
 | 构建时报 GPG 签名错误             | 默认已跳过签名检查；若仍报错，检查 keyring 是否最新                               |
-| chroot 中缺少依赖                 | 该包可能需要在 lilac.yaml 中添加 `repo_depends` 指向 archlinuxcn 中的依赖         |
+| chroot 中缺少依赖                 | 若依赖在 archlinuxcn 中，在 `repo_depends` 中声明即可，无需改 `build_prefix`     |
 | 版本检测结果不正确                | 检查 `use_latest_release` vs `use_max_tag`，添加 `include_regex` 或 `prefix` 过滤 |
 | 版本中包含了预发布 tag            | 添加 `include_prereleases: false`                                                 |
 | tag 有 v 前缀但与 pkgver 不匹配   | 在 `update_pkgver_and_pkgrel()` 中使用 `.lstrip('v')` 或 `.removeprefix('v')`     |

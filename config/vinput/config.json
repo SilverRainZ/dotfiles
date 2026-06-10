@@ -22,7 +22,7 @@
             {
                 "id": "sherpa-onnx",
                 "type": "local",
-                "model": "model.sherpa-onnx.paraformer-zh-2023-09-14",
+                "model": "model.sherpa-onnx.sense-voice-funasr-nano-int8",
                 "hotwords_file": "/home/la/.config/vinput/hotwords.txt",
                 "timeout_ms": 15000
             }

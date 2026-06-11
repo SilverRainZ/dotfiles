@@ -4,6 +4,7 @@
 def main [
     --easy                          # use action-easy agent (default)
     --hard                          # use action-hard agent
+    --continue (-c)                 # continue the last session
     ...prompt: string               # prompt
 ] {
     let agent = if $hard { "action-hard" } else { "action-easy" }
@@ -14,6 +15,7 @@ def main [
         # See also ~/.config/opencode/opencode.jsonc
         --agent $agent
         --title $"[oneshot] ($prompt)"
+        ...(if $continue { ["--continue"] } else { [] })
     ]
 
     ^opencode run ...$opts $prompt | ^$render

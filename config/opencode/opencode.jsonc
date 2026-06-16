@@ -7,6 +7,8 @@
         "external_directory": {
             "/usr/lib/python*/**": "allow",
             "/usr/include/**": "allow",
+            "/usr/share/man/**": "allow",
+            "/usr/share/doc/**": "allow",
             "~/git/**": "allow",
             "~/.local/lib/python*/**": "allow",
             "~/.config/opencode/**": "allow",
@@ -71,6 +73,7 @@
         "@mohak34/opencode-notifier@latest",
         "@tarquinen/opencode-dcp@latest",
         "superpowers@git+https://github.com/obra/superpowers.git",
-        "opencode-history-search"
+        "opencode-history-search",
+        "file:///home/la/git/opencode-thinking-translate"
     ]
 }

@@ -16,10 +16,7 @@ description: General git commit workflow, lower priority — only use when no ot
    - 否则，直接进入下一步
 3. write commit message: 结合改动内容编写 commit meesage，
    消息格式要模仿对应文件的历史 commit messages
-4. attach co-author info: 如果你参与了代码的修改，在 commit message body 中加上附加模型的 co-author 信息：
-   - 如果你是 MiniMax，邮箱用 <model@minimax.io>
-   - 如果你是 Codex/GPT，邮箱用 <noreply@openai.com>
-   - 如果你是 DeepSeek，邮箱用 <service@deepseek.com>
+4. attach co-author info: 如果你参与了代码的修改，在 commit message body 中附加 co-author 信息，参见 `model-co-authors` skill
 5. git commit: 执行 git commit
 6. git push: 如果用户提到了 push 就执行 git push 
 

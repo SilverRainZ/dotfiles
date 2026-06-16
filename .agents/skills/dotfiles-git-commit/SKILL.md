@@ -73,8 +73,7 @@ commit message 规范：
 - 描述改动目的，首字母大写
 - 控制在 50 字符内
 
-在 commit body 中附加 co-author 信息（根据实际模型选择邮箱）：
-- DeepSeek: `Co-authored-by: DeepSeek <service@deepseek.com>`
+在 commit body 中附加 co-author 信息，参见 `model-co-authors` skill：
 
 ```bash
 git commit -m "sway: Adjust workspace layout" -m "" -m "Co-authored-by: DeepSeek <service@deepseek.com>" -- config/sway/config

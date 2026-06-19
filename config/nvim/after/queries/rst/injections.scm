@@ -36,4 +36,4 @@
  (#any-of?
   @_type
   "data.template" "data.render")
- (#set! injection.language "jinja"))
+ (#set! injection.language "rst"))

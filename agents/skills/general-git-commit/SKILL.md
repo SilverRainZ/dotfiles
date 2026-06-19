@@ -1,6 +1,6 @@
 ---
 name: general-git-commit
-description: General git commit workflow, lower priority — only use when no other commit skill is active
+description: General git commit workflow, lower priority — only use when user asks to commit changes, and no other commit skill is active
 ---
 
 # GitHub Commmit Skill

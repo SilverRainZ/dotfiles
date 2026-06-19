@@ -65,5 +65,6 @@ alias diff=delta
 source ~/.sh/ls.sh
 source ~/.sh/git.sh
 source ~/.sh/systemd.sh
+source ~/.sh/agent.sh
 
 # vim: set ft=bash:

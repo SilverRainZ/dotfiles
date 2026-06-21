@@ -9,12 +9,6 @@
 
 - 所有 GitHub 相关操作（读 issue、开 PR、查看 diff）统一使用 `gh` CLI，不要用 WebFetch
 - 复杂任务先创建新分支，参考已有分支命名风格
-- commit message 模仿该文件的历史 commit messages 风格
-- 当你参与了代码的修改，在 commit message body 中附加 co-author 信息：
-  - DeepSeek → `Co-authored-by: DeepSeek <service@deepseek.com>`
-  - MiniMax → `Co-authored-by: MiniMax <model@minimax.io>`
-  - OpenAI → `Co-authored-by: OpenAI <noreply@openai.com>`
-- push 前检查 remote 一致性，不一致则停止并提醒我
 
 ## 项目约定
 
@@ -26,4 +20,5 @@
 ## 禁止事项
 
 - 永远不许执行 `git reset --hard` 和 `git restore` 操作
-- 除非我明确要求，否则不得执行 `git commit`、`git push`
+- 除非我明确要求，否则不得执行 `git commit --ammed`、`git push`
+- 此类禁止事项的允许没有延续性，同会话的下次执行依然需要我的批准

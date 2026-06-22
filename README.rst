@@ -33,18 +33,31 @@ AI Assistant            Hermes
 .. _kitty: config/kitty/
 .. _OpenCode: config/opencode/
 
-Prompts
--------
+Agents & Skills
+----------------
 
-======================= ========================================================
-`pragmatic-oneshot`_    pragmatic terminal task executor
-`aur-to-archlinuxcn`_   add AUR packages to archlinuxcn repo
-`general-git-commit`_   general git commit workflow, lower priority
-======================= ========================================================
+================================ ==============================================
+`pragmatic-oneshot`_             pragmatic terminal task executor
+`aur-to-archlinuxcn`_            add AUR packages to archlinuxcn repo
+`general-git-commit`_            general git commit workflow, lower priority
+`grill-me`_                      interview the user relentlessly about a plan
+                                 or design
+`model-co-authors`_              AI model co-author info for git commit
+`sphinxnotes-changelog`_         write and maintain changelogs for sphinxnotes
+                                 projects
+`sphinxnotes-release`_           release workflow for sphinxnotes projects
+`sphinxnotes-template-update`_   update sphinxnotes project from cookiecutter
+                                 template
+================================ ==============================================
 
 .. _pragmatic-oneshot: agents/agents/pragmatic-oneshot.md
 .. _aur-to-archlinuxcn: agents/skills/aur-to-archlinuxcn/SKILL.md
 .. _general-git-commit: agents/skills/general-git-commit/SKILL.md
+.. _grill-me: agents/skills/grill-me/SKILL.md
+.. _model-co-authors: agents/skills/model-co-authors/SKILL.md
+.. _sphinxnotes-changelog: agents/skills/sphinxnotes-changelog/SKILL.md
+.. _sphinxnotes-release: agents/skills/sphinxnotes-release/SKILL.md
+.. _sphinxnotes-template-update: agents/skills/sphinxnotes-template-update/SKILL.md
 
 How to?
 =======

@@ -35,7 +35,7 @@
             "description": "Subagent for running an easy difficulty oneshot task",
             "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
             "temperature": 0.1,
-            "steps": 10,
+            "steps": 40,
             "model": "opencode/deepseek-v4-flash-free",
             "permission": {
                 "question": "deny"

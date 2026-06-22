@@ -4,6 +4,7 @@
 
 alias r='agent-run'
 alias run='agent-run'
+alias ok='agent-run --continue ok'
 alias cmt='agent-run commit staged files'
 alias commit='agent-run commit staged files'
 # alias ask='agent-run --tmp'

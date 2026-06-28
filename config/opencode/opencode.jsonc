@@ -22,6 +22,7 @@
             "url": "https://mcp.dida365.com"
         }
     },
+    "lsp": {},
     "agent": {
         "build": {
             "model": "deepseek/deepseek-v4-flash"

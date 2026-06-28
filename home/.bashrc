@@ -55,4 +55,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     source /usr/local/etc/profile.d/autojump.sh
 fi
 
+# https://worktrunk.dev
+if command -v wt >/dev/null 2>&1; then
+    eval "$(command wt config shell init zsh)";
+fi
+
 # vim: se fdm=marker:

@@ -22,12 +22,24 @@
     ],
     "defaultMode": "auto"
   },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/notify.sh"
+          }
+        ]
+      }
+    ]
+  },
   "theme": "dark",
   "autoMode": {
     "soft_deny": [
       "$defaults",
       "Installing system or language packages (pacman/pip/npm and similar, e.g. pacman -S, pip install, npm install/add) — always require user approval"
     ]
-  },
-  "model": "sonnet"
+  }
 }

@@ -77,8 +77,8 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 # https://veronneau.org/python-311-pip-and-breaking-system-packages.html
 export PIP_BREAK_SYSTEM_PACKAGES=1
 
-# rustup
-[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
+# Cargo
+export PATH=~/.cargo/bin:$PATH
 
 # ByteDance private profile
 if [[ -f ~/.bytedprofile ]]; then
@@ -88,6 +88,14 @@ fi
 # Make systemd aware of your modified $PATH.
 # https://wiki.archlinux.org/title/Systemd/User#PATH
 systemctl --user import-environment PATH
+
+# Java (JDK)
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+
+# Android, AUR android-sdk-cmdline-tools-latest
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 # If running from tty1 start sway
 # FIXME: Start sway from TTY cause ~/.profile is sourced multiple times.

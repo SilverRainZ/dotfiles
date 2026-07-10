@@ -27,7 +27,7 @@ export WINEPREFIX=~/.wine
 export QT_STYLE_OVERRIDE=breeze
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# Java
+# Java (GUI)
 #
 # ref: https://wiki.archlinux.org/index.php/Java#Applications_not_resizing_with_WM.2C_menus_immediately_closing
 export _JAVA_AWT_WM_NONREPARENTING=1

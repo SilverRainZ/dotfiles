@@ -1,0 +1,33 @@
+{
+  "env": {
+    "http_proxy": "http://127.0.0.1:10809",
+    "https_proxy": "http://127.0.0.1:10809",
+    "HTTP_PROXY": "http://127.0.0.1:10809",
+    "HTTPS_PROXY": "http://127.0.0.1:10809",
+    "ALL_PROXY": "http://127.0.0.1:10808",
+    "all_proxy": "http://127.0.0.1:10808"
+  },
+  "permissions": {
+    "ask": [
+      "Bash(pacman -S*)",
+      "Bash(sudo pacman -S*)",
+      "Bash(pip install*)",
+      "Bash(pip3 install*)",
+      "Bash(python -m pip install*)",
+      "Bash(uv pip install*)",
+      "Bash(npm install*)",
+      "Bash(npm i *)",
+      "Bash(npm ci*)",
+      "Bash(npm add*)"
+    ],
+    "defaultMode": "auto"
+  },
+  "theme": "dark",
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Installing system or language packages (pacman/pip/npm and similar, e.g. pacman -S, pip install, npm install/add) — always require user approval"
+    ]
+  },
+  "model": "sonnet"
+}

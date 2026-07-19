@@ -11,25 +11,24 @@ setopt prompt_subst
 ## git prompt
 ## ref: http://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
 git_prompt() {
-    git rev-parse --git-dir > /dev/null 2>&1 || return
+    # GIT_OPTIONAL_LOCKS=0: never take the index lock, so the prompt cannot
+    # contend with a git command already running in the repo.
+    # Speed in big repos comes from core.fsmonitor + core.untrackedCache
+    # (see ~/.gitconfig); keep git invocations to a minimum here.
 
-    branch=$(git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3-)
-    tag=$(git describe --tag 2>/dev/null)
-    head=$(git rev-parse --short HEAD)
+    # Branch name, else exact tag on HEAD, else short hash. Bail if not a repo.
+    local ref
+    ref=$(GIT_OPTIONAL_LOCKS=0 git symbolic-ref --short HEAD 2>/dev/null) \
+        || ref=$(GIT_OPTIONAL_LOCKS=0 git describe --tags --exact-match HEAD 2>/dev/null) \
+        || ref=$(GIT_OPTIONAL_LOCKS=0 git rev-parse --short HEAD 2>/dev/null) \
+        || return
 
-    if [[ ! -z ${branch} ]]; then
-        prompt=${branch}
-    elif [[ ! -z ${tag} ]]; then
-        prompt=${tag}
-    else
-        prompt=${head}
-    fi
-
-    is_clean=$(git status --short)
-    if [[ ! -z ${is_clean} ]]; then
+    # Dirty marker: fsmonitor makes this near-instant even with untracked files.
+    local is_clean=""
+    if [[ -n $(GIT_OPTIONAL_LOCKS=0 git status --porcelain 2>/dev/null) ]]; then
         is_clean="%F{yellow}x"
     fi
-    echo "%F{blue}git:(%F{red}${prompt}%F{blue}) ${is_clean}%f";
+    echo "%F{blue}git:(%F{red}${ref}%F{blue}) ${is_clean}%f";
 }
 
 ## host prompt

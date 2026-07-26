@@ -10,6 +10,7 @@
             "/usr/share/man/**": "allow",
             "/usr/share/doc/**": "allow",
             "~/git/**": "allow",
+            "~/bin/**": "allow",
             "~/.local/lib/python*/**": "allow",
             "~/.config/opencode/**": "allow",
             "~/.config/.agent/**": "allow"

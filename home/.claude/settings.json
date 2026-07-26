@@ -1,5 +1,6 @@
 {
   "env": {
+    "SHELL": "/usr/bin/bash",
     "http_proxy": "http://127.0.0.1:10809",
     "https_proxy": "http://127.0.0.1:10809",
     "HTTP_PROXY": "http://127.0.0.1:10809",
@@ -22,6 +23,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {

@@ -28,7 +28,7 @@ git_prompt() {
     if [[ -n $(GIT_OPTIONAL_LOCKS=0 git status --porcelain 2>/dev/null) ]]; then
         is_clean="%F{yellow}x"
     fi
-    echo "%F{blue}git:(%F{red}${ref}%F{blue}) ${is_clean}%f";
+    echo "%F{blue}git:(%F{red}${ref}%F{blue}) ${is_clean}%f ";
 }
 
 ## host prompt
@@ -46,10 +46,15 @@ chezmoi_prompt(){
     # if [[ ! -z ${is_clean} ]]; then
     #     is_clean="%F{yellow}x"
     # fi
-    echo "%F{blue}chezmoi:(%F{red}${CHEZMOI_DEST_DIR}%F{blue}) ${is_clean}%f";
+    echo "%F{blue}chezmoi:(%F{red}${CHEZMOI_DEST_DIR}%F{blue}) ${is_clean}%f ";
 }
 
-PROMPT=$'%F{green}/%f %B%F{cyan}%n%f %F{white}@%f $(host_prompt) %F{black}%T%f %F{white}->%(?..%F{red}[%?])%f %F{green}%~%f %F$(git_prompt)%f %F$(chezmoi_prompt)%f %b
+venv_prompt() {
+    [[ -z "$VIRTUAL_ENV" ]] && return
+    echo "%F{blue}venv:(%F{red}$(basename "$VIRTUAL_ENV")%F{blue}) ${is_clean}%f ";
+}
+
+PROMPT=$'%F{green}/%f %B%F{cyan}%n%f %F{white}@%f $(host_prompt) %F{black}%T%f %F{white}->%(?..%F{red}[%?])%f %F{green}%~%f %F$(git_prompt)%f%F$(chezmoi_prompt)%f%F$(venv_prompt)%f%b
 %F{green}\\%f %B%(!.%F{red}%#.%F{blue}$) %F{white}%b'
 
 # History {{{1

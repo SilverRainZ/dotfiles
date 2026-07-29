@@ -1,0 +1,33 @@
+#!/usr/bin/env nu
+
+# Print the absolute path of each given path and copy them to the clipboard.
+def main [
+    --expand (-e)      # keep $HOME expanded instead of collapsing to ~
+    ...paths: string    # paths to resolve (default: $env.PWD)
+] {
+    let paths = if ($paths | is-empty) { [$env.PWD] } else { $paths }
+    let home = $env.HOME
+    let home_prefix = $"($home)/"
+    let abs = ($paths
+        | each { |p|
+            let expanded = ($p | path expand)
+            if (not ($expanded | path exists)) {
+                print -e $"Warning: path does not exist: ($p)"
+            }
+            $expanded
+        }
+        | each {
+            if $expand {
+                $in
+            } else if $in == $home {
+                "~"
+            } else if ($in | str starts-with $home_prefix) {
+                $"~/($in | str substring (($home | str length) + 1)..)"
+            } else {
+                $in
+            }
+        })
+    let out = ($abs | str join "\n")
+    print $out
+    $out | ^wl-copy
+}

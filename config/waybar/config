@@ -1,3 +1,4 @@
+// Get icons from https://www.nerdfonts.com/cheat-sheet.
 {
     // "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
@@ -73,18 +74,12 @@
         "on-click": "iwgtk"
     },
     "network#speed": {
-        "interval": 3,
-        "format": "{ifname}",
-        "format-wifi": "   {bandwidthDownBytes}",
-        "format-ethernet": "   {bandwidthDownBytes}",
-        "format-disconnected": "󰌙",
-        "tooltip-format": "{ipaddr}",
-        "format-linked": "󰈁 {ifname} (No IP)",
-        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-        "tooltip-format-ethernet": "{ifname} 󰌘",
-        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "interval": 1,
+        "format": "   {bandwidthDownBytes}",
+        "format-alt": "   {bandwidthDownBytes}     {bandwidthUpBytes}",
+        "tooltip-format": "   {bandwidthDownBytes}     {bandwidthUpBytes}",
+        "format-alt-click": 1,
         "max-length": 30,
-        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
     },
     "wireplumber": {
         "format": "{volume}% {icon} ",

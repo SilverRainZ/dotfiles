@@ -31,12 +31,7 @@ mkdir -p ~/.codex
 nolink ~/.codex/AGENTS.md
 link agents/AGENTS.md ~/.codex
 
-echo Installing Codex configuration...
-mkdir -p ~/.codex
-nolink ~/.codex/AGENTS.md
-link agents/AGENTS.md ~/.codex
-
-echo Installing General Agent Skills...
+echo Installing skills for general agents...
 mkdir -p ~/.agents/skills
 for dir in agents/skills/*/; do
     [ -d "$dir" ] || continue
@@ -45,7 +40,15 @@ for dir in agents/skills/*/; do
     link "$dir" ~/.agents/skills
 done
 
-echo Installing General Agents...
+echo Installing skills for ClaudeCode...
+for dir in agents/skills/*/; do
+    [ -d "$dir" ] || continue
+    name=$(basename "$dir")
+    nolink ~/.claude/skills/$name
+    link "$dir" ~/.claude/skills
+done
+
+echo Installing Agents for general agents...
 mkdir -p ~/.agents/agents
 for dir in agents/agents/*; do
     name=$(basename "$dir")

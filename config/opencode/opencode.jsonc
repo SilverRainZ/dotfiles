@@ -5,6 +5,7 @@
             "*": "allow"
         },
         "external_directory": {
+            "/tmp/**": "allow",
             "/usr/lib/python*/**": "allow",
             "/usr/include/**": "allow",
             "/usr/share/man/**": "allow",
@@ -73,7 +74,6 @@
     "plugin": [
         "@franlol/opencode-md-table-formatter@0.0.3",
         "@mohak34/opencode-notifier@latest",
-        "@tarquinen/opencode-dcp@latest",
         "superpowers@git+https://github.com/obra/superpowers.git",
         "opencode-history-search",
         "file:///home/la/git/opencode-thinking-translate"

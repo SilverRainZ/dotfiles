@@ -385,10 +385,10 @@ exec syncthing-gtk --minimized
 exec blueman-applet
 exec clash-verge
 exec localsend
-exec thunderbird
 exec firefox
 exec dida
 exec $term
+exec tmuxp load -d home gilabs
 
 include /etc/sway/config.d/*
 

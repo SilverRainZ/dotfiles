@@ -1,0 +1,6 @@
+session_name: home
+start_directory: ~/
+windows:
+  - window_name: default
+    panes:
+      - zsh

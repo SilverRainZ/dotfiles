@@ -102,9 +102,5 @@ export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
 # Use a display manager to fix it?
 if [ "$(tty)" = "/dev/tty1" ] && [ ! -z "$(command -v sway)" ]; then
     source ~/.config/sway/init.sh
-    if [[ -z $(lspci | grep VGA | grep NVIDIA) ]]; then
-        exec sway
-    else
-        exec sway --unsupported # for swanpc's RTX3060
-    fi
+    exec sway
 fi

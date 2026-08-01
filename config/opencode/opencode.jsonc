@@ -27,10 +27,10 @@
     "lsp": {},
     "agent": {
         "build": {
-            "model": "zai/glm-5.2"
+            "model": "deepseek/deepseek-v4-flash"
         },
         "plan": {
-            "model": "zai/glm-5.2"
+            "model": "deepseek/deepseek-v4-pro"
         },
         "action-easy": {
             "mode": "all",

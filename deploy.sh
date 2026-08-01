@@ -9,30 +9,28 @@ link(){
 nolink(){
     unlink "$1" 2>/dev/null || true
 }
+relink(){
+    name=$(basename "$1")
+    mkdir -p "$2"
+    unlink "$2/$name" 2>/dev/null || true
+    ln -sfv "$PWD/$1" "$2"
+}
 
 echo Installing home dotfiles...
 for f in home/.*; do
     [ "$f" = "home/." ] || [ "$f" = "home/.." ] && continue
-    name=$(basename "$f")
-    nolink ~/$name
-    link "$f" ~/
+    relink "$f" ~
 done
 
 echo Installing XDG config...
-mkdir -p ~/.config
 for f in config/*; do
-    name=$(basename "$f")
-    nolink ~/.config/$name
-    link "$f" ~/.config
+    relink "$f" ~/.config
 done
 
 echo Installing Codex configuration...
-mkdir -p ~/.codex
-nolink ~/.codex/AGENTS.md
-link agents/AGENTS.md ~/.codex
+relink agents/AGENTS.md ~/.codex
 
 echo Installing skills for general agents...
-mkdir -p ~/.agents/skills
 for dir in agents/skills/*/; do
     [ -d "$dir" ] || continue
     name=$(basename "$dir")

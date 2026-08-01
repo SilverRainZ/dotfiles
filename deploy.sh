@@ -2,18 +2,14 @@
 
 cd "$(dirname "$0")"
 
-link(){
-    ln -sfv "$PWD/$1" "$2"
-}
+LN_OPTS="-sf"
+[ "$1" = "-v" ] && LN_OPTS="$LN_OPTS -v"
 
-nolink(){
-    unlink "$1" 2>/dev/null || true
-}
 relink(){
     name=$(basename "$1")
     mkdir -p "$2"
     unlink "$2/$name" 2>/dev/null || true
-    ln -sfv "$PWD/$1" "$2"
+    ln $LN_OPTS "$PWD/$1" "$2"
 }
 
 echo Installing home dotfiles...
@@ -27,29 +23,27 @@ for f in config/*; do
     relink "$f" ~/.config
 done
 
+echo Installing user bin...
+for f in bin/*; do
+    relink "$f" ~/bin
+done
+
 echo Installing Codex configuration...
 relink agents/AGENTS.md ~/.codex
 
 echo Installing skills for general agents...
 for dir in agents/skills/*/; do
     [ -d "$dir" ] || continue
-    name=$(basename "$dir")
-    nolink ~/.agents/skills/$name
-    link "$dir" ~/.agents/skills
+    relink "$dir" ~/.agents/skills
 done
 
 echo Installing skills for ClaudeCode...
 for dir in agents/skills/*/; do
     [ -d "$dir" ] || continue
-    name=$(basename "$dir")
-    nolink ~/.claude/skills/$name
-    link "$dir" ~/.claude/skills
+    relink "$dir" ~/.claude/skills
 done
 
 echo Installing Agents for general agents...
-mkdir -p ~/.agents/agents
 for dir in agents/agents/*; do
-    name=$(basename "$dir")
-    nolink ~/.agents/agents/$name
-    link "$dir" ~/.agents/agents
+    relink "$dir" ~/.agents/agents
 done

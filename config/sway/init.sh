@@ -38,3 +38,15 @@ export MOZ_ENABLE_WAYLAND=1         # for firefox
 export QT_QPA_PLATFORM=wayland      # qt
 # ref: https://github.com/swaywm/sway/wiki/Running-programs-natively-under-wayland
 export XDG_SESSION_TYPE=wayland     # run natively
+
+# Ask wlroot only use the builtin i915 (PCI 00:02.0), regardless of its
+# current card number, which shifts when the Nvidia eGPU is plugged/unplugged.
+#
+# NOTE:
+# 1. by-path names contain ':' which conflicts with WLR_DRM_DEVICES's
+#    ':'-separated list syntax, so resolve the symlink first.
+# 2. device nodes are not regular files, use "-e" instead of "-f" to test them.
+_igpu_path=/dev/dri/by-path/pci-0000:00:02.0-card
+if [ -e "$_igpu_path" ]; then
+    export WLR_DRM_DEVICES=$(readlink -f "$_igpu_path")
+fi

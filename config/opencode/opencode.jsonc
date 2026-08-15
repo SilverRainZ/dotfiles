@@ -39,7 +39,7 @@
             "prompt": "{file:~/.agents/agents/pragmatic-oneshot.md}",
             "temperature": 0.1,
             "steps": 40,
-            "model": "opencode/deepseek-v4-flash-free",
+            "model": "deepseek/deepseek-v4-flash",
             "permission": {
                 "question": "deny"
             }

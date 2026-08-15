@@ -39,8 +39,18 @@
   },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
+    "pyright-lsp@claude-plugins-official": true,
+    "crit@crit": true
   },
+  "extraKnownMarketplaces": {
+    "crit": {
+      "source": {
+        "source": "github",
+        "repo": "tomasz-tomczyk/crit"
+      }
+    }
+  },
+  "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
   "autoMode": {
     "soft_deny": [

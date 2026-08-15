@@ -24,9 +24,14 @@ export http_proxy=socks5h://127.0.0.1:1080
 export https_proxy=socks5h://127.0.0.1:1080
 
 # 或 http 代理
-export http_proxy=http://127.0.0.1:108
-export https_proxy=http://127.0.0.1:10809
+export http_proxy=http://127.0.0.1:1080
+export https_proxy=http://127.0.0.1:1080
 ```
+
+> **Python 程序优先用 http 代理。** `requests` / `httpx`（transformers、huggingface_hub
+> 等据此下载）走 `socks5h://` 需要额外的 `socksio` 包（`pip install httpx[socks]`），
+> 否则报 `Using SOCKS proxy, but the 'socksio' package is not installed`。用上面的
+> `http://127.0.0.1:1080` 可绕过此依赖。
 
 ## 辅助脚本
 

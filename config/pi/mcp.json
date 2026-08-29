@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "showStatusIcon": false
+  },
+  "mcpServers": {
+    "dida": {
+      "url": "https://mcp.dida365.com"
+    }
+  }
+}

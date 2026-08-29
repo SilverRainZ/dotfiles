@@ -14,6 +14,7 @@ export TERMINAL=kitty
 # See also ~/.config/user-dirs.dirs
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 source ~/.config/user-dirs.dirs
 
 # Less colorful output
@@ -96,6 +97,10 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export ANDROID_HOME=/opt/android-sdk
 export ANDROID_SDK_ROOT=/opt/android-sdk
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+
+# Pi Coding Agent.
+export PI_OFFLINE=1
+export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
 
 # If running from tty1 start sway
 # FIXME: Start sway from TTY cause ~/.profile is sourced multiple times.

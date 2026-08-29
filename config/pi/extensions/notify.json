@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "onlyWhenInteractive": true,
+  "title": "Pi",
+  "body": "Ready for input",
+  "channels": {
+    "desktop": true,
+    "terminal": false,
+    "bell": false,
+    "sound": false
+  },
+  "desktop": {
+    "backend": "auto"
+  }
+}

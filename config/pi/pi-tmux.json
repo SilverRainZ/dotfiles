@@ -1,0 +1,11 @@
+{
+  "sound": {
+    "enabled": false
+  },
+  "naming": {
+    "enabled": true,
+    "model": "",
+    "thinking": "minimal",
+    "maxChars": 32
+  }
+}

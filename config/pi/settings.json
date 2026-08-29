@@ -1,0 +1,25 @@
+{
+  "lastChangelogVersion": "0.84.4",
+  "theme": "nord",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-terra",
+  "defaultThinkingLevel": "high",
+  "httpProxy": "http://127.0.0.1:1080",
+  "enableInstallTelemetry": false,
+  "packages": [
+    "npm:pi-web-access",
+    "npm:pi-mcp-adapter",
+    "npm:pi-btw@0.4.1",
+    "npm:@ifi/oh-pi-themes@0.5.1",
+    "npm:@narumitw/pi-usage@0.57.0",
+    "npm:pi-open-tui@0.3.0",
+    "npm:@tintinweb/pi-subagents@0.19.0",
+    "npm:pi-claude-bridge@0.7.0",
+    "npm:pi-resume-claude@0.1.5",
+    "npm:@diegopetrucci/pi-notify@0.1.17",
+    "npm:pi-tmux@0.1.0"
+  ],
+  "hideThinkingBlock": false,
+  "tuiMode": "fullscreen",
+  "treeFilterMode": "no-tools"
+}

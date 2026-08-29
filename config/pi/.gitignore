@@ -1,0 +1,13 @@
+# Pi runtime state and third-party local resources
+auth.json
+mcp-cache.json
+models-store.json
+npm/
+plans/
+sessions/
+skills/
+tmp/
+web-search-cache/
+extensions/*
+!extensions/exit-command.ts
+!extensions/notify.json

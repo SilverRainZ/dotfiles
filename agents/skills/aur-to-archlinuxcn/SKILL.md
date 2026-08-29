@@ -149,7 +149,7 @@ post_build_script: |
 
 - 若 tag 不带 `v` 前缀，去掉 `.lstrip('v')`
 - 若 tag 有特殊命名规则，使用 `include_regex` 过滤，并在脚本中做相应字符串处理
-- **何时用 `update_aur_repo()`**：仅当该包在 AUR 中存在，且希望 lilac 把更新后的 PKGBUILD 推回 archlinuxcn 的 AUR 镜像时使用。非 AUR 包省略此行。
+- **`update_aur_repo()` 的使用条件**：仅当我们自己（archlinuxcn 身份）是该 AUR 包的维护者时才使用，把更新后的 PKGBUILD 推回 AUR。大多数情况下我们只是镜像别人的 AUR 包，**不要**添加 `update_aur_repo()`
 
 ### 4d. 固定 maintainers 块
 
@@ -206,7 +206,6 @@ pre_build_script: |
 
 post_build_script: |
   git_pkgbuild_commit()
-  update_aur_repo()
 
 update_on:
   - source: github
@@ -226,13 +225,14 @@ pre_build_script: |
 
 post_build_script: |
   git_pkgbuild_commit()
-  update_aur_repo()
 
 update_on:
   - source: github
     github: <owner>/<repo>
     use_max_tag: true
 ```
+
+> 仅当我们自己是该 AUR 包的维护者时，才在 `post_build_script` 中追加 `update_aur_repo()`。
 
 ### 4g. nvchecker 更新源类型参考
 

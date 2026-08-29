@@ -389,6 +389,7 @@ exec firefox
 exec dida
 exec $term
 exec tmuxp load -d home gilabs
+exec proxychains aerion
 
 include /etc/sway/config.d/*
 

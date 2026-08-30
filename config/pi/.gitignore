@@ -2,6 +2,7 @@
 auth.json
 mcp-cache.json
 models-store.json
+trust.json
 npm/
 plans/
 sessions/

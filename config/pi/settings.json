@@ -4,8 +4,18 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-terra",
   "defaultThinkingLevel": "high",
+  "modelThinkingLevels": {
+    "deepseek/deepseek-v4-flash": "medium"
+  },
   "httpProxy": "http://127.0.0.1:1080",
   "enableInstallTelemetry": false,
+  "hideThinkingBlock": false,
+  "tuiMode": "fullscreen",
+  "treeFilterMode": "no-tools",
+  "enabledModels": [
+    "openai-codex/gpt-5.6-terra",
+    "deepseek/deepseek-v4-flash"
+  ],
   "packages": [
     "npm:pi-web-access",
     "npm:pi-mcp-adapter",
@@ -17,9 +27,8 @@
     "npm:pi-claude-bridge@0.7.0",
     "npm:pi-resume-claude@0.1.5",
     "npm:@diegopetrucci/pi-notify@0.1.17",
-    "npm:pi-tmux@0.1.0"
-  ],
-  "hideThinkingBlock": false,
-  "tuiMode": "fullscreen",
-  "treeFilterMode": "no-tools"
+    "npm:pi-tmux@0.1.0",
+    "npm:@inobit/pi-undo",
+    "git:github.com/DietrichGebert/ponytail"
+  ]
 }

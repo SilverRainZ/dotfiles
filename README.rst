@@ -20,7 +20,7 @@ Terminal                kitty_ and Alacritty_
 Terminal multiplexer    tmux_
 Editor                  Neovim_
 IRC client              Srain_
-Coding Agent            OpenCode_, ClaudeCode_ and Codex
+Coding Agent            OpenCode_, ClaudeCode_, Codex and Pi_
 AI Assistant            Hermes
 ======================= ========================================================
 
@@ -33,6 +33,7 @@ AI Assistant            Hermes
 .. _kitty: config/kitty/
 .. _OpenCode: config/opencode/
 .. _ClaudeCode: home/.claude/
+.. _Pi: config/pi/
 
 Agents & Skills
 ----------------

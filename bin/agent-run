@@ -1,22 +1,29 @@
 #!/usr/bin/env nu
 
-# Run a oneshot task via OpenCode.
+# Run a oneshot task via Pi.
 def main [
-    --easy                          # use action-easy agent (default)
-    --hard                          # use action-hard agent
+    --easy                          # use DeepSeek V4 Flash (default)
+    --hard                          # use GPT-5.6 Terra
     --continue (-c)                 # continue the last session
     ...prompt: string               # prompt
 ] {
-    let agent = if $hard { "action-hard" } else { "action-easy" }
+    let model = if $hard { "openai-codex/gpt-5.6-terra" } else { "deepseek/deepseek-v4-flash" }
     let prompt = ($prompt | str join " ")
     let render = if (which glow | is-empty) { "cat" } else { "glow" }
 
     let opts = [
-        # See also ~/.config/opencode/opencode.jsonc
-        --agent $agent
-        --title $"[oneshot] ($prompt)"
+        --no-extensions
+        --no-skills
+        --no-context-files
+        --extension npm:pi-mcp-adapter
+        --extension npm:pi-web-access
+        --model $model
+        --session-dir ~/.local/share/pi/agent-run-sessions
+        --append-system-prompt (open --raw ~/.agents/agents/pragmatic-oneshot.md)
+        --name $"[oneshot] ($prompt)"
+        --print
         ...(if $continue { ["--continue"] } else { [] })
     ]
 
-    ^opencode run ...$opts $prompt | ^$render
+    ^pi ...$opts -- $prompt | ^$render
 }

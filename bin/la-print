@@ -1,0 +1,19 @@
+#!/usr/bin/env nu
+
+# :pacman:`timg` :pacman:`glow` :pacman:`bat`
+def main [...files: string] {
+    for f in $files {
+        let mime = (^file -b --mime $f | str trim)
+
+        if $mime =~ '^image/' {
+            ^timg --pixelation=kitty --grid=4 --title=%b --center $f
+        } else if $mime =~ 'charset=binary' {
+            print -e $"la-print: not a text/image file: ($f)"
+            exit 1
+        } else if ($f | path parse | get extension) in ["md" "markdown"] {
+            ^glow $f
+        } else {
+            ^bat --style=plain $f
+        }
+    }
+}

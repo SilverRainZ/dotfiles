@@ -8,6 +8,7 @@ alias m='make'
 alias mj8='make -j8'
 alias py='python3'
 alias o='xdg-open'
+alias p='la-print'
 alias grep='grep --color=auto'
 alias g='grep --color=auto -r'
 alias tsh='trash' # use trash rather than rm

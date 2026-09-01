@@ -1,4 +1,9 @@
 {
+  "spinner": {
+    "enabled": true,
+    "style": "star",
+    "speed": "normal"
+  },
   "sound": {
     "enabled": false
   },

@@ -216,6 +216,7 @@ bindsym $mod+Shift+Up sticky toggle
     assign [class="Bytedance-feishu"] $ws_im
     assign [class="com.alibabainc.dingtalk"] $ws_im
     assign [app_id="org.mozilla.Thunderbird"] $ws_im
+    assign [app_id="Aerion"] $ws_im
     for_window [app_id="fluffychat"] focus_on_window_activation focus
     assign [app_id="fluffychat"] $ws_im
     for_window [app_id="fluffychat"] focus_on_window_activation focus
@@ -389,7 +390,7 @@ exec firefox
 exec dida
 exec $term
 exec tmuxp load -d home gilabs
-exec proxychains aerion
+exec aerion
 
 include /etc/sway/config.d/*
 

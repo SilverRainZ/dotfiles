@@ -50,3 +50,14 @@ _igpu_path=/dev/dri/by-path/pci-0000:00:02.0-card
 if [ -e "$_igpu_path" ]; then
     export WLR_DRM_DEVICES=$(readlink -f "$_igpu_path")
 fi
+
+# Keep the desktop graphics stack off the eGPU so it never holds /dev/nvidia*
+# at idle -- otherwise egpu-detach's "GPU still in use" check fails forever.
+# Every GPU app (sway itself, firefox, electron apps) would otherwise open the
+# NVIDIA nodes just to enumerate the card. CUDA is unaffected: libcuda talks to
+# /dev/nvidia0 directly, not through glvnd/EGL or the Vulkan loader.
+#
+# EGL: force glvnd to load only the Mesa vendor, never libEGL_nvidia.
+export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+# Vulkan: hide the nvidia ICD from the loader (glob matches nvidia_icd.json).
+export VK_LOADER_DRIVERS_DISABLE='*nvidia*'

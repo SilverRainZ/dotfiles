@@ -1,12 +1,12 @@
 {
   "env": {
     "SHELL": "/usr/bin/bash",
-    "http_proxy": "http://127.0.0.1:10809",
-    "https_proxy": "http://127.0.0.1:10809",
-    "HTTP_PROXY": "http://127.0.0.1:10809",
-    "HTTPS_PROXY": "http://127.0.0.1:10809",
-    "ALL_PROXY": "http://127.0.0.1:10808",
-    "all_proxy": "http://127.0.0.1:10808",
+    "http_proxy": "http://127.0.0.1:1080",
+    "https_proxy": "http://127.0.0.1:1080",
+    "HTTP_PROXY": "http://127.0.0.1:1080",
+    "HTTPS_PROXY": "http://127.0.0.1:1080",
+    "ALL_PROXY": "http://127.0.0.1:1080",
+    "all_proxy": "http://127.0.0.1:1080",
     "no_proxy": "localhost,127.0.0.1,.in.silverrainz.me,.tailnet-ecdc.ts.net",
     "NO_PROXY": "localhost,127.0.0.1,.in.silverrainz.me,.tailnet-ecdc.ts.net"
   },

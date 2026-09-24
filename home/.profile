@@ -81,9 +81,9 @@ export PIP_BREAK_SYSTEM_PACKAGES=1
 # Cargo
 export PATH=~/.cargo/bin:$PATH
 
-# ByteDance private profile
-if [[ -f ~/.bytedprofile ]]; then
-    source ~/.bytedprofile
+# Private profile for work
+if [[ -f ~/.workprofile ]]; then
+    source ~/.workprofile
 fi
 
 # Make systemd aware of your modified $PATH.

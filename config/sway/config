@@ -214,6 +214,8 @@ bindsym $mod+Shift+Up sticky toggle
     for_window [app_id="srain"] focus_on_window_activation focus
     assign [class="Feishu"] $ws_im
     assign [class="Bytedance-feishu"] $ws_im
+    # Feishu Meeting.
+    assign [class="Meeting"] $ws_im
     assign [class="com.alibabainc.dingtalk"] $ws_im
     assign [app_id="org.mozilla.Thunderbird"] $ws_im
     assign [app_id="Aerion"] $ws_im
@@ -223,6 +225,8 @@ bindsym $mod+Shift+Up sticky toggle
     assign [class="wechat"] $ws_im
     ## Feishu's image preview window.
     for_window [title="图片"] floating enable
+    ## Feishu Meeting.
+    for_window [class="Meeting"] floating enable
     # Workspace document viewer
     assign [class="Wps"] $ws_doc
     assign [class="Wpp"] $ws_doc

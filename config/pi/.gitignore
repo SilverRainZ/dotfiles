@@ -13,3 +13,4 @@ web-search-cache/
 extensions/*
 !extensions/exit-command.ts
 !extensions/notify.json
+!extensions/codex-context.ts

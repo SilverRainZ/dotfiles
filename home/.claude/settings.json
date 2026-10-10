@@ -25,7 +25,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -43,19 +43,13 @@
     "clangd-lsp@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
     "crit@crit": true,
-    "ponytail@ponytail": true
+    "crit-tui@crit": true
   },
   "extraKnownMarketplaces": {
     "crit": {
       "source": {
         "source": "github",
         "repo": "tomasz-tomczyk/crit"
-      }
-    },
-    "ponytail": {
-      "source": {
-        "source": "github",
-        "repo": "DietrichGebert/ponytail"
       }
     }
   },

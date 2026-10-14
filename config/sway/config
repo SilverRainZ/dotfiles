@@ -384,7 +384,6 @@ gaps inner 10
 smart_gaps on
 
 # Autostart:
-exec swaync
 exec fcitx5
 exec syncthing-gtk --minimized
 exec blueman-applet

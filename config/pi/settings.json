@@ -12,9 +12,10 @@
   "hideThinkingBlock": true,
   "tuiMode": "fullscreen",
   "treeFilterMode": "no-tools",
+  "extensions": ["-builtin:mcp"],
   "enabledModels": [
-    "openai-codex/gpt-5.6-sol",
-    "openai-codex/gpt-5.6-terra",
+    "gilabs/gpt-6.1-sol",
+    "gilabs/gpt-6-astra",
     "deepseek/deepseek-flash"
   ],
   "packages": [

@@ -7,7 +7,7 @@ def main [
     --continue (-c)                 # continue the last session
     ...prompt: string               # prompt
 ] {
-    let model = if $hard { "openai-codex/gpt-5.6-terra" } else { "deepseek/deepseek-v4-flash" }
+    let model = if $hard { "openai-codex/gpt-5.6-terra" } else { "deepseek/deepseek-flash" }
     let prompt = ($prompt | str join " ")
     let render = if (which glow | is-empty) { "cat" } else { "glow" }
 

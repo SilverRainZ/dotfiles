@@ -18,7 +18,9 @@
   "enabledModels": [
     "gilabs/gpt-6.1-sol",
     "gilabs/gpt-6-astra",
-    "deepseek/deepseek-flash"
+    "deepseek/deepseek-flash",
+    "kimi-coding/k3",
+    "kimi-coding/k3-256k"
   ],
   "packages": [
     "npm:pi-web-access",

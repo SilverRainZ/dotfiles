@@ -4,6 +4,9 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-terra",
   "defaultThinkingLevel": "high",
+  "defaultTools": [
+    "+codemode"
+  ],
   "modelThinkingLevels": {
     "deepseek/deepseek-flash": "medium"
   },
@@ -12,7 +15,6 @@
   "hideThinkingBlock": true,
   "tuiMode": "fullscreen",
   "treeFilterMode": "no-tools",
-  "extensions": ["-builtin:mcp"],
   "enabledModels": [
     "gilabs/gpt-6.1-sol",
     "gilabs/gpt-6-astra",
@@ -20,7 +22,6 @@
   ],
   "packages": [
     "npm:pi-web-access",
-    "npm:pi-mcp-adapter",
     "npm:pi-btw@0.4.1",
     "npm:@ifi/oh-pi-themes@0.5.1",
     "npm:@narumitw/pi-usage@0.57.0",

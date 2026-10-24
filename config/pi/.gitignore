@@ -1,5 +1,6 @@
 # Pi runtime state and third-party local resources
 auth.json
+mcp-auth.json
 mcp-cache.json
 models-store.json
 trust.json

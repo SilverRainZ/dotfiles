@@ -16,11 +16,11 @@
   "tuiMode": "fullscreen",
   "treeFilterMode": "no-tools",
   "enabledModels": [
+    "kimi-coding/k3-256k",
+    "kimi-coding/k3",
     "gilabs/gpt-6.1-sol",
     "gilabs/gpt-6-astra",
-    "deepseek/deepseek-flash",
-    "kimi-coding/k3",
-    "kimi-coding/k3-256k"
+    "deepseek/deepseek-flash"
   ],
   "packages": [
     "npm:pi-web-access",

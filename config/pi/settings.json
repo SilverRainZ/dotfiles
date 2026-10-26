@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.3.0",
+  "lastChangelogVersion": "1.4.0",
   "theme": "nord",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-terra",
@@ -24,16 +24,17 @@
   ],
   "packages": [
     "npm:pi-web-access",
-    "npm:pi-btw@0.8.0",
     "npm:@ifi/oh-pi-themes@0.5.1",
     "npm:@narumitw/pi-usage@0.68.0",
     "npm:pi-open-tui@0.3.11",
     "npm:@tintinweb/pi-subagents@0.22.0",
     "npm:pi-claude-bridge@0.9.3",
-    "npm:pi-resume-claude@0.1.5",
     "npm:@diegopetrucci/pi-notify@0.1.19",
-    "npm:@inobit/pi-undo",
     "npm:@yukikisaku/pi-tmux-status@0.2.0",
-    "git:github.com/DietrichGebert/ponytail"
+    "npm:@narumitw/pi-btw@0.62.0",
+    "npm:@juicesharp/rpiv-btw@2.15.0",
+    "npm:pi-sidekick@0.3.0",
+    "npm:resume-from",
+    "npm:@inobit/pi-undo"
   ]
 }

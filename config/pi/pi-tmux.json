@@ -1,11 +1,26 @@
 {
   "spinner": {
     "enabled": true,
-    "style": "star",
-    "speed": "normal"
+    "style": "braille",
+    "speed": "slow"
+  },
+  "completionAlert": {
+    "enabled": true,
+    "bellEnabled": true,
+    "focusedMarkAutoClearMs": 5000,
+    "markWatchIntervalMs": 500,
+    "markWatchMaxMs": 1800000,
+    "mark": "🔔",
+    "hookEnabled": true
   },
   "sound": {
-    "enabled": false
+    "enabled": false,
+    "command": "mpv",
+    "args": [
+      "--no-video",
+      "--really-quiet",
+      "/home/la/git/dotfiles/config/pi/npm/node_modules/@yukikisaku/pi-tmux-status/assets/notification.mp3"
+    ]
   },
   "naming": {
     "enabled": true,

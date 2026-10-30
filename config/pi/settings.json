@@ -34,6 +34,8 @@
     "npm:@narumitw/pi-btw@0.62.0",
     "npm:@juicesharp/rpiv-btw@2.15.0",
     "npm:resume-from",
-    "npm:@inobit/pi-undo"
+    "npm:@inobit/pi-undo",
+    "npm:pi-lens",
+    "npm:@nredd/pi-dev-tools"
   ]
 }

@@ -1,0 +1,3 @@
+{
+  "disableTools": ["find", "grep"]
+}

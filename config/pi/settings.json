@@ -39,6 +39,7 @@
     "npm:@nredd/pi-dev-tools",
     "npm:@heyhuynhgiabuu/pi-pretty",
     "npm:@heyhuynhgiabuu/pi-diff",
-    "npm:pi-background"
+    "npm:pi-background",
+    "npm:pi-memory"
   ]
 }

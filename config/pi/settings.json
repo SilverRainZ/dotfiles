@@ -20,7 +20,8 @@
     "kimi-coding/k3",
     "gilabs/gpt-6.1-sol",
     "gilabs/gpt-6-astra",
-    "deepseek/deepseek-flash"
+    "deepseek/deepseek-flash",
+    "deepseek/deepseek-v4-pro"
   ],
   "packages": [
     "npm:pi-web-access",
@@ -40,6 +41,7 @@
     "npm:@heyhuynhgiabuu/pi-pretty",
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:pi-background",
-    "npm:pi-memory"
+    "npm:pi-memory",
+    "npm:pi-fusion"
   ]
 }

@@ -19,3 +19,6 @@ known_hosts
 .xmonad/xmonad.state
 
 .directory
+
+# pi-intercom runtime state
+config/pi/intercom/

@@ -368,9 +368,9 @@ bindsym XF86MonBrightnessDown exec lightctl down
 #
 # Theme:
 #
-# Set cursor theme
-set $cursor_theme Breeze-Adapta-Cursor
-set $cursor_size 36
+# Set cursor theme, require :pacman:`breeze-cursors`.
+set $cursor_theme Breeze_Light
+set $cursor_size 32
 
 seat seat0 xcursor_theme $cursor_theme $cursor_size
 

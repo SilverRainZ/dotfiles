@@ -41,6 +41,7 @@
     "npm:pi-background",
     "npm:pi-memory",
     "npm:pi-fusion",
-    "npm:pi-intercom"
+    "npm:pi-intercom",
+    "npm:@plannotator/pi-extension"
   ]
 }

@@ -2,6 +2,15 @@
   "mcpServers": {
     "dida": {
       "url": "https://mcp.dida365.com"
+    },
+    "gdocs": {
+      "command": "npx",
+      "args": ["-y", "@a-bonus/google-docs-mcp"],
+      "env": {
+        "GOOGLE_CLIENT_ID": "!awk '/^ID:/{print $2}' ~/workspace/2026-11-pi-google-doc-mcp/token.txt",
+        "GOOGLE_CLIENT_SECRET": "!awk '/^Key:/{print $2}' ~/workspace/2026-11-pi-google-doc-mcp/token.txt"
+      },
+      "description": "Google Docs/Sheets/Drive/Gmail/Calendar via Google OAuth"
     }
   }
 }

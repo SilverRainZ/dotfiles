@@ -52,7 +52,7 @@
     "npm:context-mode",
     "npm:pi-context-view",
     "npm:pi-tidy",
-    "npm:@ifi/oh-pi-themes@0.5.1"
+    "npm:@spences10/pi-themes"
   ],
   "terminal": {}
 }

@@ -43,6 +43,7 @@
     "npm:pi-fusion",
     "npm:pi-intercom",
     "npm:@plannotator/pi-extension",
-    "npm:pi-simplify"
+    "npm:pi-simplify",
+    "npm:context-mode"
   ]
 }

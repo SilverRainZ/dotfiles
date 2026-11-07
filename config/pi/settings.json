@@ -12,7 +12,7 @@
   },
   "httpProxy": "http://127.0.0.1:1080",
   "enableInstallTelemetry": false,
-  "hideThinkingBlock": true,
+  "hideThinkingBlock": false,
   "tuiMode": "fullscreen",
   "treeFilterMode": "no-tools",
   "enabledModels": [
@@ -23,9 +23,15 @@
     "deepseek/deepseek-flash",
     "deepseek/deepseek-v4-pro"
   ],
+  "tidy": {
+    "userMessageStyle": "off",
+    "finalReplyStyle": "off",
+    "frameMessages": false,
+    "collapseTurns": "afterRun",
+    "groupOpen": true
+  },
   "packages": [
     "npm:pi-web-access",
-    "npm:@ifi/oh-pi-themes@0.5.1",
     "npm:@narumitw/pi-usage@0.68.0",
     "npm:pi-open-tui@0.3.11",
     "npm:@tintinweb/pi-subagents@0.22.0",
@@ -36,7 +42,6 @@
     "npm:@juicesharp/rpiv-btw@2.15.0",
     "npm:resume-from",
     "npm:@inobit/pi-undo",
-    "npm:@heyhuynhgiabuu/pi-pretty",
     "npm:@heyhuynhgiabuu/pi-diff",
     "npm:pi-background",
     "npm:pi-memory",
@@ -45,6 +50,9 @@
     "npm:@plannotator/pi-extension",
     "npm:pi-simplify",
     "npm:context-mode",
-    "npm:pi-context-view"
-  ]
+    "npm:pi-context-view",
+    "npm:pi-tidy",
+    "npm:@ifi/oh-pi-themes@0.5.1"
+  ],
+  "terminal": {}
 }

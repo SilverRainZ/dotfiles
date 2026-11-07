@@ -44,6 +44,7 @@
     "npm:pi-intercom",
     "npm:@plannotator/pi-extension",
     "npm:pi-simplify",
-    "npm:context-mode"
+    "npm:context-mode",
+    "npm:pi-context-view"
   ]
 }

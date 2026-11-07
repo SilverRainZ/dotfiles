@@ -20,5 +20,6 @@ known_hosts
 
 .directory
 
-# pi-intercom runtime state
+# pi coding agent
 config/pi/intercom/
+config/pi/mcp.log

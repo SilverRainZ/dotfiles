@@ -105,6 +105,10 @@ export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi"
 # If running from tty1 start sway
 # FIXME: Start sway from TTY cause ~/.profile is sourced multiple times.
 # Use a display manager to fix it?
+
+# pi-memory: skip the LLM exit summary on quit (daily log stays hand-written)
+export PI_MEMORY_EXIT_SUMMARY=0
+
 if [ "$(tty)" = "/dev/tty1" ] && [ ! -z "$(command -v sway)" ]; then
     source ~/.config/sway/init.sh
     exec sway

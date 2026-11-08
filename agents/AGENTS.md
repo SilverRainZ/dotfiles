@@ -30,6 +30,16 @@
 - `uv pip install` 这种在 venv 里的不需要 approve
 
 
+## 记忆 (pi-memory)
+
+三层分工，不得混用：
+
+- **MEMORY.md** = 长期事实/偏好/教训的**草稿箱**。只收「稳定到值得晋升 AGENTS.md」的候选；项目事件、过程记录、流水账一律不进
+- **daily log** = 跨 session 交接。只写「另一个 session 接手时必须知道」的信息；每次 `memory_write(daily)` 前先自问「下个 session 没有这条会做错事吗」，不会就别写
+- **scratchpad** = 待办清单。事项完成或失效即勾掉；session 开始看到未勾项时，主动向我确认是否还有效
+
+晋升流程：MEMORY.md 条目稳定后，由我过目确认 → 写进 AGENTS.md（全局或项目级）→ `memory_forget` 清掉原条目（有 recovery 兜底）。
+
 ## 禁止事项
 
 - 永远不许执行 `git reset --hard` 和 `git restore` 操作

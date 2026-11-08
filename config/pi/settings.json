@@ -54,5 +54,8 @@
     "npm:pi-tidy",
     "npm:@spences10/pi-themes"
   ],
-  "terminal": {}
+  "terminal": {},
+  "compaction": {
+    "keepRecentTokens": 40000
+  }
 }

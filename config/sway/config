@@ -369,6 +369,8 @@ bindsym XF86MonBrightnessDown exec lightctl down
 # Theme:
 #
 # Set cursor theme, require :pacman:`breeze-cursors`.
+# NOTE: this only affects the cursor sway draws itself (wallpaper, borders).
+# Wayland clients read XCURSOR_THEME/XCURSOR_SIZE, exported in init.sh.
 set $cursor_theme Breeze_Light
 set $cursor_size 32
 
@@ -377,6 +379,7 @@ seat seat0 xcursor_theme $cursor_theme $cursor_size
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema cursor-theme $cursor_theme
+    gsettings set $gnome-schema cursor-size $cursor_size
 }
 default_border none
 

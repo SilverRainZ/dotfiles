@@ -16,6 +16,12 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
+# Cursor theme, keep in sync with $cursor_theme/$cursor_size in
+# ~/.config/sway/config: `seat seat0 xcursor_theme` only affects the cursor
+# sway draws itself, Wayland clients read these env vars instead.
+export XCURSOR_THEME=Breeze_Light
+export XCURSOR_SIZE=32
+
 # Wine.
 export WINEARCH=win32
 export WINEPREFIX=~/.wine

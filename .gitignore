@@ -23,3 +23,7 @@ known_hosts
 # pi coding agent
 config/pi/intercom/
 config/pi/mcp.log
+
+# Machine-local GTK state, not managed
+config/gtk-3.0/custom-papers
+config/gtk-3.0/servers

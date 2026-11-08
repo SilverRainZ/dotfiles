@@ -1,6 +1,7 @@
 ---
 name: sphinxnotes-template-update
 description: Use when updating a sphinxnotes project from the cookiecutter template, resolving cruft update conflicts (.rej files), and completing template sync
+disable-model-invocation: true
 ---
 
 # SphinxNotes 模板更新指南

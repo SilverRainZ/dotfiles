@@ -1,6 +1,7 @@
 ---
 name: sphinxnotes-release
 description: Release workflow for sphinxnotes/cookiecutter generated projects. Use when the user asks to release a new stable version.
+disable-model-invocation: true
 ---
 
 # SphinxNotes 版本发布指南

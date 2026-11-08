@@ -1,6 +1,7 @@
 ---
 name: sphinxnotes-changelog
 description: Write and maintain changelogs for sphinxnotes projects. Covers preparing release changelogs, adding incremental entries, and the ``.. version::`` directive reference.
+disable-model-invocation: true
 ---
 
 # SphinxNotes Changelog 编写指南

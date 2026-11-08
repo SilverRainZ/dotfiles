@@ -1,6 +1,7 @@
 ---
 name: aur-to-archlinuxcn
 description: 当用户提供一个 AUR 包名，要把它加入 archlinuxcn 仓库时使用
+disable-model-invocation: true
 ---
 
 # 将 AUR 包加入 ArchlinuxCN

@@ -34,7 +34,7 @@
     "npm:pi-web-access",
     "npm:@narumitw/pi-usage@0.68.0",
     "npm:pi-open-tui@0.3.11",
-    "npm:@tintinweb/pi-subagents@0.22.0",
+    "npm:@tintinweb/pi-subagents@0.23.1",
     "npm:pi-claude-bridge@0.9.3",
     "npm:@diegopetrucci/pi-notify@0.1.19",
     "npm:@yukikisaku/pi-tmux-status@0.2.0",
